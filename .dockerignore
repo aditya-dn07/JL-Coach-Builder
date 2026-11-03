@@ -1,0 +1,11 @@
+node_modules
+.next
+.next-production
+.git
+.env*
+!.env.example
+docs
+Changes
+tests
+*.docx
+*.tsbuildinfo

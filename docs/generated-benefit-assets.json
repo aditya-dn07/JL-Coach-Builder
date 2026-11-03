@@ -1,0 +1,22 @@
+{
+  "mode": "built-in image_gen tool",
+  "purpose": "Decorative Why Choose card backgrounds",
+  "assets": [
+    {
+      "path": "D:\\Aditya Digital Neighbour\\JL Coach Builder\\public\\images\\why-choose\\insurance.webp",
+      "prompt": "Create a premium editorial photographic background asset for a dark charcoal and red caravan repair website. Portrait 3:4 composition. A trade-qualified RV repair specialist's gloved hands inspecting a dented white caravan exterior panel with a small inspection light, close-up of careful damage assessment inside a professional workshop. Realistic materials and proportions, natural photography, restrained desaturated steel blue and charcoal palette with small red tool accents, subject in upper half, lower half quiet and shadowed for a later text overlay. Keep enough detail visible; the website will apply its own dark gradient. No text, no logos, no watermark, no UI, no collage. This is illustrative stock-style imagery, not a photograph of a specific business."
+    },
+    {
+      "path": "D:\\Aditya Digital Neighbour\\JL Coach Builder\\public\\images\\why-choose\\models.webp",
+      "prompt": "Create a premium editorial photographic background asset for a dark charcoal and red caravan repair website. Portrait 3:4 composition. A varied lineup of a white touring caravan, a campervan and a motorhome outside a tidy New Zealand repair workshop, photographed from a low three-quarter angle. Realistic materials and proportions, natural photography, restrained desaturated steel blue and charcoal palette with small red tool accents, subject in upper half, lower half quiet and shadowed for a later text overlay. Keep enough detail visible; the website will apply its own dark gradient. No text, no logos, no watermark, no UI, no collage. This is illustrative stock-style imagery, not a photograph of a specific business."
+    },
+    {
+      "path": "D:\\Aditya Digital Neighbour\\JL Coach Builder\\public\\images\\why-choose\\canterbury.webp",
+      "prompt": "Create a premium editorial photographic background asset for a dark charcoal and red caravan repair website. Portrait 3:4 composition. A white touring caravan parked beside a quiet Canterbury New Zealand rural road, distant Southern Alps and open grassland, calm late afternoon light, no people. Realistic materials and proportions, natural photography, restrained desaturated steel blue and charcoal palette with small red tool accents, subject in upper half, lower half quiet and shadowed for a later text overlay. Keep enough detail visible; the website will apply its own dark gradient. No text, no logos, no watermark, no UI, no collage. This is illustrative stock-style imagery, not a photograph of a specific business."
+    },
+    {
+      "path": "D:\\Aditya Digital Neighbour\\JL Coach Builder\\public\\images\\why-choose\\maintenance.webp",
+      "prompt": "Create a premium editorial photographic background asset for a dark charcoal and red caravan repair website. Portrait 3:4 composition. Close-up of an RV technician's gloved hands carefully checking a caravan window weather seal with professional hand tools, immaculate practical repair workshop setting. Realistic materials and proportions, natural photography, restrained desaturated steel blue and charcoal palette with small red tool accents, subject in upper half, lower half quiet and shadowed for a later text overlay. Keep enough detail visible; the website will apply its own dark gradient. No text, no logos, no watermark, no UI, no collage. This is illustrative stock-style imagery, not a photograph of a specific business."
+    }
+  ]
+}

@@ -1,0 +1,500 @@
+{
+  "logo": {
+    "id": "logo",
+    "originalSrc": "/images/original/JL-Coachbuilders-Logo.png",
+    "optimizedSrc": "/images/optimized/logo-768.webp",
+    "alt": "JL Coachbuilders",
+    "width": 2170,
+    "height": 725,
+    "focalPoint": {
+      "x": 0.5,
+      "y": 0.45
+    },
+    "treatment": "logo"
+  },
+  "nav": [
+    {
+      "label": "Caravans",
+      "href": "#services",
+      "children": [
+        {
+          "label": "Caravan Services",
+          "href": "https://jlcoachbuilders.co.nz/caravan-services-in-christchurch/",
+          "children": []
+        },
+        {
+          "label": "Caravan Repairs",
+          "href": "https://jlcoachbuilders.co.nz/caravan-repairs-in-christchurch/",
+          "children": []
+        },
+        {
+          "label": "Caravan Panel and Paint Services",
+          "href": "https://jlcoachbuilders.co.nz/caravan-panel-and-paint-services-in-christchurch/",
+          "children": []
+        },
+        {
+          "label": "Caravan Alteration and Upgrades",
+          "href": "https://jlcoachbuilders.co.nz/caravan-alterations-and-upgrades-in-christchurch/",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "Campervans",
+      "href": "#services",
+      "children": [
+        {
+          "label": "Campervan Services",
+          "href": "https://jlcoachbuilders.co.nz/campervan-services-in-christchurch/",
+          "children": []
+        },
+        {
+          "label": "Campervan Repairs",
+          "href": "https://jlcoachbuilders.co.nz/campervan-repairs-in-christchurch/",
+          "children": []
+        },
+        {
+          "label": "Campervan Panel and Paint Services",
+          "href": "https://jlcoachbuilders.co.nz/campervan-panel-and-paint-services-in-christchurch/",
+          "children": []
+        },
+        {
+          "label": "Campervan Alteration and Upgrades",
+          "href": "https://jlcoachbuilders.co.nz/campervan-alteration-and-upgrades-in-christchurch/",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "Motorhomes",
+      "href": "#services",
+      "children": [
+        {
+          "label": "Motorhome Services",
+          "href": "https://jlcoachbuilders.co.nz/motorhome-services-in-christchurch/",
+          "children": []
+        },
+        {
+          "label": "Motorhome Repairs",
+          "href": "https://jlcoachbuilders.co.nz/motorhome-repairs-in-christchurch/",
+          "children": []
+        },
+        {
+          "label": "Motorhome Panel and Paint Services",
+          "href": "https://jlcoachbuilders.co.nz/motorhome-panel-and-paint-services-in-christchurch/",
+          "children": []
+        },
+        {
+          "label": "Motorhome Alteration and Upgrades",
+          "href": "https://jlcoachbuilders.co.nz/motorhome-alteration-and-upgrades-in-christchurch/",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "Fifth Wheels",
+      "href": "#services",
+      "children": [
+        {
+          "label": "Fifth Wheel Services",
+          "href": "https://jlcoachbuilders.co.nz/fifth-wheel-services-in-christchurch/",
+          "children": []
+        },
+        {
+          "label": "Fifth Wheel Repairs",
+          "href": "https://jlcoachbuilders.co.nz/fifth-wheel-repairs-in-christchurch/",
+          "children": []
+        },
+        {
+          "label": "Fifth Wheel Panel and Paint Services",
+          "href": "https://jlcoachbuilders.co.nz/fifth-wheel-panel-and-paint-services-in-christchurch/",
+          "children": []
+        },
+        {
+          "label": "Fifth Wheels Alteration and Upgrades",
+          "href": "https://jlcoachbuilders.co.nz/fifth-wheels-alteration-and-upgrades-in-christchurch/",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "Buses",
+      "href": "#services",
+      "children": [
+        {
+          "label": "Bus Services",
+          "href": "https://jlcoachbuilders.co.nz/bus-services-in-christchurch/",
+          "children": []
+        },
+        {
+          "label": "Bus Repairs",
+          "href": "https://jlcoachbuilders.co.nz/bus-repairs-in-christchurch/",
+          "children": []
+        },
+        {
+          "label": "Bus Panel and Paint Services",
+          "href": "https://jlcoachbuilders.co.nz/bus-panel-and-paint-services-in-christchurch/",
+          "children": []
+        },
+        {
+          "label": "Bus Alteration and Upgrades",
+          "href": "https://jlcoachbuilders.co.nz/bus-alteration-and-upgrades-in-christchurch/",
+          "children": []
+        }
+      ]
+    }
+  ],
+  "quickLinks": [
+    {
+      "label": "About us",
+      "href": "https://jlcoachbuilders.co.nz/about/"
+    },
+    {
+      "label": "Insurance",
+      "href": "https://jlcoachbuilders.co.nz/insurance/"
+    },
+    {
+      "label": "Finance",
+      "href": "https://apply.mtf.co.nz/welcome?rp_source=Public+Website&originatorid=2224&_gl=1*ji652q*_gcl_aw*R0NMLjE3NTI3MDEwMTAuQ2owS0NRandtOTNEQmhEX0FSSXNBRFJfRGpFQTB6LVplMG5sQUo5TWR5Ykd0SEI0UTdFcld6WVJKYlpUNFFSNTlzQkR5cDZTSXY1LWpJd2FBcHlTRUFMd193Y0I.*_gcl_au*MTAyNjkxNzA4Ni4xNzUyMDA1Nzk1*_ga*MTQ4NTMzMjQ3MS4xNzUxODc1NzAw*_ga_WGWS2HCGTF*czE3NTI3MDEwMDkkbzYkZzEkdDE3NTI3MDEwMTUkajU0JGwwJGgw"
+    },
+    {
+      "label": "Gallery",
+      "href": "https://jlcoachbuilders.co.nz/gallery/"
+    },
+    {
+      "label": "Contact",
+      "href": "https://jlcoachbuilders.co.nz/contact/"
+    },
+    {
+      "label": "FAQs",
+      "href": "https://jlcoachbuilders.co.nz/faqs/"
+    },
+    {
+      "label": "Blogs",
+      "href": "https://jlcoachbuilders.co.nz/blogs/"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Christchurch's Caravan & Motorhome Repair Specialists",
+    "h1": "Complete Caravan & RV Repairs in Christchurch",
+    "highlightWord": "RV Repairs",
+    "chips": ["Repairs", "Upgrades", "Servicing", "Panel & Paint", "Self Containment"],
+    "primaryCta": {
+      "label": "Get a free quote",
+      "href": "#quote"
+    },
+    "secondaryCta": {
+      "label": "Call 027 347 0214",
+      "href": "tel:0273470214"
+    },
+    "image": {
+      "id": "workshop",
+      "originalSrc": "https://jlcoachbuilders.co.nz/storage/2022/06/20211022_140143-1-scaled-1.jpg",
+      "optimizedSrc": "/images/optimized/workshop-768.webp",
+      "alt": "White and turquoise caravan outside the JL Coachbuilders workshop",
+      "width": 1920,
+      "height": 2560,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "treatment": "stripe"
+    },
+    "trustBadges": [
+      {
+        "value": "4.9",
+        "label": "Google rating"
+      },
+      {
+        "value": "100+",
+        "label": "Five-star reviews"
+      },
+      {
+        "value": "80+",
+        "label": "Years combined experience"
+      }
+    ]
+  },
+  "services": [
+    {
+      "id": "caravan",
+      "title": "Caravan Repairs & Servicing",
+      "shortDescription": "Keep your caravan safe, comfortable and ready for the road. We provide repairs, servicing, maintenance, water damage repairs, electrical and plumbing work, bodywork and custom alterations for all makes and models.",
+      "href": "https://jlcoachbuilders.co.nz/caravan-services-in-christchurch/",
+      "image": {
+        "id": "caravan",
+        "originalSrc": "https://jlcoachbuilders.co.nz/storage/2022/06/6.jpg",
+        "optimizedSrc": "/images/optimized/caravan-768.webp",
+        "alt": "Caravan exterior",
+        "width": 1024,
+        "height": 768,
+        "focalPoint": {
+          "x": 0.5,
+          "y": 0.45
+        },
+        "treatment": "tile"
+      },
+      "size": "large"
+    },
+    {
+      "id": "campervan",
+      "title": "Campervan Repairs & Custom Work",
+      "shortDescription": "From accident damage and body repairs to interior upgrades, electrical systems and custom modifications, our experienced team can repair, maintain and improve your campervan.",
+      "href": "https://jlcoachbuilders.co.nz/campervan-services-in-christchurch/",
+      "image": {
+        "id": "campervan",
+        "originalSrc": "https://jlcoachbuilders.co.nz/storage/2022/10/Campervan.jpg",
+        "optimizedSrc": "/images/optimized/campervan-768.webp",
+        "alt": "Campervan at the workshop",
+        "width": 768,
+        "height": 1024,
+        "focalPoint": {
+          "x": 0.5,
+          "y": 0.45
+        },
+        "treatment": "tile"
+      },
+      "size": "small"
+    },
+    {
+      "id": "motorhome",
+      "title": "Motorhome Repairs, Servicing & Upgrades",
+      "shortDescription": "We provide professional motorhome repairs and servicing, from general maintenance and bodywork to water damage, electrical, plumbing, interior renovations and custom upgrades.",
+      "href": "https://jlcoachbuilders.co.nz/motorhome-services-in-christchurch/",
+      "image": {
+        "id": "motorhome",
+        "originalSrc": "https://jlcoachbuilders.co.nz/storage/2022/10/motorhome-interior-1-1.jpg",
+        "optimizedSrc": "/images/optimized/motorhome-768.webp",
+        "alt": "Motorhome interior with cabinetry",
+        "width": 768,
+        "height": 1024,
+        "focalPoint": {
+          "x": 0.5,
+          "y": 0.45
+        },
+        "treatment": "tile"
+      },
+      "size": "large"
+    },
+    {
+      "id": "fifth-wheel",
+      "title": "Fifth Wheel Repairs & Maintenance",
+      "shortDescription": "Our team can help keep your fifth wheel safe, reliable and ready for your next adventure. We provide repairs, maintenance, bodywork, alterations and specialist coachbuilding.",
+      "href": "https://jlcoachbuilders.co.nz/fifth-wheel-services-in-christchurch/",
+      "image": {
+        "id": "fifth-wheel",
+        "originalSrc": "https://jlcoachbuilders.co.nz/storage/2022/10/Fifth-wheel-1.jpg",
+        "optimizedSrc": "/images/optimized/fifth-wheel-768.webp",
+        "alt": "Fifth wheel vehicle",
+        "width": 768,
+        "height": 1024,
+        "focalPoint": {
+          "x": 0.5,
+          "y": 0.45
+        },
+        "treatment": "tile"
+      },
+      "size": "small"
+    },
+    {
+      "id": "bus",
+      "title": "Bus Repairs & Coachbuilding",
+      "shortDescription": "Our coachbuilding expertise extends to buses and coaches, with services including accident repairs, bodywork, panel and paint, structural repairs, interior modifications and custom coachbuilding.",
+      "href": "https://jlcoachbuilders.co.nz/bus-services-in-christchurch/",
+      "image": {
+        "id": "bus",
+        "originalSrc": "https://jlcoachbuilders.co.nz/storage/2022/10/Bus.jpg",
+        "optimizedSrc": "/images/optimized/bus-768.webp",
+        "alt": "Bus exterior",
+        "width": 768,
+        "height": 1024,
+        "focalPoint": {
+          "x": 0.5,
+          "y": 0.45
+        },
+        "treatment": "tile"
+      },
+      "size": "small"
+    }
+  ],
+  "stats": [
+    {
+      "value": 80,
+      "suffix": "+",
+      "label": "years combined experience"
+    },
+    {
+      "value": 4.9,
+      "suffix": "",
+      "label": "Google rating"
+    },
+    {
+      "value": 100,
+      "suffix": "+",
+      "label": "five-star reviews"
+    },
+    {
+      "value": 2016,
+      "suffix": "",
+      "label": "Since 2016"
+    }
+  ],
+  "reviews": [
+    {
+      "author": "Matt Fitzsimmons",
+      "location": "Christchurch, NZ",
+      "text": "Great place and staff. Easy to deal with and they went above and beyond what we needed. We will definitely be back if we have any issues in the future",
+      "rating": null
+    },
+    {
+      "author": "Cheryl Glen",
+      "location": "Christchurch, NZ",
+      "text": "We have just had a leaking window in our UK caravan fixed by Jamie. Excellent job, very professional and his rates are very reasonable. Great to know a good tradesman in this industry and we highly recommend him to anyone wanting caravan work done.",
+      "rating": null
+    },
+    {
+      "author": "Richard Burridge",
+      "location": "Christchurch, NZ",
+      "text": "After getting quotes for insurance around town from 3 other repair guys for a leaky motorhome I found Jamie at JLC to be head and shoulders above the rest when it came to a thorough assessment and good pricing. He even found some issues that the others had missed, preventing further expensive damage in the future. Top bloke and highly recommended!!!!",
+      "rating": null
+    },
+    {
+      "author": "John Russell",
+      "location": "Christchurch, NZ",
+      "text": "Great service. Have used them twice. Had a water pump repair, which was done at the workshop and also a repair which was done at my property. Quick responses from emails.Also a creative fix to an issue I had with run off from my awning getting into the extractor fan outlet. Highly recommend.",
+      "rating": null
+    },
+    {
+      "author": "Ange Abel",
+      "location": "Christchurch, NZ",
+      "text": "I visited Jamie with a leaky caravan, I was epically impressed with the whole setup. Communication was outstanding as was his honesty and expertise. Thanks so much!",
+      "rating": null
+    },
+    {
+      "author": "Terry & Raylene Helm",
+      "location": "Christchurch, NZ",
+      "text": "This company is an excellent example of customer service. Jamie and the team were helpful and carried out the work why quicker than expected finishing with a great result. I have no hesitation in recommending them!",
+      "rating": null
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need to come to you for repairs?",
+      "answer": "Yes, we carry out all repairs at our workshop to ensure the best possible service. Having all our tools and materials on-site allows us to work more efficiently and maintain strict health and safety standards."
+    },
+    {
+      "question": "How long will the repair take?",
+      "answer": "Timeframes depend on the complexity of the job. We always aim to complete work as efficiently as possible and will provide you with an estimated timeframe when you request your free quote. We also stock a range of common caravan parts and accessories in New Zealand to help speed up repairs where possible."
+    },
+    {
+      "question": "What makes of caravans do you work on?",
+      "answer": "We work on all makes and models from both New Zealand and overseas manufacturers."
+    },
+    {
+      "question": "I need a small repair job. Can you help?",
+      "answer": "Yes, we handle all types of work, big or small. Get in touch with us for a free, no-obligation quote and we’ll be happy to help."
+    }
+  ],
+  "copy": {
+    "skip": "Skip to content",
+    "menu": "Open navigation",
+    "closeMenu": "Close navigation",
+    "navigation": "Main navigation",
+    "freeQuote": "Free Quote",
+    "call": "Call",
+    "email": "Email",
+    "google": "Google",
+    "mapTitle": "JL Coachbuilders workshop location",
+    "facebook": "Follow us on Facebook",
+    "copyright": "© 2026 JL Coachbuilders Ltd. All rights reserved.",
+    "credit": "Digital Marketing by Digital Neighbour",
+    "creditUrl": "https://digitalneighbour.co.nz/",
+    "photoLabel": "Christchurch, New Zealand",
+    "servicesTitle": "Services we offer",
+    "previousService": "Previous service",
+    "nextService": "Next service",
+    "insurance": "Insurance repairs required? Click here",
+    "explore": "View services",
+    "faqTitle": "Coachbuilding FAQs",
+    "reviewsTitle": "Over 100 5 star reviews!",
+    "whyTitle": "Why choose us",
+    "ctaTitle": "High Quality Caravan Parts & Accessories in Christchurch",
+    "ctaButton": "Get a Quote",
+    "footerIntro": "At JL Coachbuilders we offer competitive prices and make sure our service is only to the highest standard. Keeping our customers happy and satisfied is our number one goal.",
+    "quickLinks": "Quick links",
+    "services": "Services",
+    "contact": "Get in touch",
+    "quoteTitle": "Get A Free Quote",
+    "quoteClose": "Close quote form",
+    "statsLabel": "80+ years combined experience",
+    "quoteLink": "Get a free quote"
+  },
+  "form": {
+    "labels": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "website": "Leave this field empty",
+      "message": "Message",
+      "submit": "Send",
+      "submitting": "Sending…"
+    },
+    "messages": {
+      "invalid": "Please check your details. Name, a valid phone number, email and a message are required.",
+      "success": "Thank you. Your quote request has been sent. Our team will be in touch.",
+      "error": "Your request could not be sent. Please call or email us directly.",
+      "unconfigured": "Online quote delivery is being set up. Please call 027 347 0214 or email jamie@jlcoachbuilders.co.nz."
+    }
+  },
+  "whatWeDo": {
+    "eyebrow": "What we do",
+    "title": "Repairs, upgrades and rebuilds under one roof",
+    "badge": "Since 2016",
+    "paragraphs": [
+      "At JL Coachbuilders, we specialise in caravan and motorhome repairs, servicing, renovations and custom alterations in Christchurch. From accident damage and general repairs to complete refurbishments and upgrades, our experienced team helps keep your vehicle safe, comfortable and ready for the road.",
+      "With more than 80 years of combined coachbuilding experience, our skilled team has the expertise to handle everything from structural repairs and electrical work to interior renovations and custom modifications. Our large purpose-built spray booth also allows us to provide professional panel and paint repairs and refinishing, delivering a quality, factory-style finish.",
+      "While caravans and motorhomes are our specialty, we also repair and modify buses, horse floats, trailers, fifth wheels, truck bodies and other specialist vehicles.",
+      "From small repairs and routine maintenance to major rebuilds, we provide practical solutions and quality workmanship designed to last.",
+      "Looking for trusted caravan or motorhome repairs in Christchurch? Contact JL Coachbuilders on 027 347 0214 for a free, no-obligation quote."
+    ],
+    "ticks": [
+      "Extensive coachbuilding experience",
+      "Motorhome specialist",
+      "Caravan specialist",
+      "Comprehensive services"
+    ]
+  },
+  "repairsIntro": {
+    "title": "Caravan and motorhome repairs in Christchurch",
+    "body": "Need repairs or servicing for your motorhome or caravan? Whether you're looking to install motor movers, upgrade to a new solar system, or carry out general repairs and maintenance, JL Coachbuilders is your trusted RV repair and service specialist in Christchurch."
+  },
+  "difference": {
+    "title": "What makes JL Coachbuilders different?",
+    "paragraphs": [
+      "Unlike other repairers who specialise in just one area, or only one brand we can take care of your vehicle from the outside in, no matter where it comes from.",
+      "If your caravan or camper has been in an accident, we don't just repair the hole in the side panel, we can repair the damaged bathroom too.",
+      "Your classic kiwi built Zephyr caravan needs new exterior body panels? We make them in house.",
+      "From structural repairs, fabrication and panel and paint to cabinetry, woodwork, electrical, plumbing and self-containment, we can manage the complete job under one roof.",
+      "We work on all makes and models, backed by more than 80 years of combined coachbuilding experience and a large purpose-built spray booth for professional paint and refinishing work.",
+      "Two workshops. One team. Complete solutions."
+    ]
+  },
+  "whyChooseUs": [
+    {
+      "title": "Insurance Repairs",
+      "body": "We work on behalf of all major insurance companies, allowing you to pay the most affordable price for our services."
+    },
+    {
+      "title": "Wide Range of Models",
+      "body": "We work on all makes and models of caravan and motorhome and have access to most parts."
+    },
+    {
+      "title": "Trusted by Canterbury",
+      "body": "We are confident in our ability to keep you satisfied with every job we do. Since we started in 2016, JL Coachbuilders have been dedicated to repairing and renovating caravans and motorhomes to the highest of standards. Read our testimonials for more information."
+    },
+    {
+      "title": "Caravan & Motorhome Maintenance",
+      "body": "After repairing or renovating, we go through the next steps to ensure any faults don’t happen again. We help you make the right choices to keep your caravan or motorhome running and looking as if it were brand new."
+    }
+  ]
+}

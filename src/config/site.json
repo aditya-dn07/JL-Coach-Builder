@@ -1,0 +1,30 @@
+{
+  "url": "https://jlcoachbuilders.co.nz/",
+  "seo": {
+    "title": "Expert Caravan & RV Repairs in Christchurch | JL Coachbuilders",
+    "description": "Reliable caravan and motorhome repairs in Christchurch. Our expert team provides top-notch services to maintain your RV's performance and comfort."
+  },
+  "business": {
+    "name": "JL Coachbuilders",
+    "tagline": "Two workshops. One team. Complete solutions.",
+    "phone": "027 347 0214",
+    "email": "jamie@jlcoachbuilders.co.nz",
+    "address": {
+      "street": "5/4 Spencerville Road, Kainga",
+      "locality": "Christchurch",
+      "postcode": "8083",
+      "country": "NZ"
+    },
+    "foundedYear": 2016,
+    "sameAs": ["https://www.facebook.com/JLCoachbuilders/"],
+    "googleRating": {
+      "value": 4.9,
+      "reviewCount": null,
+      "reviewClaim": "100+ five-star reviews"
+    }
+  },
+  "locale": "en_NZ",
+  "language": "en-NZ",
+  "themeColor": "#252925",
+  "vehicleTypes": ["Caravans", "Campervans", "Motorhomes", "Fifth Wheels", "Buses"]
+}

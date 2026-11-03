@@ -1,0 +1,154 @@
+{
+  "desktop": [
+    {
+      "h1": 1,
+      "missingAnchors": [],
+      "overflow": false,
+      "path": "/caravan-panel-and-paint-services-in-christchurch",
+      "width": 1440
+    },
+    {
+      "h1": 1,
+      "missingAnchors": [],
+      "overflow": false,
+      "path": "/campervan-services-in-christchurch",
+      "width": 1440
+    },
+    {
+      "h1": 1,
+      "missingAnchors": [],
+      "overflow": false,
+      "path": "/motorhome-alteration-and-upgrades-in-christchurch",
+      "width": 1440
+    },
+    {
+      "h1": 1,
+      "missingAnchors": [],
+      "overflow": false,
+      "path": "/fifth-wheel-repairs-in-christchurch",
+      "width": 1440
+    },
+    {
+      "h1": 1,
+      "missingAnchors": [],
+      "overflow": false,
+      "path": "/bus-services-in-christchurch",
+      "width": 1440
+    },
+    {
+      "h1": 1,
+      "missingAnchors": [],
+      "overflow": false,
+      "path": "/insurance",
+      "width": 1440
+    },
+    {
+      "h1": 1,
+      "missingAnchors": [],
+      "overflow": false,
+      "path": "/about",
+      "width": 1440
+    },
+    {
+      "h1": 1,
+      "missingAnchors": [],
+      "overflow": false,
+      "path": "/contact",
+      "width": 1440
+    },
+    {
+      "h1": 1,
+      "missingAnchors": [],
+      "overflow": false,
+      "path": "/gallery",
+      "width": 1440
+    },
+    {
+      "h1": 1,
+      "missingAnchors": [],
+      "overflow": false,
+      "path": "/privacy-policy",
+      "width": 1440
+    },
+    {
+      "h1": 1,
+      "missingAnchors": [],
+      "overflow": false,
+      "path": "/terms-and-conditions",
+      "width": 1440
+    }
+  ],
+  "mobile": [
+    {
+      "overflow": false,
+      "path": "/caravan-services-in-christchurch",
+      "wideElements": []
+    },
+    {
+      "overflow": false,
+      "path": "/caravan-repairs-in-christchurch",
+      "wideElements": []
+    },
+    {
+      "overflow": false,
+      "path": "/caravan-panel-and-paint-services-in-christchurch",
+      "wideElements": []
+    },
+    {
+      "overflow": false,
+      "path": "/campervan-alteration-and-upgrades-in-christchurch",
+      "wideElements": []
+    },
+    {
+      "overflow": false,
+      "path": "/motorhome-services-in-christchurch",
+      "wideElements": []
+    },
+    {
+      "overflow": false,
+      "path": "/fifth-wheel-repairs-in-christchurch",
+      "wideElements": []
+    },
+    {
+      "overflow": false,
+      "path": "/bus-services-in-christchurch",
+      "wideElements": []
+    },
+    {
+      "overflow": false,
+      "path": "/insurance",
+      "wideElements": []
+    },
+    {
+      "overflow": false,
+      "path": "/about",
+      "wideElements": []
+    },
+    {
+      "overflow": false,
+      "path": "/contact",
+      "wideElements": []
+    },
+    {
+      "overflow": false,
+      "path": "/gallery",
+      "wideElements": []
+    },
+    {
+      "overflow": false,
+      "path": "/privacy-policy",
+      "wideElements": []
+    },
+    {
+      "overflow": false,
+      "path": "/terms-and-conditions",
+      "wideElements": []
+    }
+  ],
+  "gallery": {
+    "initialPhotographs": 18,
+    "afterShowMore": 36,
+    "viewerNavigationVerified": true,
+    "closeRestoresScrolling": true
+  }
+}

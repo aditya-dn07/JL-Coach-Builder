@@ -1,0 +1,1191 @@
+{
+  "elements": [
+    {
+      "tag": "title",
+      "text": "Expert Caravan & RV Repairs in Christchurch | JL Coachbuilders"
+    },
+    {
+      "tag": "a",
+      "text": "Skip to main content",
+      "class": "hfe-skip-link",
+      "href": "#content"
+    },
+    {
+      "tag": "a",
+      "text": "jlcoachbuilders",
+      "href": "https://jlcoachbuilders.co.nz/",
+      "title": "jlcoachbuilders",
+      "rel": "home"
+    },
+    {
+      "tag": "p",
+      "text": "jlcoachbuilders",
+      "class": "main-title bhf-hidden",
+      "itemprop": "headline"
+    },
+    {
+      "tag": "a",
+      "text": "Facebook-f",
+      "class": "elementor-icon elementor-social-icon elementor-social-icon-facebook-f elementor-repeater-item-ae8711f",
+      "href": "https://www.facebook.com/JLCoachbuilders/",
+      "target": "_blank"
+    },
+    {
+      "tag": "a",
+      "text": "HOME",
+      "href": "https://jlcoachbuilders.co.nz/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Caravans",
+      "href": "#",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Caravan Services",
+      "href": "https://jlcoachbuilders.co.nz/caravan-services-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Caravan Repairs",
+      "href": "https://jlcoachbuilders.co.nz/caravan-repairs-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Caravan Panel and Paint Services",
+      "href": "https://jlcoachbuilders.co.nz/caravan-panel-and-paint-services-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Caravan Alteration and Upgrades",
+      "href": "https://jlcoachbuilders.co.nz/caravan-alterations-and-upgrades-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Campervans",
+      "href": "#",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Campervan Services",
+      "href": "https://jlcoachbuilders.co.nz/campervan-services-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Campervan Repairs",
+      "href": "https://jlcoachbuilders.co.nz/campervan-repairs-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Campervan Panel and Paint Services",
+      "href": "https://jlcoachbuilders.co.nz/campervan-panel-and-paint-services-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Campervan Alteration and Upgrades",
+      "href": "https://jlcoachbuilders.co.nz/campervan-alteration-and-upgrades-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Motorhomes",
+      "href": "#",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Motorhome Services",
+      "href": "https://jlcoachbuilders.co.nz/motorhome-services-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Motorhome Repairs",
+      "href": "https://jlcoachbuilders.co.nz/motorhome-repairs-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Motorhome Panel and Paint Services",
+      "href": "https://jlcoachbuilders.co.nz/motorhome-panel-and-paint-services-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Motorhome Alteration and Upgrades",
+      "href": "https://jlcoachbuilders.co.nz/motorhome-alteration-and-upgrades-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Fifth Wheels",
+      "href": "#",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Fifth Wheel Services",
+      "href": "https://jlcoachbuilders.co.nz/fifth-wheel-services-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Fifth Wheel Repairs",
+      "href": "https://jlcoachbuilders.co.nz/fifth-wheel-repairs-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Fifth Wheel Panel and Paint Services",
+      "href": "https://jlcoachbuilders.co.nz/fifth-wheel-panel-and-paint-services-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Fifth Wheels Alteration and Upgrades",
+      "href": "https://jlcoachbuilders.co.nz/fifth-wheels-alteration-and-upgrades-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Buses",
+      "href": "#",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Bus Services",
+      "href": "https://jlcoachbuilders.co.nz/bus-services-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Bus Repairs",
+      "href": "https://jlcoachbuilders.co.nz/bus-repairs-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Bus Panel and Paint Services",
+      "href": "https://jlcoachbuilders.co.nz/bus-panel-and-paint-services-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Bus Alteration and Upgrades",
+      "href": "https://jlcoachbuilders.co.nz/bus-alteration-and-upgrades-in-christchurch/",
+      "class": "hfe-sub-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "ABOUT US",
+      "href": "https://jlcoachbuilders.co.nz/about/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "INSURANCE",
+      "href": "https://jlcoachbuilders.co.nz/insurance/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "FINANCE",
+      "target": "_blank",
+      "rel": "noopener",
+      "href": "https://apply.mtf.co.nz/welcome?rp_source=Public+Website&originatorid=2224&_gl=1*ji652q*_gcl_aw*R0NMLjE3NTI3MDEwMTAuQ2owS0NRandtOTNEQmhEX0FSSXNBRFJfRGpFQTB6LVplMG5sQUo5TWR5Ykd0SEI0UTdFcld6WVJKYlpUNFFSNTlzQkR5cDZTSXY1LWpJd2FBcHlTRUFMd193Y0I.*_gcl_au*MTAyNjkxNzA4Ni4xNzUyMDA1Nzk1*_ga*MTQ4NTMzMjQ3MS4xNzUxODc1NzAw*_ga_WGWS2HCGTF*czE3NTI3MDEwMDkkbzYkZzEkdDE3NTI3MDEwMTUkajU0JGwwJGgw",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "GALLERY",
+      "href": "https://jlcoachbuilders.co.nz/gallery/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "CONTACT",
+      "href": "https://jlcoachbuilders.co.nz/contact/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "p",
+      "text": "CHRISTCHURCH\u2019S CARAVAN & MOTORHOME REPAIR SPECIALISTS"
+    },
+    {
+      "tag": "h1",
+      "text": "Complete Caravan & RV Repairs in Christchurch",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "p",
+      "text": "Repairs \u2013 Upgrades \u2013 Servicing \u2013 Panel & Paint \u2013 Self Containment"
+    },
+    {
+      "tag": "h2",
+      "text": "Get A Free Quote",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "button",
+      "text": "Send",
+      "type": "submit",
+      "class": "elementor-button elementor-size-sm"
+    },
+    {
+      "tag": "h2",
+      "text": "WHAT WE DO",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "p",
+      "text": "At JL Coachbuilders, we specialise in caravan and motorhome repairs, servicing, renovations and custom alterations in Christchurch. From accident damage and general repairs to complete refurbishments and upgrades, our experienced team helps keep your vehicle safe, comfortable and ready for the road."
+    },
+    {
+      "tag": "p",
+      "text": "With more than 80 years of combined coachbuilding experience, our skilled team has the expertise to handle everything from structural repairs and electrical work to interior renovations and custom modifications. Our large purpose-built spray booth also allows us to provide professional panel and paint repairs and refinishing, delivering a quality, factory-style finish."
+    },
+    {
+      "tag": "p",
+      "text": "While caravans and motorhomes are our specialty, we also repair and modify buses, horse floats, trailers, fifth wheels, truck bodies and other specialist vehicles."
+    },
+    {
+      "tag": "p",
+      "text": "From small repairs and routine maintenance to major rebuilds, we provide practical solutions and quality workmanship designed to last."
+    },
+    {
+      "tag": "p",
+      "text": "Looking for trusted caravan or motorhome repairs in Christchurch? Contact JL Coachbuilders on 027 347 0214 for a free, no-obligation quote."
+    },
+    {
+      "tag": "h2",
+      "text": "SERVICES WE OFFER",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "a",
+      "text": "INSURANCE REPAIRS REQUIRED ?CLICK HERE",
+      "class": "elementor-button elementor-button-link elementor-size-sm",
+      "href": "https://jlcoachbuilders.co.nz/insurance/"
+    },
+    {
+      "tag": "h3",
+      "text": "Caravan Repairs & Servicing",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "p",
+      "text": "Keep your caravan safe, comfortable and ready for the road. We provide repairs, servicing, maintenance, water damage repairs, electrical and plumbing work, bodywork and custom alterations for all makes and models."
+    },
+    {
+      "tag": "a",
+      "text": "Read More",
+      "class": "elementor-button elementor-button-link elementor-size-sm",
+      "href": "https://jlcoachbuilders.co.nz/caravan-services-in-christchurch/"
+    },
+    {
+      "tag": "h3",
+      "text": "Campervan Repairs & Custom Work",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "p",
+      "text": "From accident damage and body repairs to interior upgrades, electrical systems and custom modifications, our experienced team can repair, maintain and improve your campervan."
+    },
+    {
+      "tag": "a",
+      "text": "Read More",
+      "class": "elementor-button elementor-button-link elementor-size-sm",
+      "href": "https://jlcoachbuilders.co.nz/campervan-services-in-christchurch/"
+    },
+    {
+      "tag": "h3",
+      "text": "Motorhome Repairs, Servicing & Upgrades",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "p",
+      "text": "We provide professional motorhome repairs and servicing, from general maintenance and bodywork to water damage, electrical, plumbing, interior renovations and custom upgrades."
+    },
+    {
+      "tag": "a",
+      "text": "Read More",
+      "class": "elementor-button elementor-button-link elementor-size-sm",
+      "href": "https://jlcoachbuilders.co.nz/motorhome-services-in-christchurch/"
+    },
+    {
+      "tag": "h3",
+      "text": "Fifth Wheel Repairs & Maintenance",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "p",
+      "text": "Our team can help keep your fifth wheel safe, reliable and ready for your next adventure. We provide repairs, maintenance, bodywork, alterations and specialist coachbuilding."
+    },
+    {
+      "tag": "a",
+      "text": "Read More",
+      "class": "elementor-button elementor-button-link elementor-size-sm",
+      "href": "https://jlcoachbuilders.co.nz/fifth-wheel-services-in-christchurch/"
+    },
+    {
+      "tag": "h3",
+      "text": "Bus Repairs & Coachbuilding",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "p",
+      "text": "Our coachbuilding expertise extends to buses and coaches, with services including accident repairs, bodywork, panel and paint, structural repairs, interior modifications and custom coachbuilding."
+    },
+    {
+      "tag": "a",
+      "text": "Read More",
+      "class": "elementor-button elementor-button-link elementor-size-sm",
+      "href": "https://jlcoachbuilders.co.nz/bus-services-in-christchurch/"
+    },
+    {
+      "tag": "h4",
+      "text": "CARAVAN AND MOTORHOME REPAIRS IN CHRISTCHURCH",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "p",
+      "text": "Need repairs or servicing for your motorhome or caravan? Whether you\u2019re looking to install motor movers, upgrade to a new solar system, or carry out general repairs and maintenance, JL Coachbuilders is your trusted RV repair and service specialist in Christchurch."
+    },
+    {
+      "tag": "h4",
+      "text": "What Makes JL Coachbuilders Different?",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "p",
+      "text": "Unlike other repairers who specialise in just one area, or only one brand we can take care of your vehicle from the outside in, no matter where it comes from."
+    },
+    {
+      "tag": "p",
+      "text": "If your caravan or camper has been in an accident, we don\u2019t just repair the hole in the side panel \u2014 we can repair the damaged bathroom too."
+    },
+    {
+      "tag": "p",
+      "text": "Your classic kiwi built Zephyr caravan needs new exterior body panels? We make them in house."
+    },
+    {
+      "tag": "p",
+      "text": "From structural repairs, fabrication and panel and paint to cabinetry, woodwork, electrical, plumbing and self-containment, we can manage the complete job under one roof."
+    },
+    {
+      "tag": "p",
+      "text": "We work on all makes and models, backed by more than 80 years of combined coachbuilding experience and a large purpose-built spray booth for professional paint and refinishing work."
+    },
+    {
+      "tag": "p",
+      "text": "Two workshops. One team. Complete solutions."
+    },
+    {
+      "tag": "h2",
+      "text": "COACHBUILDING FAQS",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "a",
+      "text": "Do I need to come to you for repairs?",
+      "class": "elementor-accordion-title",
+      "tabindex": "0"
+    },
+    {
+      "tag": "p",
+      "text": "Yes, we carry out all repairs at our workshop to ensure the best possible service. Having all our tools and materials on-site allows us to work more efficiently and maintain strict health and safety standards."
+    },
+    {
+      "tag": "a",
+      "text": "How long will the repair take?",
+      "class": "elementor-accordion-title",
+      "tabindex": "0"
+    },
+    {
+      "tag": "p",
+      "text": "Timeframes depend on the complexity of the job. We always aim to complete work as efficiently as possible and will provide you with an estimated timeframe when you request your free quote. We also stock a range of common caravan parts and accessories in New Zealand to help speed up repairs where possible."
+    },
+    {
+      "tag": "a",
+      "text": "What makes of caravans do you work on?",
+      "class": "elementor-accordion-title",
+      "tabindex": "0"
+    },
+    {
+      "tag": "p",
+      "text": "We work on all makes and models from both New Zealand and overseas manufacturers.",
+      "data-start": "809",
+      "data-end": "935"
+    },
+    {
+      "tag": "a",
+      "text": "I need a small repair job. Can you help?",
+      "class": "elementor-accordion-title",
+      "tabindex": "0"
+    },
+    {
+      "tag": "p",
+      "text": "Yes, we handle all types of work, big or small. Get in touch with us for a free, no-obligation quote and we\u2019ll be happy to help."
+    },
+    {
+      "tag": "h2",
+      "text": "OVER 100 5 STAR REVIEWS!",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "p",
+      "text": "Great place and staff. Easy to deal with and they went above and beyond what we needed. We will definitely be back if we have any issues in the future"
+    },
+    {
+      "tag": "p",
+      "text": "We have just had a leaking window in our UK caravan fixed by Jamie. Excellent job, very professional and his rates are very reasonable. Great to know a good tradesman in this industry and we highly recommend him to anyone wanting caravan work done."
+    },
+    {
+      "tag": "p",
+      "text": "After getting quotes for insurance around town from 3 other repair guys for a leaky motorhome I found Jamie at JLC to be head and shoulders above the rest when it came to a thorough assessment and good pricing. He even found some issues that the others had missed, preventing further expensive damage in the future. Top bloke and highly recommended!!!!"
+    },
+    {
+      "tag": "p",
+      "text": "Great service. Have used them twice. Had a water pump repair, which was done at the workshop and also a repair which was done at my property. Quick responses from emails.Also a creative fix to an issue I had with run off from my awning getting into the extractor fan outlet. Highly recommend."
+    },
+    {
+      "tag": "p",
+      "text": "I visited Jamie with a leaky caravan, I was epically impressed with the whole setup. Communication was outstanding as was his honesty and expertise. Thanks so much!"
+    },
+    {
+      "tag": "p",
+      "text": "This company is an excellent example of customer service. Jamie and the team were helpful and carried out the work why quicker than expected finishing with a great result. I have no hesitation in recommending them!"
+    },
+    {
+      "tag": "h2",
+      "text": "WHY CHOOSE US",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "h3",
+      "text": "INSURANCE REPAIRS",
+      "class": "elementor-icon-box-title"
+    },
+    {
+      "tag": "p",
+      "text": "We work on behalf of all major insurance companies, allowing you to pay the most affordable price for our services.",
+      "class": "elementor-icon-box-description"
+    },
+    {
+      "tag": "h3",
+      "text": "WIDE RANGE OF MODELS",
+      "class": "elementor-icon-box-title"
+    },
+    {
+      "tag": "p",
+      "text": "We work on all makes and models of caravan and motorhome and have access to most parts.",
+      "class": "elementor-icon-box-description"
+    },
+    {
+      "tag": "h3",
+      "text": "TRUSTED BY CANTERBURY",
+      "class": "elementor-icon-box-title"
+    },
+    {
+      "tag": "p",
+      "text": "We are confident in our ability to keep you satisfied with every job we do. Since we started in 2016, JL Coachbuilders have been dedicated to repairing and renovating caravans and motorhomes to the highest of standards. Read our testimonials for more information.",
+      "class": "elementor-icon-box-description"
+    },
+    {
+      "tag": "h3",
+      "text": "CARAVAN & MOTORHOME MAINTENANCE",
+      "class": "elementor-icon-box-title"
+    },
+    {
+      "tag": "p",
+      "text": "After repairing or renovating, we go through the next steps to ensure any faults don\u2019t happen again. We help you make the right choices to keep your caravan or motorhome running and looking as if it were brand new.",
+      "class": "elementor-icon-box-description"
+    },
+    {
+      "tag": "a",
+      "text": "GET A QUOTE",
+      "class": "elementor-button elementor-button-link elementor-size-sm",
+      "href": "https://jlcoachbuilders.co.nz/contact/"
+    },
+    {
+      "tag": "a",
+      "text": "Google rating 4.9",
+      "href": "https://admin.trustindex.io/api/googleReview?place-id=ChIJwQg-6nmMMW0Rb1Rhq4anT7I",
+      "role": "button",
+      "target": "_blank",
+      "rel": "noopener nofollow",
+      "class": "ti-header ti-header-grid source-Google"
+    },
+    {
+      "tag": "h5",
+      "text": "QUICK LINKS",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "a",
+      "text": "HOME",
+      "href": "https://jlcoachbuilders.co.nz/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "ABOUT US",
+      "href": "https://jlcoachbuilders.co.nz/about/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "INSURANCE",
+      "href": "https://jlcoachbuilders.co.nz/insurance/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "FINANCE",
+      "href": "https://apply.mtf.co.nz/welcome?rp_source=Public+Website&originatorid=2224&_gl=1*ji652q*_gcl_aw*R0NMLjE3NTI3MDEwMTAuQ2owS0NRandtOTNEQmhEX0FSSXNBRFJfRGpFQTB6LVplMG5sQUo5TWR5Ykd0SEI0UTdFcld6WVJKYlpUNFFSNTlzQkR5cDZTSXY1LWpJd2FBcHlTRUFMd193Y0I.*_gcl_au*MTAyNjkxNzA4Ni4xNzUyMDA1Nzk1*_ga*MTQ4NTMzMjQ3MS4xNzUxODc1NzAw*_ga_WGWS2HCGTF*czE3NTI3MDEwMDkkbzYkZzEkdDE3NTI3MDEwMTUkajU0JGwwJGgw",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "GALLERY",
+      "href": "https://jlcoachbuilders.co.nz/gallery/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "CONTACT",
+      "href": "https://jlcoachbuilders.co.nz/contact/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "FAQs",
+      "href": "https://jlcoachbuilders.co.nz/faqs/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "BLOGS",
+      "href": "https://jlcoachbuilders.co.nz/blogs/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "h5",
+      "text": "SERVICES",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "a",
+      "text": "Caravan Services",
+      "href": "https://jlcoachbuilders.co.nz/caravan-services-in-christchurch/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Campervan Services",
+      "href": "https://jlcoachbuilders.co.nz/campervan-services-in-christchurch/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Motorhome Services",
+      "href": "https://jlcoachbuilders.co.nz/motorhome-services-in-christchurch/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Fifth Wheel Services",
+      "href": "https://jlcoachbuilders.co.nz/fifth-wheel-services-in-christchurch/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Bus Services",
+      "href": "https://jlcoachbuilders.co.nz/bus-services-in-christchurch/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "h5",
+      "text": "GET IN TOUCH",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "a",
+      "text": "0273470214",
+      "href": "tel:0273470214"
+    },
+    {
+      "tag": "h5",
+      "text": "0273470214",
+      "class": "elementor-icon-box-title"
+    },
+    {
+      "tag": "a",
+      "text": "jamie@jlcoachbuilders.co.nz",
+      "href": "mailto:jamie@jlcoachbuilders.co.nz"
+    },
+    {
+      "tag": "h5",
+      "text": "jamie@jlcoachbuilders.co.nz",
+      "class": "elementor-icon-box-title"
+    },
+    {
+      "tag": "h5",
+      "text": "5/4 Spencerville Road, Kainga, Christchurch 8083, NZ",
+      "class": "elementor-icon-box-title"
+    },
+    {
+      "tag": "a",
+      "text": "Digital Marketing by Digital Neighbour",
+      "href": "https://digitalneighbour.co.nz/",
+      "target": "_blank",
+      "rel": "noopener"
+    },
+    {
+      "tag": "p",
+      "text": "\u00a9 2026 JL Coachbuilders Ltd. All rights reserved. Digital Marketing by Digital Neighbour"
+    },
+    {
+      "tag": "a",
+      "text": "Call Now",
+      "href": "tel:0273470214",
+      "class": "footer_btn1"
+    },
+    {
+      "tag": "a",
+      "text": "Email Us",
+      "href": "mailto:jamie@jlcoachbuilders.co.nz",
+      "class": "footer_btn1"
+    },
+    {
+      "tag": "a",
+      "text": "GET A QUOTE",
+      "class": "elementor-button elementor-button-link elementor-size-sm",
+      "href": "https://jlcoachbuilders.co.nz/contact/"
+    },
+    {
+      "tag": "a",
+      "text": "Google rating 4.9",
+      "href": "https://admin.trustindex.io/api/googleReview?place-id=ChIJwQg-6nmMMW0Rb1Rhq4anT7I",
+      "role": "button",
+      "target": "_blank",
+      "rel": "noopener nofollow",
+      "class": "ti-header ti-header-grid source-Google"
+    },
+    {
+      "tag": "h5",
+      "text": "QUICK LINKS",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "a",
+      "text": "HOME",
+      "href": "https://jlcoachbuilders.co.nz/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "ABOUT US",
+      "href": "https://jlcoachbuilders.co.nz/about/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "INSURANCE",
+      "href": "https://jlcoachbuilders.co.nz/insurance/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "FINANCE",
+      "href": "https://apply.mtf.co.nz/welcome?rp_source=Public+Website&originatorid=2224&_gl=1*ji652q*_gcl_aw*R0NMLjE3NTI3MDEwMTAuQ2owS0NRandtOTNEQmhEX0FSSXNBRFJfRGpFQTB6LVplMG5sQUo5TWR5Ykd0SEI0UTdFcld6WVJKYlpUNFFSNTlzQkR5cDZTSXY1LWpJd2FBcHlTRUFMd193Y0I.*_gcl_au*MTAyNjkxNzA4Ni4xNzUyMDA1Nzk1*_ga*MTQ4NTMzMjQ3MS4xNzUxODc1NzAw*_ga_WGWS2HCGTF*czE3NTI3MDEwMDkkbzYkZzEkdDE3NTI3MDEwMTUkajU0JGwwJGgw",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "GALLERY",
+      "href": "https://jlcoachbuilders.co.nz/gallery/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "CONTACT",
+      "href": "https://jlcoachbuilders.co.nz/contact/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "FAQs",
+      "href": "https://jlcoachbuilders.co.nz/faqs/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "BLOGS",
+      "href": "https://jlcoachbuilders.co.nz/blogs/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "h5",
+      "text": "SERVICES",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "a",
+      "text": "Caravan Services",
+      "href": "https://jlcoachbuilders.co.nz/caravan-services-in-christchurch/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Campervan Services",
+      "href": "https://jlcoachbuilders.co.nz/campervan-services-in-christchurch/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Motorhome Services",
+      "href": "https://jlcoachbuilders.co.nz/motorhome-services-in-christchurch/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Fifth Wheel Services",
+      "href": "https://jlcoachbuilders.co.nz/fifth-wheel-services-in-christchurch/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "a",
+      "text": "Bus Services",
+      "href": "https://jlcoachbuilders.co.nz/bus-services-in-christchurch/",
+      "class": "hfe-menu-item"
+    },
+    {
+      "tag": "h5",
+      "text": "GET IN TOUCH",
+      "class": "elementor-heading-title elementor-size-default"
+    },
+    {
+      "tag": "a",
+      "text": "0273470214",
+      "href": "tel:0273470214"
+    },
+    {
+      "tag": "h5",
+      "text": "0273470214",
+      "class": "elementor-icon-box-title"
+    },
+    {
+      "tag": "a",
+      "text": "jamie@jlcoachbuilders.co.nz",
+      "href": "mailto:jamie@jlcoachbuilders.co.nz"
+    },
+    {
+      "tag": "h5",
+      "text": "jamie@jlcoachbuilders.co.nz",
+      "class": "elementor-icon-box-title"
+    },
+    {
+      "tag": "h5",
+      "text": "5/4 Spencerville Road, Kainga, Christchurch 8083, NZ",
+      "class": "elementor-icon-box-title"
+    },
+    {
+      "tag": "a",
+      "text": "Digital Marketing by Digital Neighbour",
+      "href": "https://digitalneighbour.co.nz/",
+      "target": "_blank",
+      "rel": "noopener"
+    },
+    {
+      "tag": "p",
+      "text": "\u00a9 2026 JL Coachbuilders Ltd. All rights reserved. Digital Marketing by Digital Neighbour"
+    },
+    {
+      "tag": "a",
+      "text": "Call Now",
+      "href": "tel:0273470214",
+      "class": "footer_btn1"
+    },
+    {
+      "tag": "a",
+      "text": "Email Us",
+      "href": "mailto:jamie@jlcoachbuilders.co.nz",
+      "class": "footer_btn1"
+    },
+    {
+      "tag": "a",
+      "text": "imunify-bot-check",
+      "href": "/imunify-bot-check",
+      "rel": "nofollow",
+      "aria-hidden": "true",
+      "tabindex": "-1",
+      "style": "display:none!important;position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden"
+    }
+  ],
+  "images": [
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNDAiIGhlaWdodD0iNjIiIHZpZXdCb3g9IjAgMCAzNDAgNjIiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiNjZmQ0ZGI7ZmlsbC1vcGFjaXR5OiAwLjE7Ii8+PC9zdmc+",
+      "loading": "lazy",
+      "width": "340",
+      "height": "62",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/03/01_LOGO.jpg",
+      "class": "attachment-large size-large wp-image-25",
+      "alt": "JL Coachbuilder Logo Design",
+      "data-srcset": "https://jlcoachbuilders.co.nz/storage/2022/03/01_LOGO.jpg.webp 340w, https://jlcoachbuilders.co.nz/storage/2022/03/01_LOGO-300x55.jpg.webp 300w",
+      "data-sizes": "(max-width: 340px) 100vw, 340px"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iNTUiIHZpZXdCb3g9IjAgMCAzMDAgNTUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiNjZmQ0ZGI7ZmlsbC1vcGFjaXR5OiAwLjE7Ii8+PC9zdmc+",
+      "class": "hfe-site-logo-img elementor-animation-",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/05/01_LOGO-300x55.jpg",
+      "alt": "JL Coachbuilder Logo Design",
+      "width": "300",
+      "height": "55"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjI1NjAiIHZpZXdCb3g9IjAgMCAxOTIwIDI1NjAiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiNjZmQ0ZGI7ZmlsbC1vcGFjaXR5OiAwLjE7Ii8+PC9zdmc+",
+      "fetchpriority": "high",
+      "decoding": "async",
+      "width": "1920",
+      "height": "2560",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/06/20211022_140143-1-scaled-1.jpg",
+      "class": "attachment-full size-full wp-image-923",
+      "alt": "Top Caravan Repair Services",
+      "data-srcset": "https://jlcoachbuilders.co.nz/storage/2022/06/20211022_140143-1-scaled-1.jpg 1920w, https://jlcoachbuilders.co.nz/storage/2022/06/20211022_140143-1-scaled-1-225x300.jpg 225w, https://jlcoachbuilders.co.nz/storage/2022/06/20211022_140143-1-scaled-1-768x1024.jpg 768w, https://jlcoachbuilders.co.nz/storage/2022/06/20211022_140143-1-scaled-1-1152x1536.jpg 1152w, https://jlcoachbuilders.co.nz/storage/2022/06/20211022_140143-1-scaled-1-1536x2048.jpg 1536w",
+      "data-sizes": "(max-width: 1920px) 100vw, 1920px"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDI0IiBoZWlnaHQ9Ijc2OCIgdmlld0JveD0iMCAwIDEwMjQgNzY4Ij48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojY2ZkNGRiO2ZpbGwtb3BhY2l0eTogMC4xOyIvPjwvc3ZnPg==",
+      "decoding": "async",
+      "width": "1024",
+      "height": "768",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/06/6.jpg",
+      "class": "attachment-large size-large wp-image-921",
+      "alt": "Top Caravans Services in Christchurch",
+      "data-srcset": "https://jlcoachbuilders.co.nz/storage/2022/06/6.jpg 1024w, https://jlcoachbuilders.co.nz/storage/2022/06/6-300x225.jpg 300w, https://jlcoachbuilders.co.nz/storage/2022/06/6-768x576.jpg 768w",
+      "data-sizes": "(max-width: 1024px) 100vw, 1024px"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NjgiIGhlaWdodD0iMTAyNCIgdmlld0JveD0iMCAwIDc2OCAxMDI0Ij48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojY2ZkNGRiO2ZpbGwtb3BhY2l0eTogMC4xOyIvPjwvc3ZnPg==",
+      "decoding": "async",
+      "width": "768",
+      "height": "1024",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/10/Campervan.jpg",
+      "class": "attachment-full size-full wp-image-1650",
+      "alt": "Best Campervan Repair Services in Christchurch",
+      "data-srcset": "https://jlcoachbuilders.co.nz/storage/2022/10/Campervan.jpg 768w, https://jlcoachbuilders.co.nz/storage/2022/10/Campervan-225x300.jpg 225w",
+      "data-sizes": "(max-width: 768px) 100vw, 768px"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NjgiIGhlaWdodD0iMTAyNCIgdmlld0JveD0iMCAwIDc2OCAxMDI0Ij48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojY2ZkNGRiO2ZpbGwtb3BhY2l0eTogMC4xOyIvPjwvc3ZnPg==",
+      "loading": "lazy",
+      "decoding": "async",
+      "width": "768",
+      "height": "1024",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/10/motorhome-interior-1-1.jpg",
+      "class": "attachment-large size-large wp-image-1760",
+      "alt": "Top Motorhome Interior & Repair Services in Christchurch",
+      "data-srcset": "https://jlcoachbuilders.co.nz/storage/2022/10/motorhome-interior-1-1.jpg 768w, https://jlcoachbuilders.co.nz/storage/2022/10/motorhome-interior-1-1-225x300.jpg 225w",
+      "data-sizes": "(max-width: 768px) 100vw, 768px"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NjgiIGhlaWdodD0iMTAyNCIgdmlld0JveD0iMCAwIDc2OCAxMDI0Ij48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojY2ZkNGRiO2ZpbGwtb3BhY2l0eTogMC4xOyIvPjwvc3ZnPg==",
+      "loading": "lazy",
+      "decoding": "async",
+      "width": "768",
+      "height": "1024",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/10/Fifth-wheel-1.jpg",
+      "class": "attachment-large size-large wp-image-1725",
+      "alt": "Top Fifth Wheel Services in Christchurch",
+      "data-srcset": "https://jlcoachbuilders.co.nz/storage/2022/10/Fifth-wheel-1.jpg 768w, https://jlcoachbuilders.co.nz/storage/2022/10/Fifth-wheel-1-225x300.jpg 225w",
+      "data-sizes": "(max-width: 768px) 100vw, 768px"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NjgiIGhlaWdodD0iMTAyNCIgdmlld0JveD0iMCAwIDc2OCAxMDI0Ij48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojY2ZkNGRiO2ZpbGwtb3BhY2l0eTogMC4xOyIvPjwvc3ZnPg==",
+      "loading": "lazy",
+      "decoding": "async",
+      "width": "768",
+      "height": "1024",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/10/Bus.jpg",
+      "class": "attachment-large size-large wp-image-1633",
+      "alt": "Bus Services in Christchurch",
+      "data-srcset": "https://jlcoachbuilders.co.nz/storage/2022/10/Bus.jpg 768w, https://jlcoachbuilders.co.nz/storage/2022/10/Bus-225x300.jpg 225w",
+      "data-sizes": "(max-width: 768px) 100vw, 768px"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDI0IiBoZWlnaHQ9Ijc2OCIgdmlld0JveD0iMCAwIDEwMjQgNzY4Ij48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojY2ZkNGRiO2ZpbGwtb3BhY2l0eTogMC4xOyIvPjwvc3ZnPg==",
+      "decoding": "async",
+      "width": "1024",
+      "height": "768",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/06/6.jpg",
+      "class": "attachment-large size-large wp-image-921",
+      "alt": "Top Caravans Services in Christchurch",
+      "data-srcset": "https://jlcoachbuilders.co.nz/storage/2022/06/6.jpg 1024w, https://jlcoachbuilders.co.nz/storage/2022/06/6-300x225.jpg 300w, https://jlcoachbuilders.co.nz/storage/2022/06/6-768x576.jpg 768w",
+      "data-sizes": "(max-width: 1024px) 100vw, 1024px"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0Ij48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojY2ZkNGRiO2ZpbGwtb3BhY2l0eTogMC4xOyIvPjwvc3ZnPg==",
+      "loading": "lazy",
+      "decoding": "async",
+      "width": "64",
+      "height": "64",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/10/quote.png",
+      "class": "elementskit-testimonial-client-logo",
+      "alt": "Campervan Panel and Paint in Christchurch"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0Ij48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojY2ZkNGRiO2ZpbGwtb3BhY2l0eTogMC4xOyIvPjwvc3ZnPg==",
+      "loading": "lazy",
+      "decoding": "async",
+      "width": "64",
+      "height": "64",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/10/quote.png",
+      "class": "elementskit-testimonial-client-logo",
+      "alt": "Campervan Panel and Paint in Christchurch"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0Ij48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojY2ZkNGRiO2ZpbGwtb3BhY2l0eTogMC4xOyIvPjwvc3ZnPg==",
+      "loading": "lazy",
+      "decoding": "async",
+      "width": "64",
+      "height": "64",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/10/quote.png",
+      "class": "elementskit-testimonial-client-logo",
+      "alt": "Campervan Panel and Paint in Christchurch"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0Ij48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojY2ZkNGRiO2ZpbGwtb3BhY2l0eTogMC4xOyIvPjwvc3ZnPg==",
+      "loading": "lazy",
+      "decoding": "async",
+      "width": "64",
+      "height": "64",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/10/quote.png",
+      "class": "elementskit-testimonial-client-logo",
+      "alt": "Campervan Panel and Paint in Christchurch"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0Ij48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojY2ZkNGRiO2ZpbGwtb3BhY2l0eTogMC4xOyIvPjwvc3ZnPg==",
+      "loading": "lazy",
+      "decoding": "async",
+      "width": "64",
+      "height": "64",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/10/quote.png",
+      "class": "elementskit-testimonial-client-logo",
+      "alt": "Campervan Panel and Paint in Christchurch"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDY0IDY0Ij48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojY2ZkNGRiO2ZpbGwtb3BhY2l0eTogMC4xOyIvPjwvc3ZnPg==",
+      "loading": "lazy",
+      "decoding": "async",
+      "width": "64",
+      "height": "64",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/10/quote.png",
+      "class": "elementskit-testimonial-client-logo",
+      "alt": "Campervan Panel and Paint in Christchurch"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSIzOSIgdmlld0JveD0iMCAwIDUwIDM5Ij48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojY2ZkNGRiO2ZpbGwtb3BhY2l0eTogMC4xOyIvPjwvc3ZnPg==",
+      "loading": "lazy",
+      "decoding": "async",
+      "width": "50",
+      "height": "39",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/03/Element20-1.png",
+      "class": "attachment-full size-full wp-image-307",
+      "alt": "JL Coach Builders"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUwIDUwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojY2ZkNGRiO2ZpbGwtb3BhY2l0eTogMC4xOyIvPjwvc3ZnPg==",
+      "loading": "lazy",
+      "decoding": "async",
+      "width": "50",
+      "height": "50",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/03/Element21-1.png",
+      "class": "attachment-full size-full wp-image-308",
+      "alt": "JL Coach Builders"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI0NCIgdmlld0JveD0iMCAwIDUwIDQ0Ij48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojY2ZkNGRiO2ZpbGwtb3BhY2l0eTogMC4xOyIvPjwvc3ZnPg==",
+      "loading": "lazy",
+      "decoding": "async",
+      "width": "50",
+      "height": "44",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/03/Element22-1.png",
+      "class": "attachment-full size-full wp-image-309",
+      "alt": "JL Coach Builders"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSIyOSIgdmlld0JveD0iMCAwIDUwIDI5Ij48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojY2ZkNGRiO2ZpbGwtb3BhY2l0eTogMC4xOyIvPjwvc3ZnPg==",
+      "loading": "lazy",
+      "decoding": "async",
+      "width": "50",
+      "height": "29",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/03/Element23-1.png",
+      "class": "attachment-full size-full wp-image-310",
+      "alt": "JL Coach Builders"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iNTUiIHZpZXdCb3g9IjAgMCAzMDAgNTUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiNjZmQ0ZGI7ZmlsbC1vcGFjaXR5OiAwLjE7Ii8+PC9zdmc+",
+      "loading": "lazy",
+      "decoding": "async",
+      "width": "300",
+      "height": "55",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/03/01_LOGO-300x55.jpg",
+      "class": "attachment-medium size-medium wp-image-25",
+      "alt": "JL Coachbuilder Logo Design",
+      "data-srcset": "https://jlcoachbuilders.co.nz/storage/2022/03/01_LOGO-300x55.jpg.webp 300w, https://jlcoachbuilders.co.nz/storage/2022/03/01_LOGO.jpg.webp 340w",
+      "data-sizes": "(max-width: 300px) 100vw, 300px"
+    },
+    {
+      "loading": "lazy",
+      "decoding": "async",
+      "class": "ti-platform-icon skip-lazy",
+      "src": "https://cdn.trustindex.io/assets/platform/Google/icon.svg",
+      "alt": "Google",
+      "width": "20",
+      "height": "20"
+    },
+    {
+      "loading": "lazy",
+      "decoding": "async",
+      "class": "ti-star skip-lazy",
+      "src": "https://cdn.trustindex.io/assets/platform/Google/star/f.svg",
+      "alt": "Google star 1",
+      "width": "17",
+      "height": "17"
+    },
+    {
+      "loading": "lazy",
+      "decoding": "async",
+      "class": "ti-star skip-lazy",
+      "src": "https://cdn.trustindex.io/assets/platform/Google/star/f.svg",
+      "alt": "Google star 2",
+      "width": "17",
+      "height": "17"
+    },
+    {
+      "loading": "lazy",
+      "decoding": "async",
+      "class": "ti-star skip-lazy",
+      "src": "https://cdn.trustindex.io/assets/platform/Google/star/f.svg",
+      "alt": "Google star 3",
+      "width": "17",
+      "height": "17"
+    },
+    {
+      "loading": "lazy",
+      "decoding": "async",
+      "class": "ti-star skip-lazy",
+      "src": "https://cdn.trustindex.io/assets/platform/Google/star/f.svg",
+      "alt": "Google star 4",
+      "width": "17",
+      "height": "17"
+    },
+    {
+      "loading": "lazy",
+      "decoding": "async",
+      "class": "ti-star skip-lazy",
+      "src": "https://cdn.trustindex.io/assets/platform/Google/star/f.svg",
+      "alt": "Google star 5",
+      "width": "17",
+      "height": "17"
+    },
+    {
+      "data-lazyloaded": "1",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iNTUiIHZpZXdCb3g9IjAgMCAzMDAgNTUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiNjZmQ0ZGI7ZmlsbC1vcGFjaXR5OiAwLjE7Ii8+PC9zdmc+",
+      "loading": "lazy",
+      "width": "300",
+      "height": "55",
+      "data-src": "https://jlcoachbuilders.co.nz/storage/2022/03/01_LOGO-300x55.jpg",
+      "class": "attachment-medium size-medium wp-image-25",
+      "alt": "JL Coachbuilder Logo Design",
+      "data-srcset": "https://jlcoachbuilders.co.nz/storage/2022/03/01_LOGO-300x55.jpg.webp 300w, https://jlcoachbuilders.co.nz/storage/2022/03/01_LOGO.jpg.webp 340w",
+      "data-sizes": "(max-width: 300px) 100vw, 300px"
+    },
+    {
+      "loading": "lazy",
+      "class": "ti-platform-icon skip-lazy",
+      "src": "https://cdn.trustindex.io/assets/platform/Google/icon.svg",
+      "alt": "Google",
+      "width": "20",
+      "height": "20"
+    },
+    {
+      "loading": "lazy",
+      "class": "ti-star skip-lazy",
+      "src": "https://cdn.trustindex.io/assets/platform/Google/star/f.svg",
+      "alt": "Google star 1",
+      "width": "17",
+      "height": "17"
+    },
+    {
+      "loading": "lazy",
+      "class": "ti-star skip-lazy",
+      "src": "https://cdn.trustindex.io/assets/platform/Google/star/f.svg",
+      "alt": "Google star 2",
+      "width": "17",
+      "height": "17"
+    },
+    {
+      "loading": "lazy",
+      "class": "ti-star skip-lazy",
+      "src": "https://cdn.trustindex.io/assets/platform/Google/star/f.svg",
+      "alt": "Google star 3",
+      "width": "17",
+      "height": "17"
+    },
+    {
+      "loading": "lazy",
+      "class": "ti-star skip-lazy",
+      "src": "https://cdn.trustindex.io/assets/platform/Google/star/f.svg",
+      "alt": "Google star 4",
+      "width": "17",
+      "height": "17"
+    },
+    {
+      "loading": "lazy",
+      "class": "ti-star skip-lazy",
+      "src": "https://cdn.trustindex.io/assets/platform/Google/star/f.svg",
+      "alt": "Google star 5",
+      "width": "17",
+      "height": "17"
+    }
+  ],
+  "jsonld": [
+    "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/jlcoachbuilders.co.nz\\/\",\"url\":\"https:\\/\\/jlcoachbuilders.co.nz\\/\",\"name\":\"Expert Caravan & RV Repairs in Christchurch | JL Coachbuilders\",\"isPartOf\":{\"@id\":\"https:\\/\\/jlcoachbuilders.co.nz\\/#website\"},\"primaryImageOfPage\":{\"@id\":\"https:\\/\\/jlcoachbuilders.co.nz\\/#primaryimage\"},\"image\":{\"@id\":\"https:\\/\\/jlcoachbuilders.co.nz\\/#primaryimage\"},\"thumbnailUrl\":\"https:\\/\\/jlcoachbuilders.co.nz\\/storage\\/2022\\/06\\/20211022_140143-1-scaled-1.jpg\",\"datePublished\":\"2022-10-05T17:31:25+00:00\",\"dateModified\":\"2026-09-22T08:26:07+00:00\",\"description\":\"Reliable caravan and motorhome repairs in Christchurch. Our expert team provides top-notch services to maintain your RV's performance and comfort.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/jlcoachbuilders.co.nz\\/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/jlcoachbuilders.co.nz\\/\"]}]},{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https:\\/\\/jlcoachbuilders.co.nz\\/#primaryimage\",\"url\":\"https:\\/\\/jlcoachbuilders.co.nz\\/storage\\/2022\\/06\\/20211022_140143-1-scaled-1.jpg\",\"contentUrl\":\"https:\\/\\/jlcoachbuilders.co.nz\\/storage\\/2022\\/06\\/20211022_140143-1-scaled-1.jpg\",\"width\":1920,\"height\":2560,\"caption\":\"Top Caravan Repair Services\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/jlcoachbuilders.co.nz\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/jlcoachbuilders.co.nz\\/#website\",\"url\":\"https:\\/\\/jlcoachbuilders.co.nz\\/\",\"name\":\"jlcoachbuilders\",\"description\":\"\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/jlcoachbuilders.co.nz\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"}]}",
+    "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Organization\",\n  \"name\": \"JL Coachbuilders\",\n  \"url\": \"https://jlcoachbuilders.co.nz/\",\n  \"logo\": \"https://jlcoachbuilders.co.nz/storage/2022/03/01_LOGO.jpg\",\n  \"contactPoint\": {\n    \"@type\": \"ContactPoint\",\n    \"telephone\": \"0273470214\",\n    \"contactType\": \"customer service\",\n    \"areaServed\": \"NZ\"\n  }\n}",
+    "{\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Do I need to come to you for repairs?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"<p>Yes, we carry out all repairs at our workshop to ensure the best possible service. Having all our tools and materials on-site allows us to work more efficiently and maintain strict health and safety standards.<\\/p>\"}},{\"@type\":\"Question\",\"name\":\"How long will the repair take?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"<p>Timeframes depend on the complexity of the job. We always aim to complete work as efficiently as possible and will provide you with an estimated timeframe when you request your free quote. We also stock a range of common caravan parts and accessories in New Zealand to help speed up repairs where possible.<\\/p>\"}},{\"@type\":\"Question\",\"name\":\"What makes of caravans do you work on?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"<p data-start=\\\"809\\\" data-end=\\\"935\\\">We work on all makes and models from both New Zealand and overseas manufacturers.<\\/p>\"}},{\"@type\":\"Question\",\"name\":\"I need a small repair job. Can you help?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"<p>Yes, we handle all types of work, big or small. Get in touch with us for a free, no-obligation quote and we\\u2019ll be happy to help.<\\/p>\"}}]}",
+    "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"LocalBusiness\",\n  \"name\": \"JL Coachbuilders\",\n  \"image\": \"https://jlcoachbuilders.co.nz/storage/2022/03/01_LOGO.jpg\",\n  \"@id\": \"\",\n  \"url\": \"https://jlcoachbuilders.co.nz/\",\n  \"telephone\": \"0273470214\",\n  \"address\": {\n    \"@type\": \"PostalAddress\",\n    \"streetAddress\": \"2/4 Spencerville Road, Kainga\",\n    \"addressLocality\": \"Christchurch\",\n    \"postalCode\": \"8083\",\n    \"addressCountry\": \"NZ\"\n  }  \n}"
+  ]
+}

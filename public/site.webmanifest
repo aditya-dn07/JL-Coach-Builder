@@ -1,0 +1,24 @@
+{
+  "name": "JL Coachbuilders",
+  "short_name": "JL Coachbuilders",
+  "description": "Reliable caravan and motorhome repairs in Christchurch. Our expert team provides top-notch services to maintain your RV's performance and comfort.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f5f0",
+  "theme_color": "#252925",
+  "lang": "en-NZ",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

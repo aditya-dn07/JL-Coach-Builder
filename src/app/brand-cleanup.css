@@ -1,0 +1,62 @@
+/* Shared brand and action styling across all routes. */
+html[data-theme] body :is(.button, .underlink, .section-link, .road-discover, .road-quote-link, .round-cta, .header-cta) {
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+}
+html[data-theme] body :is(.button, .underlink, .section-link, .road-discover, .road-quote-link, .round-cta, .header-cta)::after {
+  content: none !important;
+}
+html[data-theme] body :is(h1, h2, h3, h4, h5, h6, .kicker, .road-eyebrow)::before,
+html[data-theme] body :is(h1, h2, h3, h4, h5, h6, .kicker, .road-eyebrow)::after { content: none !important; }
+html[data-theme] body :is(h1, h2, h3, h4, h5, h6, .kicker, .road-eyebrow) { border: 0 !important; }
+html[data-theme] body .wordmark { width: 250px; }
+html[data-theme] body .wordmark img { width: 100%; height: auto; max-height: 78px; object-fit: contain; }
+.footer-top > div:first-child > img { width: 280px; height: auto; }
+@media (max-width: 1000px) { html[data-theme] body .wordmark { width: 205px; } }
+@media (max-width: 560px) { html[data-theme] body .wordmark { width: 190px; } }
+/* Clear button silhouettes for action links formerly styled with decorative marks. */
+html[data-theme] body :is(.underlink, .section-link, .road-discover, .studio-hero-note a, .alternate-bottom a) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 12px 18px;
+  border: 1px solid #556272 !important;
+  border-radius: 6px;
+  background: #26323f !important;
+  color: #fff !important;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none !important;
+  box-shadow: 0 3px 10px #0002;
+  transition: background .2s, border-color .2s, box-shadow .2s;
+}
+html[data-theme] body :is(.underlink, .section-link, .road-discover, .studio-hero-note a, .alternate-bottom a):is(:hover, :focus-visible) {
+  background: #39495b !important;
+  border-color: #ff797f !important;
+  box-shadow: 0 6px 18px #0004;
+}
+html[data-theme] body .service-links { gap: 9px !important; margin-top: 18px !important; }
+html[data-theme] body .service-links a {
+  display: flex;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid #475466 !important;
+  border-radius: 5px;
+  background: #26323f;
+  color: #eaf0f6;
+  text-decoration: none;
+  text-align: center;
+  font-size: 11px;
+  transition: background .2s, border-color .2s;
+}
+html[data-theme] body .service-links a:is(:hover, :focus-visible) { background: #44313b; border-color: #ee626b !important; color: #fff !important; }
+html[data-theme] body .studio-hero-note a { width: 100%; }
+html[data-theme] body .alternate-bottom { align-items: center; }
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme] body :is(.button, .underlink, .section-link, .road-discover, .service-links a) { transition: none; transform: none !important; }
+}

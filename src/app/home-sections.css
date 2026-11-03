@@ -1,0 +1,267 @@
+/* Homepage section compositions. Hero, navigation and closing CTA retain their styles. */
+body:has(.home-hero) .trust-strip {
+  background: #f3f5f6;
+  border-bottom: 1px solid var(--line);
+}
+body:has(.home-hero) .trust-strip > .container {
+  gap: 0;
+  padding-block: 32px;
+}
+body:has(.home-hero) .trust-strip .container > div,
+body:has(.home-hero) .trust-strip .container > div:first-child,
+body:has(.home-hero) .trust-strip .container > div:nth-child(even) {
+  min-height: 78px;
+  padding: 8px 30px;
+  background: transparent;
+  border: 0;
+  border-right: 1px solid #d8dfe4;
+  border-radius: 0;
+}
+body:has(.home-hero) .trust-strip .container > div:first-child { padding-left: 0; }
+body:has(.home-hero) .trust-strip .container > div:last-child { border-right: 0; }
+body:has(.home-hero) .trust-strip strong {
+  font-size: clamp(32px, 3.3vw, 46px);
+  font-weight: 600;
+  color: var(--ink);
+}
+body:has(.home-hero) .trust-strip .container > div > span { font-weight: 400; font-size: 12px; }
+
+body:has(.home-hero) .vehicle-section { padding-block: 100px; }
+body:has(.home-hero) .section-heading { margin-bottom: 44px; }
+body:has(.home-hero) .section-heading h2 { font-size: clamp(35px, 4vw, 56px); }
+body:has(.home-hero) .section-heading h2 > span { color: #77838d; }
+body:has(.home-hero) .vehicle-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 28px; }
+body:has(.home-hero) .vehicle-card,
+body:has(.home-hero) .vehicle-card:first-child,
+body:has(.home-hero) .vehicle-card:nth-child(2),
+body:has(.home-hero) .vehicle-card:last-child {
+  grid-column: span 2;
+  border: 1px solid #e0e5e9;
+  border-radius: 14px;
+  box-shadow: none;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+body:has(.home-hero) .vehicle-card:first-child,
+body:has(.home-hero) .vehicle-card:nth-child(2) { grid-column: span 3; }
+body:has(.home-hero) .vehicle-card:hover { box-shadow: 0 16px 40px #1b253012; }
+body:has(.home-hero) .vehicle-photo,
+body:has(.home-hero) .vehicle-card:first-child .vehicle-photo,
+body:has(.home-hero) .vehicle-card:nth-child(2) .vehicle-photo,
+body:has(.home-hero) .vehicle-card:last-child .vehicle-photo { height: 240px; flex-shrink: 0; }
+body:has(.home-hero) .vehicle-card:first-child .vehicle-photo,
+body:has(.home-hero) .vehicle-card:nth-child(2) .vehicle-photo { height: 310px; }
+body:has(.home-hero) .vehicle-number {
+  top: 18px; left: 18px; background: #1b2530e6; color: #fff;
+  border-radius: 100px; padding: 6px 13px; font-size: 11px;
+}
+body:has(.home-hero) .vehicle-explore {
+  position: absolute; bottom: 18px; right: 18px;
+  display: grid; place-items: center; width: 44px; height: 44px;
+  background: #fff; color: var(--ink); border-radius: 50%;
+  transition: background .2s, color .2s;
+}
+body:has(.home-hero) .vehicle-photo:hover .vehicle-explore { background: var(--red); color: #fff; }
+body:has(.home-hero) .vehicle-card-copy { padding: 28px; display: flex; flex-direction: column; flex: 1; }
+body:has(.home-hero) .vehicle-card-copy h3 { font-size: 30px; }
+body:has(.home-hero) .vehicle-card-copy > p { font-size: 14px; margin-block: 12px 24px; }
+body:has(.home-hero) .service-links { margin-top: auto; }
+body:has(.home-hero) .service-links a { gap: 16px; padding-block: 12px; font-size: 12px; }
+body:has(.home-hero) .service-links a::after { content: none; }
+
+body:has(.home-hero) .workshop-feature {
+  background: #fff; color: var(--ink); overflow: visible;
+  grid-template-columns: 1.05fr 1fr; gap: clamp(40px, 6vw, 96px);
+  margin-bottom: 110px; border-radius: 0; align-items: center;
+}
+body:has(.home-hero) .feature-image { position: relative; height: 570px; margin-right: 24px; }
+body:has(.home-hero) .feature-image > .photo { overflow: hidden; border-radius: 14px 90px 14px 14px; }
+body:has(.home-hero) .feature-image::before {
+  content: ''; position: absolute; inset: 24px -24px -24px 24px;
+  border: 1px solid #dce2e6; border-radius: 14px 90px 14px 14px; z-index: -1;
+}
+body:has(.home-hero) .workshop-stamp {
+  position: absolute; right: -40px; bottom: 36px; display: flex; align-items: center;
+  gap: 18px; padding: 26px 30px; background: #1b2530; color: #fff;
+  border-left: 4px solid var(--red); border-radius: 6px; box-shadow: 0 12px 32px #1b253026;
+}
+body:has(.home-hero) .workshop-stamp strong { font-family: var(--font-display); font-size: 52px; font-weight: 600; line-height: 1; }
+body:has(.home-hero) .workshop-stamp strong span { color: #ff7177; }
+body:has(.home-hero) .workshop-stamp > span { font-size: 12px; line-height: 1.6; color: #d2d9df; }
+body:has(.home-hero) .feature-copy { padding: 20px 0; }
+body:has(.home-hero) .feature-copy h2 { max-width: 16ch; font-size: clamp(36px, 3.8vw, 52px); }
+body:has(.home-hero) .feature-copy ul { gap: 0; margin-block: 26px 32px; }
+body:has(.home-hero) .feature-copy li { padding-block: 13px; border-bottom: 1px solid var(--line); }
+body:has(.home-hero) .feature-copy li svg { background: #fcebed; border-radius: 50%; padding: 3px; width: 24px; height: 24px; }
+
+body:has(.home-hero) .document-sections .home-content-section-3 { background: #f3f5f6; border: 0; }
+body:has(.home-hero) .home-content-section-3 > .container {
+  display: grid; grid-template-columns: .85fr 1.15fr; column-gap: 80px;
+}
+body:has(.home-hero) .home-content-section-3 .content-section-header { display: block; grid-column: 1; grid-row: 1; }
+body:has(.home-hero) .home-content-section-3 h2 { max-width: 15ch; font-size: clamp(34px, 3.6vw, 50px); }
+body:has(.home-hero) .home-content-section-3 .section-prose { grid-column: 2; grid-row: 1 / span 2; width: 100%; }
+body:has(.home-hero) .home-content-section-3 .section-prose ul {
+  list-style: none; padding: 0; margin: 26px 0; display: grid;
+  grid-template-columns: 1fr 1fr; gap: 12px; counter-reset: repair;
+}
+body:has(.home-hero) .home-content-section-3 .section-prose li {
+  display: flex; align-items: flex-start; gap: 12px; padding: 18px;
+  background: #fff; border: 1px solid #e5e9ec; border-radius: 8px;
+  font-size: 13px; line-height: 1.6; counter-increment: repair;
+}
+body:has(.home-hero) .home-content-section-3 .section-prose li::before {
+  content: counter(repair, decimal-leading-zero); color: var(--red); font-size: 10px; font-weight: 700; padding-top: 3px;
+}
+body:has(.home-hero) .home-content-section-3 .section-link { grid-column: 1; align-self: end; justify-self: start; }
+
+body:has(.home-hero) .document-sections .home-content-section-4 { border: 0; background: #fff; }
+body:has(.home-hero) .home-content-section-4 > .container {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px 70px; align-items: start;
+}
+body:has(.home-hero) .home-content-section-4 .content-section-header { display: block; grid-column: 1 / -1; max-width: 670px; margin: 0 0 12px; }
+body:has(.home-hero) .home-content-section-4 h2 { font-size: clamp(34px, 3.8vw, 52px); max-width: 21ch; }
+body:has(.home-hero) .capability-photo { position: relative; min-height: 470px; grid-column: 1; grid-row: 2 / span 2; overflow: hidden; border-radius: 12px; align-self: stretch; }
+body:has(.home-hero) .capability-photo > span { position: absolute; bottom: 20px; left: 20px; display: flex; align-items: center; gap: 9px; background: #fffffff2; padding: 10px 15px; border-radius: 5px; font-size: 11px; }
+body:has(.home-hero) .home-content-section-4 .section-prose { width: 100%; grid-column: 2; }
+body:has(.home-hero) .home-content-section-4 .section-prose ul { padding: 0; margin-block: 18px 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; }
+body:has(.home-hero) .home-content-section-4 .section-prose li { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+body:has(.home-hero) .home-content-section-4 .section-prose li::before { content: '•'; color: var(--red); margin-right: 9px; }
+body:has(.home-hero) .home-content-section-4 .section-link { grid-column: 2; justify-self: start; margin: 0; }
+
+body:has(.home-hero) .document-sections .home-content-section-5 { border: 0; background: #f3f5f6; }
+body:has(.home-hero) .home-content-section-5 .content-section-header { display: block; max-width: 720px; margin-bottom: 40px; }
+body:has(.home-hero) .home-content-section-5 .section-prose:empty { display: none; }
+body:has(.home-hero) .home-content-section-5 .detail-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+body:has(.home-hero) .home-content-section-5 .detail-grid article { position: relative; padding: 30px 24px 24px; border: 1px solid #e1e6ea; border-radius: 10px; }
+body:has(.home-hero) .capability-icon { display: grid; place-items: center; width: 52px; height: 52px; background: #fcebed; color: var(--red); border-radius: 12px; margin-bottom: 30px; }
+body:has(.home-hero) .home-content-section-5 .detail-index { position: absolute; right: 24px; top: 32px; color: #8c98a2; }
+body:has(.home-hero) .home-content-section-5 .detail-grid h3 { font-size: 24px; }
+body:has(.home-hero) .home-content-section-5 .detail-grid p { font-size: 14px; line-height: 1.8; }
+body:has(.home-hero) .capability-note { max-width: 760px; margin-top: 28px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+
+body:has(.home-hero) .faq-block { background: #f3f5f6; }
+body:has(.home-hero) .faq-layout { grid-template-columns: .8fr 1.2fr; gap: 80px; }
+body:has(.home-hero) .faq-layout h2 { font-size: clamp(36px, 3.8vw, 50px); max-width: 14ch; }
+body:has(.home-hero) .faq-questions { display: grid; gap: 12px; align-content: start; }
+body:has(.home-hero) .faq-questions details { background: #fff; border: 1px solid #e0e5e9; border-radius: 9px; padding-inline: 24px; }
+body:has(.home-hero) .faq-questions details[open] { border-color: #d7242d60; }
+body:has(.home-hero) .faq-questions summary { padding-block: 21px; font-size: 14px; }
+body:has(.home-hero) .faq-questions summary > span { display: grid; place-items: center; background: #f3f5f6; border-radius: 50%; width: 28px; height: 28px; flex-shrink: 0; }
+body:has(.home-hero) .faq-questions details > p { font-size: 14px; }
+
+body:has(.home-hero) .reviews-block { padding-block: 100px; }
+body:has(.home-hero) .reviews-grid { grid-template-columns: 1.2fr 1fr; gap: 20px; }
+body:has(.home-hero) .reviews-grid blockquote { position: relative; padding: 30px 34px; background: #f5f7f8; border: 1px solid #e5e9ec; border-radius: 12px; }
+body:has(.home-hero) .reviews-grid blockquote:first-child { grid-row: span 2; padding: 44px; background: #1b2530; color: #fff; border: 0; }
+body:has(.home-hero) .reviews-grid .quote-mark { display: none; }
+body:has(.home-hero) .reviews-grid blockquote:first-child .quote-mark { display: block; height: 65px; font-size: 110px; color: #ff7177; }
+body:has(.home-hero) .reviews-grid blockquote > p { font-size: 14px; margin-block: 16px 26px; line-height: 1.8; }
+body:has(.home-hero) .reviews-grid blockquote:first-child > p { font-size: clamp(20px, 2.2vw, 29px); line-height: 1.6; letter-spacing: -.02em; }
+body:has(.home-hero) .reviews-grid blockquote:first-child footer > div > span { color: #b9c5ce; }
+body:has(.home-hero) .reviews-grid blockquote:first-child .review-avatar { color: #fff; background: #ffffff1a; }
+body:has(.home-hero) .reviews-grid blockquote:first-child .review-google { color: #ff8e93; }
+
+@media (max-width: 1000px) {
+  body:has(.home-hero) .trust-strip .container > div { padding-inline: 16px; }
+  body:has(.home-hero) .vehicle-grid { gap: 20px; }
+  body:has(.home-hero) .vehicle-card-copy { padding: 22px; }
+  body:has(.home-hero) .vehicle-card-copy h3 { font-size: 26px; }
+  body:has(.home-hero) .workshop-feature { gap: 40px; }
+  body:has(.home-hero) .home-content-section-3 > .container,
+  body:has(.home-hero) .home-content-section-4 > .container,
+  body:has(.home-hero) .faq-layout { column-gap: 36px; }
+  body:has(.home-hero) .home-content-section-5 .detail-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 800px) {
+  body:has(.home-hero) .trust-strip > .container { grid-template-columns: 1fr 1fr; padding-block: 20px; gap: 24px 0; }
+  body:has(.home-hero) .trust-strip .container > div,
+  body:has(.home-hero) .trust-strip .container > div:first-child,
+  body:has(.home-hero) .trust-strip .container > div:nth-child(even) { padding: 0 20px; flex-direction: row; align-items: center; }
+  body:has(.home-hero) .trust-strip .container > div:nth-child(odd) { padding-left: 0; }
+  body:has(.home-hero) .trust-strip .container > div:nth-child(even) { border-right: 0; }
+  body:has(.home-hero) .vehicle-section,
+  body:has(.home-hero) .reviews-block { padding-block: 64px; }
+  body:has(.home-hero) .vehicle-grid { grid-template-columns: 1fr 1fr; }
+  body:has(.home-hero) .vehicle-card,
+  body:has(.home-hero) .vehicle-card:first-child,
+  body:has(.home-hero) .vehicle-card:nth-child(2),
+  body:has(.home-hero) .vehicle-card:last-child { grid-column: auto; }
+  body:has(.home-hero) .vehicle-card:last-child { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; }
+  body:has(.home-hero) .vehicle-photo,
+  body:has(.home-hero) .vehicle-card:first-child .vehicle-photo,
+  body:has(.home-hero) .vehicle-card:nth-child(2) .vehicle-photo { height: 240px; }
+  body:has(.home-hero) .vehicle-card:last-child .vehicle-photo { height: 100%; min-height: 260px; }
+  body:has(.home-hero) .section-heading > p:last-child { position: static; margin-top: 20px; }
+  body:has(.home-hero) .workshop-feature { grid-template-columns: 1fr; gap: 38px; margin-bottom: 64px; }
+  body:has(.home-hero) .feature-image { height: 450px; margin-right: 20px; }
+  body:has(.home-hero) .workshop-stamp { right: -20px; }
+  body:has(.home-hero) .feature-copy { padding: 0; }
+  body:has(.home-hero) .feature-copy h2 { max-width: none; }
+  body:has(.home-hero) .home-content-section-3 > .container,
+  body:has(.home-hero) .home-content-section-4 > .container,
+  body:has(.home-hero) .faq-layout { grid-template-columns: 1fr; gap: 30px; }
+  body:has(.home-hero) .home-content-section-3 .content-section-header,
+  body:has(.home-hero) .home-content-section-3 .section-prose,
+  body:has(.home-hero) .home-content-section-3 .section-link,
+  body:has(.home-hero) .home-content-section-4 .content-section-header,
+  body:has(.home-hero) .home-content-section-4 .section-prose,
+  body:has(.home-hero) .home-content-section-4 .section-link,
+  body:has(.home-hero) .capability-photo { grid-column: auto; grid-row: auto; margin: 0; }
+  body:has(.home-hero) .home-content-section-3 h2 { max-width: 23ch; }
+  body:has(.home-hero) .capability-photo { min-height: 350px; }
+  body:has(.home-hero) .reviews-grid { grid-template-columns: 1fr 1fr; }
+  body:has(.home-hero) .reviews-grid blockquote:first-child { grid-column: 1 / -1; grid-row: auto; }
+}
+@media (max-width: 560px) {
+  body:has(.home-hero) .trust-strip strong { font-size: 32px; }
+  body:has(.home-hero) .trust-strip .container > div > span { font-size: 10px; }
+  body:has(.home-hero) .trust-strip .container > div,
+  body:has(.home-hero) .trust-strip .container > div:first-child,
+  body:has(.home-hero) .trust-strip .container > div:nth-child(even) { gap: 12px; padding-right: 10px; }
+  body:has(.home-hero) .vehicle-grid { grid-template-columns: 1fr; }
+  body:has(.home-hero) .vehicle-card:last-child { display: flex; grid-column: auto; }
+  body:has(.home-hero) .vehicle-card:last-child .vehicle-photo { height: 240px; min-height: 0; }
+  body:has(.home-hero) .feature-image { height: 360px; }
+  body:has(.home-hero) .workshop-stamp { padding: 20px; gap: 14px; bottom: 24px; }
+  body:has(.home-hero) .workshop-stamp strong { font-size: 42px; }
+  body:has(.home-hero) .home-content-section-3 .section-prose ul,
+  body:has(.home-hero) .home-content-section-5 .detail-grid,
+  body:has(.home-hero) .reviews-grid { grid-template-columns: 1fr; }
+  body:has(.home-hero) .home-content-section-4 .section-prose ul { grid-template-columns: 1fr; }
+  body:has(.home-hero) .reviews-grid blockquote,
+  body:has(.home-hero) .reviews-grid blockquote:first-child { padding: 28px; }
+  body:has(.home-hero) .faq-questions details { padding-inline: 18px; }
+}
+
+/* A consistent service chooser and a shorter, task-focused homepage. */
+html[data-theme='dark'] body:has(.home-hero) .vehicle-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+html[data-theme='dark'] body:has(.home-hero) .vehicle-card { grid-column: auto; display: flex; border-radius: 12px; }
+html[data-theme='dark'] body:has(.home-hero) .vehicle-card .vehicle-photo { height: 220px; min-height: 0; }
+html[data-theme='dark'] body:has(.home-hero) .vehicle-card-copy { padding: 24px; }
+html[data-theme='dark'] body:has(.home-hero) .vehicle-card-copy h3 { font-size: 27px; }
+html[data-theme='dark'] body:has(.home-hero) .vehicle-card-copy > p { min-height: 3.4em; margin-block: 12px 20px; line-height: 1.7; }
+html[data-theme='dark'] body:has(.home-hero) .service-links { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+html[data-theme='dark'] body:has(.home-hero) .service-links a { font-size: 12px; min-height: 48px; }
+.service-help-card { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 32px; border: 1px solid #3b4654; border-radius: 12px; background: #171d24; }
+.service-help-card .capability-icon { margin-bottom: 24px; }
+.service-help-card .kicker { margin-bottom: 16px; }
+.service-help-card h3 { font-size: 32px; line-height: 1.15; }
+.service-help-card > p:not(.kicker) { margin-block: 20px 24px; font-size: 14px; color: var(--muted); line-height: 1.8; }
+.service-help-card .button { gap: 12px; text-align: left; }
+.service-help-card .underlink { margin-top: 14px; font-size: 12px; }
+html[data-theme='dark'] body:has(.home-hero) .workshop-feature { margin-top: 72px; margin-bottom: 72px; }
+html[data-theme='dark'] body:has(.home-hero) .home-content-section-3 h2 { max-width: 13ch; }
+html[data-theme='dark'] body:has(.home-hero) .home-content-section-5 .content-section-header { max-width: 650px; }
+html[data-theme='dark'] body:has(.home-hero) .home-content-section-5 .detail-grid { margin-top: 0; }
+html[data-theme='dark'] body .main-header .main-nav { background: transparent !important; }
+@media (max-width: 1000px) {
+  html[data-theme='dark'] body:has(.home-hero) .vehicle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  html[data-theme='dark'] body .main-header .main-nav { background: #171d24 !important; }
+}
+@media (max-width: 600px) {
+  html[data-theme='dark'] body:has(.home-hero) .vehicle-grid { grid-template-columns: 1fr; gap: 20px; }
+  html[data-theme='dark'] body:has(.home-hero) .workshop-feature { margin-block: 48px; }
+  .service-help-card { padding: 28px 24px; }
+}

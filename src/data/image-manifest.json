@@ -1,0 +1,204 @@
+{
+  "logo": {
+    "src": "/images/jl-coachbuilders-logo.webp",
+    "width": 2172,
+    "height": 724,
+    "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4WAoAAAAQAAAADwAAAQAAQUxQSCEAAAAAAIl2FzEvMkMtJjNHPikkNl+NpH1UXVZlXl5iWmJUUlgAVlA4IDQAAAAQAgCdASoQAAIABABoJbACdLoAAxoaz3IAAP7L+wL7C/rvG1yX/zlq/Nvku+4Hna2HAAAA",
+    "variants": []
+  },
+  "workshop": {
+    "src": "/images/optimized/workshop-768.webp",
+    "width": 768,
+    "height": 960,
+    "blurDataURL": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAQBACdASoQABQAPxFysFAsJqSisAgBgCIJZgCo9CHZvyjhZFB9diZc9AD9KyiwcFYFXYh8V85/9FivXCjYBQtFlZ/TbqGJIuIh9RWfQC2fWeE2Mdld9PvLOCrd2pLwJqwqZOgWFuqDgq4O1Qa2ljrMVleAAA==",
+    "variants": [
+      {
+        "width": 340,
+        "src": "/images/optimized/workshop-340.webp",
+        "avif": "/images/optimized/workshop-340.avif",
+        "webpBytes": 31672,
+        "avifBytes": 24331
+      },
+      {
+        "width": 480,
+        "src": "/images/optimized/workshop-480.webp",
+        "avif": "/images/optimized/workshop-480.avif",
+        "webpBytes": 60210,
+        "avifBytes": 43719
+      },
+      {
+        "width": 768,
+        "src": "/images/optimized/workshop-768.webp",
+        "avif": "/images/optimized/workshop-768.avif",
+        "webpBytes": 150058,
+        "avifBytes": 108129
+      },
+      {
+        "width": 1024,
+        "src": "/images/optimized/workshop-1024.webp",
+        "avif": "/images/optimized/workshop-1024.avif",
+        "webpBytes": 256224,
+        "avifBytes": 181878
+      },
+      {
+        "width": 1440,
+        "src": "/images/optimized/workshop-1440.webp",
+        "avif": "/images/optimized/workshop-1440.avif",
+        "webpBytes": 464848,
+        "avifBytes": 316553
+      }
+    ]
+  },
+  "caravan": {
+    "src": "/images/optimized/caravan-768.webp",
+    "width": 768,
+    "height": 576,
+    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAwAgCdASoQAAwABABoJZACdADiYsHK7ROawAD9LBy2BpGfuINjxOCo9k7ygFwbQHvDco9TI1XcK6AOxws1uoYQoR6lrw52JLJZM0GnzUSLrO+QkHS7NqOP2C6sj1DqrJD2AAAA",
+    "variants": [
+      {
+        "width": 340,
+        "src": "/images/optimized/caravan-340.webp",
+        "avif": "/images/optimized/caravan-340.avif",
+        "webpBytes": 10548,
+        "avifBytes": 7237
+      },
+      {
+        "width": 480,
+        "src": "/images/optimized/caravan-480.webp",
+        "avif": "/images/optimized/caravan-480.avif",
+        "webpBytes": 17490,
+        "avifBytes": 11521
+      },
+      {
+        "width": 768,
+        "src": "/images/optimized/caravan-768.webp",
+        "avif": "/images/optimized/caravan-768.avif",
+        "webpBytes": 36644,
+        "avifBytes": 22970
+      },
+      {
+        "width": 1024,
+        "src": "/images/optimized/caravan-1024.webp",
+        "avif": "/images/optimized/caravan-1024.avif",
+        "webpBytes": 58812,
+        "avifBytes": 35928
+      }
+    ]
+  },
+  "campervan": {
+    "src": "/images/optimized/campervan-768.webp",
+    "width": 768,
+    "height": 576,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAwAgCdASoQAAwABABoJZQCdADp/ruf/7UMMAD+CTdfxAzoM2MIFvEPP765CBnpOB5dS5PQsNFwWwjsAZDUYILrm1WPN/jTPzBUQKE9ij7S1zgA",
+    "variants": [
+      {
+        "width": 340,
+        "src": "/images/optimized/campervan-340.webp",
+        "avif": "/images/optimized/campervan-340.avif",
+        "webpBytes": 15640,
+        "avifBytes": 11412
+      },
+      {
+        "width": 480,
+        "src": "/images/optimized/campervan-480.webp",
+        "avif": "/images/optimized/campervan-480.avif",
+        "webpBytes": 29178,
+        "avifBytes": 20358
+      },
+      {
+        "width": 768,
+        "src": "/images/optimized/campervan-768.webp",
+        "avif": "/images/optimized/campervan-768.avif",
+        "webpBytes": 63294,
+        "avifBytes": 42904
+      }
+    ]
+  },
+  "motorhome": {
+    "src": "/images/optimized/motorhome-768.webp",
+    "width": 768,
+    "height": 1024,
+    "blurDataURL": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAADQAwCdASoQABUAPxFysFAsJqSisAgBgCIJYwCw7CLq5dTlq9cQ/YAA4cysK5rLFI9KHihQn39QvDZcNo76HEumj5wJzDVBp2kdWKT/f+x1E5hIdOKb+p0VwRzEdbiOLedWpXewqA8Njr9yAAA=",
+    "variants": [
+      {
+        "width": 340,
+        "src": "/images/optimized/motorhome-340.webp",
+        "avif": "/images/optimized/motorhome-340.avif",
+        "webpBytes": 22094,
+        "avifBytes": 14072
+      },
+      {
+        "width": 480,
+        "src": "/images/optimized/motorhome-480.webp",
+        "avif": "/images/optimized/motorhome-480.avif",
+        "webpBytes": 39566,
+        "avifBytes": 24330
+      },
+      {
+        "width": 768,
+        "src": "/images/optimized/motorhome-768.webp",
+        "avif": "/images/optimized/motorhome-768.avif",
+        "webpBytes": 82476,
+        "avifBytes": 53335
+      }
+    ]
+  },
+  "fifth-wheel": {
+    "src": "/images/optimized/fifth-wheel-768.webp",
+    "width": 768,
+    "height": 576,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAACwAQCdASoQAAwABABoJYwC7ADNiLGQAN5jVerh07JQpHyzayXX+tGPWDc338RpQZzksCfUZEQLucaBkiddnpxXzWcDswuWrXQ3vlCgh6ZYR/tZVAA=",
+    "variants": [
+      {
+        "width": 340,
+        "src": "/images/optimized/fifth-wheel-340.webp",
+        "avif": "/images/optimized/fifth-wheel-340.avif",
+        "webpBytes": 18322,
+        "avifBytes": 13120
+      },
+      {
+        "width": 480,
+        "src": "/images/optimized/fifth-wheel-480.webp",
+        "avif": "/images/optimized/fifth-wheel-480.avif",
+        "webpBytes": 32944,
+        "avifBytes": 22795
+      },
+      {
+        "width": 768,
+        "src": "/images/optimized/fifth-wheel-768.webp",
+        "avif": "/images/optimized/fifth-wheel-768.avif",
+        "webpBytes": 70346,
+        "avifBytes": 48644
+      }
+    ]
+  },
+  "bus": {
+    "src": "/images/optimized/bus-768.webp",
+    "width": 768,
+    "height": 576,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAQCdASoQAAwABABoJbACdADDpXuhAAD4WwuJOMEcFTC6DWNQaHjuuYSiMoqoQDlJNApAQEus0LdK/gD0Lrnpos9dSHEAVEP5CAwIMsWB1V+gAAA=",
+    "variants": [
+      {
+        "width": 340,
+        "src": "/images/optimized/bus-340.webp",
+        "avif": "/images/optimized/bus-340.avif",
+        "webpBytes": 16250,
+        "avifBytes": 11552
+      },
+      {
+        "width": 480,
+        "src": "/images/optimized/bus-480.webp",
+        "avif": "/images/optimized/bus-480.avif",
+        "webpBytes": 30074,
+        "avifBytes": 20308
+      },
+      {
+        "width": 768,
+        "src": "/images/optimized/bus-768.webp",
+        "avif": "/images/optimized/bus-768.avif",
+        "webpBytes": 67132,
+        "avifBytes": 46032
+      }
+    ]
+  }
+}

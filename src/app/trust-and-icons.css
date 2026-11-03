@@ -1,0 +1,35 @@
+.library-icon { display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; font-size:20px; line-height:1; font-style:normal; }
+.library-icon::before { display:block; line-height:1; vertical-align:0; }
+/* Feature cards have a consistent text hierarchy rather than mixed statistic values. */
+html[data-theme] body.ui-polished .trust-strip.trust-features { padding:0; background:#121a23 !important; border-block:1px solid #2d3948; }
+html[data-theme] body.ui-polished :is(.home-designs[data-home-design], .interior-shell) .trust-strip.trust-features > .container { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; padding-block:24px; }
+html[data-theme] body.ui-polished .trust-strip.trust-features .container > .trust-feature,
+html[data-theme] body.ui-polished .home-designs[data-home-design] .trust-strip.trust-features .container > .trust-feature {
+  display:flex; flex-direction:row; align-items:center; justify-content:flex-start; min-width:0; min-height:96px; gap:14px; padding:18px; border:1px solid #354354; border-radius:12px; background:#1a2531 !important;
+}
+html[data-theme] body.ui-polished .trust-features .trust-feature-icon { display:grid; place-items:center; width:43px; height:43px; flex-shrink:0; background:#45212c; border:1px solid #ff8c9533; border-radius:10px; color:#ff737e !important; }
+.trust-feature-icon .library-icon { font-size:21px; }
+.trust-feature-copy { min-width:0; }
+html[data-theme] body.ui-polished .trust-feature-copy h3 { font-size:16px; letter-spacing:-.015em; line-height:1.3; margin:0 0 6px; font-weight:500; }
+html[data-theme] body.ui-polished .trust-feature-copy p { color:#b9c6d5; font-size:11px; line-height:1.65; margin:0; }
+/* Explicit open/closed library icons avoid text-glyph baselines and rotated pluses. */
+html[data-theme] body.ui-polished .faq-questions summary > .faq-toggle-icon { display:grid; place-items:center; width:32px; height:32px; min-width:32px; padding:0; margin:0; flex-shrink:0; border:1px solid #4b5b6d; border-radius:50%; background:#2b3745 !important; color:#f2f6fb !important; transform:none !important; transition:background .2s,border-color .2s; }
+html[data-theme] body.ui-polished .faq-toggle-icon .library-icon { grid-area:1/1; font-size:15px; line-height:1; }
+html[data-theme] body.ui-polished .faq-toggle-icon .faq-close { display:none; }
+html[data-theme] body.ui-polished .faq-questions details[open] .faq-toggle-icon .faq-plus { display:none; }
+html[data-theme] body.ui-polished .faq-questions details[open] .faq-toggle-icon .faq-close { display:inline-flex; }
+html[data-theme] body.ui-polished .faq-questions details[open] summary > .faq-toggle-icon { border-color:#ed737e; background:#51252f !important; color:#ffb5bc !important; }
+html[data-theme] body.ui-polished .quote-modal-close,
+html[data-theme] body.ui-polished .nav-toggle { display:inline-grid; place-items:center; width:42px; height:42px; padding:0; line-height:1; }
+html[data-theme] body.ui-polished .quote-modal-close { background:#263342; border:1px solid #506074; border-radius:8px; color:#fff; }
+.quote-modal-close .library-icon { font-size:18px; }
+.nav-toggle .library-icon { font-size:25px; }
+@media (min-width:1001px) { html[data-theme] body.ui-polished .nav-toggle { display:none; } }
+@media (max-width:1100px) {
+  html[data-theme] body.ui-polished :is(.home-designs[data-home-design], .interior-shell) .trust-strip.trust-features > .container { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:560px) {
+  html[data-theme] body.ui-polished :is(.home-designs[data-home-design], .interior-shell) .trust-strip.trust-features > .container { grid-template-columns:1fr; gap:10px; padding-block:18px; }
+  html[data-theme] body.ui-polished .trust-strip.trust-features .container > .trust-feature,
+  html[data-theme] body.ui-polished .home-designs[data-home-design] .trust-strip.trust-features .container > .trust-feature { padding:16px; min-height:82px; }
+}
