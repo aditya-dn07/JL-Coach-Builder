@@ -5,8 +5,8 @@ import { LibraryIcon } from '@/components/shared/library-icon';
 export function ReviewSlider({ reviews }: { reviews: { text: string; author: string }[] }) {
   const viewport = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const [interacting, setInteracting] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [focused, setFocused] = useState(false);
 
   function move(direction: number) {
     const element = viewport.current;
@@ -22,12 +22,12 @@ export function ReviewSlider({ reviews }: { reviews: { text: string; author: str
 
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (paused || interacting) return;
-    const timer = window.setInterval(() => { if (!reduced.matches) move(1); }, 6000);
+    if (hovered || focused) return;
+    const timer = window.setInterval(() => { if (!reduced.matches) move(1); }, 4000);
     return () => window.clearInterval(timer);
-  }, [paused, interacting]);
+  }, [hovered, focused]);
 
-  return <div className="review-slider" role="region" aria-roledescription="carousel" aria-label="Customer reviews" onMouseEnter={() => setInteracting(true)} onMouseLeave={() => setInteracting(false)} onFocusCapture={() => setInteracting(true)} onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget)) setInteracting(false); }}>
+  return <div className="review-slider" role="region" aria-roledescription="carousel" aria-label="Customer reviews" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} onFocusCapture={() => setFocused(true)} onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false); }}>
     <div ref={viewport} id="home-review-slides" className="review-slider-viewport" tabIndex={0} aria-label="Scroll customer reviews" onScroll={() => {
       const element = viewport.current;
       const card = element?.firstElementChild;
@@ -42,7 +42,6 @@ export function ReviewSlider({ reviews }: { reviews: { text: string; author: str
       <button type="button" aria-label="Previous review" aria-controls="home-review-slides" onClick={() => move(-1)}><LibraryIcon name="chevron-left" /></button>
       <span>Review {index + 1} of {reviews.length}</span>
       <button type="button" aria-label="Next review" aria-controls="home-review-slides" onClick={() => move(1)}><LibraryIcon name="chevron-right" /></button>
-      <button type="button" aria-label={paused ? 'Play review slider' : 'Pause review slider'} aria-pressed={paused} onClick={() => setPaused(!paused)}><LibraryIcon name={paused ? 'play-fill' : 'pause-fill'} /></button>
     </div>
   </div>;
 }

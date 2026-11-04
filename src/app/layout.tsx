@@ -3,6 +3,7 @@ import { headingFont as display, bodyFont as body } from '@/lib/brand-fonts';
 import { siteConfig } from '@/config/site';
 import { Header } from '@/components/layout/site-header';
 import { Footer } from '@/components/layout/site-footer';
+import { BackToTop } from '@/components/layout/back-to-top';
 import { ClosingContact } from '@/components/contact/closing-contact';
 import { MotionEffects } from '@/components/layout/motion-effects';
 import { InteractionEffects } from '@/components/layout/interaction-effects';
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <ClosingContact />
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );

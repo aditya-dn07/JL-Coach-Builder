@@ -23,7 +23,7 @@ export function HomeServices({ page }: Props) {
         <div className="vehicle-card-copy">
           <h3><Link href={vehicle.links[0].href}>{content.blocks[1 + i * 2].text}</Link></h3>
           <p>{content.blocks[2 + i * 2].text}</p>
-          <div className="service-links">{vehicle.links.map((link, index) => <Link href={link.href} key={link.href}><LibraryIcon name={(["grid", "tools", "paint-bucket", "sliders"] as const)[index]} />{['All services', 'Repairs', 'Panel & paint', 'Alterations & upgrades'][index]}</Link>)}</div>
+          <div className="service-links">{vehicle.links.map((link, index) => <Link href={link.href} key={link.href} className="!justify-start !text-left"><LibraryIcon name={(["grid", "tools", "paint-bucket", "sliders"] as const)[index]} />{['All services', 'Repairs', 'Panel & paint', 'Upgrades'][index]}</Link>)}</div>
         </div>
       </article>)}
       <article className="service-help-card" data-reveal>

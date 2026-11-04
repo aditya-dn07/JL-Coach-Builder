@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { brandFontVariables } from '@/lib/brand-fonts';
 import { contentRepository } from '@/content/repository';
 import { pageMetadata } from '@/lib/metadata';
-import { HomeHero } from '@/components/home/hero';
+import { HomeBanner } from '@/components/home/banner';
 import { DocumentSections } from '@/components/content/document-sections';
 import { HomeTrust } from '@/components/home/trust-section';
 import { HomeServices } from '@/components/home/services-section';
@@ -25,7 +25,7 @@ export default async function Home() {
       <style>{`body:has(.home-hero) { ${brandFontVariables} }`}</style>
       <PageStructuredData page={page} />
       <div className="home-page" data-home-page>
-        <HomeHero page={page} />
+        <HomeBanner page={page} />
         <SectionDivider />
         <HomeTrust page={page} />
         <SectionDivider />

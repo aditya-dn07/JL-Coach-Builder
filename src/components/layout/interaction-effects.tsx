@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { animate } from 'motion';
 
-const actions = '.button, .underlink, .section-link, .road-discover, .road-quote-link, .round-cta, .header-cta, .alternate-actions a, .studio-hero-note a, .alternate-bottom a, .service-links a';
+const actions = '.button, .underlink, .section-link, .road-discover, .road-quote-link, .round-cta, .header-cta, [data-hero-action], .service-links a';
 
 export function InteractionEffects() {
   const path = usePathname();

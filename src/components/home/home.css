@@ -50,26 +50,6 @@ body:has(.home-hero) .button.primary:hover {
   background: #af1722;
 }
 
-body:has(.home-hero) .home-hero {
-  grid-template-columns: minmax(0, 45%) minmax(0, 55%);
-  min-height: 640px;
-  background: #ffffff;
-  overflow: hidden;
-}
-
-body:has(.home-hero) .home-hero .kicker {
-  font-size: 10px;
-  margin-bottom: 19px;
-  color: var(--red);
-}
-
-body:has(.home-hero) .home-hero h1 {
-  max-width: 13ch;
-  font-size: clamp(43px, 4.55vw, 70px);
-  line-height: 1.04;
-  text-wrap: balance;
-}
-
 body:has(.home-hero) .vehicle-section {
   padding-top: 72px;
 }
@@ -272,22 +252,9 @@ body:has(.home-hero) .round-cta:hover {
   body:has(.home-hero) .workshop-feature {
     width: calc(100% - 64px);
   }
-
-  body:has(.home-hero) .home-hero h1 {
-    font-size: clamp(42px, 4.5vw, 58px);
-  }
 }
 
 @media (max-width: 1000px) {
-
-  body:has(.home-hero) .home-hero {
-    grid-template-columns: minmax(0, 48%) minmax(0, 52%);
-    min-height: 590px;
-  }
-
-  body:has(.home-hero) .home-hero h1 {
-    font-size: clamp(40px, 4.4vw, 50px);
-  }
 
   body:has(.home-hero) .vehicle-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -306,17 +273,6 @@ body:has(.home-hero) .round-cta:hover {
 
   body:has(.home-hero) .section-pad {
     padding-block: 64px;
-  }
-
-  body:has(.home-hero) .home-hero {
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
-  }
-
-  body:has(.home-hero) .home-hero h1 {
-    max-width: 15ch;
-    font-size: clamp(43px, 8vw, 62px);
   }
 
   body:has(.home-hero) .vehicle-section {
@@ -359,10 +315,6 @@ body:has(.home-hero) .round-cta:hover {
 }
 
 @media (max-width: 560px) {
-
-  body:has(.home-hero) .home-hero h1 {
-    font-size: clamp(39px, 10vw, 52px);
-  }
 
   body:has(.home-hero) .vehicle-photo,
   body:has(.home-hero) .vehicle-card:first-child .vehicle-photo,
@@ -624,32 +576,8 @@ html[data-theme='dark'] body:has(.home-hero) .home-content-section-5 .detail-gri
 /* Rounded hero and shared homepage sections. */
 .home-page { background:#101317; color:#f3f5f7; }
 /* Every alternate hero is an uninterrupted full-width background photograph. */
-html[data-theme] body .home-page .alternate-hero { display:grid; position:relative; isolation:isolate; overflow:hidden; min-height:700px; grid-template-columns:minmax(0,1fr); align-items:center; color:#fff; background:#101317; }
-.alternate-hero .alternate-photo { position:absolute; inset:0; z-index:-1; }
-.alternate-photo img { object-fit:cover; object-position:center 50%; animation:home-photo-in 1.2s ease-out both; }
-.alternate-photo::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,#070d15ed,#070d1580 60%,#070d1538),linear-gradient(0deg,#070d15e8,transparent 65%); }
-.alternate-copy { z-index:1; padding:70px max(48px,calc((100vw - 1280px)/2)); animation:home-copy-in .7s ease-out both; }
-.alternate-eyebrow { font-size:10px; letter-spacing:.17em; text-transform:uppercase; line-height:1.9; margin-bottom:25px; max-width:54ch; color:#f4b5bb; }
-html[data-theme] body .home-page .alternate-hero h1 { max-width:16ch; font-size:clamp(46px,5vw,76px); line-height:1.03; letter-spacing:-.045em; color:#fff !important; }
-.alternate-description { font-size:14px; line-height:1.85; margin-top:26px; max-width:48ch; color:#d6dfe8; }
-.alternate-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:30px; }
-.alternate-actions a { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:14px 21px; font-size:12px; font-weight:600; border:1px solid #ffffff50; border-radius:5px; color:#fff; text-decoration:none; transition:transform .2s,background .2s; }
-.alternate-actions a:first-child { background:#df1d2a; border-color:#df1d2a; }
-.alternate-actions a:hover { transform:translateY(-2px); background:#af1520; }
-.alternate-proof { display:flex; gap:30px; margin-top:38px; }
-.alternate-proof span { max-width:140px; font-size:10px; line-height:1.7; color:#c5cfd9; }
-.alternate-proof strong { display:block; font-size:32px; font-weight:500; color:#fff; }
-.alternate-bottom { align-self:end; display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; padding:23px max(48px,calc((100vw - 1280px)/2)); font-size:11px; background:#0b121cba; color:#d6dfe8; }
 /* Classic services retain their card treatment. */
 /* Rounded hero, floating note, workshop, and shared sections. */
-html[data-theme] body .home-page[data-home-page] .alternate-hero { margin:28px; border-radius:30px; min-height:700px; grid-template-columns:1fr 330px; }
-.studio-hero .alternate-copy { padding:70px clamp(32px,5vw,80px); }
-.studio-hero .alternate-photo::after { background:linear-gradient(90deg,#071019e8,#0710198c 55%,#07101926),linear-gradient(0deg,#071019dc,transparent 60%); }
-.studio-hero-note { align-self:end; margin:0 32px 70px 0; padding:27px; background:#16212ce8; border:1px solid #ffffff30; border-radius:18px; }
-.studio-hero-note > span { font-size:11px; color:#becbd7; }
-.studio-hero-note strong { display:block; font-size:25px; line-height:1.25; margin:14px 0 23px; font-weight:500; }
-.studio-hero-note a { font-size:11px; color:#ffb4bc; }
-.studio-hero .alternate-bottom { grid-column:1/-1; background:#0b1420b8; }
 html[data-theme] body.ui-polished .home-page[data-home-page] .workshop-feature { background:#17202a !important; padding:32px; border-radius:26px; gap:48px; grid-template-columns:1.1fr 1fr; }
 html[data-theme] body.ui-polished .home-page[data-home-page] .feature-image { height:520px; margin:0; }
 html[data-theme] body.ui-polished .home-page[data-home-page] .feature-image > .photo { border-radius:18px; }
@@ -664,21 +592,7 @@ html[data-theme] body.ui-polished .home-page[data-home-page] .faq-layout h2 { ma
 html[data-theme] body.ui-polished .home-page[data-home-page] .faq-questions { grid-template-columns:1fr 1fr; align-items:start; }
 /* Carry each composition through the closing CTA and footer. */
 html[data-theme] body:has([data-home-page]) .closing-cta { margin:32px; border-radius:24px; border:0; }
-@keyframes home-photo-in { from { transform:scale(1.035); } to { transform:scale(1); } }
-@keyframes home-copy-in { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
-@media (max-width:1100px) {
-  html[data-theme] body .home-page[data-home-page] .alternate-hero { grid-template-columns:1fr 270px; margin:20px; }
-  .studio-hero .alternate-copy { padding-inline:35px; }
-}
 @media (max-width:800px) {
-  html[data-theme] body .home-page .alternate-hero,
-  html[data-theme] body .home-page[data-home-page] .alternate-hero { grid-template-columns:1fr; min-height:650px; }
-  html[data-theme] body .home-page[data-home-page] .alternate-hero { margin:16px; border-radius:22px; }
-  .alternate-copy,.studio-hero .alternate-copy { padding:55px 24px 35px; }
-  html[data-theme] body .home-page .alternate-hero h1 { font-size:clamp(40px,7.5vw,60px); max-width:19ch; }
-  .studio-hero-note { margin:0 24px 28px; padding:22px; }
-  .studio-hero-note strong { font-size:22px; }
-  .alternate-bottom { padding:22px 24px; font-size:10px; }
   html[data-theme] body.ui-polished .home-page[data-home-page] .workshop-feature { padding:22px; grid-template-columns:1fr; gap:30px; }
   html[data-theme] body.ui-polished .home-page[data-home-page] .feature-image { height:360px; }
   html[data-theme] body.ui-polished .home-page[data-home-page] .home-content-section-5 > .container { display:block; }
@@ -692,10 +606,6 @@ html[data-theme] body:has([data-home-page]) .closing-cta { margin:32px; border-r
   html[data-theme] body.ui-polished .home-page[data-home-page] .section-heading > p:last-child { margin-top:20px; }
   html[data-theme] body.ui-polished .home-page[data-home-page] .faq-questions,
   html[data-theme] body.ui-polished .home-page[data-home-page] .home-content-section-5 .detail-grid { grid-template-columns:1fr; }
-  .alternate-eyebrow { font-size:9px; }
-  .alternate-description { font-size:13px; }
-  .alternate-actions { gap:10px; }
-  .alternate-actions a { padding-inline:15px; font-size:11px; }
 }
 @media (prefers-reduced-motion:reduce) { .home-page *, .home-page *::before, .home-page *::after { transition:none !important; animation:none !important; } }
 /* Illustrated benefit cards use real image elements for responsive loading. */
@@ -881,32 +791,21 @@ html[data-theme] body.ui-polished:has(.home-page[data-home-page]) {
   --home-radius: 24px;
   --home-control-radius: 12px;
 }
-html[data-theme] body.ui-polished:has(.home-page) :is(.kicker, .studio-hero-note > span) { color: var(--red) !important; }
-html[data-theme] body.ui-polished .home-page :is( .alternate-eyebrow) {
-  color: #fff !important;
-  text-shadow: 0 2px 6px #000b;
-}
-html[data-theme] body.ui-polished:has(.home-page) :is(.button, .underlink, .section-link, .road-quote-link, .alternate-actions a, .studio-hero-note a, .alternate-bottom a, .service-links a) {
+html[data-theme] body.ui-polished:has(.home-page) :is(.kicker) { color: var(--red) !important; }
+html[data-theme] body.ui-polished:has(.home-page) :is(.button, .underlink, .section-link, .road-quote-link, .service-links a) {
   display: inline-flex; align-items: center; justify-content: center; gap: 9px;
   border: 1px solid var(--red) !important; border-radius: var(--home-control-radius);
   background: var(--red) !important; color: #fff !important;
 }
-html[data-theme] body.ui-polished:has(.home-page) :is(.button, .underlink, .section-link, .road-quote-link, .alternate-actions a, .studio-hero-note a, .alternate-bottom a, .service-links a):hover { background: #d40000 !important; border-color: #d40000 !important; }
-html[data-theme] body.ui-polished:has(.home-page) :is(.alternate-actions a + a, .service-links a, .contact-direct) {
+html[data-theme] body.ui-polished:has(.home-page) :is(.button, .underlink, .section-link, .road-quote-link, .service-links a):hover { background: #d40000 !important; border-color: #d40000 !important; }
+html[data-theme] body.ui-polished:has(.home-page) :is( .service-links a, .contact-direct) {
   background: transparent !important; border: 1px solid #8b9caf !important; border-radius: var(--home-control-radius); color: #fff !important;
 }
-html[data-theme] body.ui-polished:has(.home-page) :is(.alternate-actions a + a, .service-links a, .contact-direct):hover { background: #fa000018 !important; border-color: var(--red) !important; }
+html[data-theme] body.ui-polished:has(.home-page) :is( .service-links a, .contact-direct):hover { background: #fa000018 !important; border-color: var(--red) !important; }
 html[data-theme] body.ui-polished:has(.home-page) .library-icon { font-size: 18px; }
-html[data-theme] body.ui-polished .home-page[data-home-page] :is(.alternate-hero, .studio-hero-note, .experience-proof, .vehicle-card, .service-help-card, .workshop-feature, .feature-image > .photo, .feature-image::before, .workshop-stamp, .capability-tiles li, .detail-grid article, .capability-icon, .detail-index, .faq-questions details, .contact-panel) { border-radius: var(--home-radius); }
+html[data-theme] body.ui-polished .home-page[data-home-page] :is( .experience-proof, .vehicle-card, .service-help-card, .workshop-feature, .feature-image > .photo, .feature-image::before, .workshop-stamp, .capability-tiles li, .detail-grid article, .capability-icon, .detail-index, .faq-questions details, .contact-panel) { border-radius: var(--home-radius); }
 html[data-theme] body.ui-polished .home-page[data-home-page] :is(.home-workshop .capability-tiles li, .home-content-section-5 .benefit-photo-card .capability-icon, .home-content-section-5 .benefit-photo-card .detail-index, .home-document-closing .contact-panel-actions > .button, .home-document-closing .contact-direct) { border-radius: var(--home-control-radius); }
-
-.service-marquee { display: flex; align-items: center; gap: 10px; width: 100%; max-width: 480px; margin-top: 18px; min-width: 0; }
-.service-marquee-window { overflow: hidden; flex: 1; min-width: 0; }
-.service-marquee-track { display: flex; width: max-content; animation: home-services-scroll 20s linear infinite; color: #fff; font-size: 13px; line-height: 1.8; }
-.service-marquee-track > span { flex-shrink: 0; white-space: nowrap; }
-.service-marquee[data-paused='true'] .service-marquee-track, .service-marquee:hover .service-marquee-track, .service-marquee:focus-within .service-marquee-track { animation-play-state: paused; }
-.service-marquee button, .review-slider-controls button { display: inline-grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; padding: 0; border: 1px solid #8b9caf; border-radius: var(--home-control-radius); background: transparent; color: #fff; cursor: pointer; }
-@keyframes home-services-scroll { to { transform: translateX(-50%); } }
+.review-slider-controls button { display: inline-grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; padding: 0; border: 1px solid #8b9caf; border-radius: var(--home-control-radius); background: transparent; color: #fff; cursor: pointer; }
 
 .review-slider { min-width: 0; }
 .review-slider-viewport { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
@@ -922,16 +821,10 @@ html[data-theme] body.ui-polished .home-page[data-home-page] .review-slider bloc
 .review-slider blockquote footer > div > span { color: #b1bac5; }
 .review-slider blockquote .review-google { margin-left: auto; }
 .review-slider-controls { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 24px; font-size: 12px; }
-.review-slider-controls button:hover, .service-marquee button:hover { border-color: var(--red); }
+.review-slider-controls button:hover { border-color: var(--red); }
 @media (max-width: 1000px) {
   html[data-theme] body.ui-polished .home-page[data-home-page] .review-slider blockquote { flex-basis: calc((100% - 20px) / 2); }
 }
 @media (max-width: 650px) {
   html[data-theme] body.ui-polished .home-page[data-home-page] .review-slider blockquote { flex-basis: 100%; padding: 28px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .service-marquee-track { animation: none; }
-  .service-marquee-track > span { white-space: normal; }
-  .service-marquee-track { width: auto; }
-  .service-marquee-track > span + span, .service-marquee > button { display: none; }
 }

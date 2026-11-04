@@ -164,7 +164,7 @@ html[data-theme] body :is(h1, h2, h3, h4, h5, h6, .kicker)::before,
 html[data-theme] body :is(h1, h2, h3, h4, h5, h6, .kicker)::after { content: none !important; }
 html[data-theme] body :is(h1, h2, h3, h4, h5, h6, .kicker) { border: 0 !important; }
 /* Clear button silhouettes for action links formerly styled with decorative marks. */
-html[data-theme] body :is(.underlink, .section-link, .road-discover, .studio-hero-note a, .alternate-bottom a) {
+html[data-theme] body :is(.underlink, .section-link, .road-discover) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -183,7 +183,7 @@ html[data-theme] body :is(.underlink, .section-link, .road-discover, .studio-her
   box-shadow: 0 3px 10px #0002;
   transition: background .2s, border-color .2s, box-shadow .2s;
 }
-html[data-theme] body :is(.underlink, .section-link, .road-discover, .studio-hero-note a, .alternate-bottom a):is(:hover, :focus-visible) {
+html[data-theme] body :is(.underlink, .section-link, .road-discover):is(:hover, :focus-visible) {
   background: #39495b !important;
   border-color: #ff797f !important;
   box-shadow: 0 6px 18px #0004;
@@ -204,8 +204,6 @@ html[data-theme] body .service-links a {
   transition: background .2s, border-color .2s;
 }
 html[data-theme] body .service-links a:is(:hover, :focus-visible) { background: #44313b; border-color: #ee626b !important; color: #fff !important; }
-html[data-theme] body .studio-hero-note a { width: 100%; }
-html[data-theme] body .alternate-bottom { align-items: center; }
 @media (prefers-reduced-motion: reduce) {
   html[data-theme] body :is(.button, .underlink, .section-link, .road-discover, .service-links a) { transition: none; transform: none !important; }
 }

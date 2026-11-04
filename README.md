@@ -47,7 +47,8 @@ src/
     sitemap.ts
   components/
     home/
-      hero.tsx
+      banner.tsx                Active homepage banner (copy of the original hero)
+      hero.tsx                  Original hero preserved for reference
       trust-section.tsx
       services-section.tsx
       workshop-section.tsx
@@ -61,6 +62,7 @@ src/
       site-header.tsx
       header-navigation.tsx     Responsive navigation and keyboard dismissal
       site-footer.tsx
+      back-to-top.tsx            Floating scroll-to-top arrow
       footer/
         footer-contact.tsx      Contact list and supplied Google Maps embed
         footer-links.tsx
@@ -137,6 +139,30 @@ docs/                          CMS setup, source inventory, and verification not
 - Keep browser state and event handlers in client components. Content loading, metadata, and structured data stay server rendered.
 
 Tailwind tokens are defined in `tailwind.config.ts`. The `nav` breakpoint (1001px) controls desktop navigation, and `wide` (1401px) enables the larger header composition.
+
+### Change the homepage banner image
+
+Edit `src/components/home/banner.tsx`. The homepage renders `HomeBanner`, copied from the original `HomeHero` in `hero.tsx` with its own updated photograph and crop; the original is preserved for reference. The banner uses Next.js `Image` with Tailwind positioning:
+
+```tsx
+<Image
+  src="/images/home-workshop-banner.png"
+  alt="JL Coachbuilders workshop buildings and caravan yard in Christchurch"
+  fill
+  priority
+  sizes="100vw"
+  unoptimized
+  className="object-cover object-right"
+/>
+```
+
+Replace `object-center` with `object-bottom` or `object-top` to change alignment. For a precise crop, use `object-[50%_80%]` (horizontal and vertical position), or responsive positioning such as `object-bottom md:object-center`. Keep just one base positioning class. Change `src` to use another image from `public/images/`.
+
+The banner has no extra scale or zoom animation. `object-cover object-right` aligns the image right-center and crops only as needed to fill the existing section. `unoptimized` serves the original uploaded PNG without resizing or recompression.
+
+At widths up to 800px, the copy overlays the same original image. The mobile image frame is 440px tall and shifted up 96px to keep the building sign above the text, fading into the section background. At widths up to 480px, the quote and call buttons stack at full width. The desktop background composition remains unchanged.
+
+The hero and scrolling services strip use Tailwind for layout, colors, spacing, responsive behavior, and hover states. Their animation definitions live in `tailwind.config.ts`; the previous hero and marquee CSS rules have been removed.
 
 ## Homepage composition
 

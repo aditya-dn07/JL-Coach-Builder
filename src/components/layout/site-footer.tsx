@@ -26,11 +26,10 @@ export function Footer() {
         <FooterLinks title="Our services" links={vehicles.map((vehicle, index) => ({ label: `${serviceNames[index]} services`, href: vehicle.links[0].href }))} />
         <FooterContact />
       </div>
-      <div className="mx-auto flex w-[calc(100%-40px)] max-w-[1380px] flex-col gap-x-7 gap-y-[18px] border-t border-line py-[23px] text-xs text-[#b1bac5] sm:w-[calc(100%-64px)] nav:flex-row nav:flex-wrap nav:items-center nav:justify-between wide:w-[calc(100%-104px)]">
-        <span>© {new Date().getFullYear()} {siteConfig.business.name} Ltd. All rights reserved.</span>
-        <div className="flex flex-wrap gap-x-[25px] gap-y-2"><Link href="/privacy-policy/">Privacy Policy</Link><Link href="/terms-and-conditions/">Terms &amp; Conditions</Link></div>
-        <a href="#top">Back to top</a>
-        <a href={site.copy.creditUrl}>{site.copy.credit}</a>
+      <div className="mx-auto grid w-[calc(100%-40px)] max-w-[1380px] grid-cols-1 items-center gap-x-6 gap-y-4 border-t border-line py-[23px] text-center text-xs text-[#b1bac5] sm:w-[calc(100%-64px)] nav:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] wide:w-[calc(100%-104px)]">
+        <span className="nav:text-left">© {new Date().getFullYear()} {siteConfig.business.name} Ltd. All rights reserved.</span>
+        <div className="flex flex-wrap items-center justify-center gap-x-[25px] gap-y-2"><Link href="/privacy-policy/">Privacy Policy</Link><Link href="/terms-and-conditions/">Terms &amp; Conditions</Link></div>
+        <a href={site.copy.creditUrl} className="nav:justify-self-end nav:pr-14 nav:text-right">{site.copy.credit}</a>
       </div>
     </footer>
   );

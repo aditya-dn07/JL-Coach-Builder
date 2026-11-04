@@ -1,18 +1,12 @@
-'use client';
-import { useState } from 'react';
-import { LibraryIcon } from '@/components/shared/library-icon';
-
 const services = 'Repairs · Upgrades · Servicing · Panel & Paint · Self Containment';
 
 export function ServiceMarquee() {
-  const [paused, setPaused] = useState(false);
-  return <div className="service-marquee" data-paused={paused}>
-    <div className="service-marquee-window">
+  return <div className="group mt-[18px] flex w-full min-w-0 max-w-[480px] items-center" tabIndex={0} role="region" aria-label="Workshop services">
+    <div className="min-w-0 flex-1 overflow-hidden">
       <span className="sr-only">{services}</span>
-      <div className="service-marquee-track" aria-hidden="true">
-        {[0, 1].map(copy => <span key={copy}>{services} ·&nbsp;</span>)}
+      <div className="flex w-max animate-services-scroll text-[13px] leading-[1.8] text-white group-hover:[animation-play-state:paused] group-focus-within:[animation-play-state:paused] motion-reduce:w-auto motion-reduce:animate-none" aria-hidden="true">
+        {[0, 1].map(copy => <span className={`shrink-0 whitespace-nowrap motion-reduce:whitespace-normal ${copy ? 'motion-reduce:hidden' : ''}`} key={copy}>{services} ·&nbsp;</span>)}
       </div>
     </div>
-    <button type="button" aria-label={paused ? 'Play service marquee' : 'Pause service marquee'} onClick={() => setPaused(!paused)}><LibraryIcon name={paused ? 'play-fill' : 'pause-fill'} /></button>
   </div>;
 }
