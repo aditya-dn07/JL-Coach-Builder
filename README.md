@@ -194,7 +194,7 @@ npm run check:routes
 
 The route checker verifies content routes, internal links, metadata, canonical URLs, JSON-LD, 404/noindex behavior, and icon assets. Browser checks should also cover the homepage section order, mobile navigation, quote dialog focus and dismissal, gallery controls, and the footer map and review link.
 
-Development output is `.next/`; production output is `.next-production/`. These directories are generated and ignored. They are separate so a production build does not overwrite development artifacts. Build once before running `typecheck` in a fresh checkout if generated route types are needed.
+Development and Vercel output is `.next/`; local production and Docker output is `.next-production/`. The Vercel build/runtime environment (`VERCEL=1`) selects `.next/`, matching `vercel.json` and Vercel's Next.js adapter. Local production builds remain separate from development artifacts. Both directories are generated and ignored. Build once before running `typecheck` in a fresh checkout if generated route types are needed.
 
 ## Quote delivery
 
@@ -209,6 +209,8 @@ With no webhook configured, the form reports that delivery is unavailable and pr
 Pages are generated at build time. Content or slug changes require a rebuild. Keep CMS credentials in server-side environment variables.
 
 ## Production deployment
+
+For Vercel, import this repository with the **Next.js** framework preset and the default `npm run build` command. The tracked `vercel.json` sets the output directory to `.next`; leave system environment variables enabled so `VERCEL=1` is available. If an older deployment failed with `NEXT_NO_ROUTES_MANIFEST`, redeploy the commit containing this configuration fix. No dependency changes or install-script approvals are required for that directory mismatch.
 
 For a Node.js host:
 

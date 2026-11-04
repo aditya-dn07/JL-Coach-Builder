@@ -3,9 +3,10 @@ import type { NextConfig } from 'next';
 import { PHASE_DEVELOPMENT_SERVER } from 'next/constants';
 
 export default function config(phase: string): NextConfig {
+  const isVercel = process.env.VERCEL === '1';
   return {
-    // Keep production builds independent of a running development server.
-    distDir: phase === PHASE_DEVELOPMENT_SERVER ? '.next' : '.next-production',
+    // Vercel's Next.js adapter expects .next; isolate only local production builds.
+    distDir: isVercel || phase === PHASE_DEVELOPMENT_SERVER ? '.next' : '.next-production',
     poweredByHeader: false,
 
     images: {
