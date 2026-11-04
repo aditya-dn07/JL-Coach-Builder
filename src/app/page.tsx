@@ -15,6 +15,7 @@ import './home-banner.css';
 import './home-designs.css';
 import './home-document-content.css';
 import './rounded-services.css';
+import './homepage-refinements.css';
 
 
 export async function generateMetadata(): Promise<Metadata> {

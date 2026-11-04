@@ -9,10 +9,11 @@ import { phoneHref, siteConfig } from '@/config/site';
 import { LibraryIcon } from './library-icon';
 import { TwoToneHeading } from './two-tone-heading';
 import { StudioServices } from './studio-services';
+import { ReviewSlider } from './review-slider';
 
 type Props = { page: ContentPage };
 const section = (page: ContentPage, id: number) => page.sections.find(s => s.id === `section-${id}`)!;
-const Quote = () => <a className="button primary" href="#quote">Get a free quote</a>;
+const Quote = () => <a className="button primary" href="#quote"><LibraryIcon name="chat-square-text" />Get a free quote</a>;
 
 export function HomeTrust({ page }: Props) {
   const content = section(page, 1);
@@ -50,7 +51,7 @@ export function HomeServices({ page }: Props) {
         <div className="vehicle-card-copy">
           <h3><Link href={vehicle.links[0].href}>{content.blocks[1 + i * 2].text}</Link></h3>
           <p>{content.blocks[2 + i * 2].text}</p>
-          <div className="service-links">{vehicle.links.map((link, index) => <Link href={link.href} key={link.href}>{['All services', 'Repairs', 'Panel & paint', 'Alterations & upgrades'][index]}</Link>)}</div>
+          <div className="service-links">{vehicle.links.map((link, index) => <Link href={link.href} key={link.href}><LibraryIcon name={(["grid", "tools", "paint-bucket", "sliders"] as const)[index]} />{['All services', 'Repairs', 'Panel & paint', 'Alterations & upgrades'][index]}</Link>)}</div>
         </div>
       </article>)}
       <article className="service-help-card" data-reveal>
@@ -58,7 +59,7 @@ export function HomeServices({ page }: Props) {
         <p className="kicker">Insurance Repairs</p>
         <h3><TwoToneHeading text={section(page, 6).title} /></h3>
         <p>{section(page, 6).blocks[0].text}</p>
-        <a className="button primary" href={phoneHref}>Call {siteConfig.business.phone}</a>
+        <a className="button primary" href={phoneHref}><LibraryIcon name="telephone" />Call {siteConfig.business.phone}</a>
       </article>
     </div>
   </section>;
@@ -84,11 +85,8 @@ export function HomeReviews({ page }: Props) {
   const reviews = content.blocks.filter((_, i) => i % 2 === 0).map((block, i) => ({text: block.text, author: content.blocks[i * 2 + 1].text}));
   return <section className="reviews-block section-pad container home-document-reviews">
     <div className="section-heading" data-reveal><p className="kicker">Customer Reviews</p><h2><TwoToneHeading text={content.title} /></h2><p className="review-stars">★★★★★ <span>4.9 Google rating</span></p></div>
-    <div className="reviews-grid">{reviews.map(review => <blockquote key={review.author} data-reveal>
-      <span className="quote-mark" aria-hidden="true">“</span><p>{review.text}</p>
-      <footer><span className="review-avatar">{review.author[0]}</span><div><strong>{review.author.split(',')[0]}</strong><span>Christchurch</span></div><span className="review-google">G</span></footer>
-    </blockquote>)}</div>
-    <div className="home-section-action"><a className="button primary" href={phoneHref}>Call {siteConfig.business.phone}</a></div>
+    <ReviewSlider reviews={reviews} />
+    <div className="home-section-action"><a className="button primary" href={phoneHref}><LibraryIcon name="telephone" />Call {siteConfig.business.phone}</a></div>
   </section>;
 }
 

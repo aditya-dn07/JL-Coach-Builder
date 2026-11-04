@@ -4,6 +4,7 @@ import content from '@/content/quote-form.json';
 import Link from 'next/link';
 import { siteConfig, phoneHref } from '@/config/site';
 import { QuoteSchema } from '@/lib/quote';
+import { Send } from 'lucide-react';
 
 export function QuoteForm() {
   const titleId = useId();
@@ -63,6 +64,7 @@ export function QuoteForm() {
         <input name="website" tabIndex={-1} autoComplete="off" />
       </label>
       <button type="submit" className="button primary" disabled={status === 'sending'}>
+        <Send size={18} aria-hidden="true" />
         {status === 'sending' ? l.submitting : l.submit}
       </button>
       <p className="form-privacy">

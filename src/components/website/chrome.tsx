@@ -4,7 +4,8 @@ import { vehicles } from '@/content/catalog';
 import { siteConfig, phoneHref, fullAddress, directionsHref } from '@/config/site';
 import manifest from '@/data/image-manifest.json';
 import { HeaderNavigation } from './header-navigation';
-import { Phone, Mail, Check } from 'lucide-react';
+import { Phone, Mail, Check, MessageSquareText, MapPin, Facebook } from 'lucide-react';
+import { site } from '@/data/site.data';
 export function Header() {
   return (
     <HeaderNavigation
@@ -33,7 +34,7 @@ export function Footer() {
           </div>
           <div className="contact-panel-actions">
             <span className="contact-panel-label">Let’s talk about your vehicle</span>
-            <a className="button primary" href="#quote">Request a free quote</a>
+            <a className="button primary" href="#quote"><MessageSquareText size={18} aria-hidden="true" />Request a free quote</a>
             <a className="contact-direct" href={phoneHref}><Phone size={19} aria-hidden="true" /><span>Call the workshop<strong>{siteConfig.business.phone}</strong></span></a>
             <a className="contact-direct" href={`mailto:${siteConfig.business.email}`}><Mail size={19} aria-hidden="true" /><span>Email our team<strong>{siteConfig.business.email}</strong></span></a>
           </div>
@@ -55,7 +56,7 @@ export function Footer() {
               Complete solutions.
             </p>
             <a href={siteConfig.business.sameAs[0]} className="underlink">
-              Follow us on Facebook
+              <Facebook size={18} aria-hidden="true" />Follow us on Facebook
             </a>
           </div>
           <div>
@@ -83,7 +84,7 @@ export function Footer() {
             <h2>Come and see us</h2>
             <p>{fullAddress}</p>
             <a href={directionsHref} className="underlink">
-              Get directions
+              <MapPin size={18} aria-hidden="true" />Get directions
             </a>
           </div>
         </div>
@@ -96,6 +97,7 @@ export function Footer() {
             <Link href="/terms-and-conditions/">Terms & Conditions</Link>
           </div>
           <a href="#top">Back to top</a>
+          <a className="footer-credit" href={site.copy.creditUrl}>{site.copy.credit}</a>
         </div>
       </footer>
     </>

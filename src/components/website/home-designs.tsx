@@ -4,6 +4,8 @@ import { useState, type ReactNode } from 'react';
 import Image from 'next/image';
 import { motion, useReducedMotion } from 'motion/react';
 import { phoneHref, siteConfig } from '@/config/site';
+import { ServiceMarquee } from './service-marquee';
+import { LibraryIcon } from './library-icon';
 
 const designs = [
   { id: 'original', label: 'Panoramic classic' },
@@ -44,12 +46,12 @@ export function HomeDesigns({ currentHero, sections, title, eyebrow, description
             <p className="alternate-eyebrow">{eyebrow}</p>
             <h1 id="alternate-hero-title">{title}</h1>
             <p className="alternate-description">{description}</p>
-            <p className="home-service-summary">Repairs · Upgrades · Servicing · Panel &amp; Paint · Self Containment</p>
-            <div className="alternate-actions"><a href="#quote">Get a free quote</a><a href={phoneHref}>Call {siteConfig.business.phone}</a></div>
+            <ServiceMarquee />
+            <div className="alternate-actions"><a href="#quote"><LibraryIcon name="chat-square-text" />Get a free quote</a><a href={phoneHref}><LibraryIcon name="telephone" />Call {siteConfig.business.phone}</a></div>
             <div className="alternate-proof"><span><strong>80+</strong> Years of combined experience</span><span><strong>2016</strong> Locally owned since</span></div>
           </div>
-          <div className="studio-hero-note"><span>Trusted Local Specialists</span><strong>Experience That Shows<br />in the Finished Job</strong><a href="#quote">Get a free quote</a></div>
-          <div className="alternate-bottom"><span>Caravans · Motorhomes · Campervans · Fifth wheels · Buses</span><a href={phoneHref}>Talk to the team {siteConfig.business.phone}</a></div>
+          <div className="studio-hero-note"><span>Trusted Local Specialists</span><strong>Experience That Shows<br />in the Finished Job</strong><a href="#quote"><LibraryIcon name="chat-square-text" />Get a free quote</a></div>
+          <div className="alternate-bottom"><span>Caravans · Motorhomes · Campervans · Fifth wheels · Buses</span><a href={phoneHref}><LibraryIcon name="telephone" />Talk to the team {siteConfig.business.phone}</a></div>
         </section>
       )}
       <div className="home-layout-sections">

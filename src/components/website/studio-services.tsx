@@ -27,15 +27,15 @@ export function StudioServices({ services, insuranceTitle, insuranceDescription 
           event.preventDefault(); setActive(next); buttons.current[next]?.focus();
         }}><span className="studio-tab-number">0{index + 1}</span><span>{service.label}</span><span className="studio-tab-status" aria-hidden="true" /></button>)}
       </div>
-      <aside className="studio-service-help"><LibraryIcon name="chat-square-text" /><h3>{insuranceTitle}</h3><p>{insuranceDescription}</p><a className="button primary" href={phoneHref}>Call {siteConfig.business.phone}</a></aside>
     </div>
     <div className="studio-service-stage">
       {services.map((service, index) => <div key={service.label} role="tabpanel" id={`studio-panel-${index}`} aria-labelledby={`studio-tab-${index}`} tabIndex={0} hidden={index !== active}>
         {active === index && <motion.div key={index} initial={reduced ? false : { opacity: 0.5 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
           <div className="studio-service-photo"><Photo image={service.image} sizes="(max-width: 700px) 100vw, 65vw" /><span>0{index + 1} / 0{services.length}</span></div>
-          <div className="studio-service-content"><h3>{service.title}</h3><p>{service.description}</p><div className="service-links">{service.links.map((link, linkIndex) => <Link key={link.href} href={link.href}>{['All services', 'Repairs', 'Panel & paint', 'Alterations & upgrades'][linkIndex]}</Link>)}</div></div>
+          <div className="studio-service-content"><h3>{service.title}</h3><p>{service.description}</p><div className="service-links">{service.links.map((link, linkIndex) => <Link key={link.href} href={link.href}><LibraryIcon name={(["grid", "tools", "paint-bucket", "sliders"] as const)[linkIndex]} />{['All services', 'Repairs', 'Panel & paint', 'Alterations & upgrades'][linkIndex]}</Link>)}</div></div>
         </motion.div>}
       </div>)}
     </div>
+    <aside className="studio-service-help"><LibraryIcon name="shield-check" /><div><h3>{insuranceTitle}</h3><p>{insuranceDescription}</p></div><a className="button primary" href={phoneHref}><LibraryIcon name="telephone" />Call {siteConfig.business.phone}</a></aside>
   </div>;
 }

@@ -128,7 +128,7 @@ export function HeaderNavigation({
           ))}
         </nav>
         <a href="#quote" className="button primary header-cta" onClick={close}>
-          Let’s talk
+          <LibraryIcon name="chat-square-text" />Let’s talk
         </a>
         <button
           ref={toggleRef}

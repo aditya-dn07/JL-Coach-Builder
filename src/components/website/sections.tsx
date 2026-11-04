@@ -13,6 +13,7 @@ import { AnimatedBenefitCard } from './animated-benefit-card';
 import { InteriorHero } from './interior-hero';
 import { ProjectGallery } from './project-gallery';
 import { LibraryIcon } from './library-icon';
+import { ServiceMarquee } from './service-marquee';
 
 export function PageHero({ page }: { page: ContentPage }) {
   return page.kind === 'home' ? <HomeBanner page={page} /> : <InteriorHero page={page} />;
@@ -30,13 +31,13 @@ function HomeBanner({ page }: { page: ContentPage }) {
           <h1 id="home-banner-title"><TwoToneHeading text={page.title} /></h1>
         </div>
         <div className="road-banner-details">
-          <div><p>{page.description}</p><p className="home-service-summary">Repairs · Upgrades · Servicing · Panel &amp; Paint · Self Containment</p></div>
+          <div><p>{page.description}</p><ServiceMarquee /></div>
           <Link className="road-experience" href="/about/" aria-label="Meet our team with over 80 years of combined experience"><span>80<small>+</small></span><p>Years of combined<br />craftsmanship</p></Link>
         </div>
         <div className="road-quote-bar">
           <div className="road-quote-title"><span className="road-status-dot" /><div><strong>Trusted Local Specialists</strong><p>All makes and models</p></div></div>
           <a className="road-call" href={phoneHref}><Phone size={18} aria-hidden="true" /><span>Call<strong>{siteConfig.business.phone}</strong></span></a>
-          <a href="#quote" className="road-quote-link">Get a free quote</a>
+          <a href="#quote" className="road-quote-link"><LibraryIcon name="chat-square-text" />Get a free quote</a>
         </div>
       </div>
       <nav className="road-service-ribbon" aria-label="Workshop services">
@@ -239,13 +240,13 @@ export function DocumentSections({ page, sectionIds }: { page: ContentPage; sect
                   {page.kind === 'home' ? '' : 'Have a different question?'}
                   <br />
                   <a className="underlink" href={page.kind === 'home' ? '#quote' : phoneHref}>
-                    {page.kind === 'home' ? 'Get a free quote' : 'Talk to our team'}
+                    <LibraryIcon name={page.kind === 'home' ? 'chat-square-text' : 'telephone'} />{page.kind === 'home' ? 'Get a free quote' : 'Talk to our team'}
                   </a>
                 </p>
               </div>
               <div className="faq-questions">
-                {page.faqs.map((f) => (
-                  <details key={f.question}>
+                {page.faqs.map((f, index) => (
+                  <details key={f.question} name={`faq-${page.slug || 'home'}-${s.id}`} open={index === 0}>
                     <summary>
                       {f.question}
                       <span className="faq-toggle-icon" aria-hidden="true"><LibraryIcon name="plus-lg" className="faq-plus" /><LibraryIcon name="x-lg" className="faq-close" /></span>
@@ -272,7 +273,7 @@ export function DocumentSections({ page, sectionIds }: { page: ContentPage; sect
                 )}
                 <h2><TwoToneHeading text={s.title} /></h2>
                 {page.kind === 'home' && s.id === 'section-3' && (
-                  <a className="underlink section-link" href="#quote">Get a free quote</a>
+                  <a className="underlink section-link" href="#quote"><LibraryIcon name="chat-square-text" />Get a free quote</a>
                 )}
               </div>
               {page.kind === 'home' && s.id === 'section-4' && (
@@ -286,7 +287,7 @@ export function DocumentSections({ page, sectionIds }: { page: ContentPage; sect
               <Groups blocks={s.blocks} illustrated={(page.kind === 'home' && s.id === 'section-5') || (page.kind === 'service' && /Why Choose/.test(s.title))} serviceLinks={page.kind === 'service' ? vehicles.find((vehicle) => vehicle.image.id === page.image)?.links : undefined} statementCards={page.kind === 'about' && s.id === 'section-2'} />
               {page.kind !== 'legal' && !(page.kind === 'home' && s.id === 'section-3') && (
                 <a className="underlink section-link" href="#quote">
-                  {page.kind === 'home' ? 'Get a free quote' : 'Let’s discuss your vehicle'}
+                  <LibraryIcon name="chat-square-text" />{page.kind === 'home' ? 'Get a free quote' : 'Let’s discuss your vehicle'}
                 </a>
               )}
               </div>
