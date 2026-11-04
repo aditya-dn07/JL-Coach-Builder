@@ -1,87 +1,239 @@
 # JL Coachbuilders
 
-A 27-page Next.js 15 App Router website for the Christchurch specialist vehicle workshop, using the supplied Word content, existing logo and real old-website photographs. TypeScript, Tailwind CSS, next/font, next/image, lucide-react and CSS motion.
+A Next.js website for JL Coachbuilders in Christchurch, with 27 content pages, one curated homepage, a project gallery, and a validated quote form.
 
-## Run
+## Stack
 
-Use Node.js 22+.
+- Next.js 15 App Router, React 19, and TypeScript
+- Tailwind CSS 3 for layout, spacing, typography, and responsive controls
+- Feature CSS for the homepage composition, editorial layouts, image treatments, and animations
+- Motion, Lucide React, and Bootstrap Icons
+- Zod for content and quote validation
+- Local JSON content, with optional Sanity or Payload adapters
+- Self-hosted Outfit and Inter fonts; optimized images through `next/image`
+
+## Getting started
+
+Use Node.js 22 or newer and npm.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Open http://localhost:3000. Production:
+Open [localhost:3000](http://localhost:3000). To choose another port:
 
 ```sh
-npm run test
-npm run lint
+npm run dev -- --port 3011
+```
+
+For quote delivery or a remote CMS, copy `.env.example` to `.env.local` and configure the required values. Local content runs without external accounts.
+
+## Project structure
+
+```text
+src/
+  app/
+    (home)/
+      page.tsx                  Homepage composition and metadata; URL: /
+    (content)/
+      [slug]/page.tsx            Services, about, contact, gallery, and legal routes
+    api/quote/route.ts          Server-side quote validation and delivery
+    layout.tsx                  Global fonts, styles, header, footer, and effects
+    error.tsx                   Route error boundary
+    global-error.tsx            Root error boundary
+    not-found.tsx               404 page
+    robots.ts
+    sitemap.ts
+  components/
+    home/
+      hero.tsx
+      trust-section.tsx
+      services-section.tsx
+      workshop-section.tsx
+      problems-section.tsx
+      reviews-section.tsx
+      closing-section.tsx
+      service-marquee.tsx
+      home-content.ts           Typed homepage section lookup
+      home.css                  Homepage-specific visual compositions
+    layout/
+      site-header.tsx
+      header-navigation.tsx     Responsive navigation and keyboard dismissal
+      site-footer.tsx
+      footer/
+        footer-contact.tsx      Contact list and supplied Google Maps embed
+        footer-links.tsx
+      motion-effects.tsx
+      interaction-effects.tsx
+    content/
+      interior-hero.tsx
+      page-contents.tsx
+      document-sections.tsx
+      content-groups.tsx
+      animated-benefit-card.tsx
+      related-services.tsx
+      content.css               Shared interior-page presentation
+    contact/
+      quote-form.tsx
+      quote-modal.tsx
+      contact-section.tsx
+      closing-contact.tsx
+      contact-panel.css
+    gallery/
+      project-gallery.tsx       Gallery, pagination, and image dialog
+    shared/
+      photo.tsx
+      library-icon.tsx
+      two-tone-heading.tsx
+      quote-link.tsx
+      google-review-link.tsx    Google badge shared by reviews and footer
+      trust-strip.tsx
+      customer-reviews.tsx
+      review-slider.tsx
+      sections.css               Shared editorial, form, and section styling
+      icons.css                  Icon and FAQ state styling
+    seo/
+      page-structured-data.tsx
+    errors/
+      retry-panel.tsx
+  config/
+    site.json                   Business details, canonical domain, and social links
+    site.ts                     Derived phone, directions, map, and review URLs
+    navigation.ts               Header and footer navigation
+  content/
+    pages.json                  Migrated page text, SEO fields, sections, and FAQs
+    quote-form.json             Form labels and response messages
+    schema.ts                   Validated ContentPage contract
+    repository.ts               Local / Sanity / Payload content loading
+    catalog.ts                  Vehicle navigation and image references
+  data/                         Image manifest, gallery, and legacy content data
+  cms/                          Remote content adapters and authoring schemas
+  lib/                          Fonts, metadata, JSON-LD, and quote validation
+  styles/
+    globals.css                 Tailwind directives, reset, and base tokens
+    theme.css                   Dark theme
+    refinements.css             Shared editorial spacing and action treatments
+public/
+  fonts/                        Self-hosted font files and licenses
+  images/                       Original assets and optimized variants
+  icons/                        Favicons and app icons
+scripts/                        Asset generation and route verification
+tests/                         Content, CMS, SEO, and quote API regression tests
+docs/                          CMS setup, source inventory, and verification notes
+```
+
+`(home)` and `(content)` are Next.js route groups. Their names organize files without appearing in URLs. The homepage remains `/`; `app/home/page.tsx` would create a separate `/home` URL. Shared document pages remain data driven through `[slug]`, so their original URLs and metadata are preserved.
+
+## Component and styling conventions
+
+- Keep route files focused on content loading, metadata, and composing feature components.
+- Put a component in its feature folder. Put it in `shared/` only when more than one feature uses it.
+- Use the `@/` alias for imports across features; use relative imports within a feature.
+- Prefer Tailwind utilities for new markup. Header, footer, review badge, and trust cards use utilities; header and footer text use the `text-chrome` token (15px), with 12px text for the top information line and footer legal row.
+- Keep custom CSS for the retained art direction and interactions that need descendant selectors or coordinated states. Home and interior CSS are imported by their own route groups.
+- Global CSS belongs in `styles/`. Feature CSS belongs next to its components. Edit the owning rule instead of adding another override file.
+- Declare complete Tailwind class names in source. Do not construct utility names dynamically.
+- Keep browser state and event handlers in client components. Content loading, metadata, and structured data stay server rendered.
+
+Tailwind tokens are defined in `tailwind.config.ts`. The `nav` breakpoint (1001px) controls desktop navigation, and `wide` (1401px) enables the larger header composition.
+
+## Homepage composition
+
+The homepage has one fixed composition with no layout selector. Rounded Studio supplies the hero, Trusted Local Specialists, Workshop Capability, and Ready to Book sections. Our Services uses the Panoramic Classic cards. Shared sections follow in this order:
+
+1. Hero
+2. Trusted Local Specialists
+3. Our Services
+4. Workshop Capability
+5. Common Problems We Fix
+6. Why Choose Us
+7. Insurance Repairs
+8. Customer Reviews
+9. FAQs
+10. Ready to Book
+
+Edit the composition in `src/app/(home)/page.tsx` and individual sections in `src/components/home/`. The classic services grid has its own 12px card and 6px control radius tokens, while the surrounding page retains the rounded presentation.
+
+## Common changes
+
+| Change | Location |
+| --- | --- |
+| Homepage section | `src/components/home/*-section.tsx` |
+| Homepage text and FAQs | `src/content/pages.json` (home entry) |
+| Service or legal page text | `src/content/pages.json` (matching slug) |
+| Logo | `src/data/image-manifest.json` and `public/images/` |
+| Header/footer links | `src/config/navigation.ts` |
+| Phone, email, address, social links | `src/config/site.json` |
+| Footer map and Google review link | `src/config/site.ts` |
+| Gallery photographs | `src/data/site-gallery.json` |
+| Quote labels and messages | `src/content/quote-form.json` |
+
+## Validation
+
+```sh
 npm run typecheck
+npm test
+npm run build
+```
+
+The build runs Next.js compilation, lint, type checks, and page generation. For an explicit repository-wide lint run, use `npm run lint`.
+
+After a successful build, start production locally:
+
+```sh
+npm run start -- --port 3011
+```
+
+In a second terminal, verify the rendered routes. PowerShell:
+
+```powershell
+$env:CHECK_ORIGIN = 'http://localhost:3011'
+npm run check:routes
+```
+
+The route checker verifies content routes, internal links, metadata, canonical URLs, JSON-LD, 404/noindex behavior, and icon assets. Browser checks should also cover the homepage section order, mobile navigation, quote dialog focus and dismissal, gallery controls, and the footer map and review link.
+
+Development output is `.next/`; production output is `.next-production/`. These directories are generated and ignored. They are separate so a production build does not overwrite development artifacts. Build once before running `typecheck` in a fresh checkout if generated route types are needed.
+
+## Quote delivery
+
+Set `QUOTE_WEBHOOK_URL` to a trusted HTTPS endpoint accepting the validated quote JSON. Optionally set `QUOTE_WEBHOOK_SECRET` for a bearer token. The route rejects cross-origin requests, oversized or malformed bodies, and honeypot submissions, and applies a delivery timeout.
+
+With no webhook configured, the form reports that delivery is unavailable and provides phone/email alternatives. Tests mock delivery and do not send customer enquiries. A deployment needs a real delivery configuration and a real end-to-end enquiry check.
+
+## Optional CMS
+
+`CONTENT_SOURCE` defaults to `local`. Set it to `sanity` or `payload` and configure the matching variables from `.env.example` to use a remote content provider. Adapters validate responses against the same page schema. See [CMS integration](docs/cms-integration.md).
+
+Pages are generated at build time. Content or slug changes require a rebuild. Keep CMS credentials in server-side environment variables.
+
+## Production deployment
+
+For a Node.js host:
+
+```sh
+npm ci
 npm run build
 npm run start
 ```
 
-If port 3000 is already in use, run `npm run start -- --port 3010`. Development output goes to `.next`; production output goes to `.next-production`.
+Set environment variables on the host and configure the intended public domain in `src/config/site.json`. Supply `--port` when the host requires a specific port.
 
-## Structure
-
-```text
-src/config/site.json              Single source for brand, URL, contacts and social links
-src/config/site.ts                Derived phone and map links
-src/app/                          Pages, Metadata API, 404/error boundaries, sitemap and robots
-src/components/website/           Server-rendered sections/footer and interactive navigation
-src/components/errors/            Shared retry screen
-src/components/quote-*            Validated enquiry form and accessible dialog
-src/content/pages.json            Content migrated from the supplied Word document
-src/content/schema.ts             Shared Zod content contract
-src/content/repository.ts         Local / Sanity / Payload content loading
-src/content/quote-form.json        Form copy and status messages
-src/content/catalog.ts            Vehicle navigation and image references
-src/cms/                          Sanity/Payload schemas and validated server-side readers
-src/data/                         Original content inventory and optimized image manifest
-public/fonts/                     Self-hosted Outfit and Inter, with licenses
-public/images/                    Original photos, responsive variants and branded OG artwork
-public/icons/                     Complete PNG icon sizes
-scripts/                          Image/brand asset generation and route validation
-tests/                            Content, routes and quote API regression tests
-docs/                             Page inventory, CMS instructions and verification evidence
-```
-
-Pages include Home, 20 vehicle-service pages, Insurance, About, Contact, Gallery, Privacy Policy and Terms. The original service slugs are retained. Unused comparison components, styles and Framer Motion have been removed.
-
-## Design and accessibility
-
-The workshop identity uses charcoal, warm off-white, red and a restrained earth accent. The design combines split photography, an asymmetric service index, full-width workshop imagery, editorial text, numbered repair details and accessible FAQs. CSS variables define the palette; Tailwind tokens reference them. Outfit is the display face and Inter the body face, both self-hosted through next/font/local with display swap.
-
-Scroll reveals, hover details and reading progress respect reduced-motion preferences. Navigation and the quote dialog support keyboard dismissal and focus return. The skip link targets the main landmark. The unnecessary route-wide loading screen was removed after measuring a layout shift; content pages are pre-rendered and navigate without an artificial loading state.
-
-## SEO and assets
-
-All 27 content pages have a unique title/description, canonical, full Open Graph and Twitter tags, and page-appropriate JSON-LD. Metadata API configuration includes the title template and metadataBase. The 1200×630 branded OG image is `public/images/brand/og.jpg`.
-
-The favicon set includes ICO, SVG, 16/32/48/192/512px PNGs, an Apple touch icon, web manifest and theme color. Regenerate with `npm run assets`. Regenerate responsive photographs with `npm run images`. No mandatory visual assets are missing. Higher-resolution photographs of campervans, motorhome interiors, fifth wheels and buses would improve large-display detail.
-
-## Forms and CMS
-
-Copy `.env.example` to `.env.local`. Set `QUOTE_WEBHOOK_URL` to a trusted HTTPS delivery endpoint and optionally `QUOTE_WEBHOOK_SECRET`. The form uses client/server validation, a honeypot, same-origin checks, size limits and a delivery timeout. Without a webhook it shows a clear failure and phone/email alternatives. Tests use mocked delivery; no customer enquiry is transmitted.
-
-Local content works without any account. To use a CMS, register/import the provided schema and content, configure either Sanity or Payload environment variables, and rebuild. See `docs/cms-integration.md`. CMS credentials are server-side. Add/remove page slugs through a new build so unknown routes retain correct HTTP 404 responses.
-
-## Deploy
-
-A Node.js host can run `npm ci`, `npm run build`, then `npm run start` behind its HTTPS proxy. Set the runtime `PORT` using `npm run start -- --port <port>` if required by the host. Configure environment variables in the host's environment, update `src/config/site.json` for the intended domain, and rebuild. Public assets, `.next-production`, package files and installed runtime dependencies must remain available.
-
-A multi-stage Dockerfile is also provided:
+The Dockerfile enables Next.js standalone output and runs as the `node` user:
 
 ```sh
 docker build -t jl-coachbuilders .
 docker run --rm -p 3000:3000 --env-file .env.local jl-coachbuilders
 ```
 
-Docker builds default to local page content and create a standalone Node bundle. For a remote CMS, use a build environment with the selected CMS configuration and private build-time secret support; do not put tokens into Docker build arguments or the image. Docker was unavailable in the development environment, so the container path has not been executed. The ordinary Node production build is verified.
+Docker itself has not been validated in this environment. The standard Node production build is checked locally. Remote CMS builds need the corresponding build-time environment and credentials; do not place secrets in Docker build arguments.
 
-Before going live, configure enquiry delivery, select the intended CMS provider if needed, confirm domain settings, and test a real enquiry on the deployment. No live website has been published or replaced. No git commands were used.
+Asset commands:
 
-## Verification
+```sh
+npm run images
+npm run assets
+```
 
-`npm run check:routes` checks all 27 routes, unique metadata, OG/Twitter tags, canonical URLs, JSON-LD, internal links, 404/noindex and icon assets. It targets localhost:3000; set `CHECK_ORIGIN` for another origin. See `docs/production-readiness.md` for browser checks and measured Lighthouse results.
+These regenerate optimized photography and brand/icon assets respectively. Review regenerated assets before committing them. No hosting service, live domain, or public deployment is changed by the local development commands.

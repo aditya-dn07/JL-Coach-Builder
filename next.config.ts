@@ -1,9 +1,11 @@
 
 import type { NextConfig } from 'next';
+import { PHASE_DEVELOPMENT_SERVER } from 'next/constants';
 
-export default function config(): NextConfig {
+export default function config(phase: string): NextConfig {
   return {
-    // Use Next.js default build directory (.next)
+    // Keep production builds independent of a running development server.
+    distDir: phase === PHASE_DEVELOPMENT_SERVER ? '.next' : '.next-production',
     poweredByHeader: false,
 
     images: {

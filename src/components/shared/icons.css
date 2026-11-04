@@ -1,0 +1,13 @@
+.library-icon { display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; font-size:20px; line-height:1; font-style:normal; }
+.library-icon::before { display:block; line-height:1; vertical-align:0; }
+/* Feature cards have a consistent text hierarchy rather than mixed statistic values. */
+/* Explicit open/closed library icons avoid text-glyph baselines and rotated pluses. */
+html[data-theme] body.ui-polished .faq-questions summary > .faq-toggle-icon { display:grid; place-items:center; width:32px; height:32px; min-width:32px; padding:0; margin:0; flex-shrink:0; border:1px solid #4b5b6d; border-radius:50%; background:#2b3745 !important; color:#f2f6fb !important; transform:none !important; transition:background .2s,border-color .2s; }
+html[data-theme] body.ui-polished .faq-toggle-icon .library-icon { grid-area:1/1; font-size:15px; line-height:1; }
+html[data-theme] body.ui-polished .faq-toggle-icon .faq-close { display:none; }
+html[data-theme] body.ui-polished .faq-questions details[open] .faq-toggle-icon .faq-plus { display:none; }
+html[data-theme] body.ui-polished .faq-questions details[open] .faq-toggle-icon .faq-close { display:inline-flex; }
+html[data-theme] body.ui-polished .faq-questions details[open] summary > .faq-toggle-icon { border-color:#ed737e; background:#51252f !important; color:#ffb5bc !important; }
+html[data-theme] body.ui-polished .quote-modal-close { display:inline-grid; place-items:center; width:42px; height:42px; padding:0; line-height:1; }
+html[data-theme] body.ui-polished .quote-modal-close { background:#263342; border:1px solid #506074; border-radius:8px; color:#fff; }
+.quote-modal-close .library-icon { font-size:18px; }

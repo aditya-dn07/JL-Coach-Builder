@@ -1,0 +1,74 @@
+/* Theme overrides are intentional: route styles also define literal light colors. */
+html[data-theme='dark'] { color-scheme: dark; background: #101317; }
+html[data-theme='dark'] body {
+  --paper: #101317 !important;
+  --ink: #f3f5f7 !important;
+  --muted: #b1bac5 !important;
+  --line: #323b46 !important;
+  --dark: #171d24 !important;
+  --red: #fa0000 !important;
+  background: #101317 !important;
+  color: #f3f5f7;
+}
+html[data-theme='dark'] :is( .workshop-feature, .content-section, .document-sections .content-section) {
+  background: #101317 !important;
+  color: var(--ink) !important;
+}
+html[data-theme='dark'] :is( .faq-block, .quote-card, .quote-modal, .tinted, .home-content-section-3, .home-content-section-5) {
+  background: #171d24 !important;
+  color: var(--ink) !important;
+}
+html[data-theme='dark'] :is( .vehicle-card, .detail-grid article, .faq-questions details, .reviews-grid blockquote, .related-services > div > a, .section-prose li, .capability-photo > span) {
+  background: #1e2630 !important;
+  color: var(--ink) !important;
+  border-color: #36414e !important;
+}
+html[data-theme='dark'] :is(h1, h2, h3, h4, h5, h6, .vehicle-card-copy h3, .feature-copy li, .form-grid label, .faq-questions summary) { color: #f3f5f7 !important; }
+html[data-theme='dark'] :is( .vehicle-card-copy > p, .section-heading > p:last-child, .feature-copy > p:not(.kicker), .section-prose p, .detail-grid p, .intro-prose p, .faq-questions details > p, .faq-layout > div > p:last-child, .review-stars > span, .reviews-grid footer > div > span, .capability-note) { color: #b1bac5 !important; }
+html[data-theme='dark'] .section-heading h2 > span,
+html[data-theme='dark'] .heading-accent { color: #fa0000 !important; }
+html[data-theme='dark'] :is(.kicker, .detail-index, .quote-mark, .review-google, .review-stars, .service-links a:hover, .related-services > div > a:hover) { color: #fa0000 !important; }
+html[data-theme='dark'] :is(.service-links a, .content-section, .feature-copy li, .section-prose li, .contact-methods > a) { border-color: #36414e !important; }
+html[data-theme='dark'] :is(.button.primary, .round-cta) { background: #fa0000 !important; color: #fff !important; }
+html[data-theme='dark'] :is(.button.primary, .round-cta):hover { background: #d40000 !important; }
+html[data-theme='dark'] :is( .review-avatar, .faq-questions summary > span) { background: #2b3643 !important; color: #f3f5f7 !important; border-color: #536171 !important; }
+html[data-theme='dark'] :is(.capability-icon, .feature-copy li svg) { background: #42252d !important; color: #fa0000 !important; }
+html[data-theme='dark'] .feature-image::before { border-color: #45505f !important; }
+html[data-theme='dark'] :is(.closing-cta, .workshop-stamp, .reviews-grid blockquote:first-child) { background: #080c11 !important; color: #f3f5f7 !important; }
+html[data-theme='dark'] .closing-cta { border-top-color: #fa0000 !important; }
+html[data-theme='dark'] :is(input, textarea, select) { background: #10161e !important; color: #f3f5f7 !important; border-color: #526071 !important; }
+html[data-theme='dark'] :is(input, textarea)::placeholder { color: #929eac; }
+html[data-theme='dark'] :is(a, button, summary, input, textarea, select):focus-visible { outline: 2px solid #ff8991; outline-offset: 5px; }
+html[data-theme='dark'] ::selection { background: #80333e; color: #fff; }
+
+/* Consistent breathing room and readable paragraph measures. */
+html[data-theme='dark'] body .home-content-section-3 > .container { grid-template-rows: auto; align-items: start; }
+html[data-theme='dark'] body .home-content-section-3 .section-prose { grid-row: 1; }
+html[data-theme='dark'] body .home-content-section-3 .content-section-header .section-link { margin-top: 24px; }
+html[data-theme='dark'] body .home-content-section-4 > .container { grid-template-rows: auto auto 1fr; }
+html[data-theme='dark'] body .home-content-section-4 .section-link { align-self: start; }
+html[data-theme='dark'] body .vehicle-card-copy .service-links { margin-top: 0; }
+html[data-theme='dark'] body .section-link { margin-top: 24px; }
+html[data-theme='dark'] body .feature-copy ul { margin-block: 20px 24px; }
+html[data-theme='dark'] body .workshop-feature { margin-bottom: 64px; }
+html[data-theme='dark'] body .section-pad { padding-block: clamp(48px, 5vw, 72px); }
+@media (max-width: 800px) {
+  html[data-theme='dark'] body .home-content-section-3 .section-prose { grid-row: auto; }
+}
+body:is(:has(.home-hero), :has(.interior-hero)) .section-pad { padding-block: clamp(56px, 6vw, 88px); }
+body:is(:has(.home-hero), :has(.interior-hero)) .content-section-header { gap: 24px 48px; margin-bottom: 28px; }
+body:is(:has(.home-hero), :has(.interior-hero)) .section-prose p { margin-bottom: 20px; line-height: 1.8; }
+body:has(.home-hero) .home-content-section-3 .section-link { align-self: start; margin-top: 24px; }
+body:has(.home-hero) .home-content-section-3 > .container { grid-template-rows: auto 1fr; }
+body:has(.home-hero) :is(.home-content-section-6, .home-content-section-9) > .container {
+  display: grid; grid-template-columns: .9fr 1.1fr; gap: 28px 64px; align-items: start;
+}
+body:has(.home-hero) :is(.home-content-section-6, .home-content-section-9) .content-section-header { display: block; margin: 0; }
+body:has(.home-hero) :is(.home-content-section-6, .home-content-section-9) .section-prose { width: 100%; }
+body:has(.home-hero) :is(.home-content-section-6, .home-content-section-9) .section-link { grid-column: 2; justify-self: start; margin-top: 0; }
+@media (max-width: 800px) {
+  body:has(.home-hero) :is(.home-content-section-6, .home-content-section-9) > .container { grid-template-columns: 1fr; gap: 22px; }
+  body:has(.home-hero) :is(.home-content-section-6, .home-content-section-9) .section-link { grid-column: auto; }
+  body:is(:has(.home-hero), :has(.interior-hero)) .section-heading { margin-bottom: 28px; }
+  body:has(.home-hero) .home-content-section-3 .section-link { margin-top: 0; }
+}

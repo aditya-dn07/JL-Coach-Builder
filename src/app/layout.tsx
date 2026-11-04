@@ -1,17 +1,19 @@
 import type { Metadata, Viewport } from 'next';
 import { headingFont as display, bodyFont as body } from '@/lib/brand-fonts';
 import { siteConfig } from '@/config/site';
-import { Header, Footer } from '@/components/website/chrome';
-import { MotionEffects } from '@/components/website/motion-effects';
-import { InteractionEffects } from '@/components/website/interaction-effects';
+import { Header } from '@/components/layout/site-header';
+import { Footer } from '@/components/layout/site-footer';
+import { ClosingContact } from '@/components/contact/closing-contact';
+import { MotionEffects } from '@/components/layout/motion-effects';
+import { InteractionEffects } from '@/components/layout/interaction-effects';
 import { pageMetadata } from '@/lib/metadata';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import './website.css';
-import './dark-theme.css';
-import './ui-spacing.css';
-import './brand-cleanup.css';
-import './contact-panel.css';
-import './trust-and-icons.css';
+import '@/styles/globals.css';
+import '@/components/shared/sections.css';
+import '@/styles/theme.css';
+import '@/styles/refinements.css';
+import '@/components/contact/contact-panel.css';
+import '@/components/shared/icons.css';
 export const metadata: Metadata = {
   ...pageMetadata({
     title: 'Page not found',
@@ -52,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="content" tabIndex={-1}>
           {children}
         </main>
+        <ClosingContact />
         <Footer />
       </body>
     </html>

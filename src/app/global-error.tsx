@@ -2,9 +2,10 @@
 import localFont from 'next/font/local';
 import { RetryPanel } from '@/components/errors/retry-panel';
 import { siteConfig } from '@/config/site';
-import './website.css';
-import './dark-theme.css';
-import './brand-cleanup.css';
+import '@/styles/globals.css';
+import '@/components/shared/sections.css';
+import '@/styles/theme.css';
+import '@/styles/refinements.css';
 const display = localFont({
   src: '../../public/fonts/outfit-medium.ttf',
   weight: '500',
