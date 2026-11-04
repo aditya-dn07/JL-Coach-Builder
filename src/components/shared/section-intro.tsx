@@ -11,7 +11,7 @@ export function SectionIntro({ eyebrow, title, description, action }: Props) {
         <h2 className="!m-0 text-balance !text-[clamp(32px,3.4vw,48px)] !leading-[1.12] !tracking-[-.035em]"><TwoToneHeading text={title} /></h2>
         <p data-intro-description className="max-w-[78ch] text-[15px] leading-[1.85] text-[#b9c6d5]">{description}</p>
       </div>
-      <div className="flex shrink-0 justify-end">{action}</div>
+      <div className="flex shrink-0 justify-start min-[801px]:justify-end">{action}</div>
     </div>
   );
 }

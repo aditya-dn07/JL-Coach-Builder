@@ -40,9 +40,10 @@ export function DocumentSections({ page, sectionIds }: { page: ContentPage; sect
               <div>
                 <p className="kicker">{page.kind === 'home' ? 'FAQs' : 'A little clarity'}</p>
                 <h2><TwoToneHeading text={s.title} /></h2>
-                <p>
+                {page.kind === 'home' && <p className="col-start-1 row-start-3 max-w-[78ch] text-[15px] leading-[1.85] text-[#b9c6d5]">Find answers to common questions about our repairs, servicing, turnaround times and the vehicles we work on before booking with our team.</p>}
+                <p className={page.kind === 'home' ? 'self-end min-[801px]:!row-start-3' : undefined}>
                   {page.kind === 'home' ? '' : 'Have a different question?'}
-                  <br />
+                  {page.kind !== 'home' && <br />}
                   <a className="underlink" href={page.kind === 'home' ? '#quote' : phoneHref}>
                     <LibraryIcon name={page.kind === 'home' ? 'chat-square-text' : 'telephone'} />{page.kind === 'home' ? 'Get a free quote' : 'Talk to our team'}
                   </a>
