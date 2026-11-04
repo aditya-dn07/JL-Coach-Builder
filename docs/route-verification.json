@@ -1,5 +1,5 @@
 {
-  "origin": "http://localhost:3011",
+  "origin": "http://localhost:3013",
   "pages": [
     {
       "path": "/",
@@ -227,6 +227,21 @@
       "indexable": true
     },
     {
+      "path": "/faqs",
+      "status": 200,
+      "h1": 1,
+      "title": "FAQs | JL Coachbuilders",
+      "description": "Find answers about repairs, servicing, insurance, turnaround times and the caravans, motorhomes and other vehicles we work on.",
+      "canonical": "https://jlcoachbuilders.co.nz/faqs/",
+      "canonicalMatches": true,
+      "missingMeta": [],
+      "missingSchema": [],
+      "brokenInternal": [],
+      "brandTitle": true,
+      "twitterCard": "summary_large_image",
+      "indexable": true
+    },
+    {
       "path": "/fifth-wheel-panel-and-paint-services-in-christchurch",
       "status": 200,
       "h1": 1,
@@ -383,6 +398,21 @@
       "title": "Privacy Policy | JL Coachbuilders",
       "description": "JL Coachbuilders Ltd respects your privacy and is committed to handling your personal information responsibly. This Privacy Policy explains how we collect, use,",
       "canonical": "https://jlcoachbuilders.co.nz/privacy-policy/",
+      "canonicalMatches": true,
+      "missingMeta": [],
+      "missingSchema": [],
+      "brokenInternal": [],
+      "brandTitle": true,
+      "twitterCard": "summary_large_image",
+      "indexable": true
+    },
+    {
+      "path": "/reviews",
+      "status": 200,
+      "h1": 1,
+      "title": "Customer Reviews | JL Coachbuilders",
+      "description": "Read customer experiences with JL Coachbuilders in Christchurch. Browse a selection of reviews here and visit Google for the complete collection.",
+      "canonical": "https://jlcoachbuilders.co.nz/reviews/",
       "canonicalMatches": true,
       "missingMeta": [],
       "missingSchema": [],

@@ -5,4 +5,4 @@ export const mainNavigation = [
   { label: 'Contact', href: '/contact/' },
 ];
 
-export const footerNavigation = [{ label: 'Home', href: '/' }, ...mainNavigation];
+export const footerNavigation = [{ label: 'Home', href: '/' }, ...mainNavigation, { label: 'Reviews', href: '/reviews/' }, { label: 'FAQs', href: '/faqs/' }];

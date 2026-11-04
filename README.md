@@ -38,6 +38,9 @@ src/
       page.tsx                  Homepage composition and metadata; URL: /
     (content)/
       [slug]/page.tsx            Services, about, contact, gallery, and legal routes
+    (resources)/
+      reviews/page.tsx           Customer reviews; URL: /reviews/
+      faqs/page.tsx              All existing FAQ topics; URL: /faqs/
     api/quote/route.ts          Server-side quote validation and delivery
     layout.tsx                  Global fonts, styles, header, footer, and effects
     error.tsx                   Route error boundary
@@ -165,6 +168,8 @@ At widths up to 800px, the copy overlays the same original image. The mobile ima
 The hero and scrolling services strip use Tailwind for layout, colors, spacing, responsive behavior, and hover states. Their animation definitions live in `tailwind.config.ts`; the previous hero and marquee CSS rules have been removed.
 
 ## Homepage composition
+
+The homepage reviews CTA opens `/reviews/`, which presents the existing customer testimonials and a link to the complete Google collection. The Google rating badge is commented out only in the homepage reviews introduction; it remains available in the footer, trust section, and reviews page. The homepage FAQ CTA opens `/faqs/`, which groups existing questions by topic and removes duplicate questions. All FAQ accordions on that page start closed. Both resource routes are included in the sitemap and footer links.
 
 The homepage has one fixed composition with no layout selector. Rounded Studio supplies the hero, Trusted Local Specialists, Workshop Capability, and Ready to Book sections. Our Services uses the Panoramic Classic cards. Shared sections follow in this order:
 

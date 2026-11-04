@@ -44,10 +44,6 @@ export function HomeBanner({ page }: { page: ContentPage }) {
         <strong className="mb-[23px] mt-3.5 block text-[22px] font-medium leading-[1.25] min-[801px]:text-[25px]">Experience That Shows<br />in the Finished Job</strong>
         <a data-hero-action href="#quote" className={`${primaryActionClass} w-full !min-h-11 !px-[18px] !py-3`}><LibraryIcon name="chat-square-text" />Get a free quote</a>
       </div>
-      <div className="col-span-full flex flex-wrap items-center justify-between gap-3.5 self-end bg-[#0b1420b8] px-6 py-[22px] text-[10px] text-[#d6dfe8] min-[801px]:px-[max(48px,calc((100vw-1280px)/2))] min-[801px]:py-[23px] min-[801px]:text-[11px]">
-        <span>Caravans · Motorhomes · Campervans · Fifth wheels · Buses</span>
-        <a data-hero-action href={phoneHref} className={`${primaryActionClass} !min-h-11 !px-[18px] !py-3`}><LibraryIcon name="telephone" />Talk to the team {siteConfig.business.phone}</a>
-      </div>
     </section>
   );
 }

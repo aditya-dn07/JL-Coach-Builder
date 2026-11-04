@@ -6,6 +6,8 @@ const paths = [
   '/',
   ...pages.filter((page) => page.slug).map((page) => `/${page.slug}`),
   '/gallery',
+  '/reviews',
+  '/faqs',
 ];
 const results = [];
 const decode = (s) =>
