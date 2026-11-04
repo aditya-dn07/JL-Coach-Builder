@@ -12,9 +12,10 @@ type Props = {
   statementCards?: boolean;
   summaryInHeader?: boolean;
   beforeGrid?: ReactNode;
+  showNumbers?: boolean;
 };
 
-export function ContentGroups({ blocks, illustrated = false, serviceLinks = [], statementCards = false, summaryInHeader = false, beforeGrid }: Props) {
+export function ContentGroups({ blocks, illustrated = false, serviceLinks = [], statementCards = false, summaryInHeader = false, beforeGrid, showNumbers = true }: Props) {
   const icons = [ShieldCheck, Truck, MapPin, Wrench];
   const normalizeService = (text: string) => text.toLowerCase().replace(/&/g, 'and').replace(/alterations?/g, 'alteration').replace(/fifth wheels?/g, 'fifthwheel').replace(/services?|in christchurch/g, '').replace(/[^a-z]/g, '');
   const groups: { title: string; text: string[] }[] = [];
@@ -88,7 +89,7 @@ export function ContentGroups({ blocks, illustrated = false, serviceLinks = [], 
             const cardContent = <>
               {illustrated && <Image className="benefit-background" src={`/images/why-choose/${backgrounds[i]}.webp`} alt="" fill sizes="(max-width: 560px) 100vw, (max-width: 1000px) 50vw, 30vw" />}
               {illustrated && <span className="capability-icon"><Icon size={25} aria-hidden="true" /></span>}
-              <span className="detail-index">{String(i + 1).padStart(2, '0')}</span>
+              {showNumbers && <span className="detail-index">{String(i + 1).padStart(2, '0')}</span>}
               <h3>{g.title}</h3>
               {g.text.map((p, j) => (
                 <p key={j}>{p}</p>

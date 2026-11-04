@@ -94,6 +94,7 @@ export function DocumentSections({ page, sectionIds }: { page: ContentPage; sect
                 serviceLinks={page.kind === 'service' ? vehicles.find((vehicle) => vehicle.image.id === page.image)?.links : undefined}
                 statementCards={page.kind === 'about' && s.id === 'section-2'}
                 summaryInHeader={page.kind === 'home' && s.id === 'section-5'}
+                showNumbers={!(page.kind === 'home' && s.id === 'section-5')}
                 beforeGrid={page.kind === 'home' && s.id === 'section-5'
                   ? <SectionIntro eyebrow="Why Choose Us" title={s.title} description={s.blocks.at(-1)!.text} action={<QuoteLink />} />
                   : undefined}

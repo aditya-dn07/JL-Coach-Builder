@@ -793,7 +793,7 @@ body:has(.home-page) > .closing-cta { display: none; }
 .experience-intro h2 { font-size: clamp(32px,3.4vw,50px); line-height: 1.12; max-width: 19ch; margin: 18px 0; }
 .experience-intro > p:not(.kicker) { font-size: 14px; line-height: 1.8; color: #b9c6d5; max-width: 57ch; margin-bottom: 24px; }
 .experience-proof { padding: 32px; border: 1px solid #364453; border-radius: 20px; background: linear-gradient(145deg,#202d3a,#151e28); }
-.experience-metrics { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); align-items: center; gap: 16px; padding-bottom: 28px; border-bottom: 1px solid #3b4754; }
+.experience-metrics { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr) auto; align-items: center; gap: 16px; padding-bottom: 28px; border-bottom: 1px solid #3b4754; }
 .experience-metric { display: flex; flex-direction: column; gap: 15px; min-width: 0; }
 .experience-metric strong { font-size: clamp(36px,4vw,58px); line-height: 1; letter-spacing: -.05em; color: #fff; font-weight: 600; }
 .experience-metric:first-child strong { color: #ff424c; }

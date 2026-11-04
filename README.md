@@ -87,7 +87,7 @@ src/
       library-icon.tsx
       two-tone-heading.tsx
       quote-link.tsx
-      google-review-link.tsx    Google badge shared by reviews and footer
+      google-review-link.tsx    Google badge shared by trust, reviews, and footer
       trust-strip.tsx
       customer-reviews.tsx
       review-slider.tsx
