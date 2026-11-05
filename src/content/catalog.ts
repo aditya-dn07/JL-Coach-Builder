@@ -1,4 +1,5 @@
-import { site } from '@/data/site.data';
+import { contentRepository } from '@/content/repository';
+const site = contentRepository.getLegacySite();
 export const localHref = (href: string) =>
   href.startsWith(site.url) ? new URL(href).pathname : href;
 export const vehicles = site.nav.map((group, i) => ({

@@ -455,6 +455,10 @@
   top: 15px;
   background: transparent;
   border: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
   padding: 5px;
 }
 .legal-content {

@@ -1,6 +1,6 @@
 import { AllFaqsPage } from '@/components/faq/faq-page';
-import { faqsPage } from '@/content/resource-pages';
+import { contentRepository } from '@/content/repository';
 import { pageMetadata } from '@/lib/metadata';
 
-export const metadata = pageMetadata({ ...faqsPage.seo, path: '/faqs/' });
+export async function generateMetadata() { const page = await contentRepository.getPage('faqs'); return pageMetadata({ ...page!.seo, path: '/faqs/' }); }
 export default AllFaqsPage;

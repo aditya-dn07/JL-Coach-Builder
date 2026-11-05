@@ -1,3 +1,5 @@
+import { InteriorSectionFrame, InteriorSectionHeader } from '@/components/shared/section-intro';
+import type { ReactNode } from 'react';
 import Link from 'next/link';
 import type { ContentPage } from '@/content/schema';
 import { vehicles } from '@/content/catalog';
@@ -5,15 +7,16 @@ import { Photo } from '@/components/shared/photo';
 import { phoneHref, siteConfig } from '@/config/site';
 import { LibraryIcon } from '@/components/shared/library-icon';
 import { TwoToneHeading } from '@/components/shared/two-tone-heading';
-import { getHomeSection } from './home-content';
+import { getHomeSection, getHomeUi } from './home-content';
 
-type Props = { page: ContentPage };
+type Props = { page: ContentPage; interior?: { section: ContentPage['sections'][number]; intro: ReactNode; children: ReactNode } };
 
-export function HomeServices({ page }: Props) {
+export function HomeServices({ page, interior }: Props) {
+  if (interior) return <InteriorSectionFrame id={interior.section.id}><InteriorSectionHeader>{interior.intro}</InteriorSectionHeader>{interior.children}</InteriorSectionFrame>;
   const content = getHomeSection(page, 2);
   return <section id="services" className="vehicle-section section-pad container [--home-radius:12px] [--home-control-radius:6px]">
     <div className="section-heading" data-reveal>
-      <p className="kicker">Our Services</p>
+      <p className="kicker">{content.eyebrow}</p>
       <h2><TwoToneHeading text={content.title} /></h2>
       <p>{content.blocks[0].text}</p>
     </div>
@@ -23,15 +26,15 @@ export function HomeServices({ page }: Props) {
         <div className="vehicle-card-copy">
           <h3><Link href={vehicle.links[0].href}>{content.blocks[1 + i * 2].text}</Link></h3>
           <p>{content.blocks[2 + i * 2].text}</p>
-          <div className="service-links">{vehicle.links.map((link, index) => <Link href={link.href} key={link.href} className="!justify-start !text-left"><LibraryIcon name={(["grid", "tools", "paint-bucket", "sliders"] as const)[index]} />{['All services', 'Repairs', 'Panel & paint', 'Upgrades'][index]}</Link>)}</div>
+          <div className="service-links">{vehicle.links.map((link, index) => <Link href={link.href} key={link.href} className="!justify-start !text-left"><LibraryIcon name={(["grid", "tools", "paint-bucket", "sliders"] as const)[index]} />{[getHomeUi(page, 'serviceAll'), getHomeUi(page, 'serviceRepairs'), getHomeUi(page, 'servicePaint'), getHomeUi(page, 'serviceUpgrades')][index]}</Link>)}</div>
         </div>
       </article>)}
       <article className="service-help-card" data-reveal>
         <span className="capability-icon"><LibraryIcon name="chat-square-text" /></span>
-        <p className="kicker">Insurance Repairs</p>
+        <p className="kicker">{getHomeUi(page, 'insurance')}</p>
         <h3><TwoToneHeading text={getHomeSection(page, 6).title} /></h3>
         <p>{getHomeSection(page, 6).blocks[0].text}</p>
-        <a className="button primary" href={phoneHref}><LibraryIcon name="telephone" />Call {siteConfig.business.phone}</a>
+        <a className="button primary" href={phoneHref}><LibraryIcon name="telephone" />{getHomeUi(page, 'callPrefix')}{siteConfig.business.phone}</a>
       </article>
     </div>
   </section>;

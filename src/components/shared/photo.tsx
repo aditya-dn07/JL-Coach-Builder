@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import type { ImageRef } from '@/data/site.schema';
-import manifest from '@/data/image-manifest.json';
+import { contentRepository } from '@/content/repository';
 
 export function Photo({
   image,
@@ -13,8 +13,8 @@ export function Photo({
   sizes?: string;
   className?: string;
 }) {
-  const asset = manifest[image.id as keyof typeof manifest];
-  const src = asset.variants.at(-1)?.src ?? asset.src;
+  const asset = contentRepository.getImageManifest()[image.id];
+  const src = asset.variants?.at(-1)?.src ?? asset.src;
   const position = `${image.focalPoint.x * 100}% ${image.focalPoint.y * 100}%`;
   // The generated tiny preview provides a soft placeholder without runtime SVG filters.
   return (

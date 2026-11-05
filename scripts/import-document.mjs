@@ -60,14 +60,17 @@ const pages = starts.map((start, index) => {
       .filter((r) => !r.style && r.text.length > 90 && !/^(CTA|Secondary CTA)/.test(r.text))
       .map((r) => r.text);
   let sections = [];
-  let section = { id: 'introduction', title: '', blocks: [] };
+  let section = { id: 'introduction', title: '', eyebrow: '', blocks: [] };
   for (const [i, r] of chunk.entries()) {
     if (i < (sectionStart < 0 ? chunk.length : sectionStart)) continue;
     if (r.style === 'Heading2') {
       if (section.title || section.blocks.length) sections.push(section);
-      section = { id: `section-${sections.length + 1}`, title: r.text, blocks: [] };
+      const previous = chunk[i - 1];
+      const eyebrow = previous && !previous.style && previous.text.length < 65 && !/^(CTA:|Secondary CTA:)/.test(previous.text) ? previous.text : '';
+      section = { id: `section-${sections.length + 1}`, title: r.text, eyebrow, blocks: [] };
       continue;
     }
+    if (r.text.startsWith('CTA:') && section.title) section.cta = r.text.slice(4).trim();
     if (
       /^((Secondary )?CTA:|Meta Title:|Meta Description:|https?:|Existing Form|GMB Map)/.test(
         r.text
@@ -110,7 +113,7 @@ const pages = starts.map((start, index) => {
     slug,
     label,
     title: heroRow.text,
-    eyebrow: index === 0 ? chunk[0].text : (chunk[heroPosition - 1]?.text ?? label),
+    eyebrow: index === 0 ? chunk[0].text : (chunk[heroPosition - 1]?.style ? '' : chunk[heroPosition - 1]?.text ?? ''),
     description: intro[0] ?? label,
     intro,
     kind:

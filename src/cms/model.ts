@@ -8,7 +8,8 @@ export const pageFields = [
   ['description', 'Hero description'],
   ['updatedAt', 'Policy update date'],
 ] as const;
-export const pageKinds = ['home', 'service', 'about', 'contact', 'legal', 'gallery'] as const;
+export const pageKinds = ['home', 'service', 'about', 'contact', 'legal', 'gallery', 'reviews', 'faqs'] as const;
+export const imageFields = ['src', 'alt', 'width', 'height'] as const;
 export const imageIds = [
   'workshop',
   'caravan',

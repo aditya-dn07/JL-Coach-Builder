@@ -16,5 +16,12 @@
       "unconfigured": "We couldn’t send your enquiry right now. Please call or email our workshop."
     }
   },
-  "title": "Get A Free Quote"
+  "title": "Get A Free Quote",
+  "ui": {
+    "privacy": "We use your details to respond to your enquiry.",
+    "privacyLink": "Privacy Policy",
+    "emailWorkshop": "Email the workshop",
+    "modalTitle": "Request a free quote",
+    "modalClose": "Close quote form"
+  }
 }

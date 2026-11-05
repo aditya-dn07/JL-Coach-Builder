@@ -1,8 +1,12 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { allPages } from '../src/content/repository';
-import { PageSchema } from '../src/content/schema';
+import { allPages, contentRepository, galleryImages, imageManifest } from '../src/content/repository';
+import { ImageSchema, PageSchema } from '../src/content/schema';
+import { getCustomerReviews } from '../src/content/feedback';
+import { normalizeCmsSettings, readCmsSettings } from '../src/cms/adapters';
+import { sanitySchemaTypes } from '../src/cms/sanity/schema';
+import { payloadSiteSettingsGlobal, payloadQuoteFormGlobal } from '../src/cms/payload/collection';
 import { site } from '../src/data/site.data';
 
 test('all document pages and original service routes resolve locally', () => {
@@ -25,6 +29,113 @@ test('all document pages and original service routes resolve locally', () => {
     'gallery',
   ])
     assert.ok(allPages.some((p) => p.slug === slug));
+});
+test('homepage data preserves displayed labels and image URLs', () => {
+  const home = allPages.find(page => page.kind === 'home')!;
+  assert.deepEqual([home.heroImage?.src, home.heroImage?.alt, home.closingImage?.src, home.closingImage?.alt], [
+    '/images/home-workshop-banner.png',
+    'JL Coachbuilders workshop buildings and caravan yard in Christchurch',
+    '/images/cta-caravan-lakeside.webp',
+    '',
+  ]);
+  assert.deepEqual([home.homeUi?.quote, home.homeUi?.marquee, home.homeUi?.reviewIntro, home.homeUi?.ready], [
+    'Get a free quote',
+    'Repairs · Upgrades · Servicing · Panel & Paint · Self Containment',
+    'Our customers trust JL Coachbuilders for quality workmanship, honest advice and reliable service. Read what they say about their experience with our team.',
+    'Ready to Book?',
+  ]);
+});
+test('homepage markup retains image rendering and source-backed text bindings', () => {
+  const hero = readFileSync('src/components/home/banner.tsx', 'utf8');
+  const closing = readFileSync('src/components/home/closing-section.tsx', 'utf8');
+  assert.match(hero, /src=\{page\.heroImage!\.src\}/);
+  assert.match(hero, /alt=\{page\.heroImage!\.alt\}/);
+  assert.match(hero, /\bunoptimized\b/);
+  assert.match(hero, /\bpriority\b/);
+  assert.match(hero, /sizes="100vw"/);
+  assert.match(hero, /object-cover object-right/);
+  assert.match(hero, /getHomeUi\(page, 'quote'\)/);
+  assert.match(closing, /src=\{page\.closingImage!\.src\}/);
+  assert.match(closing, /getHomeUi\(page, 'ready'\)/);
+});
+test('rendered homepage matches the post-Phase-1 snapshot, not the original', () => {
+  const snapshot = JSON.parse(readFileSync('tests/homepage-post-phase1.snapshot.json', 'utf8')) as { label: string; html: string };
+  assert.equal(snapshot.label, 'Snapshot of the post-Phase-1 state, not the original');
+  const output = readFileSync('.next-production/server/app/index.html', 'utf8');
+  const start = output.indexOf('<body');
+  const home = output.indexOf('data-home-page', start);
+  const end = output.indexOf('<script', home);
+  assert.ok(start >= 0 && home > start && end > home, 'Build the production homepage before running this snapshot test.');
+  const html = output.slice(start, end)
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '')
+    .replace(/©\s*20\d{2}/g, '© {YEAR}');
+  assert.equal(html, snapshot.html);
+});
+test('homepage testimonials pair each DOCX quote with its author', () => {
+  const reviews = getCustomerReviews(allPages.find(page => page.kind === 'home')!);
+  assert.equal(reviews.length, 4);
+  assert.deepEqual(reviews.map(review => review.author), [
+    'Matt Fitzsimmons, Christchurch',
+    'Cheryl Glen, Christchurch',
+    'Richard Burridge, Christchurch',
+    'Ange Abel, Christchurch',
+  ]);
+  assert.match(reviews[0].text, /Great place and staff/);
+  assert.match(reviews[1].text, /leaking window/);
+  assert.match(reviews[2].text, /quotes for insurance/);
+  assert.match(reviews[3].text, /leaky caravan/);
+});
+test('repository validates gallery, manifest and shared image records', () => {
+  assert.equal(contentRepository.getGalleryImages(), galleryImages);
+  assert.equal(contentRepository.getImageManifest(), imageManifest);
+  assert.equal(galleryImages.length, 126);
+  for (const image of [...galleryImages, ...Object.values(imageManifest)]) assert.ok(ImageSchema.safeParse(image).success);
+  assert.equal(ImageSchema.safeParse({ src: '/bad.webp', alt: 'Bad', width: 0, height: 100 }).success, false);
+});
+test('CMS settings normalize and reject malformed navigation and images', () => {
+  const site = JSON.parse(readFileSync('src/config/site.json', 'utf8'));
+  const quote = JSON.parse(readFileSync('src/content/quote-form.json', 'utf8'));
+  assert.deepEqual(normalizeCmsSettings(site, quote).site.navigation, site.navigation);
+  const sanityLike = { ...site, ui: Object.entries(site.ui).map(([key, value]) => ({ key, value })), images: Object.entries(site.images).map(([key, image]) => ({ key, ...(image as object) })) };
+  assert.deepEqual(normalizeCmsSettings(sanityLike, quote).site.ui, site.ui);
+  assert.throws(() => normalizeCmsSettings({ ...site, navigation: { ...site.navigation, main: [{ label: '', href: '/' }] } }, quote));
+  assert.throws(() => normalizeCmsSettings({ ...site, images: { hero: { src: '/a.webp', alt: 'A', width: 0, height: 100 } } }, quote));
+});
+test('Sanity and Payload settings adapters validate mocked responses', async () => {
+  const site = JSON.parse(readFileSync('src/config/site.json', 'utf8'));
+  const quote = JSON.parse(readFileSync('src/content/quote-form.json', 'utf8'));
+  const originalFetch = globalThis.fetch;
+  const oldProject = process.env.SANITY_PROJECT_ID;
+  const oldPayload = process.env.PAYLOAD_API_URL;
+  const oldSource = process.env.CONTENT_SOURCE;
+  try {
+    process.env.SANITY_PROJECT_ID = 'mock-project';
+    globalThis.fetch = async () => Response.json({ result: { site, quoteForm: quote } });
+    assert.deepEqual((await readCmsSettings('sanity')).site.navigation, site.navigation);
+    process.env.CONTENT_SOURCE = 'sanity';
+    assert.deepEqual((await contentRepository.getCmsSettings()).site.ui, site.ui);
+    process.env.PAYLOAD_API_URL = 'https://cms.example.test/api';
+    const urls: string[] = [];
+    globalThis.fetch = async (input) => { const url = String(input); urls.push(url); return Response.json(url.includes('site-settings') ? site : quote); };
+    assert.deepEqual((await readCmsSettings('payload')).quoteForm.form.labels, quote.form.labels);
+    process.env.CONTENT_SOURCE = 'payload';
+    assert.deepEqual((await contentRepository.getCmsSettings()).quoteForm.ui, quote.ui);
+    assert.ok(urls.some(url => url.endsWith('/globals/site-settings')));
+    assert.ok(urls.some(url => url.endsWith('/globals/quote-form-content')));
+  } finally {
+    globalThis.fetch = originalFetch;
+    if (oldProject === undefined) delete process.env.SANITY_PROJECT_ID; else process.env.SANITY_PROJECT_ID = oldProject;
+    if (oldPayload === undefined) delete process.env.PAYLOAD_API_URL; else process.env.PAYLOAD_API_URL = oldPayload;
+    if (oldSource === undefined) delete process.env.CONTENT_SOURCE; else process.env.CONTENT_SOURCE = oldSource;
+  }
+});
+test('CMS authoring exposes settings, navigation and functional labels', () => {
+  assert.ok(sanitySchemaTypes.some(type => type.name === 'siteSettings'));
+  assert.ok(sanitySchemaTypes.some(type => type.name === 'quoteFormContent'));
+  assert.deepEqual([payloadSiteSettingsGlobal.slug, payloadQuoteFormGlobal.slug], ['site-settings', 'quote-form-content']);
+  for (const name of ['url', 'seo', 'business', 'ui', 'images', 'navigation', 'language', 'locale', 'vehicleTypes', 'themeColor']) {
+    assert.ok(payloadSiteSettingsGlobal.fields.some(field => field.name === name), name);
+  }
 });
 test('all FAQ answers and legal policy sections survive document migration', () => {
   const source = JSON.parse(

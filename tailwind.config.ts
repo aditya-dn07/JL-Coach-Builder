@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import { interiorMotion } from './src/lib/motion';
 export default {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
@@ -7,11 +8,13 @@ export default {
         'banner-photo': 'banner-photo 1.2s ease-out both',
         'banner-copy': 'banner-copy .7s ease-out both',
         'services-scroll': 'services-scroll 20s linear infinite',
+        'interior-faq': `interior-faq ${interiorMotion.fast}s cubic-bezier(${interiorMotion.ease.join(',')}) both`,
       },
       keyframes: {
         'banner-photo': { from: { transform: 'scale(1.035)' }, to: { transform: 'scale(1)' } },
         'banner-copy': { from: { opacity: '0', transform: 'translateY(16px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
         'services-scroll': { to: { transform: 'translateX(-50%)' } },
+        'interior-faq': { from: { opacity: '0', transform: 'translateY(6px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
       },
       colors: {
         brand: 'var(--red)',

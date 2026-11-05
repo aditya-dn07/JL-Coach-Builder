@@ -3,20 +3,18 @@ import { notFound } from 'next/navigation';
 import { contentRepository } from '@/content/repository';
 import { pageMetadata } from '@/lib/metadata';
 import { InteriorHero } from '@/components/content/interior-hero';
-import { TrustStrip } from '@/components/shared/trust-strip';
-import { DocumentSections } from '@/components/content/document-sections';
+import { InteriorClosing, InteriorSections } from '@/components/content/interior-sections';
 import { ContactSection } from '@/components/contact/contact-section';
 import { ProjectGallery } from '@/components/gallery/project-gallery';
-import galleryPhotos from '@/data/site-gallery.json';
-import { RelatedServices } from '@/components/content/related-services';
-import { Reviews } from '@/components/shared/customer-reviews';
 import { PageStructuredData } from '@/components/seo/page-structured-data';
 import { brandFontVariables } from '@/lib/brand-fonts';
 import { PageContents } from '@/components/content/page-contents';
+import '@/components/home/home.css';
 import '@/components/content/content.css';
+import { interiorMotionStyle } from '@/lib/motion';
 export const dynamicParams = false;
 export async function generateStaticParams() {
-  return (await contentRepository.getPages()).filter((p) => p.slug).map((p) => ({ slug: p.slug }));
+  return (await contentRepository.getPages()).filter((p) => p.slug && !['reviews', 'faqs'].includes(p.slug)).map((p) => ({ slug: p.slug }));
 }
 export async function generateMetadata({
   params,
@@ -45,21 +43,19 @@ export default async function ContentRoute({ params }: { params: Promise<{ slug:
   if (!page) notFound();
   return (
     <>
-      <style>{`body:has(.interior-hero) { ${brandFontVariables} }`}</style>
+      <style>{`body:has(.interior-shell) { ${brandFontVariables} }`}</style>
       <PageStructuredData page={page} />
-      <div className={`interior-shell interior-${page.kind}`}>
+      <div className={`home-page interior-shell interior-${page.kind}`} data-home-page style={interiorMotionStyle}>
       <InteriorHero page={page} />
-      {page.kind === 'service' && <TrustStrip />}
       <PageContents page={page} />
       {page.kind === 'contact' ? (
         <ContactSection page={page} />
       ) : page.kind === 'gallery' ? (
-        <ProjectGallery photos={galleryPhotos} />
+        <ProjectGallery page={page} photos={contentRepository.getGalleryImages()} ui={contentRepository.getSiteSettings().ui} />
       ) : (
-        <DocumentSections page={page} />
+        <InteriorSections page={page} />
       )}{' '}
-      {page.kind === 'about' && <Reviews />}
-      {page.kind === 'service' && <RelatedServices page={page} />}
+      <InteriorClosing page={page} />
       </div>
     </>
   );

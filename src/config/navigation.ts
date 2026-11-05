@@ -1,8 +1,4 @@
-export const mainNavigation = [
-  { label: 'Our story', href: '/about/' },
-  { label: 'Our work', href: '/gallery/' },
-  { label: 'Insurance repairs', href: '/insurance/' },
-  { label: 'Contact', href: '/contact/' },
-];
-
-export const footerNavigation = [{ label: 'Home', href: '/' }, ...mainNavigation, { label: 'Reviews', href: '/reviews/' }, { label: 'FAQs', href: '/faqs/' }];
+import { contentRepository } from '@/content/repository';
+const settings = contentRepository.getSiteSettings();
+export const mainNavigation = settings.navigation.main;
+export const footerNavigation = [{ label: settings.ui.headerHome, href: '/' }, ...mainNavigation, ...settings.navigation.footerExtra];

@@ -16,10 +16,10 @@ export function pageMetadata({
   const fullTitle = `${cleanTitle}${brandSuffix}`;
   const url = new URL(path, siteConfig.url).href;
   const image = {
-    url: new URL('/images/brand/og.jpg', siteConfig.url).href,
+    url: new URL(siteConfig.images.og.src, siteConfig.url).href,
     width: 1200,
     height: 630,
-    alt: 'JL Coachbuilders: specialist caravan and RV repairs in Christchurch',
+    alt: siteConfig.images.og.alt,
   };
   return {
     title: path === '/' ? { absolute: fullTitle } : cleanTitle,

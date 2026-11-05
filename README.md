@@ -112,9 +112,11 @@ src/
     schema.ts                   Validated ContentPage contract
     repository.ts               Local / Sanity / Payload content loading
     catalog.ts                  Vehicle navigation and image references
+    feedback.ts                 DOCX testimonial pairing
   data/                         Image manifest, gallery, and legacy content data
   cms/                          Remote content adapters and authoring schemas
   lib/                          Fonts, metadata, JSON-LD, and quote validation
+    motion.ts                   Interior duration and easing tokens
   styles/
     globals.css                 Tailwind directives, reset, and base tokens
     theme.css                   Dark theme
@@ -145,12 +147,12 @@ Tailwind tokens are defined in `tailwind.config.ts`. The `nav` breakpoint (1001p
 
 ### Change the homepage banner image
 
-Edit `src/components/home/banner.tsx`. The homepage renders `HomeBanner`, copied from the original `HomeHero` in `hero.tsx` with its own updated photograph and crop; the original is preserved for reference. The banner uses Next.js `Image` with Tailwind positioning:
+Edit the home entry's `heroImage` in `src/content/pages.json`. The homepage renders `HomeBanner`; the original `HomeHero` remains in `hero.tsx` for reference. The banner uses Next.js `Image` with Tailwind positioning:
 
 ```tsx
 <Image
-  src="/images/home-workshop-banner.png"
-  alt="JL Coachbuilders workshop buildings and caravan yard in Christchurch"
+  src={page.heroImage.src}
+  alt={page.heroImage.alt}
   fill
   priority
   sizes="100vw"
@@ -194,9 +196,9 @@ Edit the composition in `src/app/(home)/page.tsx` and individual sections in `sr
 | Homepage text and FAQs | `src/content/pages.json` (home entry) |
 | Service or legal page text | `src/content/pages.json` (matching slug) |
 | Logo | `src/data/image-manifest.json` and `public/images/` |
-| Header/footer links | `src/config/navigation.ts` |
+| Header/footer links | `src/config/site.json` (`navigation`) |
 | Phone, email, address, social links | `src/config/site.json` |
-| Footer map and Google review link | `src/config/site.ts` |
+| Footer map and Google review link | `src/config/site.json` (`ui`, `images`) |
 | Gallery photographs | `src/data/site-gallery.json` |
 | Quote labels and messages | `src/content/quote-form.json` |
 
@@ -236,6 +238,16 @@ With no webhook configured, the form reports that delivery is unavailable and pr
 ## Optional CMS
 
 `CONTENT_SOURCE` defaults to `local`. Set it to `sanity` or `payload` and configure the matching variables from `.env.example` to use a remote content provider. Adapters validate responses against the same page schema. See [CMS integration](docs/cms-integration.md).
+
+Interior sections follow **subheading → heading → description**. Add a page in `src/content/pages.json` with a unique `slug`, hero fields, `seo`, ordered `sections`, `faqs`, and one `closingCta`. Each section needs `id`, `eyebrow` where appropriate, `title`, `description`, and source `blocks`. Numbered legal sections omit `eyebrow`. Images use `{ src, alt, width, height }`. For example:
+
+```json
+{"id":"example","slug":"example","label":"[Heading needed]","title":"[Heading needed]","eyebrow":"[Subheading needed]","description":"[Description needed]","intro":[],"kind":"service","image":"workshop","seo":{"title":"[Heading needed]","description":"[Description needed]"},"sections":[{"id":"section-1","eyebrow":"[Subheading needed]","title":"[Heading needed]","description":"[Description needed]","blocks":[]}],"faqs":[],"closingCta":{"eyebrow":"Ready to Book?","title":"Get Your Caravan, Motorhome or RV Looked At by a Specialist","description":"Whether it is a small repair, a leak, insurance work, panel and paint, servicing or a major rebuild, JL Coachbuilders can help you understand the next step and get the work moving.","quoteLabel":"Get a free quote","callLabel":"Call 027 347 0214"}}
+```
+
+`src/content/schema.ts` defines the exact heading, subheading and description placeholders. Search for `needed]` in `src/content/pages.json` to list them. A normal build permits placeholders; `CONTENT_STRICT=1 npm run build` fails while any remain. Interior closing labels live in each page's `closingCta`. The homepage retains its existing two closing CTAs.
+
+Interior motion uses the tokens in `src/lib/motion.ts`, shared with Tailwind's FAQ keyframe. `InteriorReveal` and `InteriorListItem` in `animated-benefit-card.tsx` provide once-only reveals and staggered lists; use them on new interior sections. They respect reduced-motion preferences and do not change homepage animation.
 
 Pages are generated at build time. Content or slug changes require a rebuild. Keep CMS credentials in server-side environment variables.
 

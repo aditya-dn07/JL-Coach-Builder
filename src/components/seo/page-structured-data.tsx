@@ -1,7 +1,8 @@
 import type { ContentPage } from '@/content/schema';
 import { generateJsonLd } from '@/lib/jsonld';
-import { site } from '@/data/site.data';
+import { contentRepository } from '@/content/repository';
 export function PageStructuredData({ page }: { page: ContentPage }) {
+  const site = contentRepository.getLegacySite();
   const url = new URL(page.slug ? `/${page.slug}/` : '/', site.url).href;
   const base = generateJsonLd(site)['@graph'].filter(
     (e) => !['FAQPage', 'BreadcrumbList'].includes(e['@type'] as string)

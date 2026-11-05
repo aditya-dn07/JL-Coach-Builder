@@ -1,10 +1,13 @@
+import { InteriorSectionFrame, InteriorSectionHeader } from '@/components/shared/section-intro';
+import type { ReactNode } from 'react';
 import { Check } from 'lucide-react';
 import type { ContentPage } from '@/content/schema';
 import { QuoteLink } from '@/components/shared/quote-link';
 import { SectionIntro } from '@/components/shared/section-intro';
-import { getHomeSection } from './home-content';
+import { getHomeSection, getHomeUi } from './home-content';
 
-export function HomeProblems({ page }: { page: ContentPage }) {
+export function HomeProblems({ page, interior }: { page: ContentPage; interior?: { section: ContentPage['sections'][number]; intro: ReactNode; children: ReactNode } }) {
+  if (interior) return <InteriorSectionFrame id={interior.section.id} className="home-content-section-3"><InteriorSectionHeader>{interior.intro}</InteriorSectionHeader>{interior.children}</InteriorSectionFrame>;
   const content = getHomeSection(page, 3);
   const introduction = content.blocks.slice(0, 2).map(block => block.text).join(' ');
   const jobs = content.blocks.slice(2, -1);
@@ -13,7 +16,7 @@ export function HomeProblems({ page }: { page: ContentPage }) {
   return (
     <section id={content.id} className="content-section section-pad home-content-section-3">
       <div className="container" data-reveal>
-        <SectionIntro eyebrow="Common Problems We Fix" title={content.title} description={introduction} action={<QuoteLink />} />
+        <SectionIntro eyebrow={getHomeUi(page, 'problems')} title={content.title} description={introduction} action={<QuoteLink />} />
         <ul className="m-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2 min-[901px]:grid-cols-4">
           {jobs.map(job => (
             <li key={job.text} className="flex min-h-[78px] items-center gap-3 rounded-lg border border-line bg-[#1e2630] p-4 text-sm leading-relaxed">

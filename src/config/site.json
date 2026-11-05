@@ -16,7 +16,9 @@
       "country": "NZ"
     },
     "foundedYear": 2016,
-    "sameAs": ["https://www.facebook.com/JLCoachbuilders/"],
+    "sameAs": [
+      "https://www.facebook.com/JLCoachbuilders/"
+    ],
     "googleRating": {
       "value": 4.9,
       "reviewCount": null,
@@ -26,5 +28,122 @@
   "locale": "en_NZ",
   "language": "en-NZ",
   "themeColor": "#252925",
-  "vehicleTypes": ["Caravans", "Campervans", "Motorhomes", "Fifth Wheels", "Buses"]
+  "vehicleTypes": [
+    "Caravans",
+    "Campervans",
+    "Motorhomes",
+    "Fifth Wheels",
+    "Buses"
+  ],
+  "ui": {
+    "quote": "Get a free quote",
+    "googleRatingAria": "Google rating: 4.9 out of 5. Read our Google reviews (opens in a new tab)",
+    "googleRatingLabel": "Google rating",
+    "googleStars": "★★★★★",
+    "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2897.327970637402!2d172.6502569!3d-43.432865799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d318c79ea3e08c1%3A0xb24fa786ab61546f!2sJL%20Coachbuilders%20Ltd!5e0!3m2!1sen!2sin!4v1793761793702!5m2!1sen!2sin",
+    "googleReviewHref": "https://admin.trustindex.io/api/googleReview?place-id=ChIJwQg-6nmMMW0Rb1Rhq4anT7I",
+    "headerSkip": "Skip to content",
+    "headerBuilt": "Built on experience. Since ",
+    "headerMobilePlace": "Christchurch, NZ",
+    "headerHome": "Home",
+    "headerServices": "Our services",
+    "headerTalk": "Let’s talk",
+    "headerOpen": "Open navigation",
+    "headerClose": "Close navigation",
+    "headerNavAria": "Main navigation",
+    "headerLogoSuffix": " home",
+    "footerFacebook": "Follow us on Facebook",
+    "footerQuick": "Quick links",
+    "footerServices": "Our services",
+    "footerContact": "Get in touch",
+    "footerPrivacy": "Privacy Policy",
+    "footerTerms": "Terms & Conditions",
+    "footerCopyrightSuffix": " Ltd. All rights reserved.",
+    "footerServiceNames": "Caravan|Campervan|Motorhome|Fifth wheel|Bus",
+    "footerMapTitle": "JL Coachbuilders Ltd — workshop location",
+    "footerCountry": "New Zealand",
+    "reviewRegion": "Customer reviews",
+    "reviewScroll": "Scroll customer reviews",
+    "reviewLocation": "Christchurch",
+    "reviewSource": "Google review",
+    "reviewSourceMark": "G",
+    "reviewStarsAria": "5 out of 5 stars",
+    "reviewPrevious": "Previous review",
+    "reviewNext": "Next review",
+    "reviewPositionPrefix": "Review ",
+    "reviewPositionJoin": " of ",
+    "closingEyebrow": "Your next adventure starts here",
+    "closingLine1": "Let’s get you",
+    "closingLine2": "back on the road.",
+    "closingDescription": "From a small repair to a complete rebuild, tell us what your vehicle needs. Our Christchurch team can help you take the next step.",
+    "closingAssurance1": "Free quotes",
+    "closingAssurance2": "All makes and models",
+    "closingAssurance3": "Straightforward advice",
+    "closingLabel": "Let’s talk about your vehicle",
+    "closingQuote": "Request a free quote",
+    "closingCall": "Call the workshop",
+    "closingEmail": "Email our team",
+    "galleryView": "View photograph",
+    "galleryOpen": "View workshop photograph ",
+    "galleryShowing": "Showing ",
+    "galleryOf": " of ",
+    "galleryPhotographs": " photographs",
+    "galleryMore": "Show more projects",
+    "galleryViewer": "Workshop photograph viewer",
+    "galleryPhoto": "Workshop photograph ",
+    "galleryClose": "Close photo",
+    "galleryPrevious": "Previous photo",
+    "galleryNext": "Next photo",
+    "galleryOriginal": "Open original photo"
+  },
+  "navigation": {
+    "main": [
+      {
+        "label": "Our story",
+        "href": "/about/"
+      },
+      {
+        "label": "Our work",
+        "href": "/gallery/"
+      },
+      {
+        "label": "Insurance repairs",
+        "href": "/insurance/"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact/"
+      }
+    ],
+    "footerExtra": [
+      {
+        "label": "Reviews",
+        "href": "/reviews/"
+      },
+      {
+        "label": "FAQs",
+        "href": "/faqs/"
+      }
+    ]
+  },
+  "images": {
+    "closing": {
+      "src": "/images/cta-caravan-lakeside.webp",
+      "alt": "",
+      "width": 1672,
+      "height": 941
+    },
+    "googleIcon": {
+      "src": "https://cdn.trustindex.io/assets/platform/Google/icon.svg",
+      "alt": "",
+      "width": 34,
+      "height": 34
+    },
+    "og": {
+      "src": "/images/brand/og.jpg",
+      "alt": "JL Coachbuilders: specialist caravan and RV repairs in Christchurch",
+      "width": 1200,
+      "height": 630
+    }
+  }
 }

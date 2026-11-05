@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { LibraryIcon } from '@/components/shared/library-icon';
 import { QuoteForm } from '@/components/contact/quote-form';
+import { contentRepository } from '@/content/repository';
 
 export function QuoteModal() {
   const ref = useRef<HTMLDialogElement>(null);
@@ -63,7 +64,7 @@ export function QuoteModal() {
       id="quote"
       ref={ref}
       className="quote-modal"
-      aria-label="Request a free quote"
+      aria-label={contentRepository.getQuoteForm().ui.modalTitle}
       onClick={(event) => {
         if (event.target === event.currentTarget) ref.current?.close();
       }}
@@ -72,7 +73,7 @@ export function QuoteModal() {
         <button
           className="quote-modal-close"
           type="button"
-          aria-label="Close quote form"
+          aria-label={contentRepository.getQuoteForm().ui.modalClose}
           onClick={() => ref.current?.close()}
         >
           <LibraryIcon name="x-lg" />

@@ -1,12 +1,13 @@
 'use client';
 import { useId, useState, type FormEvent } from 'react';
-import content from '@/content/quote-form.json';
+import { contentRepository } from '@/content/repository';
 import Link from 'next/link';
 import { siteConfig, phoneHref } from '@/config/site';
 import { QuoteSchema } from '@/lib/quote';
 import { Send } from 'lucide-react';
 
 export function QuoteForm() {
+  const content = contentRepository.getQuoteForm();
   const titleId = useId();
   const { labels: l, messages: m } = content.form;
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
@@ -68,8 +69,8 @@ export function QuoteForm() {
         {status === 'sending' ? l.submitting : l.submit}
       </button>
       <p className="form-privacy">
-        We use your details to respond to your enquiry.{' '}
-        <Link href="/privacy-policy/">Privacy Policy</Link>
+        {content.ui.privacy}{' '}
+        <Link href="/privacy-policy/">{content.ui.privacyLink}</Link>
       </p>
       <p className="form-feedback" role={status === 'error' ? 'alert' : 'status'}>
         {feedback}
@@ -77,7 +78,7 @@ export function QuoteForm() {
       {status === 'error' && (
         <p className="form-contact-alternatives">
           <a href={phoneHref}>{siteConfig.business.phone}</a>
-          <a href={`mailto:${siteConfig.business.email}`}>Email the workshop</a>
+          <a href={`mailto:${siteConfig.business.email}`}>{content.ui.emailWorkshop}</a>
         </p>
       )}
     </form>
