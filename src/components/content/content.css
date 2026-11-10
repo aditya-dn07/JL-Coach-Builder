@@ -258,7 +258,7 @@ html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .int
 html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .interior-service-number { display:grid; place-items:center; width:44px; height:44px; margin-bottom:16px; border-radius:50%; background:var(--red); color:white; font-weight:700; }
 html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .contact-map { display:block; filter:none; width:100%; height:400px; margin-top:40px; border:1px solid #36414e; border-radius:var(--home-radius); }
 html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .benefit-photo-card::after { content:none; display:none; }
-html[data-theme] body.ui-polished .home-page.interior-shell.interior-about[data-home-page] .home-document-trust { padding-block:64px; }
+html[data-theme] body.ui-polished .home-page.interior-shell.interior-about[data-home-page] .home-document-trust { padding-block:var(--section-space); }
 html[data-theme] body.ui-polished .home-page.interior-shell.interior-about[data-home-page] .home-document-trust .experience-layout { align-items:stretch; }
 html[data-theme] body.ui-polished .home-page.interior-shell.interior-about[data-home-page] .home-document-trust .interior-section-header { margin-bottom:0; }
 html[data-theme] body.ui-polished .home-page.interior-shell.interior-about[data-home-page] .home-document-trust .experience-proof { display:flex; align-items:center; padding:32px; }
@@ -276,7 +276,7 @@ html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .int
 html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .interior-service-banner { aspect-ratio:16 / 9; margin-bottom:28px; }
 html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .contact-map { height:280px; }
 html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .benefit-photo-card { min-height:0; }
-html[data-theme] body.ui-polished .home-page.interior-shell.interior-about[data-home-page] .home-document-trust { padding-block:40px; }
+html[data-theme] body.ui-polished .home-page.interior-shell.interior-about[data-home-page] .home-document-trust { padding-block:var(--section-space); }
 html[data-theme] body.ui-polished .home-page.interior-shell.interior-about[data-home-page] .home-document-trust .experience-layout { gap:28px; }
 html[data-theme] body.ui-polished .home-page.interior-shell.interior-about[data-home-page] .home-document-trust .experience-proof { padding:24px; }
 }

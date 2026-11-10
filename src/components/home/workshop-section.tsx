@@ -27,7 +27,7 @@ export function HomeWorkshop({ page, interior }: Props) {
           <span>Before</span>
           <span>After</span>
         </figcaption>
-        <span className="workshop-comparison-divider" aria-hidden="true"><LibraryIcon name="chevron-right" /></span>
+        <span className="workshop-comparison-divider" aria-hidden="true" />
       </figure>}
       <div className="workshop-comparison-footer">
         <p>From damaged<br /><strong>to ready for the road.</strong></p>

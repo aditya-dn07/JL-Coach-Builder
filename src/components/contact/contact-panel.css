@@ -1,7 +1,7 @@
 /* Shared closing contact panel replaces the former diagonal artwork. */
 html[data-theme] body.ui-polished .contact-cta {
   background: #101317 !important;
-  padding: 48px 0 !important;
+  padding: var(--section-space) 0 !important;
   margin: 0 !important;
   border: 0 !important;
   border-radius: 0 !important;
@@ -37,7 +37,7 @@ html[data-theme] body .contact-panel-actions > .button { min-height: 49px; width
   .contact-panel-actions { max-width: none; }
 }
 @media (max-width: 480px) {
-  html[data-theme] body.ui-polished .contact-cta { padding-block: 30px !important; }
+  html[data-theme] body.ui-polished .contact-cta { padding-block: var(--section-space) !important; }
   html[data-theme] body.ui-polished .contact-cta .contact-panel { padding: 24px 20px; border-radius: 16px; }
   html[data-theme] body.ui-polished .contact-panel h2 { font-size: 36px; }
   .contact-panel-actions { padding: 20px; }

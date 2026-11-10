@@ -72,7 +72,7 @@ export function HeaderNavigation({
             <summary data-active={servicesActive} className={`${navItemClass} flex list-none items-center gap-2 data-[active=true]:text-brand nav:data-[active=true]:after:scale-x-100`}>{siteConfig.ui.headerServices} <ChevronDown size={12} aria-hidden="true" className="transition-transform group-open:rotate-180" /></summary>
             <div className="grid gap-6 border-line bg-surface py-5 sm:grid-cols-2 nav:absolute nav:inset-x-0 nav:top-full nav:grid-cols-5 nav:border-b nav:px-[52px] nav:py-10 nav:shadow-xl">
               {groups.map(group => <div key={group.label}>
-                <strong className="mb-4 block font-semibold">{group.label}</strong>
+                <strong className="mb-4 block text-lg font-bold">{group.label}</strong>
                 {group.links.map(link => <Link key={link.href} href={link.href} className="flex min-h-11 items-center border-t border-line py-2.5 hover:text-brand aria-[current=page]:text-brand" aria-current={isCurrent(link.href) ? 'page' : undefined}>{link.label.replace(/^(Caravan|Campervan|Motorhome|Fifth Wheel|Bus) /, '')}</Link>)}
               </div>)}
             </div>
