@@ -234,6 +234,9 @@ html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .int
 
 /* Compact navigation and full-width interior content. */
 html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .interior-structured-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; align-items:stretch; }
+@media(min-width:1001px) {
+html[data-theme] body.ui-polished .home-page.interior-shell.interior-about[data-home-page] .interior-structured-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
 html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .interior-structured-card { min-width:0; padding:24px; border:1px solid #36414e; border-radius:var(--home-radius); background:#1e2630; transition:transform var(--interior-fast) var(--interior-ease),border-color var(--interior-fast) var(--interior-ease); }
 html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .interior-structured-card:hover { transform:translateY(-3px); border-color:var(--red); }
 html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .interior-structured-card .capability-icon { display:grid; place-items:center; width:48px; height:48px; margin-bottom:16px; border-radius:var(--home-control-radius); background:#fa000018; color:var(--red); }
