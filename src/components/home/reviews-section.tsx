@@ -11,7 +11,18 @@ import { getHomeSection, getHomeUi } from './home-content';
 type Props = { page: ContentPage; interior?: { section: ContentPage['sections'][number]; intro: ReactNode; children: ReactNode } };
 
 export function HomeReviews({ page, interior }: Props) {
-  if (interior) return <InteriorSectionFrame id={interior.section.id} className="home-document-reviews">{interior.intro && <InteriorSectionHeader>{interior.intro}</InteriorSectionHeader>}{interior.children}</InteriorSectionFrame>;
+  if (interior) return <InteriorSectionFrame id={interior.section.id} className="home-document-reviews">
+    <div className={interior.intro
+      ? 'mb-10 flex flex-col items-start gap-6 min-[1001px]:flex-row min-[1001px]:items-end min-[1001px]:justify-between'
+      : 'mb-6 flex items-center justify-end'}>
+      {interior.intro && <div className="min-w-0 flex-1 [&>.interior-section-header]:!mb-0"><InteriorSectionHeader>{interior.intro}</InteriorSectionHeader></div>}
+      <div className="flex shrink-0 flex-col items-stretch gap-3">
+        <GoogleReviewLink />
+        {page.slug !== 'reviews' && <Link href="/reviews/" className="underlink !mt-0">View All Reviews</Link>}
+      </div>
+    </div>
+    {interior.children}
+  </InteriorSectionFrame>;
   const content = getHomeSection(page, 7);
   const reviews = getCustomerReviews(page);
   return <section className="reviews-block section-pad container home-document-reviews">

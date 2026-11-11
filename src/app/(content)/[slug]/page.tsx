@@ -8,7 +8,6 @@ import { ContactSection } from '@/components/contact/contact-section';
 import { ProjectGallery } from '@/components/gallery/project-gallery';
 import { PageStructuredData } from '@/components/seo/page-structured-data';
 import { brandFontVariables } from '@/lib/brand-fonts';
-import { PageContents } from '@/components/content/page-contents';
 import '@/components/home/home.css';
 import '@/components/content/content.css';
 import { interiorMotionStyle } from '@/lib/motion';
@@ -47,7 +46,6 @@ export default async function ContentRoute({ params }: { params: Promise<{ slug:
       <PageStructuredData page={page} />
       <div className={`home-page interior-shell interior-${page.kind}`} data-home-page style={interiorMotionStyle}>
       <InteriorHero page={page} />
-      <PageContents page={page} />
       {page.kind === 'contact' ? (
         <ContactSection page={page} />
       ) : page.kind === 'gallery' ? (

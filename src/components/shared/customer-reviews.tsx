@@ -26,7 +26,7 @@ export function Reviews() {
                 <strong>{r.author}</strong>
                 <span>{r.location}</span>
               </div>
-              <span className="review-google">G</span>
+              <span className="review-source-badge" aria-label="Google review">G</span>
             </footer>
           </blockquote>
         ))}

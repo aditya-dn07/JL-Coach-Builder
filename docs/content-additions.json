@@ -1,0 +1,118 @@
+{
+  "date": "2026-11-11",
+  "note": "User-approved additions to website copy. These entries are separate from the Word document source.",
+  "additions": [
+    {
+      "page": "about",
+      "section": "customer-trust",
+      "field": "eyebrow",
+      "source": "user",
+      "text": "Customer Reviews"
+    },
+    {
+      "page": "about",
+      "section": "customer-trust",
+      "field": "title",
+      "source": "user",
+      "text": "Over 100 Five-Star Reviews"
+    },
+    {
+      "page": "about",
+      "section": "customer-trust",
+      "field": "description",
+      "source": "user",
+      "text": "Our customers trust JL Coachbuilders for quality workmanship, honest advice and reliable service. Read what they say about their experience with our team."
+    },
+    {
+      "page": "contact",
+      "section": "quick-contact",
+      "field": "title",
+      "source": "authored",
+      "text": "Talk to Our Workshop Team"
+    },
+    {
+      "page": "contact",
+      "section": "quick-contact",
+      "field": "description",
+      "source": "authored",
+      "text": "Call or email us to discuss your vehicle, describe the work you need and arrange an assessment at our Christchurch workshop. You can also use the enquiry form to request a free quote."
+    },
+    {
+      "page": "insurance",
+      "section": "section-6",
+      "field": "description",
+      "source": "authored",
+      "text": "Find answers about damage assessments, repair quotes and working with your insurer before arranging caravan or motorhome repairs."
+    },
+    {
+      "page": "gallery",
+      "section": "hero",
+      "field": "eyebrow",
+      "source": "authored",
+      "text": "Our Work"
+    },
+    {
+      "page": "gallery",
+      "section": "hero",
+      "field": "title",
+      "source": "authored",
+      "text": "Caravan, Motorhome and Coachbuilding Gallery"
+    },
+    {
+      "page": "gallery",
+      "section": "hero",
+      "field": "description",
+      "source": "authored",
+      "text": "Take a look inside our Christchurch workshop and explore photographs of caravans, motorhomes and other specialist vehicles, from repair work and bodywork to interior details."
+    },
+    {
+      "page": "gallery",
+      "section": "seo",
+      "field": "title",
+      "source": "authored",
+      "text": "Caravan and Motorhome Workshop Gallery"
+    },
+    {
+      "page": "gallery",
+      "section": "seo",
+      "field": "description",
+      "source": "authored",
+      "text": "Explore JL Coachbuilders workshop photographs, caravan and motorhome repairs, bodywork and interiors in Christchurch."
+    },
+    {
+      "page": "gallery",
+      "section": "gallery-photos",
+      "field": "eyebrow",
+      "source": "authored",
+      "text": "Workshop Gallery"
+    },
+    {
+      "page": "gallery",
+      "section": "gallery-photos",
+      "field": "title",
+      "source": "authored",
+      "text": "A Closer Look at Our Workshop and Vehicle Projects"
+    },
+    {
+      "page": "gallery",
+      "section": "gallery-photos",
+      "field": "description",
+      "source": "authored",
+      "text": "Browse the photographs for a closer look at our workshop, vehicles and repair details. Select an image to view it at a larger size, or load more photographs to keep exploring."
+    },
+    {
+      "page": "privacy-policy",
+      "section": "hero",
+      "field": "eyebrow",
+      "source": "authored",
+      "text": "Your Information"
+    },
+    {
+      "page": "terms-and-conditions",
+      "section": "hero",
+      "field": "eyebrow",
+      "source": "authored",
+      "text": "Website and Service Terms"
+    }
+  ]
+}

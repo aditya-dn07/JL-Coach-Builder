@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { LibraryIcon } from '@/components/shared/library-icon';
 import { siteConfig } from '@/config/site';
+import { ReviewCard } from './review-card';
 
 export function ReviewSlider({ reviews, preserveAuthors = false }: { reviews: { text: string; author: string }[]; preserveAuthors?: boolean }) {
   const viewport = useRef<HTMLDivElement>(null);
@@ -34,10 +35,7 @@ export function ReviewSlider({ reviews, preserveAuthors = false }: { reviews: { 
       const card = element?.firstElementChild;
       if (element && card) setIndex(Math.round(element.scrollLeft / (card.getBoundingClientRect().width + 20)));
     }}>
-      {reviews.map((review, position) => <blockquote key={review.author} role="group" aria-roledescription="slide" aria-label={`${position + 1} of ${reviews.length}`}>
-        <span className="review-card-stars" aria-label={siteConfig.ui.reviewStarsAria}>{siteConfig.ui.googleStars}</span><p>{review.text}</p>
-        <footer><span className="review-avatar">{review.author[0]}</span><div><strong>{preserveAuthors ? review.author : review.author.split(',')[0]}</strong>{!preserveAuthors && <span>{siteConfig.ui.reviewLocation}</span>}</div><span className="review-google" aria-label={siteConfig.ui.reviewSource}>{siteConfig.ui.reviewSourceMark}</span></footer>
-      </blockquote>)}
+      {reviews.map((review, position) => <ReviewCard key={review.author} review={review} preserveAuthor={preserveAuthors} position={position} total={reviews.length} />)}
     </div>
     <div className="review-slider-controls">
       <button type="button" aria-label={siteConfig.ui.reviewPrevious} aria-controls="home-review-slides" onClick={() => move(-1)}><LibraryIcon name="chevron-left" /></button>

@@ -705,6 +705,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "All Makes and Models"
           },
@@ -739,7 +743,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-caravan-service-yard.webp",
@@ -772,6 +776,10 @@
         "title": "A Straightforward Way to Get Your Caravan Serviced",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us What You Need"
@@ -806,7 +814,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -1241,6 +1249,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Repair Team"
           },
@@ -1274,7 +1286,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-caravan-repairs-yard.webp",
@@ -1307,6 +1319,10 @@
         "title": "Getting Your Caravan Repaired Is Straightforward",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us About the Damage"
@@ -1341,7 +1357,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -1850,6 +1866,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Team"
           },
@@ -1883,7 +1903,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-caravan-paint-yard.webp",
@@ -1916,6 +1936,10 @@
         "title": "Getting Your Caravan Panel and Paint Work Sorted",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us What You Need"
@@ -1950,7 +1974,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -2409,6 +2433,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Team"
           },
@@ -2442,7 +2470,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-caravan-upgrades-yard.webp",
@@ -2475,6 +2503,10 @@
         "title": "Getting Your Caravan Upgrade Underway",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us What You Need"
@@ -2509,7 +2541,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -2995,6 +3027,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Local Team"
           },
@@ -3029,7 +3065,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-campervan-service-framing.webp",
@@ -3062,6 +3098,10 @@
         "title": "Getting Your Campervan Serviced Is Straightforward",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us What You Need"
@@ -3096,7 +3136,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -3561,6 +3601,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Repair Team"
           },
@@ -3594,7 +3638,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-campervan-repairs-ceiling.webp",
@@ -3627,6 +3671,10 @@
         "title": "Getting Your Campervan Repaired Is Straightforward",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us About the Damage"
@@ -3661,7 +3709,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -4146,6 +4194,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Team"
           },
@@ -4179,7 +4231,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-campervan-paint-framing.webp",
@@ -4212,6 +4264,10 @@
         "title": "Getting Your Campervan Panel and Paint Work Sorted",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us What You Need"
@@ -4246,7 +4302,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -4705,6 +4761,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Team"
           },
@@ -4738,7 +4798,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-campervan-upgrades-shell.webp",
@@ -4771,6 +4831,10 @@
         "title": "Getting Your Campervan Upgrade Underway",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us What You Need"
@@ -4805,7 +4869,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -5295,6 +5359,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Local Team"
           },
@@ -5329,7 +5397,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-motorhome-service-roof.webp",
@@ -5362,6 +5430,10 @@
         "title": "Getting Your Motorhome Serviced Is Straightforward",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us What You Need"
@@ -5396,7 +5468,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -5861,6 +5933,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Repair Team"
           },
@@ -5894,7 +5970,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-motorhome-repairs-roof.webp",
@@ -5927,6 +6003,10 @@
         "title": "Getting Your Motorhome Repaired Is Straightforward",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us About the Damage"
@@ -5961,7 +6041,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -6462,6 +6542,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Team"
           },
@@ -6495,7 +6579,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-motorhome-paint-roof.webp",
@@ -6528,6 +6612,10 @@
         "title": "Getting Your Motorhome Panel and Paint Work Sorted",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us What You Need"
@@ -6562,7 +6650,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -7021,6 +7109,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Team"
           },
@@ -7054,7 +7146,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-motorhome-upgrades-roof.webp",
@@ -7087,6 +7179,10 @@
         "title": "Getting Your Motorhome Upgrade Underway",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us What You Need"
@@ -7121,7 +7217,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -7598,6 +7694,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Local Team"
           },
@@ -7631,7 +7731,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-fifth-wheel-service-rear.webp",
@@ -7664,6 +7764,10 @@
         "title": "Getting Your Fifth Wheel Serviced Is Straightforward",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us What You Need"
@@ -7698,7 +7802,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -8161,6 +8265,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Repair Team"
           },
@@ -8194,7 +8302,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-fifth-wheel-repairs-framing.webp",
@@ -8227,6 +8335,10 @@
         "title": "Getting Your Fifth Wheel Repaired Is Straightforward",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us About the Damage"
@@ -8261,7 +8373,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -8717,6 +8829,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Panel and Paint Team"
           },
@@ -8750,7 +8866,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-fifth-wheel-paint-framing.webp",
@@ -8783,6 +8899,10 @@
         "title": "Getting Your Fifth Wheel Panel and Paint Work Sorted Is Straightforward",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us What You Need"
@@ -8817,7 +8937,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -9275,6 +9395,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Coachbuilding Team"
           },
@@ -9308,7 +9432,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-fifth-wheel-upgrades-rear.webp",
@@ -9341,6 +9465,10 @@
         "title": "Getting Your Fifth Wheel Upgrades Sorted Is Straightforward",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us What You Need"
@@ -9375,7 +9503,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -9885,6 +10013,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Coachbuilding Team"
           },
@@ -9919,7 +10051,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-bus-service-body.webp",
@@ -9952,6 +10084,10 @@
         "title": "Getting Your Bus Serviced Is Straightforward",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us What You Need"
@@ -9987,7 +10123,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -10505,6 +10641,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Repair Team"
           },
@@ -10538,7 +10678,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-bus-repairs-wiring.webp",
@@ -10571,6 +10711,10 @@
         "title": "Getting Your Bus Repaired Is Straightforward",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us About the Damage"
@@ -10605,7 +10749,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -11115,6 +11259,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Panel and Paint Team"
           },
@@ -11148,7 +11296,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-bus-paint-body.webp",
@@ -11181,6 +11329,10 @@
         "title": "Getting Your Bus Panel and Paint Work Sorted Is Straightforward",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us About the Damage"
@@ -11215,7 +11367,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -11731,6 +11883,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Coachbuilding Team"
           },
@@ -11764,7 +11920,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-bus-upgrades-body.webp",
@@ -11797,6 +11953,10 @@
         "title": "Getting Your Bus Upgrades Sorted Is Straightforward",
         "eyebrow": "How It Works",
         "blocks": [
+          {
+            "type": "paragraph",
+            "text": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
+          },
           {
             "type": "heading",
             "text": "1. Tell Us What You Need"
@@ -11831,7 +11991,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "From your first enquiry to the completed work, we assess your vehicle, explain the options and agree on the work before starting."
       },
       {
         "id": "section-8",
@@ -12256,6 +12416,10 @@
         "eyebrow": "Why Choose Us",
         "blocks": [
           {
+            "type": "paragraph",
+            "text": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle."
+          },
+          {
             "type": "heading",
             "text": "Experienced Repair Team"
           },
@@ -12289,7 +12453,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]",
+        "description": "Our experienced Christchurch team combines practical advice, skilled workmanship and complete workshop support to care for your vehicle.",
         "cardImages": [
           {
             "src": "/images/benefit-real-insurance-workshop-rebuild.webp",
@@ -12392,7 +12556,7 @@
           }
         ],
         "cta": "Get a free quote",
-        "description": "[Description needed]"
+        "description": "Find answers about damage assessments, repair quotes and working with your insurer before arranging caravan or motorhome repairs."
       },
       {
         "id": "section-7",
@@ -12557,9 +12721,9 @@
       },
       {
         "id": "customer-trust",
-        "eyebrow": "Customer Trust",
-        "title": "[Heading needed]",
-        "description": "[Description needed]",
+        "eyebrow": "Customer Reviews",
+        "title": "Over 100 Five-Star Reviews",
+        "description": "Our customers trust JL Coachbuilders for quality workmanship, honest advice and reliable service. Read what they say about their experience with our team.",
         "blocks": [
           {
             "type": "paragraph",
@@ -12677,8 +12841,8 @@
       {
         "id": "quick-contact",
         "eyebrow": "Quick Contact",
-        "title": "[Heading needed]",
-        "description": "[Description needed]",
+        "title": "Talk to Our Workshop Team",
+        "description": "Call or email us to discuss your vehicle, describe the work you need and arrange an assessment at our Christchurch workshop. You can also use the enquiry form to request a free quote.",
         "blocks": [
           {
             "type": "paragraph",
@@ -12721,7 +12885,7 @@
     "slug": "privacy-policy",
     "label": "Privacy Policy",
     "title": "Privacy Policy",
-    "eyebrow": "[Subheading needed]",
+    "eyebrow": "Your Information",
     "description": "JL Coachbuilders Ltd respects your privacy and is committed to handling your personal information responsibly. This Privacy Policy explains how we collect, use, store and disclose personal information when you visit our website, contact us, request a quote or use our services.",
     "intro": [
       "JL Coachbuilders Ltd respects your privacy and is committed to handling your personal information responsibly. This Privacy Policy explains how we collect, use, store and disclose personal information when you visit our website, contact us, request a quote or use our services.",
@@ -13020,6 +13184,12 @@
       "alt": "",
       "width": 1600,
       "height": 900
+    },
+    "heroImage": {
+      "src": "/images/home-workshop-banner-supplied.png",
+      "alt": "JL Coachbuilders workshop buildings and caravan yard in Christchurch",
+      "width": 1717,
+      "height": 916
     }
   },
   {
@@ -13027,7 +13197,7 @@
     "slug": "terms-and-conditions",
     "label": "Terms and Conditions",
     "title": "Terms and Conditions",
-    "eyebrow": "[Subheading needed]",
+    "eyebrow": "Website and Service Terms",
     "description": "Welcome to the JL Coachbuilders website. These Terms and Conditions apply to your use of our website and provide general information about enquiries, quotes and services supplied by JL Coachbuilders Ltd.",
     "intro": [
       "Welcome to the JL Coachbuilders website. These Terms and Conditions apply to your use of our website and provide general information about enquiries, quotes and services supplied by JL Coachbuilders Ltd.",
@@ -13469,28 +13639,34 @@
       "alt": "",
       "width": 1600,
       "height": 900
+    },
+    "heroImage": {
+      "src": "/images/home-workshop-banner-supplied.png",
+      "alt": "JL Coachbuilders workshop buildings and caravan yard in Christchurch",
+      "width": 1717,
+      "height": 916
     }
   },
   {
     "id": "gallery",
     "slug": "gallery",
     "label": "Our work",
-    "title": "[Heading needed]",
-    "eyebrow": "[Subheading needed]",
-    "description": "[Description needed]",
+    "title": "Caravan, Motorhome and Coachbuilding Gallery",
+    "eyebrow": "Our Work",
+    "description": "Take a look inside our Christchurch workshop and explore photographs of caravans, motorhomes and other specialist vehicles, from repair work and bodywork to interior details.",
     "intro": [],
     "kind": "gallery",
     "image": "workshop",
     "seo": {
-      "title": "[Heading needed]",
-      "description": "[Description needed]"
+      "title": "Caravan and Motorhome Workshop Gallery",
+      "description": "Explore JL Coachbuilders workshop photographs, caravan and motorhome repairs, bodywork and interiors in Christchurch."
     },
     "sections": [
       {
         "id": "gallery-photos",
-        "eyebrow": "[Subheading needed]",
-        "title": "[Heading needed]",
-        "description": "[Description needed]",
+        "eyebrow": "Workshop Gallery",
+        "title": "A Closer Look at Our Workshop and Vehicle Projects",
+        "description": "Browse the photographs for a closer look at our workshop, vehicles and repair details. Select an image to view it at a larger size, or load more photographs to keep exploring.",
         "blocks": []
       }
     ],
@@ -13507,6 +13683,12 @@
       "alt": "",
       "width": 1600,
       "height": 900
+    },
+    "heroImage": {
+      "src": "/images/interior-about-workshop-repair.webp",
+      "alt": "Caravan bodywork being repaired inside the JL Coachbuilders workshop",
+      "width": 900,
+      "height": 675
     }
   },
   {
@@ -13537,6 +13719,12 @@
       "alt": "",
       "width": 1600,
       "height": 900
+    },
+    "heroImage": {
+      "src": "/images/home-workshop-banner-supplied.png",
+      "alt": "JL Coachbuilders workshop buildings and caravan yard in Christchurch",
+      "width": 1717,
+      "height": 916
     }
   },
   {
@@ -13592,6 +13780,12 @@
       "alt": "",
       "width": 1600,
       "height": 900
+    },
+    "heroImage": {
+      "src": "/images/interior-about-workshop-hero.webp",
+      "alt": "White caravan parked outside workshop buildings",
+      "width": 1024,
+      "height": 576
     }
   }
 ]

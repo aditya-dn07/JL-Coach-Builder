@@ -137,19 +137,25 @@ test('CMS authoring exposes settings, navigation and functional labels', () => {
     assert.ok(payloadSiteSettingsGlobal.fields.some(field => field.name === name), name);
   }
 });
-test('all FAQ answers and legal policy sections survive document migration', () => {
+test('document content and approved website additions retain their recorded sources', () => {
   const source = JSON.parse(
     readFileSync('docs/content-source.json', 'utf8').replace(/^\uFEFF/, '')
   ) as { text: string }[];
   const sourceText = source.map((r) => r.text.trim());
+  const { additions } = JSON.parse(readFileSync('docs/content-additions.json', 'utf8')) as {
+    additions: { page: string; section: string; field: string; heading?: string; text: string }[];
+  };
   for (const page of allPages) {
     for (const faq of page.faqs) {
       assert.ok(faq.answer.length > 20, faq.question);
       assert.ok(sourceText.includes(faq.question));
     }
     for (const section of page.sections) {
-      assert.ok(sourceText.includes(section.title));
-      for (const block of section.blocks) assert.ok(sourceText.includes(block.text));
+      const recorded = additions.filter(entry => entry.page === page.slug && entry.section === section.id);
+      assert.ok(sourceText.includes(section.title) || recorded.some(entry => entry.field === 'title' && entry.text === section.title), `${page.slug}: ${section.title}`);
+      for (const [index, block] of section.blocks.entries()) {
+        assert.ok(sourceText.includes(block.text) || recorded.some(entry => entry.field === 'blocks' && entry.text === block.text && entry.heading === section.blocks[index - 1]?.text), `${page.slug}: ${block.text}`);
+      }
     }
   }
   assert.equal(allPages.find((p) => p.slug === 'privacy-policy')?.sections.length, 10);

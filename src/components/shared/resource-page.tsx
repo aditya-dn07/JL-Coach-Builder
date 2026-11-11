@@ -8,7 +8,7 @@ import '@/components/home/home.css';
 import '@/components/content/content.css';
 
 export function ResourcePage({ page, children }: { page: ContentPage; children: ReactNode }) {
-  return <><style>{`body:has(.interior-shell) { ${brandFontVariables} }`}</style><div className="home-page interior-shell" data-home-page style={interiorMotionStyle}>
+  return <><style>{`body:has(.interior-shell) { ${brandFontVariables} }`}</style><div className={`home-page interior-shell interior-${page.kind}`} data-home-page style={interiorMotionStyle}>
     <PageStructuredData page={page} />
     <InteriorHero page={page} />
     {children}

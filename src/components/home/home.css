@@ -714,8 +714,10 @@ body:has(.home-page) > .closing-cta { display: none; }
 .experience-metric:first-child strong { color: #ff424c; }
 .experience-metric > span { font-size: 12px; line-height: 1.65; color: #c2cfdd; }
 .experience-assurances { display: flex; flex-wrap: wrap; gap: 20px; padding-top: 24px; }
-.experience-assurances > div { display: flex; gap: 10px; align-items: center; font-size: 12px; color: #e0e8f1; }
-.experience-assurances .library-icon { color: #ff5f69; font-size: 18px; }
+.experience-assurances > div { display: flex; gap: 10px; align-items: flex-start; font-size: 12px; color: #e0e8f1; }
+.experience-assurances > div > span { min-width: 0; }
+html[data-theme] body.ui-polished .home-page[data-home-page] .experience-assurances .library-icon { color: #ff5f69; font-size: inherit; line-height: inherit; width: 18px; height: 1lh; }
+.experience-assurances .library-icon::before { font-size: 18px; }
 html[data-theme] body.ui-polished .home-page[data-home-page] .home-workshop { align-items: stretch; }
 html[data-theme] body.ui-polished .home-page[data-home-page] .home-workshop .feature-image { height: auto; min-height: 440px; margin: 0; }
 html[data-theme] body.ui-polished .home-page[data-home-page] .home-workshop .feature-copy h2 { max-width: none; font-size: clamp(32px,3.3vw,48px); }
@@ -815,16 +817,17 @@ html[data-theme] body.ui-polished .home-page[data-home-page] :is(.home-workshop 
 .review-slider { min-width: 0; }
 .review-slider-viewport { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
 .review-slider-viewport::-webkit-scrollbar { display: none; }
-html[data-theme] body.ui-polished .home-page[data-home-page] .review-slider blockquote {
+html[data-theme] body.ui-polished .home-page[data-home-page] :is(.review-slider,.review-grid) blockquote {
   flex: 0 0 calc((100% - 40px) / 3); min-width: 0; margin: 0; padding: 32px;
   display: flex; flex-direction: column; scroll-snap-align: start; border: 1px solid #36414e; border-radius: var(--home-radius); background: #1e2630 !important;
 }
 .review-card-stars { color: var(--red); letter-spacing: .12em; }
-html[data-theme] body.ui-polished .home-page[data-home-page] .review-slider blockquote > p { font-size: 14px; line-height: 1.8; margin: 20px 0 28px; }
-.review-slider blockquote footer { display: flex; align-items: center; gap: 12px; margin-top: auto; }
-.review-slider blockquote footer > div { display: grid; gap: 5px; font-size: 12px; }
-.review-slider blockquote footer > div > span { color: #b1bac5; }
-.review-slider blockquote .review-google { margin-left: auto; }
+html[data-theme] body.ui-polished .home-page[data-home-page] :is(.review-slider,.review-grid) blockquote > p { font-size: 14px; line-height: 1.8; margin: 20px 0 28px; }
+:is(.review-slider,.review-grid) blockquote footer { display: flex; align-items: center; gap: 12px; margin-top: auto; }
+:is(.review-slider,.review-grid) blockquote footer > div { display: grid; gap: 5px; font-size: 12px; }
+:is(.review-slider,.review-grid) blockquote footer > div > span { color: #b1bac5; }
+.review-source-badge { display:inline-grid; place-items:center; flex:none; width:32px; height:32px; margin-left:auto; border:1px solid #65717e; border-radius:50%; background:#303c49; color:#fff; font-size:18px; font-weight:700; line-height:1; }
+.review-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
 .review-slider-controls { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 24px; font-size: 12px; }
 .review-slider-controls button:hover { border-color: var(--red); }
 
@@ -999,5 +1002,6 @@ html[data-theme] body.ui-polished .home-page[data-home-page] .home-workshop .wor
   html[data-theme] body.ui-polished .home-page[data-home-page] .review-slider blockquote { flex-basis: calc((100% - 20px) / 2); }
 }
 @media (max-width: 650px) {
-  html[data-theme] body.ui-polished .home-page[data-home-page] .review-slider blockquote { flex-basis: 100%; padding: 28px; }
+  .review-grid { grid-template-columns:minmax(0,1fr); }
+  html[data-theme] body.ui-polished .home-page[data-home-page] :is(.review-slider,.review-grid) blockquote { flex-basis: 100%; padding: 28px; }
 }

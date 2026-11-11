@@ -28,7 +28,21 @@ function balancedSpan(count: number, _index: number, steps = false) {
 
 type Section = ContentPage['sections'][number];
 function SectionHeading({ section }: { section: Section }) {
-  return <>{section.eyebrow && <p className="kicker">{section.eyebrow}</p>}<h2><TwoToneHeading text={section.title} /></h2>{section.descriptionParagraphs?.length ? section.descriptionParagraphs.map((paragraph, index) => <p key={index}><LinkedText text={paragraph.text} links={paragraph.links} /></p>) : section.description && <p><LinkedText text={section.description} links={section.descriptionLinks} /></p>}</>;
+  const paragraphs = section.descriptionParagraphs?.length
+    ? section.descriptionParagraphs
+    : section.description ? [{ type: 'paragraph' as const, text: section.description, links: section.descriptionLinks }] : [];
+  const leadIn = section.leadIn && !paragraphs.some(paragraph => paragraph.text.includes(section.leadIn!.text))
+    ? section.leadIn
+    : undefined;
+  return <>
+    {section.eyebrow && <p className="kicker">{section.eyebrow}</p>}
+    <h2><TwoToneHeading text={section.title} /></h2>
+    {paragraphs.map((paragraph, index) => <p key={index}>
+      <LinkedText text={paragraph.text} links={paragraph.links} />
+      {leadIn && index === paragraphs.length - 1 && <> <LinkedText text={leadIn.text} links={leadIn.links} /></>}
+    </p>)}
+    {!paragraphs.length && leadIn && <p><LinkedText text={leadIn.text} links={leadIn.links} /></p>}
+  </>;
 }
 function Paragraphs({ blocks }: { blocks: Section['blocks'] }) {
   return <>{blocks.map((block, index) => block.type === 'heading' ? <h3 key={index}><LinkedText text={block.text} links={block.links} /></h3> : <p key={index}><LinkedText text={block.text} links={block.links} /></p>)}</>;
@@ -103,7 +117,7 @@ export async function InteriorSections({ page }: { page: ContentPage }) {
       } else if (/Why Choose|Benefits/.test(`${section.eyebrow} ${section.title}`)) {
         content = <HomeDocumentSection section={section} intro={intro} benefits><ContentGroups blocks={blocks} illustrated linked cardImages={section.cardImages} showNumbers={false} />{related}</HomeDocumentSection>;
       } else if (headingsOnly || section.leadIn || /Problems|Issues|What We Check/.test(`${section.eyebrow} ${section.title}`)) {
-        content = <HomeProblems page={page} interior={{ section, intro, children: <>{section.leadIn && <InteriorReveal className="section-prose interior-full-column interior-list-lead"><p><LinkedText text={section.leadIn.text} links={section.leadIn.links} /></p></InteriorReveal>}<ul className="interior-checklist">{blocks.map((block, index) => <InteriorListItem key={index} index={index} style={{ '--interior-card-span': balancedSpan(blocks.length, index) } as CSSProperties} className="flex min-h-[78px] items-center gap-3 rounded-lg border border-line bg-[#1e2630] p-4 text-sm leading-relaxed"><span className="interior-check-icon"><Check size={18} aria-hidden="true" /></span><span><LinkedText text={block.text} links={block.links} /></span></InteriorListItem>)}</ul>{section.closingNote && <InteriorReveal className="section-prose interior-full-column interior-closing-note"><p><LinkedText text={section.closingNote.text} links={section.closingNote.links} /></p></InteriorReveal>}{related}</> }} />;
+        content = <HomeProblems page={page} interior={{ section, intro, children: <><ul className="interior-checklist">{blocks.map((block, index) => <InteriorListItem key={index} index={index} style={{ '--interior-card-span': balancedSpan(blocks.length, index) } as CSSProperties} className="flex min-h-[78px] items-center gap-3 rounded-lg border border-line bg-[#1e2630] p-4 text-sm leading-relaxed"><span className="interior-check-icon"><Check size={18} aria-hidden="true" /></span><span><LinkedText text={block.text} links={block.links} /></span></InteriorListItem>)}</ul>{section.closingNote && <InteriorReveal className="section-prose interior-full-column interior-closing-note"><p><LinkedText text={section.closingNote.text} links={section.closingNote.links} /></p></InteriorReveal>}{related}</> }} />;
       } else if (headings.length > 0 || /Services/.test(section.eyebrow ?? '')) {
         const groups: { heading: Section['blocks'][number]; paragraphs: Section['blocks'] }[] = [];
         const leading: Section['blocks'] = [];
