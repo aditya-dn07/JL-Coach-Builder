@@ -191,6 +191,18 @@ html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .int
 @media(max-width:600px) {
  html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] :is(.interior-related-services,.detail-grid) { grid-template-columns:minmax(0,1fr); }
 }
+html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .contact-methods > a {
+  justify-content: flex-start;
+  text-align: left;
+  gap: 14px;
+}
+html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .contact-methods > a > svg {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+}
+.contact-methods > a > span { min-width: 0; }
+
 html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .interior-related-services { margin-top:0; }
 html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .interior-related-card { display:flex; flex-direction:column; aspect-ratio:auto; height:100%; overflow:visible; background:#1e2630; transition:transform var(--interior-fast) var(--interior-ease),border-color var(--interior-fast) var(--interior-ease); }
 html[data-theme] body.ui-polished .home-page.interior-shell[data-home-page] .interior-related-card::after { content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; box-shadow:0 8px 24px #fa000026; opacity:0; transition:opacity var(--interior-fast) var(--interior-ease); }

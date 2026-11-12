@@ -1,4 +1,5 @@
 import { siteConfig } from '@/config/site';
+import { GoogleReviewBadge } from '@/components/shared/google-review-badge';
 
 export type CustomerReview = { text: string; author: string };
 
@@ -14,7 +15,7 @@ export function ReviewCard({ review, preserveAuthor = false, position, total }: 
     <footer>
       <span className="review-avatar">{review.author[0]}</span>
       <div><strong>{preserveAuthor ? review.author : review.author.split(',')[0]}</strong>{!preserveAuthor && <span>{siteConfig.ui.reviewLocation}</span>}</div>
-      <span className="review-source-badge" aria-label={siteConfig.ui.reviewSource}>{siteConfig.ui.reviewSourceMark}</span>
+      <GoogleReviewBadge />
     </footer>
   </blockquote>;
 }

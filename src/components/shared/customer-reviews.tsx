@@ -1,4 +1,5 @@
 import { site } from '@/data/site.data';
+import { GoogleReviewBadge } from '@/components/shared/google-review-badge';
 
 export function Reviews() {
   const reviews = site.reviews.slice(0, 3);
@@ -26,7 +27,7 @@ export function Reviews() {
                 <strong>{r.author}</strong>
                 <span>{r.location}</span>
               </div>
-              <span className="review-source-badge" aria-label="Google review">G</span>
+              <GoogleReviewBadge />
             </footer>
           </blockquote>
         ))}
