@@ -9,7 +9,7 @@ export function SectionIntro({ eyebrow, title, description, action }: Props) {
       <div className="grid min-w-0 flex-1 gap-5">
         {eyebrow && <p className="kicker !m-0">{eyebrow}</p>}
         <h2 className="!m-0 text-balance !text-[clamp(32px,3.4vw,48px)] !leading-[1.12] !tracking-[-.035em]"><TwoToneHeading text={title} /></h2>
-        {description && <p data-intro-description className="max-w-[78ch] text-[15px] leading-[1.85] text-[#b9c6d5]">{description}</p>}
+        {description && <p data-intro-description className="max-w-[100ch] text-[15px] leading-[1.85] text-[#b9c6d5]">{description}</p>}
       </div>
       {action && <div className="flex shrink-0 justify-start min-[801px]:justify-end">{action}</div>}
     </div>

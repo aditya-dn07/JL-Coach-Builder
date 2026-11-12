@@ -45,7 +45,7 @@ export function DocumentSections({ page, sectionIds }: { page: ContentPage; sect
                 {page.kind === 'legal' && s.description && <p className="mt-4 text-base leading-7">{s.description}</p>}
                 {page.kind === 'home' ? (
                   <>
-                    <p className="col-start-1 row-start-3 max-w-[78ch] text-[15px] leading-[1.85] text-[#b9c6d5]">{getHomeUi(page, 'faqIntro')}</p>
+                    <p className="col-start-1 row-start-3 max-w-[100ch] text-[15px] leading-[1.85] text-[#b9c6d5]">{getHomeUi(page, 'faqIntro')}</p>
                     <p className="self-end min-[801px]:!row-start-3"><Link className="underlink !mt-0" href="/faqs/">{getHomeUi(page, 'viewFaqs')}</Link></p>
                   </>
                 ) : (
@@ -106,7 +106,7 @@ export function DocumentSections({ page, sectionIds }: { page: ContentPage; sect
               />
               {page.kind !== 'legal' && !(page.kind === 'home' && ['section-3', 'section-5'].includes(s.id)) && (
                 <a className="underlink section-link" href="#quote">
-                  <LibraryIcon name="chat-square-text" />{page.kind === 'home' ? getHomeUi(page, 'quote') : 'Let’s discuss your vehicle'}
+                  <LibraryIcon name="chat-square-text" />{page.kind === 'home' ? getHomeUi(page, 'quote') : 'Get a free quote'}
                 </a>
               )}
               </div>

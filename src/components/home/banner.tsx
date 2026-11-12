@@ -30,8 +30,10 @@ export function HomeBanner({ page, interior }: { page: ContentPage; interior?: {
       </div>
       <div className="z-[1] min-w-0 animate-banner-copy px-6 pb-[35px] pt-[55px] min-[801px]:px-[35px] min-[801px]:py-[70px] min-[1101px]:px-[clamp(32px,5vw,80px)]">
         {interior?.before}<p className="mb-2.5 max-w-[54ch] pt-2.5 text-[10px] uppercase leading-[1.9] tracking-[.17em] text-white [text-shadow:0_2px_6px_#000b] max-[560px]:text-[9px]">{page.eyebrow}</p>
-        <h1 id="home-hero-title" className="max-w-[19ch] !text-[clamp(32px,7.5vw,60px)] !leading-[1.03] !tracking-[-.045em] !text-white min-[801px]:max-w-[16ch] min-[801px]:!text-[clamp(46px,5vw,76px)]">{interior ? <TwoToneHeading text={page.title} /> : page.title}</h1>
-        <p className="mt-[26px] max-w-[48ch] text-sm leading-[1.85] text-[#d6dfe8] max-[560px]:text-[13px]">{interior?.description ?? page.description}</p>
+        <div data-hero-text className="max-w-[19ch] font-display text-[clamp(32px,7.5vw,60px)] font-semibold min-[801px]:max-w-[16ch] min-[801px]:text-[clamp(46px,5vw,76px)]">
+          <h1 id="home-hero-title" className="max-w-[19ch] !text-[clamp(32px,7.5vw,60px)] !leading-[1.03] !tracking-[-.045em] !text-white min-[801px]:max-w-[16ch] min-[801px]:!text-[clamp(46px,5vw,76px)]">{interior ? <TwoToneHeading text={page.title} /> : page.title}</h1>
+          <p className="mt-[26px] w-full font-sans text-sm font-normal leading-[1.85] text-[#d6dfe8] max-[560px]:text-[13px]">{interior?.description ?? page.description}</p>
+        </div>
         {!interior && <ServiceMarquee services={getHomeUi(page, 'marquee')} ariaLabel={getHomeUi(page, 'marqueeAria')} />}
         <div className="mt-[30px] grid grid-cols-1 gap-3 min-[481px]:flex min-[481px]:flex-wrap max-[560px]:gap-2.5">
           {interior ? interior.actions : <><a data-hero-action href="#quote" className={primaryActionClass}><LibraryIcon name="chat-square-text" />{getHomeUi(page, 'quote')}</a>
@@ -51,6 +53,6 @@ export function HomeBanner({ page, interior }: { page: ContentPage; interior?: {
   );
 }
 
-export function HomeBannerActions({ quoteLabel, callLabel }: { quoteLabel: string; callLabel: string }) {
-  return <><a data-hero-action href="#quote" className={primaryActionClass}><LibraryIcon name="chat-square-text" />{quoteLabel}</a><a data-hero-action href={phoneHref} className={`${actionClass} border-[#8b9caf] bg-transparent hover:border-brand hover:bg-[#fa000018]`}><LibraryIcon name="telephone" />{callLabel}</a></>;
+export function HomeBannerActions({ quoteLabel, callLabel, afterQuote }: { quoteLabel: string; callLabel: string; afterQuote?: ReactNode }) {
+  return <><a data-hero-action href="#quote" className={primaryActionClass}><LibraryIcon name="chat-square-text" />{quoteLabel}</a>{afterQuote}<a data-hero-action href={phoneHref} className={`${actionClass} border-[#8b9caf] bg-transparent hover:border-brand hover:bg-[#fa000018]`}><LibraryIcon name="telephone" />{callLabel}</a></>;
 }

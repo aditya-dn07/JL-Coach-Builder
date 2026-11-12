@@ -75,7 +75,7 @@ html[data-theme] body.ui-polished .section-heading {
 html[data-theme] body.ui-polished .section-heading > .kicker { grid-column: 1 / -1; margin: 0; }
 html[data-theme] body.ui-polished .section-heading h2 { margin: 0; max-width: 22ch; font-size: clamp(34px, 3.6vw, 50px); line-height: 1.13; }
 html[data-theme] body.ui-polished .section-heading > p:last-child {
-  position: static; margin: 0; max-width: 38ch; font-size: 15px; line-height: 1.75; justify-self: end;
+  position: static; margin: 0; max-width: 48ch; font-size: 15px; line-height: 1.75; justify-self: end;
 }
 html[data-theme] body.ui-polished .section-heading .review-stars { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; justify-content: flex-end; }
 html[data-theme] body.ui-polished .review-stars > span { margin: 0; font-size: 12px; }
@@ -153,7 +153,7 @@ html[data-theme] body.ui-polished .faq-questions summary { padding-block: 20px; 
 }
 
 /* Shared brand and action styling across all routes. */
-html[data-theme] body.ui-polished a.google-review-link {
+html[data-theme] body.ui-polished .google-review-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;

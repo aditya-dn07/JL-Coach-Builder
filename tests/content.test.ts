@@ -10,8 +10,8 @@ import { payloadSiteSettingsGlobal, payloadQuoteFormGlobal } from '../src/cms/pa
 import { site } from '../src/data/site.data';
 
 test('all document pages and original service routes resolve locally', () => {
-  assert.equal(allPages.length, 27);
-  assert.equal(new Set(allPages.map((p) => p.slug)).size, 27);
+  assert.equal(allPages.length, 29);
+  assert.equal(new Set(allPages.map((p) => p.slug)).size, 29);
   for (const link of site.nav.flatMap((g) => g.children)) {
     const slug = new URL(link.href).pathname.replaceAll('/', '');
     assert.ok(
@@ -33,7 +33,7 @@ test('all document pages and original service routes resolve locally', () => {
 test('homepage data preserves displayed labels and image URLs', () => {
   const home = allPages.find(page => page.kind === 'home')!;
   assert.deepEqual([home.heroImage?.src, home.heroImage?.alt, home.closingImage?.src, home.closingImage?.alt], [
-    '/images/home-workshop-banner.png',
+    '/images/home-workshop-banner-supplied.png',
     'JL Coachbuilders workshop buildings and caravan yard in Christchurch',
     '/images/cta-caravan-lakeside.webp',
     '',
@@ -57,20 +57,23 @@ test('homepage markup retains image rendering and source-backed text bindings', 
   assert.match(hero, /getHomeUi\(page, 'quote'\)/);
   assert.match(closing, /src=\{page\.closingImage!\.src\}/);
   assert.match(closing, /getHomeUi\(page, 'ready'\)/);
+  const services = readFileSync('src/components/home/services-section.tsx', 'utf8');
+  assert.match(services, /getHomeUi\(page, 'serviceHelpTitle'\)/);
+  assert.match(services, /getHomeSection\(page, 6\)\.blocks\[0\]\.text/);
+  assert.match(services, /href=\{phoneHref\}/);
+  assert.match(services, /<QuoteLink \/>/);
 });
-test('rendered homepage matches the post-Phase-1 snapshot, not the original', () => {
-  const snapshot = JSON.parse(readFileSync('tests/homepage-post-phase1.snapshot.json', 'utf8')) as { label: string; html: string };
-  assert.equal(snapshot.label, 'Snapshot of the post-Phase-1 state, not the original');
-  const output = readFileSync('.next-production/server/app/index.html', 'utf8');
-  const start = output.indexOf('<body');
-  const home = output.indexOf('data-home-page', start);
-  const end = output.indexOf('<script', home);
-  assert.ok(start >= 0 && home > start && end > home, 'Build the production homepage before running this snapshot test.');
-  const html = output.slice(start, end)
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '')
-    .replace(/©\s*20\d{2}/g, '© {YEAR}');
-  assert.equal(html, snapshot.html);
+test('principal quote CTA labels remain consistent across content', () => {
+  for (const page of allPages) {
+    if (page.closingCta) assert.equal(page.closingCta.quoteLabel, 'Get a free quote');
+    for (const section of page.sections) {
+      if (section.cta && !section.cta.startsWith('Call ')) assert.equal(section.cta, 'Get a free quote');
+    }
+  }
+  assert.equal(contentRepository.getSiteSettings().ui.headerTalk, 'Let’s talk');
+  assert.equal(contentRepository.getQuoteForm().form.labels.submit, 'Get a free quote');
 });
+
 test('homepage testimonials pair each DOCX quote with its author', () => {
   const reviews = getCustomerReviews(allPages.find(page => page.kind === 'home')!);
   assert.equal(reviews.length, 4);

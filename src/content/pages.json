@@ -432,6 +432,7 @@
       "servicePaint": "Panel & paint",
       "serviceUpgrades": "Upgrades",
       "insurance": "Insurance Repairs",
+      "serviceHelpTitle": "Specialist Repairs for Your Caravan & RV",
       "workshop": "Workshop Capability",
       "workshopYears": "80",
       "workshopYearsLabel1": "Years of combined",
@@ -450,7 +451,9 @@
       "electrical": "Electrical work",
       "plumbing": "Plumbing work",
       "benefitImages": "/images/why-choose/insurance.webp|/images/why-choose/models.webp|/images/why-choose/canterbury.webp|/images/why-choose/maintenance-v2.webp",
-      "capabilityLocation": "Christchurch, Canterbury"
+      "capabilityLocation": "Christchurch, Canterbury",
+      "insuranceContext": "Need help with insurance-related vehicle damage?",
+      "insuranceLink": "Insurance repairs"
     }
   },
   {
@@ -11593,7 +11596,7 @@
     "image": "bus",
     "seo": {
       "title": "Bus Alterations and Upgrades Christchurch | JL Coachbuilders",
-      "description": "Upgrade your bus in Christchurch with interior fit-outs, solar installations, seating changes and custom modifications. Request a free quote."
+      "description": "Upgrade your bus in Christchurch with interior fit-outs, solar installations, seating changes and custom modifications. Get a free quote."
     },
     "sections": [
       {
@@ -12407,7 +12410,7 @@
             "text": "IAG, AMI, Tower, NZI, Covi NZMCA Insurance, Star Campercare, AA Insurance, FMG and Vero."
           }
         ],
-        "cta": "Discuss Your Insurance Repairs",
+        "cta": "Get a free quote",
         "description": "JL Coachbuilders works with major insurance providers on eligible repair jobs. Our team can discuss your claim requirements, assess the vehicle damage and help with the repair process where needed."
       },
       {
@@ -12823,8 +12826,8 @@
     },
     "sections": [
       {
-        "id": "section-1",
-        "title": "Contact Our Christchurch Workshop",
+        "id": "workshop-location",
+        "title": "Contact our Christchurch workshop",
         "eyebrow": "Get in Touch",
         "blocks": [
           {
@@ -12839,9 +12842,9 @@
         "description": "Need repairs, servicing, panel and paint work, or alterations for your caravan, motorhome, campervan, fifth wheel or bus? Contact JL Coachbuilders to discuss your requirements or request a free, no-obligation quote."
       },
       {
-        "id": "quick-contact",
+        "id": "workshop-enquiry",
         "eyebrow": "Quick Contact",
-        "title": "Talk to Our Workshop Team",
+        "title": "Talk to our workshop team",
         "description": "Call or email us to discuss your vehicle, describe the work you need and arrange an assessment at our Christchurch workshop. You can also use the enquiry form to request a free quote.",
         "blocks": [
           {

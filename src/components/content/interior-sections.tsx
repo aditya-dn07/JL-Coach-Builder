@@ -20,6 +20,8 @@ import { HomeDocumentSection, HomeFaqSection } from './document-sections';
 import { ContentGroups } from './content-groups';
 import { InteriorCard, InteriorFaq, InteriorListItem, InteriorReveal, InteriorTimelineLine } from './animated-benefit-card';
 import { LinkedText, RelatedServices } from './related-services';
+import { QuoteLink } from '@/components/shared/quote-link';
+import { serviceCtaSections } from '@/lib/service-ctas';
 
 function balancedSpan(count: number, _index: number, steps = false) {
   const columns = steps ? count : [4, 8, 12].includes(count) || count === 7 ? 4 : 3;
@@ -81,6 +83,7 @@ export async function InteriorSections({ page }: { page: ContentPage }) {
   }));
   const sections = page.kind === 'service' || page.kind === 'about' ? page.sections.slice(0, -1) : page.sections;
   let imageIndex = 0;
+  const ctaSections = page.kind === 'service' ? serviceCtaSections(sections) : new Set<string>();
   return <div id="page-details" className="document-sections">
     {page.intro.length > 1 && <InteriorSectionFrame><InteriorReveal className="section-prose interior-full-column">{page.intro.slice(1).map((text, index) => <p key={index}><LinkedText text={text} links={page.introLinks?.find(item => item.index === index + 1)?.links} /></p>)}</InteriorReveal></InteriorSectionFrame>}
     {sections.map((section, sectionIndex) => {
@@ -117,7 +120,7 @@ export async function InteriorSections({ page }: { page: ContentPage }) {
       } else if (/Why Choose|Benefits/.test(`${section.eyebrow} ${section.title}`)) {
         content = <HomeDocumentSection section={section} intro={intro} benefits><ContentGroups blocks={blocks} illustrated linked cardImages={section.cardImages} showNumbers={false} />{related}</HomeDocumentSection>;
       } else if (headingsOnly || section.leadIn || /Problems|Issues|What We Check/.test(`${section.eyebrow} ${section.title}`)) {
-        content = <HomeProblems page={page} interior={{ section, intro, children: <><ul className="interior-checklist">{blocks.map((block, index) => <InteriorListItem key={index} index={index} style={{ '--interior-card-span': balancedSpan(blocks.length, index) } as CSSProperties} className="flex min-h-[78px] items-center gap-3 rounded-lg border border-line bg-[#1e2630] p-4 text-sm leading-relaxed"><span className="interior-check-icon"><Check size={18} aria-hidden="true" /></span><span><LinkedText text={block.text} links={block.links} /></span></InteriorListItem>)}</ul>{section.closingNote && <InteriorReveal className="section-prose interior-full-column interior-closing-note"><p><LinkedText text={section.closingNote.text} links={section.closingNote.links} /></p></InteriorReveal>}{related}</> }} />;
+        content = <HomeProblems page={page} interior={{ section, intro, children: <><ul className="interior-checklist">{blocks.map((block, index) => <InteriorListItem key={index} index={index} style={{ '--interior-card-span': balancedSpan(blocks.length, index) } as CSSProperties} className="flex min-h-[78px] items-start gap-3 rounded-lg border border-line bg-[#1e2630] p-4 text-sm leading-relaxed"><span className="interior-check-icon"><Check size={18} aria-hidden="true" /></span><span><LinkedText text={block.text} links={block.links} /></span></InteriorListItem>)}</ul>{section.closingNote && <InteriorReveal className="section-prose interior-full-column interior-closing-note"><p><LinkedText text={section.closingNote.text} links={section.closingNote.links} /></p></InteriorReveal>}{related}</> }} />;
       } else if (headings.length > 0 || /Services/.test(section.eyebrow ?? '')) {
         const groups: { heading: Section['blocks'][number]; paragraphs: Section['blocks'] }[] = [];
         const leading: Section['blocks'] = [];
@@ -128,7 +131,7 @@ export async function InteriorSections({ page }: { page: ContentPage }) {
       } else {
         content = <HomeWorkshop page={page} interior={{ section, intro, children: <InteriorReveal><ContentGroups blocks={blocks} linked />{related}</InteriorReveal> }} />;
       }
-      return <div key={section.id}><SectionDivider />{content}</div>;
+      return <div key={section.id} className="interior-document-section"><SectionDivider />{content}{ctaSections.has(section.id) && <InteriorReveal className="container flex flex-wrap items-center gap-5 pb-10"><QuoteLink /><a className="button" href={phoneHref}><Phone size={18} aria-hidden="true" />Call the workshop</a></InteriorReveal>}</div>;
     })}
   </div>;
 }

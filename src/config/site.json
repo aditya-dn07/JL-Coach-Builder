@@ -23,7 +23,31 @@
       "value": 4.9,
       "reviewCount": null,
       "reviewClaim": "100+ five-star reviews"
-    }
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "https://schema.org/Monday",
+          "https://schema.org/Tuesday",
+          "https://schema.org/Wednesday",
+          "https://schema.org/Thursday",
+          "https://schema.org/Friday"
+        ],
+        "opens": "07:30",
+        "closes": "17:30"
+      }
+    ],
+    "specialOpeningHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "validFrom": "2026-11-13",
+        "validThrough": "2026-11-13",
+        "opens": "00:00",
+        "closes": "00:00"
+      }
+    ],
+    "confirmedResponseTime": null
   },
   "locale": "en_NZ",
   "language": "en-NZ",
@@ -41,9 +65,8 @@
     "googleRatingLabel": "Google rating",
     "googleStars": "★★★★★",
     "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2897.327970637402!2d172.6502569!3d-43.432865799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d318c79ea3e08c1%3A0xb24fa786ab61546f!2sJL%20Coachbuilders%20Ltd!5e0!3m2!1sen!2sin!4v1793761793702!5m2!1sen!2sin",
-    "googleReviewHref": "https://admin.trustindex.io/api/googleReview?place-id=ChIJwQg-6nmMMW0Rb1Rhq4anT7I",
     "headerSkip": "Skip to content",
-    "headerBuilt": "Built on experience. Since ",
+    "headerBuilt": "Built on experience",
     "headerMobilePlace": "Christchurch, NZ",
     "headerHome": "Home",
     "headerServices": "Our services",
@@ -80,7 +103,7 @@
     "closingAssurance2": "All makes and models",
     "closingAssurance3": "Straightforward advice",
     "closingLabel": "Let’s talk about your vehicle",
-    "closingQuote": "Request a free quote",
+    "closingQuote": "Get a free quote",
     "closingCall": "Call the workshop",
     "closingEmail": "Email our team",
     "galleryView": "View photograph",
@@ -94,7 +117,9 @@
     "galleryClose": "Close photo",
     "galleryPrevious": "Previous photo",
     "galleryNext": "Next photo",
-    "galleryOriginal": "Open original photo"
+    "galleryOriginal": "Open original photo",
+    "verifiedGoogleReviewUrl": "https://share.google/6RMCSC2xTMsq4DGyq",
+    "responseTimeTodo": "TODO: Confirm enquiry response-time guidance before displaying a promise."
   },
   "navigation": {
     "main": [

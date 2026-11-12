@@ -706,7 +706,7 @@ body:has(.home-page) > .closing-cta { display: none; }
 .home-page .home-section-action { margin-top: 25px; }
 .experience-layout { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(32px,5vw,80px); align-items: center; }
 .experience-intro h2 { font-size: clamp(32px,3.4vw,50px); line-height: 1.12; max-width: 19ch; margin: 18px 0; }
-.experience-intro > p:not(.kicker) { font-size: 14px; line-height: 1.8; color: #b9c6d5; max-width: 57ch; margin-bottom: 24px; }
+.experience-intro > p:not(.kicker) { font-size: 14px; line-height: 1.8; color: #b9c6d5; max-width: 72ch; margin-bottom: 24px; }
 .experience-proof { padding: 32px; border: 1px solid #364453; border-radius: 20px; background: linear-gradient(145deg,#202d3a,#151e28); }
 .experience-metrics { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr) auto; align-items: center; gap: 16px; padding-bottom: 28px; border-bottom: 1px solid #3b4754; }
 .experience-metric { display: flex; flex-direction: column; gap: 15px; min-width: 0; }
@@ -729,7 +729,7 @@ html[data-theme] body.ui-polished .home-page[data-home-page] .home-workshop .cap
 html[data-theme] body.ui-polished .home-page[data-home-page] .home-workshop .workshop-stamp { right: 18px; bottom: 18px; padding: 20px; }
 html[data-theme] body.ui-polished .home-page[data-home-page] .vehicle-card-copy h3 { font-size: 23px; line-height: 1.25; }
 html[data-theme] body.ui-polished .home-page[data-home-page] .vehicle-card-copy > p { font-size: 13px; line-height: 1.8; }
-html[data-theme] body.ui-polished .home-page[data-home-page] .vehicle-card-copy .service-links { margin-top: auto; padding-top: 6px; }
+html[data-theme] body.ui-polished .home-page[data-home-page] .vehicle-card-copy .service-links { margin-top: auto !important; padding-top: 6px; }
 html[data-theme] body.ui-polished .home-page[data-home-page] .home-document-reviews .reviews-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
 html[data-theme] body.ui-polished .home-page[data-home-page] .home-document-reviews blockquote { grid-row: auto; grid-column: auto; display: flex; flex-direction: column; padding: 28px; border: 1px solid #36414e; border-radius: 12px; background: #1e2630 !important; }
 html[data-theme] body.ui-polished .home-page[data-home-page] .home-document-reviews blockquote > p { font-size: 15px; line-height: 1.8; }
@@ -841,6 +841,8 @@ html[data-theme] body.ui-polished .home-page[data-home-page] .home-workshop--com
 }
 html[data-theme] body.ui-polished .home-page[data-home-page] .home-workshop--compact .workshop-comparison {
   align-self: start;
+  position: sticky;
+  top: 120px;
 }
 html[data-theme] body.ui-polished .home-page[data-home-page] .home-workshop--compact .feature-copy {
   align-self: start;
@@ -869,7 +871,7 @@ html[data-theme] body.ui-polished .home-page[data-home-page] .home-workshop--com
 }
 html[data-theme] body.ui-polished .home-page[data-home-page] .home-workshop--compact .workshop-capability-list li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   min-width: 0;
   padding: 0;
   border: 0;
@@ -879,6 +881,7 @@ html[data-theme] body.ui-polished .home-page[data-home-page] .home-workshop--com
   line-height: 1.65;
 }
 html[data-theme] body.ui-polished .home-page[data-home-page] .home-workshop--compact .workshop-capability-list .library-icon {
+  margin-top: .3em;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -895,6 +898,10 @@ html[data-theme] body.ui-polished .home-page[data-home-page] .home-workshop--com
   margin-top: 12px;
 }
 @media (max-width: 900px) {
+  html[data-theme] body.ui-polished .home-page[data-home-page] .home-workshop--compact .workshop-comparison {
+    position: static;
+    top: auto;
+  }
   html[data-theme] body.ui-polished .home-page[data-home-page] .home-workshop--compact {
     grid-template-columns: minmax(0, 1fr);
     padding: 22px;
@@ -1005,4 +1012,17 @@ html[data-theme] body.ui-polished .home-page[data-home-page] .home-workshop .wor
 @media (max-width: 650px) {
   .review-grid { grid-template-columns:minmax(0,1fr); }
   html[data-theme] body.ui-polished .home-page[data-home-page] :is(.review-slider,.review-grid) blockquote { flex-basis: 100%; padding: 28px; }
+}
+
+/* Keep titles, descriptions and service actions aligned across each card row. */
+html[data-theme] body.ui-polished .home-page[data-home-page] .classic-service-grid .vehicle-card-copy h3 { min-height: 2.5em; }
+@media(max-width:650px) {
+  html[data-theme] body.ui-polished .home-page[data-home-page] .classic-service-grid .vehicle-card-copy h3 { min-height: 0; }
+}
+
+@media(max-width:560px) {
+  html[data-theme] body.ui-polished .home-review-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); width:100%; gap:10px; }
+  html[data-theme] body.ui-polished .home-review-actions > a { min-width:0; padding-inline:8px; font-size:11px; min-height:48px; }
+  html[data-theme] body.ui-polished .home-review-actions .google-review-link { gap:6px; }
+  html[data-theme] body.ui-polished .home-review-actions .google-review-link img { width:20px; height:20px; }
 }

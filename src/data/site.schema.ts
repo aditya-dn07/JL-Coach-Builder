@@ -1,6 +1,14 @@
 import { z } from 'zod';
 
 const text = z.string().min(1);
+const openingHoursSpecification = z.object({
+  '@type': z.literal('OpeningHoursSpecification'),
+  dayOfWeek: z.array(z.url()).optional(),
+  validFrom: z.iso.date().optional(),
+  validThrough: z.iso.date().optional(),
+  opens: z.string().regex(/^\d{2}:\d{2}$/),
+  closes: z.string().regex(/^\d{2}:\d{2}$/),
+});
 export const CtaSchema = z.object({ label: text, href: text });
 export const ImageRefSchema = z.object({
   id: text,
@@ -20,6 +28,9 @@ export const BusinessSchema = z.object({
   address: z.object({ street: text, locality: text, postcode: text, country: text }),
   geo: z.object({ latitude: z.number(), longitude: z.number() }).optional(),
   openingHours: z.array(text).optional(),
+  openingHoursSpecification: z.array(openingHoursSpecification).default([]),
+  specialOpeningHoursSpecification: z.array(openingHoursSpecification).default([]),
+  confirmedResponseTime: text.nullable().default(null),
   foundedYear: z.literal(2016),
   sameAs: z.array(z.url()),
   googleRating: z.object({

@@ -93,9 +93,12 @@ summary:focus-visible {
   background: #efd8cb;
 }
 
+:root { --sticky-bar-h: 73px; }
 .mobile-action-bar { display: none; }
 @media (max-width: 800px) {
-  body { padding-bottom: calc(73px + env(safe-area-inset-bottom, 0px)); }
+  body { padding-bottom: calc(var(--sticky-bar-h) + env(safe-area-inset-bottom, 0px)); }
+  html { scroll-padding-bottom: calc(var(--sticky-bar-h) + env(safe-area-inset-bottom, 0px) + 16px); }
+  :is(a, button, input, textarea, summary) { scroll-margin-bottom: calc(var(--sticky-bar-h) + env(safe-area-inset-bottom, 0px) + 16px); }
   .mobile-action-bar {
     position: fixed;
     inset: auto 0 0;
@@ -125,6 +128,12 @@ summary:focus-visible {
   .mobile-action-call:hover { background: #fa000018; border-color: #fa0000; }
   .mobile-action-quote { background: #fa0000; border-color: #fa0000; }
   .mobile-action-quote:hover { background: #d40000; border-color: #d40000; }
-  body .back-to-top { bottom: calc(89px + env(safe-area-inset-bottom, 0px)); }
+  body .back-to-top { bottom: calc(var(--sticky-bar-h) + env(safe-area-inset-bottom, 0px) + 16px); }
   body:has(dialog[open]) .mobile-action-bar { visibility: hidden; }
 }
+@media (max-width: 374px) {
+  /* Conservative pre-hydration/no-JS clearance while the quote label wraps. */
+  :root { --sticky-bar-h: 89px; }
+}
+
+.quote-card .form-privacy a { text-decoration: underline; text-underline-offset: 3px; }

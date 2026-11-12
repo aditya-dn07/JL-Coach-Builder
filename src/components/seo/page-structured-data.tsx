@@ -16,6 +16,7 @@ export function PageStructuredData({ page }: { page: ContentPage }) {
       name: page.title,
       description: page.seo.description,
       isPartOf: { '@id': `${site.url}#website` },
+      about: { '@id': `${site.url}#business` },
     },
     {
       '@type': 'BreadcrumbList',
@@ -31,7 +32,6 @@ export function PageStructuredData({ page }: { page: ContentPage }) {
             name: page.label,
             serviceType: page.label,
             provider: { '@id': `${site.url}#business` },
-            areaServed: { '@type': 'City', name: 'Christchurch' },
             url,
           },
         ]

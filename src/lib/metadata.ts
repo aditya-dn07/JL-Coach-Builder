@@ -25,7 +25,7 @@ export function pageMetadata({
     title: path === '/' ? { absolute: fullTitle } : cleanTitle,
     description,
     alternates: { canonical: url },
-    robots: { index, follow: index },
+    robots: { index: index && process.env.VERCEL_ENV === 'production', follow: index && process.env.VERCEL_ENV === 'production' },
     openGraph: {
       title: fullTitle,
       description,

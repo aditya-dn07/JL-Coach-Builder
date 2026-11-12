@@ -2,13 +2,14 @@ import fs from 'node:fs';
 const pages = JSON.parse(fs.readFileSync('src/content/pages.json', 'utf8'));
 const config = JSON.parse(fs.readFileSync('src/config/site.json', 'utf8'));
 const origin = process.env.CHECK_ORIGIN ?? 'http://localhost:3000';
-const paths = [
+const paths = [...new Set([
   '/',
   ...pages.filter((page) => page.slug).map((page) => `/${page.slug}`),
   '/gallery',
   '/reviews',
   '/faqs',
-];
+])];
+const expectIndexable = process.env.VERCEL_ENV === 'production';
 const results = [];
 const decode = (s) =>
   s?.replaceAll('&amp;', '&').replaceAll('&#x27;', "'").replaceAll('&quot;', '"');
@@ -50,7 +51,7 @@ for (let i = 0; i < paths.length; i += 4) {
         (type) => !schemaTypes.includes(type)
       );
       const expected = new URL(path === '/' ? '/' : `${path}/`, config.url).href;
-      const internalLinks = [...html.matchAll(/href="(\/[^"?#]*)/g)].map((match) =>
+      const internalLinks = [...html.matchAll(/<a\b[^>]*href="(\/[^"?#]*)/g)].map((match) =>
         match[1].replace(/\/$/, '')
       );
       const allowed = new Set(paths.map((p) => p.replace(/\/$/, '')));
@@ -87,7 +88,7 @@ const invalid = results.filter(
     r.status !== 200 ||
     r.h1 !== 1 ||
     !r.brandTitle ||
-    !r.indexable ||
+    r.indexable !== expectIndexable ||
     !r.canonicalMatches ||
     r.missingMeta.length ||
     r.missingSchema.length ||

@@ -4,10 +4,11 @@ import Link from 'next/link';
 import type { ContentPage } from '@/content/schema';
 import { vehicles } from '@/content/catalog';
 import { Photo } from '@/components/shared/photo';
-import { phoneHref, siteConfig } from '@/config/site';
 import { LibraryIcon } from '@/components/shared/library-icon';
 import { TwoToneHeading } from '@/components/shared/two-tone-heading';
 import { getHomeSection, getHomeUi } from './home-content';
+import { QuoteLink } from '@/components/shared/quote-link';
+import { phoneHref, siteConfig } from '@/config/site';
 
 type Props = { page: ContentPage; interior?: { section: ContentPage['sections'][number]; intro: ReactNode; children: ReactNode } };
 
@@ -32,9 +33,12 @@ export function HomeServices({ page, interior }: Props) {
       <article className="service-help-card" data-reveal>
         <span className="capability-icon"><LibraryIcon name="chat-square-text" /></span>
         <p className="kicker">{getHomeUi(page, 'insurance')}</p>
-        <h3><TwoToneHeading text={getHomeSection(page, 6).title} /></h3>
+        <h3><TwoToneHeading text={getHomeUi(page, 'serviceHelpTitle')} /></h3>
         <p>{getHomeSection(page, 6).blocks[0].text}</p>
-        <a className="button primary" href={phoneHref}><LibraryIcon name="telephone" />{getHomeUi(page, 'callPrefix')}{siteConfig.business.phone}</a>
+        <div className="mt-auto flex flex-wrap gap-3">
+          <a className="button primary" href={phoneHref}><LibraryIcon name="telephone" />{getHomeUi(page, 'callPrefix')}{siteConfig.business.phone}</a>
+          <QuoteLink />
+        </div>
       </article>
     </div>
   </section>;

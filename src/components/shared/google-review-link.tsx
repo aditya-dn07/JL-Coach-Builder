@@ -3,12 +3,13 @@ import { contentRepository } from '@/content/repository';
 const ui = contentRepository.getSiteSettings().ui;
 
 export function GoogleReviewLink() {
+  const Tag = googleReviewHref ? 'a' : 'span';
   return (
-    <a
+    <Tag
       href={googleReviewHref}
-      target="_blank"
-      rel="noopener noreferrer nofollow"
-      aria-label={ui.googleRatingAria}
+      target={googleReviewHref ? '_blank' : undefined}
+      rel={googleReviewHref ? 'noopener noreferrer nofollow' : undefined}
+      aria-label={googleReviewHref ? ui.googleRatingAria : 'Google rating: 4.9 out of 5'}
       className="google-review-link text-chrome"
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -17,6 +18,6 @@ export function GoogleReviewLink() {
         <strong className="font-semibold">{ui.googleRatingLabel}</strong>
         <span className="flex items-center gap-2.5 font-semibold">4.9 <span aria-hidden="true" className="tracking-[1px] text-[#fbbc04]">{ui.googleStars}</span></span>
       </span>
-    </a>
+    </Tag>
   );
 }

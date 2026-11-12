@@ -78,6 +78,11 @@ test('quote validation rejects bots, unknown vehicle types and invalid phone / e
     website: '',
   };
   assert.equal(QuoteSchema.safeParse(good).success, true);
+  for (const message of ['', '   ', undefined]) {
+    const result = QuoteSchema.safeParse({ ...good, message });
+    assert.equal(result.success, true);
+    if (result.success) assert.equal(result.data.message, '');
+  }
   for (const patch of [
     { website: 'spam.example' },
     { vehicle: 'Invalid' },

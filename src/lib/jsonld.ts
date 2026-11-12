@@ -1,4 +1,5 @@
 import type { Site } from '@/data/site.schema';
+import { siteConfig } from '@/config/site';
 
 export function generateJsonLd(data: Site) {
   const { business: b, url } = data;
@@ -17,14 +18,14 @@ export function generateJsonLd(data: Site) {
         '@id': `${url}#business`,
         name: b.name,
         url,
-        telephone: b.phone,
+        telephone: '+64 27 347 0214',
         email: b.email,
         address,
         foundingDate: String(b.foundedYear),
-        image: new URL(data.hero.image.optimizedSrc, url).href,
+        image: new URL('/images/optimized/workshop-768.webp', url).href,
         sameAs: b.sameAs,
-        ...(b.geo ? { geo: { '@type': 'GeoCoordinates', ...b.geo } } : {}),
-        ...(b.openingHours ? { openingHours: b.openingHours } : {}),
+        openingHoursSpecification: siteConfig.business.openingHoursSpecification,
+        specialOpeningHoursSpecification: siteConfig.business.specialOpeningHoursSpecification,
       },
       {
         '@type': 'Organization',

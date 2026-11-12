@@ -62,7 +62,7 @@ test('quote route handles validation, unavailable delivery, success and upstream
     assert.equal((await POST(request())).status, 200);
     assert.deepEqual(sent, body);
     globalThis.fetch = async () => new Response('', { status: 500 });
-    assert.equal((await POST(request())).status, 502);
+    assert.equal((await POST(request({ ...body, message: 'A different quote requiring delivery.' }))).status, 502);
   } finally {
     globalThis.fetch = priorFetch;
     if (priorUrl === undefined) delete process.env.QUOTE_WEBHOOK_URL;

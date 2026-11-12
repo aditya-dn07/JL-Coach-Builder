@@ -19,8 +19,8 @@ export function HomeProblems({ page, interior }: { page: ContentPage; interior?:
         <SectionIntro eyebrow={getHomeUi(page, 'problems')} title={content.title} description={introduction} action={<QuoteLink />} />
         <ul className="m-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2 min-[901px]:grid-cols-4">
           {jobs.map(job => (
-            <li key={job.text} className="flex min-h-[78px] items-center gap-3 rounded-lg border border-line bg-[#1e2630] p-4 text-sm leading-relaxed">
-              <Check size={20} aria-hidden="true" className="shrink-0 text-brand" />
+            <li key={job.text} className="flex min-h-[78px] items-start gap-3 rounded-lg border border-line bg-[#1e2630] p-4 text-sm leading-relaxed">
+              <Check size={20} aria-hidden="true" className="mt-0.5 shrink-0 text-brand" />
               <span>{job.text}</span>
             </li>
           ))}

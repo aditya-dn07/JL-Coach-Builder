@@ -14,6 +14,9 @@ export default function config(phase: string): NextConfig {
     // Vercel's Next.js adapter expects .next; isolate only local production builds.
     distDir: isVercel || phase === PHASE_DEVELOPMENT_SERVER ? '.next' : '.next-production',
     poweredByHeader: false,
+    // Freeze the non-secret deployment tier into both server and edge bundles.
+    // Local edge workers otherwise omit VERCEL_ENV even when next start has it.
+    env: { VERCEL_ENV: process.env.VERCEL_ENV ?? 'development' },
 
     images: {
       formats: ['image/avif', 'image/webp'],
@@ -29,6 +32,9 @@ export default function config(phase: string): NextConfig {
         {
           source: '/(.*)',
           headers: [
+            ...(process.env.VERCEL_ENV !== 'production'
+              ? [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }]
+              : []),
             {
               key: 'X-Content-Type-Options',
               value: 'nosniff',

@@ -20,7 +20,7 @@ html[data-theme] body.ui-polished .contact-cta .contact-panel {
 .contact-panel-copy { min-width: 0; }
 html[data-theme] body.ui-polished .contact-panel .kicker { margin-bottom: 19px; font-size: 10px; }
 html[data-theme] body.ui-polished .contact-panel h2 { font-size: clamp(36px, 4vw, 56px); line-height: 1.08; letter-spacing: -.04em; }
-.contact-panel-copy > p:not(.kicker) { max-width: 51ch; font-size: 14px; line-height: 1.8; margin-top: 21px; }
+.contact-panel-copy > p:not(.kicker) { max-width: 72ch; font-size: 14px; line-height: 1.8; margin-top: 21px; }
 .contact-assurances { display: flex; flex-wrap: wrap; gap: 12px 22px; margin-top: 25px; font-size: 11px; color: #d8e1eb; }
 .contact-assurances > span { display: inline-flex; gap: 6px; align-items: center; }
 .contact-assurances svg { color: #ff6c76; }

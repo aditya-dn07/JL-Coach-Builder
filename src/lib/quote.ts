@@ -11,6 +11,6 @@ export const QuoteSchema = z.object({
     .refine((value) => value.replace(/\D/g, '').length >= 7),
   email: z.email().max(254),
   vehicle: z.enum(siteConfig.vehicleTypes as [string, ...string[]]).optional(),
-  message: z.string().trim().min(10).max(4000),
+  message: z.string().trim().max(4000).refine(value => value.length === 0 || value.length >= 10).default(''),
   website: z.string().max(0),
 });

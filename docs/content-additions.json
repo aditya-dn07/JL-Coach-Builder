@@ -25,14 +25,14 @@
     },
     {
       "page": "contact",
-      "section": "quick-contact",
+      "section": "workshop-enquiry",
       "field": "title",
       "source": "authored",
       "text": "Talk to Our Workshop Team"
     },
     {
       "page": "contact",
-      "section": "quick-contact",
+      "section": "workshop-enquiry",
       "field": "description",
       "source": "authored",
       "text": "Call or email us to discuss your vehicle, describe the work you need and arrange an assessment at our Christchurch workshop. You can also use the enquiry form to request a free quote."
@@ -113,6 +113,20 @@
       "field": "eyebrow",
       "source": "authored",
       "text": "Website and Service Terms"
+    },
+    {
+      "page": "contact",
+      "section": "workshop-location",
+      "field": "title",
+      "source": "user",
+      "text": "Contact our Christchurch workshop"
+    },
+    {
+      "page": "contact",
+      "section": "workshop-enquiry",
+      "field": "title",
+      "source": "user",
+      "text": "Talk to our workshop team"
     }
   ]
 }

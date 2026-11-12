@@ -4,9 +4,8 @@
       "name": "Name",
       "phone": "Phone",
       "email": "Email",
-      "website": "Leave this field empty",
       "message": "Message",
-      "submit": "Send",
+      "submit": "Get a free quote",
       "submitting": "Sending…"
     },
     "messages": {
@@ -16,12 +15,12 @@
       "unconfigured": "We couldn’t send your enquiry right now. Please call or email our workshop."
     }
   },
-  "title": "Get A Free Quote",
+  "title": "Get a free quote",
   "ui": {
     "privacy": "We use your details to respond to your enquiry.",
     "privacyLink": "Privacy Policy",
     "emailWorkshop": "Email the workshop",
-    "modalTitle": "Request a free quote",
+    "modalTitle": "Get a free quote",
     "modalClose": "Close quote form"
   }
 }

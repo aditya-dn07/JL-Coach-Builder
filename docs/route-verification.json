@@ -1,5 +1,5 @@
 {
-  "origin": "http://localhost:3010",
+  "origin": "http://localhost:3011",
   "pages": [
     {
       "path": "/",
@@ -14,14 +14,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/about",
       "status": 200,
       "h1": 1,
-      "title": "About JL Coachbuilders | JL Coachbuilders",
-      "description": "JL Coachbuilders is a Christchurch-based specialist workshop providing repairs, servicing, panel and paint, and custom alterations for caravans, campervans, mot",
+      "title": "Experienced Coachbuilders for Repairs, Servicing and Upgrades | JL Coachbuilders",
+      "description": "JL Coachbuilders is a Christchurch-based specialist workshop providing repairs, servicing, panel and paint, and custom alterations for caravans, campervans, motorhomes, fifth wheels, buses and other specialist vehicles.",
       "canonical": "https://jlcoachbuilders.co.nz/about/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -29,14 +29,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/bus-alteration-and-upgrades-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Bus Alterations and Upgrades in Christchurch | JL Coachbuilders",
-      "description": "Improve the comfort, functionality and practicality of your bus with professional alterations, interior fit-outs and upgrades from JL Coachbuilders in Christchu",
+      "title": "Bus Alterations and Upgrades Christchurch | JL Coachbuilders",
+      "description": "Upgrade your bus in Christchurch with interior fit-outs, solar installations, seating changes and custom modifications. Get a free quote.",
       "canonical": "https://jlcoachbuilders.co.nz/bus-alteration-and-upgrades-in-christchurch/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -44,14 +44,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/bus-panel-and-paint-services-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Bus Panel and Paint Services in Christchurch | JL Coachbuilders",
-      "description": "From accident damage and scratched panels to paint repairs and complete resprays, JL Coachbuilders provides bus panel and paint services in Christchurch for dif",
+      "title": "Professional Bus Panel and Paint Services in Christchurch | JL Coachbuilders",
+      "description": "From accident damage and scratched panels to paint repairs and complete resprays, JL Coachbuilders provides bus panel and paint services in Christchurch for different makes and models.",
       "canonical": "https://jlcoachbuilders.co.nz/bus-panel-and-paint-services-in-christchurch/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -59,14 +59,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/bus-repairs-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Bus Repairs in Christchurch | JL Coachbuilders",
-      "description": "From accident damage and water leaks to structural issues and interior repairs, JL Coachbuilders provides bus repair services in Christchurch for all makes and ",
+      "title": "Professional Bus Repairs in Christchurch | JL Coachbuilders",
+      "description": "From accident damage and water leaks to structural issues and interior repairs, JL Coachbuilders provides bus repair services in Christchurch for all makes and models.",
       "canonical": "https://jlcoachbuilders.co.nz/bus-repairs-in-christchurch/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -74,13 +74,13 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/bus-services-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Bus Services in Christchurch | JL Coachbuilders",
+      "title": "Professional Bus Servicing and Maintenance in Christchurch | JL Coachbuilders",
       "description": "Keep your bus safe, reliable and ready for the road with professional servicing, maintenance and safety checks from JL Coachbuilders in Christchurch.",
       "canonical": "https://jlcoachbuilders.co.nz/bus-services-in-christchurch/",
       "canonicalMatches": true,
@@ -89,13 +89,13 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/campervan-alteration-and-upgrades-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Campervan Alterations and Upgrades in Christchurch | JL Coachbuilders",
+      "title": "Professional Campervan Alterations and Upgrades in Christchurch | JL Coachbuilders",
       "description": "Improve your campervan with practical upgrades, from solar installations and heating systems to interior renovations and custom storage solutions.",
       "canonical": "https://jlcoachbuilders.co.nz/campervan-alteration-and-upgrades-in-christchurch/",
       "canonicalMatches": true,
@@ -104,14 +104,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/campervan-panel-and-paint-services-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Campervan Panel and Paint Services in Christchurch | JL Coachbuilders",
-      "description": "From accident damage and dents to faded paintwork and complete resprays, JL Coachbuilders provides campervan panel and paint services in Christchurch for all ma",
+      "title": "Professional Campervan Panel and Paint Services in Christchurch | JL Coachbuilders",
+      "description": "From accident damage and dents to faded paintwork and complete resprays, JL Coachbuilders provides campervan panel and paint services in Christchurch for all makes and models.",
       "canonical": "https://jlcoachbuilders.co.nz/campervan-panel-and-paint-services-in-christchurch/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -119,14 +119,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/campervan-repairs-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Campervan Repairs in Christchurch | JL Coachbuilders",
-      "description": "From accident damage and water leaks to structural issues and interior repairs, JL Coachbuilders provides campervan repair services for all makes and models acr",
+      "title": "Professional Campervan Repairs in Christchurch | JL Coachbuilders",
+      "description": "From accident damage and water leaks to structural issues and interior repairs, JL Coachbuilders provides campervan repair services for all makes and models across Christchurch and Canterbury.",
       "canonical": "https://jlcoachbuilders.co.nz/campervan-repairs-in-christchurch/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -134,14 +134,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/campervan-services-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Campervan Services in Christchurch | JL Coachbuilders",
-      "description": "Keep your campervan in good condition with professional servicing, damp testing, repairs and upgrades for all makes and models across Christchurch and Canterbur",
+      "title": "Professional Campervan Services in Christchurch | JL Coachbuilders",
+      "description": "Keep your campervan in good condition with professional servicing, damp testing, repairs and upgrades for all makes and models across Christchurch and Canterbury.",
       "canonical": "https://jlcoachbuilders.co.nz/campervan-services-in-christchurch/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -149,13 +149,13 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/caravan-alterations-and-upgrades-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Caravan Alterations and Upgrades in Christchurch | JL Coachbuilders",
+      "title": "Professional Caravan Alterations and Upgrades in Christchurch | JL Coachbuilders",
       "description": "Improve your caravan with practical alterations and upgrades, from solar installations and heating systems to interior renovations and custom storage solutions.",
       "canonical": "https://jlcoachbuilders.co.nz/caravan-alterations-and-upgrades-in-christchurch/",
       "canonicalMatches": true,
@@ -164,14 +164,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/caravan-panel-and-paint-services-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Caravan Panel and Paint Services in Christchurch | JL Coachbuilders",
-      "description": "From accident damage and dents to faded paintwork and full resprays, JL Coachbuilders provides caravan panel and paint services in Christchurch for all makes an",
+      "title": "Professional Caravan Panel and Paint Services in Christchurch | JL Coachbuilders",
+      "description": "From accident damage and dents to faded paintwork and full resprays, JL Coachbuilders provides caravan panel and paint services in Christchurch for all makes and models.",
       "canonical": "https://jlcoachbuilders.co.nz/caravan-panel-and-paint-services-in-christchurch/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -179,14 +179,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/caravan-repairs-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Caravan Repairs in Christchurch | JL Coachbuilders",
-      "description": "From water leaks and accident damage to structural repairs and interior restoration, JL Coachbuilders provides caravan repairs for all makes and models across C",
+      "title": "Professional Caravan Repairs in Christchurch | JL Coachbuilders",
+      "description": "From water leaks and accident damage to structural repairs and interior restoration, JL Coachbuilders provides caravan repairs for all makes and models across Christchurch and Canterbury.",
       "canonical": "https://jlcoachbuilders.co.nz/caravan-repairs-in-christchurch/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -194,13 +194,13 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/caravan-services-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Caravan Services in Christchurch | JL Coachbuilders",
+      "title": "Professional Caravan Servicing in Christchurch | JL Coachbuilders",
       "description": "Keep your caravan safe and road-ready with expert servicing, maintenance, damp testing and repairs for all makes and models across Christchurch and Canterbury.",
       "canonical": "https://jlcoachbuilders.co.nz/caravan-services-in-christchurch/",
       "canonicalMatches": true,
@@ -209,14 +209,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/contact",
       "status": 200,
       "h1": 1,
       "title": "Contact JL Coachbuilders | JL Coachbuilders",
-      "description": "Need repairs, servicing, panel and paint work, or alterations for your caravan, motorhome, campervan, fifth wheel or bus? Contact JL Coachbuilders to discuss yo",
+      "description": "Need repairs, servicing, panel and paint work, or alterations for your caravan, motorhome, campervan, fifth wheel or bus? Contact JL Coachbuilders to discuss your requirements or request a free, no-obligation quote.",
       "canonical": "https://jlcoachbuilders.co.nz/contact/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -224,14 +224,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/faqs",
       "status": 200,
       "h1": 1,
-      "title": "FAQs | JL Coachbuilders",
-      "description": "Find answers about repairs, servicing, insurance, turnaround times and the caravans, motorhomes and other vehicles we work on.",
+      "title": "Common Questions Before You Book | JL Coachbuilders",
+      "description": "Find answers to common questions about our repairs, servicing, turnaround times and the vehicles we work on before booking with our team.",
       "canonical": "https://jlcoachbuilders.co.nz/faqs/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -239,14 +239,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/fifth-wheel-panel-and-paint-services-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Fifth Wheel Panel and Paint Services in Christchurch | JL Coachbuilders",
-      "description": "From scratches and damaged panels to paint touch-ups and complete resprays, JL Coachbuilders provides fifth wheel panel and paint services in Christchurch for a",
+      "title": "Professional Fifth Wheel Panel and Paint Services in Christchurch | JL Coachbuilders",
+      "description": "From scratches and damaged panels to paint touch-ups and complete resprays, JL Coachbuilders provides fifth wheel panel and paint services in Christchurch for all makes and models.",
       "canonical": "https://jlcoachbuilders.co.nz/fifth-wheel-panel-and-paint-services-in-christchurch/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -254,14 +254,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/fifth-wheel-repairs-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Fifth Wheel Repairs in Christchurch | JL Coachbuilders",
-      "description": "From accident damage and water leaks to structural issues and interior repairs, JL Coachbuilders provides fifth wheel repair services in Christchurch for all ma",
+      "title": "Professional Fifth Wheel Repairs in Christchurch | JL Coachbuilders",
+      "description": "From accident damage and water leaks to structural issues and interior repairs, JL Coachbuilders provides fifth wheel repair services in Christchurch for all makes and models.",
       "canonical": "https://jlcoachbuilders.co.nz/fifth-wheel-repairs-in-christchurch/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -269,14 +269,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/fifth-wheel-services-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Fifth Wheel Services in Christchurch | JL Coachbuilders",
-      "description": "Keep your fifth wheel in good condition with professional servicing, damp testing, maintenance and repairs for different makes and models across Christchurch an",
+      "title": "Professional Fifth Wheel Services in Christchurch | JL Coachbuilders",
+      "description": "Keep your fifth wheel in good condition with professional servicing, damp testing, maintenance and repairs for different makes and models across Christchurch and Canterbury.",
       "canonical": "https://jlcoachbuilders.co.nz/fifth-wheel-services-in-christchurch/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -284,13 +284,13 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/fifth-wheels-alteration-and-upgrades-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Fifth Wheel Alterations and Upgrades in Christchurch | JL Coachbuilders",
+      "title": "Professional Fifth Wheel Alteration and Upgrade Services in Christchurch | JL Coachbuilders",
       "description": "Customise your fifth wheel with practical upgrades, interior fit-outs and accessory installations from JL Coachbuilders in Christchurch.",
       "canonical": "https://jlcoachbuilders.co.nz/fifth-wheels-alteration-and-upgrades-in-christchurch/",
       "canonicalMatches": true,
@@ -299,14 +299,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/gallery",
       "status": 200,
       "h1": 1,
-      "title": "Workshop Gallery | JL Coachbuilders",
-      "description": "Explore specialist vehicle and workshop photographs from JL Coachbuilders in Christchurch.",
+      "title": "Caravan and Motorhome Workshop Gallery | JL Coachbuilders",
+      "description": "Explore JL Coachbuilders workshop photographs, caravan and motorhome repairs, bodywork and interiors in Christchurch.",
       "canonical": "https://jlcoachbuilders.co.nz/gallery/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -314,13 +314,13 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/insurance",
       "status": 200,
       "h1": 1,
-      "title": "Caravan and Motorhome Insurance Repairs in Christchurch | JL Coachbuilders",
+      "title": "Insurance Repairs for Caravans and Motorhomes in Christchurch | JL Coachbuilders",
       "description": "JL Coachbuilders can assess the damage, provide repair quotes and assist with insurance-related repair work at our Christchurch workshop.",
       "canonical": "https://jlcoachbuilders.co.nz/insurance/",
       "canonicalMatches": true,
@@ -329,13 +329,13 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/motorhome-alteration-and-upgrades-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Motorhome Alterations and Upgrades in Christchurch | JL Coachbuilders",
+      "title": "Professional Motorhome Alterations and Upgrades in Christchurch | JL Coachbuilders",
       "description": "Improve your motorhome with practical upgrades, from solar installations and heating systems to interior renovations and custom storage solutions.",
       "canonical": "https://jlcoachbuilders.co.nz/motorhome-alteration-and-upgrades-in-christchurch/",
       "canonicalMatches": true,
@@ -344,14 +344,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/motorhome-panel-and-paint-services-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Motorhome Panel and Paint Services in Christchurch | JL Coachbuilders",
-      "description": "From accident damage and dents to faded paintwork and complete resprays, JL Coachbuilders provides motorhome panel and paint services in Christchurch for all ma",
+      "title": "Professional Motorhome Panel and Paint Services in Christchurch | JL Coachbuilders",
+      "description": "From accident damage and dents to faded paintwork and complete resprays, JL Coachbuilders provides motorhome panel and paint services in Christchurch for all makes and models.",
       "canonical": "https://jlcoachbuilders.co.nz/motorhome-panel-and-paint-services-in-christchurch/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -359,14 +359,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/motorhome-repairs-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Motorhome Repairs in Christchurch | JL Coachbuilders",
-      "description": "From accident damage and water leaks to structural issues and interior repairs, JL Coachbuilders provides motorhome repair services for all makes and models acr",
+      "title": "Professional Motorhome Repairs in Christchurch | JL Coachbuilders",
+      "description": "From accident damage and water leaks to structural issues and interior repairs, JL Coachbuilders provides motorhome repair services for all makes and models across Christchurch and Canterbury.",
       "canonical": "https://jlcoachbuilders.co.nz/motorhome-repairs-in-christchurch/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -374,14 +374,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/motorhome-services-in-christchurch",
       "status": 200,
       "h1": 1,
-      "title": "Motorhome Services in Christchurch | JL Coachbuilders",
-      "description": "Keep your motorhome in good condition with professional servicing, damp testing, repairs and maintenance for all makes and models across Christchurch and Canter",
+      "title": "Professional Motorhome Services in Christchurch | JL Coachbuilders",
+      "description": "Keep your motorhome in good condition with professional servicing, damp testing, repairs and maintenance for all makes and models across Christchurch and Canterbury.",
       "canonical": "https://jlcoachbuilders.co.nz/motorhome-services-in-christchurch/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -389,14 +389,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/privacy-policy",
       "status": 200,
       "h1": 1,
       "title": "Privacy Policy | JL Coachbuilders",
-      "description": "JL Coachbuilders Ltd respects your privacy and is committed to handling your personal information responsibly. This Privacy Policy explains how we collect, use,",
+      "description": "JL Coachbuilders Ltd respects your privacy and is committed to handling your personal information responsibly. This Privacy Policy explains how we collect, use, store and disclose personal information when you visit our website, contact us, request a quote or use our services.",
       "canonical": "https://jlcoachbuilders.co.nz/privacy-policy/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -404,14 +404,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/reviews",
       "status": 200,
       "h1": 1,
-      "title": "Customer Reviews | JL Coachbuilders",
-      "description": "Read customer experiences with JL Coachbuilders in Christchurch. Browse a selection of reviews here and visit Google for the complete collection.",
+      "title": "Over 100 Five-Star Reviews | JL Coachbuilders",
+      "description": "Our customers trust JL Coachbuilders for quality workmanship, honest advice and reliable service. Read what they say about their experience with our team.",
       "canonical": "https://jlcoachbuilders.co.nz/reviews/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -419,14 +419,14 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     },
     {
       "path": "/terms-and-conditions",
       "status": 200,
       "h1": 1,
       "title": "Terms and Conditions | JL Coachbuilders",
-      "description": "Welcome to the JL Coachbuilders website. These Terms and Conditions apply to your use of our website and provide general information about enquiries, quotes and",
+      "description": "Welcome to the JL Coachbuilders website. These Terms and Conditions apply to your use of our website and provide general information about enquiries, quotes and services supplied by JL Coachbuilders Ltd.",
       "canonical": "https://jlcoachbuilders.co.nz/terms-and-conditions/",
       "canonicalMatches": true,
       "missingMeta": [],
@@ -434,7 +434,7 @@
       "brokenInternal": [],
       "brandTitle": true,
       "twitterCard": "summary_large_image",
-      "indexable": true
+      "indexable": false
     }
   ],
   "titleUnique": true,

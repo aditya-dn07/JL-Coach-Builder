@@ -9,4 +9,5 @@ export const fullAddress = [
 ].join(', ');
 export const directionsHref = 'https://maps.google.com/?q=' + encodeURIComponent(fullAddress);
 export const mapEmbedSrc = config.ui.mapEmbed;
-export const googleReviewHref = config.ui.googleReviewHref;
+// TODO: Supply the verified public Google destination in site.json; never use a proxy URL.
+export const googleReviewHref = config.ui.verifiedGoogleReviewUrl || undefined;
