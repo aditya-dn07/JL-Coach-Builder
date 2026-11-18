@@ -3,7 +3,7 @@ export function validateContent<T>(
   schema: { safeParse(value: unknown): { success: boolean; data?: T; error?: { issues: readonly { path: readonly PropertyKey[] }[] } } },
   candidate: unknown, fallback: T,
 ): T {
-  let current = structuredClone(candidate);
+  const current = structuredClone(candidate);
   for (let attempt = 0; attempt < 5; attempt++) {
     const parsed = schema.safeParse(current);
     if (parsed.success) return parsed.data as T;
