@@ -295,9 +295,9 @@ With neither a webhook nor complete Resend configuration, the form reports that 
 
 ## Sanity CMS
 
-Open /studio after configuring the public Sanity project/dataset identifiers. The default dataset is **production**. Set CONTENT_SOURCE=sanity to load published content; empty or unavailable fields retain current local defaults. No dataset writes or imports are performed automatically.
+Open /studio after configuring the public Sanity project/dataset identifiers. The default dataset is **production**. Set CONTENT_SOURCE=sanity to load published content; missing/blank fields retain local defaults. Configured read failures throw a sanitized SanityContentReadError so ISR retains the last successful page instead of caching fallback content as a successful update. Cold requests/builds need working configured Sanity. No dataset writes or imports are performed automatically.
 
-Studio has global singletons, Page → Section editors, Blog Posts and Form Submissions. Schema entry: src/cms/sanity/schemaTypes/index.ts; structure: src/cms/sanity/structure.ts. Server fetches revalidate every 60 seconds. A signed /api/revalidate webhook supports immediate publication refresh.
+Studio has global singletons, Page → Section editors, Blog Posts and Form Submissions. Schema entry: src/cms/sanity/schemaTypes/index.ts; structure: src/cms/sanity/structure.ts. Server fetches use 60-second request-triggered stale-while-revalidation; the first stale request can return old HTML while refreshing. A signed /api/revalidate webhook supports refresh on the next request after publication. See [webhook setup](docs/cms-integration.md#signed-content-webhook); pushes/rebuilds are not needed for published content updates.
 
 New source areas:
 

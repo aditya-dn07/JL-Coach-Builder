@@ -4,7 +4,7 @@ The website has an embedded Sanity Studio at /studio, fixed page/section editors
 
 ## Configuration
 
-Copy .env.example to an ignored .env.local or set deployment environment variables. Set CONTENT_SOURCE=sanity to enable CMS reads. Without configured identifiers, or when a CMS field is empty/unavailable, the current local content remains visible.
+Copy .env.example to an ignored .env.local or set deployment environment variables. Set CONTENT_SOURCE=sanity to enable CMS reads. Missing/blank published fields retain local defaults. Explicit local mode (or automatic mode without identifiers) uses local content. A configured Sanity read failure is reported as SanityContentReadError rather than silently caching defaults; failed ISR refreshes retain the last successful page. A cold request/build without working configured Sanity fails visibly instead of presenting local content as current CMS content.
 
 The default content dataset is **production**. Configure only NEXT_PUBLIC_SANITY_PROJECT_ID and NEXT_PUBLIC_SANITY_DATASET for Studio, CLI, content reads and images. Public datasets need no read token. Public identifiers are not credentials. The minimal example contains six core names plus the three Resend names.
 
@@ -20,7 +20,13 @@ Upload images through the image fields. Every image supports hotspot and Alt tex
 
 /blogs/ lists published articles and /blogs/[slug]/ shows a post. Create a category and author, then a Blog Post with title, slug, publication date, excerpt, featured image/alt and Portable Text body. Future-dated posts/drafts stay private. Blog Page contains SEO, banner, filter/featured selections, list/detail labels, optional sidebar, internal CTA and footer CTA. There were no legacy posts, so no blog import script or import run is needed. Existing `page.blog.*` document IDs are unchanged.
 
-Publish changes are visible after the 60-second cache window. For immediate refresh, configure a signed Sanity webhook to POST /api/revalidate using SANITY_REVALIDATE_SECRET. Its projection should include _type, _id, slug and beforeSlug when a post slug changes. No webhook was configured or invoked here. Arbitrary paths and submission document events are rejected.
+Public reads use the Sanity origin API, published perspective and a 60-second tagged cache. This is request-triggered stale-while-revalidate, not a scheduled refresh or a promise that every browser updates exactly 60 seconds after publishing: the first stale request can return the old page while refreshing it. For immediate refresh on the next request, configure the signed Sanity webhook described below. Open browser tabs still need navigation/reload; published content does not require GitHub pushes or rebuilding.
+
+### Signed content webhook
+
+In Sanity Manage for the same content project, create/verify a webhook targeting `https://jl-coach-builder.vercel.app/api/revalidate` while staging is the active frontend. At final-domain launch use `https://jlcoachbuilders.co.nz/api/revalidate`. Use POST, the **content** dataset `production`, published documents only (exclude `_id in path("drafts.**")`), and create/update/delete events for existing content document types. Exclude formSubmission and private submission IDs. Do not point content hooks at the submissions dataset. No account settings were changed by this fix.
+
+Set the webhook signing secret to match the server-only Vercel variable `SANITY_REVALIDATE_SECRET`; do not put it in the URL or a NEXT_PUBLIC variable. Projection: `{_type, _id, slug, "beforeSlug": before().slug.current}`. Keep `_type` at the top level; it is required by the existing handler. The handler verifies the signature, rejects submission/unknown types, invalidates `sanity:content` and `sanity:blog`, the root layout, sitemap/robots, `/blogs` and current/previous post paths. The root-layout invalidation covers all existing page/section/global singleton events even when they have no slug. CMS IDs remain `page.blog.*`; public routes remain `/blogs/`. No production webhook was invoked during local verification. Timed refresh continues without a webhook secret.
 
 ## Quote delivery and submission storage
 
