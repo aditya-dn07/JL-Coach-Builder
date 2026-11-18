@@ -8,11 +8,16 @@ import { fetchPublished } from './client';
 import { resolveImages } from './images';
 import { singletonQuery } from './queries';
 import { toSanityDocumentId, fromSanityDocumentId } from '../../cms/sanity/document-ids.mjs';
+import { expandInternalReferences } from './internal-links';
+import { correctInternalHrefs } from '../seo-targets';
 const image = ImageSchema;
 const category = z.object({ _id: z.string(), title: z.string(), slug: z.object({ current: z.string() }), count: z.number().default(0) });
 const postSchema = z.object({
   _id: z.string(), title: z.string(), slug: z.object({ current: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/) }),
   publishedAt: z.string().datetime(), excerpt: z.string().default(''),
+  excerptRich: z.array(z.object({ _type: z.string(), _key: z.string().optional() }).passthrough()).optional(),
+  relatedLinks: z.array(z.object({ label: z.string(), href: z.string() })).optional(),
+  relatedLinksTitle: z.string().optional(),
   featuredImage: image.optional(), category: category.nullish(),
   author: z.object({ name: z.string(), photo: image.nullish(), role: z.string().optional(), bio: z.array(z.object({ _type: z.string() }).passthrough()).optional(), socialLinks: z.array(z.object({ label: z.string(), href: z.string() })).optional() }).nullish(),
   tags: z.array(category).nullish(), relatedPosts: z.array(z.object({ _ref: z.string() })).optional(),
@@ -22,7 +27,8 @@ const postSchema = z.object({
 export type BlogPost = z.infer<typeof postSchema>;
 const projection = '{...,category->,author->,"tags": tags[]->}';
 const eligible = '_type == "blogPost" && !(_id in path("drafts.**")) && publishedAt <= now()';
-function postsFrom(value: unknown): BlogPost[] {
+async function postsFrom(value: unknown): Promise<BlogPost[]> {
+  value = correctInternalHrefs(await expandInternalReferences(value));
   if (!Array.isArray(value)) return [];
   return value.flatMap(item => { const parsed = postSchema.safeParse(resolveImages(item)); return parsed.success ? [parsed.data] : []; });
 }
@@ -33,7 +39,7 @@ export async function getBlogPosts(categorySlug = '', page = 1, size = 9, peek =
 }
 export const getBlogPost = cache(async (slug: string): Promise<BlogPost | undefined> => {
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) return undefined;
-  return postsFrom(await fetchPublished('*[' + eligible + ' && slug.current == $slug][0...1]' + projection, { slug }, ['sanity:blog']))[0];
+  return (await postsFrom(await fetchPublished('*[' + eligible + ' && slug.current == $slug][0...1]' + projection, { slug }, ['sanity:blog'])))[0];
 });
 export async function getRelatedPosts(post: BlogPost) {
   const ids = referenceIds(post.relatedPosts).filter(id => id !== post._id);
@@ -50,22 +56,22 @@ export async function getFeaturedPosts(ids: string[], maximum: number) {
   if (!limit) return [];
   const uniqueIds = [...new Set(ids)].slice(0, 50);
   if (uniqueIds.length) {
-    const records = postsFrom(await fetchPublished('*[' + eligible + ' && _id in $ids]' + projection, { ids: uniqueIds }, ['sanity:blog']));
+    const records = await postsFrom(await fetchPublished('*[' + eligible + ' && _id in $ids]' + projection, { ids: uniqueIds }, ['sanity:blog']));
     return uniqueIds.flatMap(id => records.find(post => post._id === id) ?? []).slice(0, limit);
   }
   return postsFrom(await fetchPublished('*[' + eligible + ' && featured == true] | order(publishedAt desc) [0...$maximum]' + projection, { maximum: limit }, ['sanity:blog']));
 }
 export const getBlogPage = cache(async () => {
   const ids = defaults.registry.find(page => page.id === 'page.blog')!.items.map(item => item.id);
-  const docs = await fetchPublished<(Record<string, unknown> & { _id: string })[]>(singletonQuery, { ids: ids.map(toSanityDocumentId) }, ['sanity:blog']);
+  const docs = await expandInternalReferences(await fetchPublished<(Record<string, unknown> & { _id: string })[]>(singletonQuery, { ids: ids.map(toSanityDocumentId) }, ['sanity:blog']));
   const map = new Map((docs ?? []).map(doc => [fromSanityDocumentId(doc._id), doc]));
   const get = <T>(key: string, fallback: T): T => resolveImages(mergeContent(fallback, map.get('page.blog.' + key))) as T;
-  return {
+  return correctInternalHrefs({
     settings: get('settings', defaults.seeds['page.blog.settings']), seo: get('seo', defaults.seeds['page.blog.seo']),
     banner: get('banner', { ...defaults.seeds['page.blog.banner'], image: defaults.seeds['page.blog.banner'].image as z.infer<typeof image> }), filters: get('filters', defaults.seeds['page.blog.filters']),
     featured: get('featured', defaults.seeds['page.blog.featured']), sidebar: get('sidebar', defaults.seeds['page.blog.sidebar']),
     internalCta: get('internalCta', defaults.seeds['page.blog.internalCta']), footerCta: get('footerCta', defaults.seeds['page.blog.footerCta']),
-  };
+  });
 });
 export const getBlogSitemapPosts = async () => postsFrom(await fetchPublished('*[' + eligible + '] | order(publishedAt desc)' + projection, {}, ['sanity:blog']));
 export const referenceIds = (value: unknown): string[] => Array.isArray(value) ? value.flatMap(item => item && typeof item === 'object' && '_ref' in item && typeof item._ref === 'string' ? [item._ref] : []) : [];

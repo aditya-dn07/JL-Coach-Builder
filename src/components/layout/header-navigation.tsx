@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 import { CalendarDays, ChevronDown, MapPin, Menu, Phone, Wrench, X } from 'lucide-react';
 import { LibraryIcon } from '@/components/shared/library-icon';
 import { QuoteModal } from '@/components/contact/quote-modal';
+import { lockBodyScroll } from '@/lib/body-scroll-lock';
 type NavigationGroup = { label: string; links: { label: string; href: string }[] };
 export function HeaderNavigation({
   groups,
@@ -21,13 +22,33 @@ export function HeaderNavigation({
   const headerRef = useRef<HTMLElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const isCurrent = (href: string) =>
-    path === href.replace(/\/$/, '') || (href === '/' && path === '/');
+    (path.replace(/\/$/, '') || '/') === (href.replace(/\/$/, '') || '/');
   function close() {
     setOpen(false);
     headerRef.current?.querySelectorAll<HTMLDetailsElement>('details[open]').forEach((el) => {
       el.open = false;
     });
   }
+  useEffect(() => {
+    if (!open) return;
+    const header = headerRef.current;
+    if (!header) return;
+    const releaseScroll = lockBodyScroll();
+    const measure = () => {
+      if (window.matchMedia('(min-width: 1001px)').matches) { close(); return; }
+      header.style.setProperty('--navigation-top', `${Math.max(0, header.getBoundingClientRect().bottom)}px`);
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(header);
+    window.addEventListener('resize', measure);
+    return () => {
+      releaseScroll();
+      observer.disconnect();
+      window.removeEventListener('resize', measure);
+      header.style.removeProperty('--navigation-top');
+    };
+  }, [open]);
   useEffect(() => {
     const dismiss = (event: PointerEvent) => {
       if (headerRef.current && !headerRef.current.contains(event.target as Node)) close();
@@ -68,7 +89,7 @@ export function HeaderNavigation({
           <Image src={logo.src} caption={logo.caption} decorative={logo.decorative} focalPoint={logo.focalPoint} alt={logo.alt || siteConfig.business.name} width={logo.width} height={logo.height} sizes="(max-width: 560px) 230px, (max-width: 1400px) 280px, 340px" priority className="block h-auto w-full" />
         </Link>
         <nav id="main-navigation" aria-label={siteConfig.ui.headerNavAria} className={
-          `${open ? 'grid' : 'hidden'} absolute inset-x-0 top-full max-h-[calc(100dvh-82px)] max-[800px]:max-h-[calc(100dvh-82px-var(--sticky-bar-h)-env(safe-area-inset-bottom,0px))] gap-x-4 overflow-y-auto border-b border-line bg-surface px-8 py-5 font-medium nav:static nav:flex nav:max-h-none nav:self-stretch nav:items-center nav:overflow-visible nav:border-0 nav:bg-transparent nav:p-0 wide:gap-x-[26px]`
+          `${open ? 'grid' : 'hidden'} absolute inset-x-0 top-full max-h-[calc(100dvh-var(--navigation-top,137px))] max-[800px]:max-h-[calc(100dvh-var(--navigation-top,137px)-var(--sticky-bar-h)-env(safe-area-inset-bottom,0px))] gap-x-4 overflow-y-auto border-b border-line bg-surface px-8 py-5 font-medium nav:static nav:flex nav:max-h-none nav:self-stretch nav:items-center nav:overflow-visible nav:border-0 nav:bg-transparent nav:p-0 wide:gap-x-[26px]`
         } onClick={(event) => { if ((event.target as Element).closest('a')) close(); }}>
           <Link href={siteConfig.ui.homeHref} className={navLinkClass} aria-current={isCurrent('/') ? 'page' : undefined}>{siteConfig.ui.headerHome}</Link>
           <details className="group nav:flex nav:self-stretch nav:items-center [&>summary::-webkit-details-marker]:hidden"
@@ -91,7 +112,7 @@ export function HeaderNavigation({
           </details>
           {mainNavigation.map(link => <Link key={link.href} href={link.href} className={navLinkClass} aria-current={isCurrent(link.href) ? 'page' : undefined}>{link.label}</Link>)}
         </nav>
-        <a href={siteConfig.ui.quoteTarget} className="order-3 hidden min-h-[49px] shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-brand px-4 py-3 font-semibold transition-colors hover:bg-[#d40000] sm:flex nav:hidden min-[1201px]:flex" onClick={close}><LibraryIcon name="chat-square-text" />{siteConfig.ui.headerTalk}</a>
+        <a href={siteConfig.ui.quoteTarget} className="order-3 hidden min-h-[49px] shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-[#d40000] px-4 py-3 font-semibold transition-colors hover:bg-[#b80000] sm:flex nav:hidden min-[1201px]:flex" onClick={close}><LibraryIcon name="chat-square-text" />{siteConfig.ui.headerTalk}</a>
         <button ref={toggleRef} type="button" className="order-2 ml-auto grid h-11 w-11 shrink-0 place-items-center border-0 bg-transparent p-0 nav:hidden" onClick={() => setOpen(!open)} aria-controls="main-navigation" aria-expanded={open} aria-label={open ? siteConfig.ui.headerClose : siteConfig.ui.headerOpen}>{open ? <X size={25} aria-hidden="true" /> : <Menu size={25} aria-hidden="true" />}</button>
       </header>
     </>

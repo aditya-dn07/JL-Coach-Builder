@@ -14,10 +14,12 @@ import { resolveImages } from './images';
 import layouts from '../../cms/sanity/layout-map.json';
 import { homeUiOwners } from '../../content/section-identity';
 import { toSanityDocumentId, fromSanityDocumentId } from '../../cms/sanity/document-ids.mjs';
+import { expandInternalReferences } from './internal-links';
+import { correctInternalHrefs } from '../seo-targets';
 type Document = Record<string, unknown> & { _id: string };
 const parseOr = validateContent;
 export const getPublicContent = cache(async (): Promise<ContentSnapshot> => {
-  const remote = await fetchPublished<Document[]>(singletonQuery, { ids: Object.keys(defaults.seeds).map(toSanityDocumentId) });
+  const remote = await expandInternalReferences(await fetchPublished<Document[]>(singletonQuery, { ids: Object.keys(defaults.seeds).map(toSanityDocumentId) }));
   const documents = new Map((remote ?? []).map(doc => [fromSanityDocumentId(doc._id), doc]));
   const get = <T>(id: string, fallback: T): T => resolveImages(mergeContent(fallback, documents.get(id))) as T;
   const business = get('global.business', defaults.seeds['global.business']);
@@ -138,5 +140,5 @@ export const getPublicContent = cache(async (): Promise<ContentSnapshot> => {
       snapshot.quoteForm = settings.quoteForm;
     } catch { /* Source-backed defaults remain available if the provider cannot be reached. */ }
   }
-  return snapshot;
+  return correctInternalHrefs(snapshot);
 });

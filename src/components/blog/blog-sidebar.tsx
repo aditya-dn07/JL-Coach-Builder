@@ -9,8 +9,8 @@ export async function BlogSidebar() {
   const ids = referenceIds(sidebar.categories);
   const categories = (await getCategories()).filter(category => !ids.length || ids.includes(category._id));
   return <aside className="rounded-lg border border-line p-6"><h2>{sidebar.heading}</h2>
-    <ul>{categories.map(category => <li key={category._id}><Link className="underlink" href={'/blog/?category=' + encodeURIComponent(category.slug.current)}>{category.title}</Link></li>)}</ul>
-    <ul>{posts.map(post => <li key={post._id}><Link className="underlink" href={'/blog/' + post.slug.current + '/'}>{post.title}</Link></li>)}</ul>
+    <ul>{categories.map(category => <li key={category._id}><Link className="underlink" href={'/blogs/?category=' + encodeURIComponent(category.slug.current)}>{category.title}</Link></li>)}</ul>
+    <ul>{posts.map(post => <li key={post._id}><Link className="underlink" href={'/blogs/' + post.slug.current + '/'}>{post.title}</Link></li>)}</ul>
     {sidebar.ctaEnabled && <div><h3>{sidebar.ctaTitle}</h3><a className="button primary" href={sidebar.ctaHref || siteConfig.ui.quoteTarget}>{sidebar.ctaLabel}</a></div>}
   </aside>;
 }

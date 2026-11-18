@@ -14,9 +14,15 @@ export default function config(phase: string): NextConfig {
     // Vercel's Next.js adapter expects .next; isolate only local production builds.
     distDir: isVercel || phase === PHASE_DEVELOPMENT_SERVER ? '.next' : '.next-production',
     poweredByHeader: false,
+    // Middleware adds slashes only to public pages; resource/Studio URLs stay unchanged.
+    trailingSlash: false,
+    skipTrailingSlashRedirect: true,
+    skipMiddlewareUrlNormalize: true,
+    // Keep route metadata in the initial head for browsers and all crawlers.
+    htmlLimitedBots: /.*/,
     // Freeze the non-secret deployment tier into both server and edge bundles.
     // Local edge workers otherwise omit VERCEL_ENV even when next start has it.
-    env: { VERCEL_ENV: process.env.VERCEL_ENV ?? 'development' },
+    env: { VERCEL_ENV: process.env.VERCEL_ENV ?? 'development', SITE_ENVIRONMENT: process.env.SITE_ENVIRONMENT ?? 'staging' },
 
     images: {
       remotePatterns: [{ protocol: 'https', hostname: 'cdn.sanity.io', pathname: '/images/**' }],
@@ -33,7 +39,7 @@ export default function config(phase: string): NextConfig {
         {
           source: '/(.*)',
           headers: [
-            ...(process.env.VERCEL_ENV !== 'production'
+            ...(!(process.env.VERCEL_ENV === 'production' && process.env.SITE_ENVIRONMENT === 'production')
               ? [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }]
               : []),
             {

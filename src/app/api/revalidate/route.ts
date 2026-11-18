@@ -19,8 +19,8 @@ export async function POST(request: Request) {
     if (!body._type || !allowed.has(body._type) && !['blogPost', 'blogCategory', 'blogAuthor', 'blogTag'].includes(body._type)) return NextResponse.json({ error: 'Invalid document' }, { status: 400 });
     revalidateTag('sanity:content'); revalidateTag('sanity:blog');
     revalidatePath('/', 'layout'); revalidatePath('/sitemap.xml'); revalidatePath('/robots.txt');
-    revalidatePath('/blog');
-    for (const slug of [body.slug?.current, body.beforeSlug]) if (slug && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) revalidatePath('/blog/' + slug);
+    revalidatePath('/blogs');
+    for (const slug of [body.slug?.current, body.beforeSlug]) if (slug && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) revalidatePath('/blogs/' + slug);
     return NextResponse.json({ revalidated: true });
   } catch { return NextResponse.json({ error: 'Invalid request' }, { status: 400 }); }
 }

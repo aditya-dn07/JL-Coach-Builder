@@ -9,7 +9,7 @@ import { ServiceMarquee } from './service-marquee';
 import { getHomeUi } from './home-content';
 
 const actionClass = 'inline-flex min-h-12 items-center justify-center gap-[9px] rounded-xl border px-[21px] py-3.5 text-xs font-semibold text-white transition-[transform,background-color,border-color] hover:-translate-y-0.5 max-[560px]:px-[15px] max-[560px]:text-[11px]';
-const primaryActionClass = `${actionClass} border-brand bg-brand hover:border-[#d40000] hover:bg-[#d40000]`;
+const primaryActionClass = `${actionClass} border-[#d40000] bg-[#d40000] hover:border-[#b80000] hover:bg-[#b80000]`;
 
 export async function HomeBanner({ page, interior }: { page: ContentPage; interior?: { before: ReactNode; description: ReactNode; actions: ReactNode; metrics?: ReactNode; trust?: ReactNode; after?: ReactNode } }) {
   const { phoneHref, siteConfig } = await getSiteContent();

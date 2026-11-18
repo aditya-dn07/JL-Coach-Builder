@@ -2,6 +2,7 @@
 import { useSiteContent } from '@/components/providers/site-content';
 import { useEffect, useId, useRef, useState, type FormEvent } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { QuoteSchema } from '@/lib/quote';
 import { Send } from 'lucide-react';
 import { quoteConversionTracker } from '@/lib/quote-conversion';
@@ -12,7 +13,8 @@ const trackConversion = quoteConversionTracker(event => {
   target.dataLayer.push(event);
 });
 
-export function QuoteForm() {
+export function QuoteForm({ onSuccess }: { onSuccess?: () => void } = {}) {
+  const router = useRouter();
   const { contentRepository, siteConfig, phoneHref } = useSiteContent();
   const content = contentRepository.getQuoteForm();
   const titleId = useId();
@@ -53,6 +55,8 @@ export function QuoteForm() {
       setFeedback(m.success);
       form.reset();
       trackConversion(token.current);
+      onSuccess?.();
+      router.push('/quote-result/?state=success');
     } catch (error) {
       setStatus('error');
       setFeedback(error instanceof Error ? error.message : m.error);
@@ -87,7 +91,7 @@ export function QuoteForm() {
       </div>
       <button type="submit" className="button primary" disabled={status === 'sending' || status === 'success'}>
         <Send size={18} aria-hidden="true" />
-        {status === 'sending' ? l.submitting : l.submit}
+        {status === 'sending' ? l.submitting || 'Submitting...' : l.submit || 'Submit'}
       </button>
       <p className="form-privacy">
         {content.ui.privacy}{' '}

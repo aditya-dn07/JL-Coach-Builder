@@ -309,7 +309,7 @@ sanity/
   structure/formSubmissionsStructure.ts Form → Year → Month record lists
 src/
   app/studio/[[...tool]]/                Embedded Studio
-  app/(resources)/blog/                 Blog list and dynamic post pages
+  app/(website)/(resources)/blogs/      Blog list and dynamic post pages
   app/api/revalidate/route.ts            Signed publish webhook
   cms/sanity/
     defaults.json                       Local templates and fixed document IDs
@@ -361,7 +361,15 @@ npm run assets
 
 These regenerate optimized photography and brand/icon assets respectively. Review regenerated assets before committing them. No hosting service, live domain, or public deployment is changed by the local development commands.
 
-Environment setup is limited to the six core Sanity/source variables and three Resend variables in `.env.example`. Public content reads need no token. Optional signed-webhook, legacy/private-content, Payload and deployment settings are documented separately in [CMS setup](docs/cms-integration.md#optional-settings-outside-the-minimal-example). Timed revalidation does not need a webhook secret.
+Environment setup uses the six core Sanity/source variables and three Resend variables in `.env.example`, plus the explicit indexing tier described below. Public content reads need no token. Optional signed-webhook, legacy/private-content, Payload and deployment settings are documented separately in [CMS setup](docs/cms-integration.md#optional-settings-outside-the-minimal-example). Timed revalidation does not need a webhook secret.
+
+## SEO routes and launch indexing
+
+The 27 approved route-specific SEO targets live in `src/content/seo-targets.json`. They override metadata only; CMS headings and visible content remain independent. Public page links use relative trailing-slash destinations. The existing Blog listing is `/blogs/`; `/blog` and `/blog/` return a single permanent 308 redirect. CMS singleton IDs such as `page.blog.*` stay unchanged.
+
+Keep `SITE_ENVIRONMENT=staging` (or omit it) on the current staging deployment and previews. At the final-domain launch, set `SITE_ENVIRONMENT=production` in Vercel's Production environment and redeploy with Vercel system environment variables enabled. Indexing requires **both** `VERCEL_ENV=production` and `SITE_ENVIRONMENT=production`; no request hostname can enable it. Do not set the production tier on the staging deployment merely because Vercel calls its branch Production. Local production verification uses these two variables only in the command process. Existing deployment values have not been changed.
+
+Canonicals, OG URLs and sitemap URLs intentionally use `https://jlcoachbuilders.co.nz/`, while navigation stays on the current host. API, Studio and resource URLs retain their existing conventions. The 11 old-site pages missing from this application remain absent; see the [18 November verification report](Changes/Aditya_18-11-2026.md).
 
 
 Website content/images were migrated to the Sanity **production** dataset on 18-11-26. Deploy the latest Studio/query code, then edit and **Publish** in Studio; public pages refresh through the existing 60-second revalidation. The repeatable, explicitly opt-in importer is `node scripts/import-sanity-content.mjs --apply` (omit `--apply` for a read-only inventory). See [CMS migration details](docs/cms-integration.md).

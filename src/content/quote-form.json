@@ -5,8 +5,8 @@
       "phone": "Phone",
       "email": "Email",
       "message": "Message",
-      "submit": "Get a free quote",
-      "submitting": "Sending…"
+      "submit": "Submit",
+      "submitting": "Submitting..."
     },
     "messages": {
       "invalid": "Please check your details. Name, a valid phone number, email and a message are required.",

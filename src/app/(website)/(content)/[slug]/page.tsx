@@ -11,6 +11,7 @@ import { brandFontVariables } from '@/lib/brand-fonts';
 import '@/components/home/home.css';
 import '@/components/content/content.css';
 import { interiorMotionStyle } from '@/lib/motion';
+import { RelatedPages } from '@/components/shared/related-pages';
 // Unknown slugs must reach this layout's styled not-found boundary.
 export const dynamicParams = true;
 export async function generateStaticParams() {
@@ -57,6 +58,7 @@ export default async function ContentRoute({ params }: { params: Promise<{ slug:
         <InteriorSections page={page} />
       )}{' '}
       <InteriorClosing page={page} />
+      <RelatedPages links={page.relatedLinks} title={page.relatedLinksTitle} />
       </div>
     </>
   );

@@ -4,6 +4,7 @@ import { PageStructuredData } from '@/components/seo/page-structured-data';
 import { InteriorHero } from '@/components/content/interior-hero';
 import { interiorMotionStyle } from '@/lib/motion';
 import { brandFontVariables } from '@/lib/brand-fonts';
+import { RelatedPages } from './related-pages';
 import '@/components/home/home.css';
 import '@/components/content/content.css';
 
@@ -12,5 +13,6 @@ export function ResourcePage({ page, children }: { page: ContentPage; children: 
     <PageStructuredData page={page} />
     <InteriorHero page={page} />
     {children}
+    <RelatedPages links={page.relatedLinks} title={page.relatedLinksTitle} />
   </div></>;
 }

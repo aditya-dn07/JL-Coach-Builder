@@ -12,6 +12,7 @@ import { HomeReviews } from '@/components/home/reviews-section';
 import { HomeClosing } from '@/components/home/closing-section';
 import { PageStructuredData } from '@/components/seo/page-structured-data';
 import { SectionDivider } from '@/components/shared/section-divider';
+import { RelatedPages } from '@/components/shared/related-pages';
 import '@/components/home/home.css';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -46,6 +47,7 @@ export default async function Home() {
         <DocumentSections page={page} sectionIds={['section-8']} />
         <SectionDivider />
         <HomeClosing page={page} />
+        <RelatedPages links={page.relatedLinks} title={page.relatedLinksTitle} />
       </div>
     </>
   );

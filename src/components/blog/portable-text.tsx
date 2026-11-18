@@ -16,7 +16,10 @@ function Video({ value }: { value: { url?: string; title?: string; poster?: CmsI
   return src ? <figure>{value.poster && imageUrl(value.poster) && <Image src={imageUrl(value.poster)!} alt={value.poster.alt || ''} caption={value.poster.caption} decorative={value.poster.decorative} focalPoint={value.poster.hotspot} width={value.poster.width || 1200} height={value.poster.height || 800} sizes="100vw" />}<iframe className="aspect-video w-full" title={value.title || 'Video'} src={src} loading="lazy" allowFullScreen /><figcaption>{value.title}</figcaption></figure> : null;
 }
 const components: Partial<PortableTextComponents> = {
-  marks: { link: ({ value, children }) => <a className="underline" href={safeHref(value?.href)} rel={typeof value?.href === 'string' && value.href.startsWith('http') ? 'noopener noreferrer' : undefined}>{children}</a> },
+  marks: {
+    link: ({ value, children }) => <a className="underline" href={safeHref(value?.href)} rel={typeof value?.href === 'string' && value.href.startsWith('http') ? 'noopener noreferrer' : undefined}>{children}</a>,
+    internalLink: ({ value, children }) => typeof value?.href === 'string' && /^\/(?!\/)/.test(value.href) ? <a className="underline" href={value.href}>{children}</a> : <>{children}</>,
+  },
   types: {
     accessibleImage: ({ value }) => {
       const image = value as CmsImage & { caption?: string };

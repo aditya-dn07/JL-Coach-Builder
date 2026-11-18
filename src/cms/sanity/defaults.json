@@ -2516,7 +2516,7 @@
         "headerMobilePlace": "Christchurch, NZ",
         "headerHome": "Home",
         "headerServices": "Our services",
-        "headerTalk": "Let’s talk",
+        "headerTalk": "Get a free quote",
         "headerOpen": "Open navigation",
         "headerClose": "Close navigation",
         "headerNavAria": "Main navigation",
@@ -2649,8 +2649,8 @@
           "phone": "Phone",
           "email": "Email",
           "message": "Message",
-          "submit": "Get a free quote",
-          "submitting": "Sending…"
+          "submit": "Submit",
+          "submitting": "Submitting..."
         },
         "messages": {
           "invalid": "Please check your details. Name, a valid phone number, email and a message are required.",

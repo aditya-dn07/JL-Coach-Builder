@@ -70,7 +70,7 @@
     "headerMobilePlace": "Christchurch, NZ",
     "headerHome": "Home",
     "headerServices": "Our services",
-    "headerTalk": "Let’s talk",
+    "headerTalk": "Get a free quote",
     "headerOpen": "Open navigation",
     "headerClose": "Close navigation",
     "headerNavAria": "Main navigation",
@@ -143,7 +143,7 @@
     "footerExtra": [
       {
         "label": "Blog",
-        "href": "/blog/"
+        "href": "/blogs/"
       },
       {
         "label": "Reviews",

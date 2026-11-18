@@ -1,15 +1,18 @@
-import type { StructureResolver, StructureBuilder } from 'sanity/structure';
-import defaults from './defaults.json';
+import type { StructureResolver, StructureBuilder, StructureResolverContext, ListItemBuilder } from 'sanity/structure';
+import { Home, Wrench, FileText, Settings, Search, Images, MessageSquare, BookOpen, Shield, Folder } from 'lucide-react';
 import { toSanityDocumentId } from './document-ids.mjs';
+import { studioNavigation, type StudioNode } from './navigation';
 import { formSubmissionsStructure } from '../../../sanity/structure/formSubmissionsStructure';
-const document = (S: StructureBuilder, item: { id: string; type: string; title: string }) =>
-  S.listItem().id(item.id).title(item.title).child(S.document().title(item.title).schemaType(item.type).documentId(toSanityDocumentId(item.id)).initialValueTemplate(item.type, { documentId: item.id }));
-export const websiteStructure: StructureResolver = (S, context) => S.list().title('Website').items([
-  ...defaults.globals.map(item => document(S, item)),
-  ...defaults.registry.map(page => S.listItem().id(page.id).title(page.id === 'page.home' ? 'Home' : page.title).child(
-    S.list().title(page.id === 'page.home' ? 'Home' : page.title).items(page.items.map(item => document(S, item)))
-  )),
-  ...['blogCategory', 'blogAuthor', 'blogTag'].map(type => S.listItem().title({ blogCategory: 'Blog Categories', blogAuthor: 'Blog Authors', blogTag: 'Blog Tags' }[type]!).child(S.documentTypeList(type))),
-  S.listItem().title('Blog Posts').schemaType('blogPost').child(S.documentTypeList('blogPost').title('Blog Posts')),
-  formSubmissionsStructure(S, context),
-]);
+const icons: Record<string, typeof Folder> = { 'page.home': Home, services: Wrench, blogs: BookOpen,
+  testimonials: MessageSquare, 'website-settings': Settings, 'seo-sitemap': Search,
+  forms: MessageSquare, 'media-library': Images, 'legal-pages': Shield };
+function item(S: StructureBuilder, context: StructureResolverContext, node: StudioNode): ListItemBuilder {
+  if (node.submissions) return formSubmissionsStructure(S, context);
+  const result = S.listItem().id(node.id).title(node.title).icon(icons[node.id] ?? (node.editor || node.listType ? FileText : Folder));
+  if (node.editor) return result.child(S.document().title(node.title).schemaType(node.editor.type)
+    .documentId(toSanityDocumentId(node.editor.id)).initialValueTemplate(node.editor.type, { documentId: node.editor.id }));
+  if (node.listType) return result.schemaType(node.listType).child(S.documentTypeList(node.listType).title(node.title));
+  return result.child(S.list().id(node.id).title(node.title).items((node.children ?? []).map(child => item(S, context, child))));
+}
+export const websiteStructure: StructureResolver = (S, context) => S.list().title('Website')
+  .items(studioNavigation.map(node => item(S, context, node)));

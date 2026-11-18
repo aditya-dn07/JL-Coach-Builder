@@ -17,7 +17,7 @@ export async function Footer() {
         <div className="col-span-2 min-w-0 sm:col-span-1">
           <Image src={manifest.logo.src} caption={manifest.logo.caption} decorative={manifest.logo.decorative} focalPoint={manifest.logo.focalPoint} alt={manifest.logo.alt || siteConfig.business.name} width={manifest.logo.width} height={manifest.logo.height} sizes="(max-width: 560px) 300px, 340px" className="h-auto w-[300px] max-w-full sm:w-[340px]" />
           <p className="my-[26px] leading-[1.8] text-[#d3d7dc]">{site.copy.footerIntro}</p>
-          <a href={siteConfig.business.sameAs[0]} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-brand px-[18px] py-3 font-semibold text-white transition-colors hover:bg-[#d40000]"><Facebook size={18} aria-hidden="true" />{siteConfig.ui.footerFacebook}</a>
+          <a href={siteConfig.business.sameAs[0]} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-[#d40000] px-[18px] py-3 font-semibold text-white transition-colors hover:bg-[#b80000]"><Facebook size={18} aria-hidden="true" />{siteConfig.ui.footerFacebook}</a>
           <div className="mt-5"><GoogleReviewLink /></div>
         </div>
         <FooterLinks title={siteConfig.ui.footerQuick} links={footerNavigation} />

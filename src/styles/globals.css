@@ -126,8 +126,8 @@ summary:focus-visible {
     padding: 10px;
   }
   .mobile-action-call:hover { background: #fa000018; border-color: #fa0000; }
-  .mobile-action-quote { background: #fa0000; border-color: #fa0000; }
-  .mobile-action-quote:hover { background: #d40000; border-color: #d40000; }
+  .mobile-action-quote { background: #d40000; border-color: #d40000; }
+  .mobile-action-quote:hover { background: #b80000; border-color: #b80000; }
   body .back-to-top { bottom: calc(var(--sticky-bar-h) + env(safe-area-inset-bottom, 0px) + 16px); }
   body:has(dialog[open]) .mobile-action-bar { visibility: hidden; }
 }

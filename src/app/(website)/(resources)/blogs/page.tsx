@@ -10,7 +10,7 @@ import '@/components/content/content.css';
 export const revalidate = 60;
 export async function generateMetadata() {
   const [{ seo }, { siteSettings }] = await Promise.all([getBlogPage(), getPublicContent()]);
-  return pageMetadata({ ...seo, settings: siteSettings, path: '/blog/' });
+  return pageMetadata({ ...seo, settings: siteSettings, path: '/blogs/' });
 }
 export default async function Blog({ searchParams }: { searchParams: Promise<{ category?: string; page?: string; tag?: string }> }) {
   const values = await searchParams, page = await getBlogPage();
@@ -20,10 +20,10 @@ export default async function Blog({ searchParams }: { searchParams: Promise<{ c
   const [posts, allCategories, featured] = await Promise.all([getBlogPosts(category, current, size, true, values.tag || ''), getCategories(), getFeaturedPosts(referenceIds(page.featured.posts), Math.max(0, Math.min(12, page.featured.maximum)))]);
   const selected = referenceIds(page.filters.categories);
   const categories = allCategories.filter(item => !selected.length || selected.includes(item._id));
-  const href = (number: number) => '/blog/?' + new URLSearchParams({ ...(category ? { category } : {}), ...(values.tag ? { tag: values.tag } : {}), page: String(number) }).toString();
+  const href = (number: number) => '/blogs/?' + new URLSearchParams({ ...(category ? { category } : {}), ...(values.tag ? { tag: values.tag } : {}), page: String(number) }).toString();
   return <div className="home-page interior-shell">
     <section className="container section-pad">{page.banner.image.src && <Image src={page.banner.image.src} caption={page.banner.image.caption} decorative={page.banner.image.decorative} focalPoint={page.banner.image.focalPoint} alt={page.banner.image.alt} width={page.banner.image.width} height={page.banner.image.height} sizes="100vw" priority />}<p className="kicker">{page.banner.eyebrow}</p><h1>{page.banner.title}</h1><p>{page.banner.description}</p><div className="mt-6 flex flex-wrap gap-3">{(page.banner.actions as { label: string; href: string }[]).map((action, index) => <Link className="button primary" key={index} href={/^(https?:\/\/|\/(?!\/)|mailto:|tel:|#)/i.test(action.href) ? action.href : '#quote'}>{action.label}</Link>)}</div></section>
-    <nav className="container flex flex-wrap gap-5 pb-8" aria-label={page.filters.ariaLabel}><span className="font-semibold">{page.filters.title}</span><Link className="underlink" href="/blog/">{page.filters.allLabel}</Link>{categories.map(item => <Link className="underlink" key={item._id} href={'/blog/?category=' + encodeURIComponent(item.slug.current)}>{item.title}{page.filters.showCounts ? ` (${item.count})` : ''}</Link>)}</nav>
+    <nav className="container flex flex-wrap gap-5 pb-8" aria-label={page.filters.ariaLabel}><span className="font-semibold">{page.filters.title}</span><Link className="underlink" href="/blogs/">{page.filters.allLabel}</Link>{categories.map(item => <Link className="underlink" key={item._id} href={'/blogs/?category=' + encodeURIComponent(item.slug.current)}>{item.title}{page.filters.showCounts ? ` (${item.count})` : ''}</Link>)}</nav>
     {featured.length > 0 && current === 1 && !category && <section className="container section-pad"><h2>{page.featured.title}</h2><ArticleCards posts={featured} readMore={page.settings.readMore} /></section>}
     <section className={'container section-pad ' + (page.sidebar.enabled ? 'grid gap-8 lg:grid-cols-[1fr_300px]' : '')}><div><h2>{page.settings.title}</h2>{posts.length ? <ArticleCards posts={posts.slice(0, size)} readMore={page.settings.readMore} /> : <p>{page.settings.emptyMessage}</p>}
       <nav className="mt-8 flex gap-6" aria-label={page.settings.title}>{current > 1 && <Link className="underlink" href={href(current - 1)}>{page.settings.previousLabel}</Link>}{posts.length > size && <Link className="underlink" href={href(current + 1)}>{page.settings.nextLabel}</Link>}</nav>

@@ -1,17 +1,20 @@
 'use client';
 import { useSiteContent } from '@/components/providers/site-content';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { LibraryIcon } from '@/components/shared/library-icon';
 import { QuoteForm } from '@/components/contact/quote-form';
+import { lockBodyScroll } from '@/lib/body-scroll-lock';
 
 export function QuoteModal() {
   const { contentRepository, siteConfig } = useSiteContent();
+  const quoteTarget = siteConfig.ui.quoteTarget;
   const ref = useRef<HTMLDialogElement>(null);
+  const [formSession, setFormSession] = useState(0);
 
   useEffect(() => {
     const dialog = ref.current;
     if (!dialog) return;
-    let previousOverflow: string | null = null;
+    let releaseScroll: (() => void) | undefined;
     let opener: HTMLElement | null = null;
     const notify = (open: boolean) =>
       window.dispatchEvent(new CustomEvent('quote-visibility-change', { detail: open }));
@@ -19,15 +22,14 @@ export function QuoteModal() {
       if (dialog.open) return;
       opener =
         source ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null);
-      previousOverflow = document.body.style.overflow;
       dialog.showModal();
-      document.body.style.overflow = 'hidden';
+      releaseScroll = lockBodyScroll();
       dialog.querySelector<HTMLInputElement>('input[name="name"]')?.focus();
       notify(true);
     };
     const close = () => {
-      if (previousOverflow !== null) document.body.style.overflow = previousOverflow;
-      previousOverflow = null;
+      releaseScroll?.();
+      releaseScroll = undefined;
       opener?.focus({ preventScroll: true });
       notify(false);
     };
@@ -43,9 +45,9 @@ export function QuoteModal() {
         return;
       const link =
         event.target instanceof Element
-          ? event.target.closest<HTMLAnchorElement>('a[href={siteConfig.ui.quoteTarget}]')
+          ? event.target.closest<HTMLAnchorElement>('a[href]')
           : null;
-      if (!link) return;
+      if (!link || link.getAttribute('href') !== quoteTarget) return;
       event.preventDefault();
       open(link);
     };
@@ -56,9 +58,9 @@ export function QuoteModal() {
       document.removeEventListener('click', click);
       dialog.removeEventListener('close', close);
       if (dialog.open) dialog.close();
-      if (previousOverflow !== null) document.body.style.overflow = previousOverflow;
+      releaseScroll?.();
     };
-  }, []);
+  }, [quoteTarget]);
 
   return (
     <dialog
@@ -79,7 +81,7 @@ export function QuoteModal() {
         >
           <LibraryIcon name="x-lg" />
         </button>
-        <QuoteForm />
+        <QuoteForm key={formSession} onSuccess={() => { ref.current?.close(); setFormSession(session => session + 1); }} />
       </div>
     </dialog>
   );

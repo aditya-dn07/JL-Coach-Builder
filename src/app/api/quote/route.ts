@@ -55,15 +55,15 @@ export async function POST(request: Request) {
       return reply(400, content.form.messages.invalid);
     const sourcePage = request.headers.get('referer') || '';
     const data = result.data;
-    after(async () => {
-      try { await saveSubmission({ formType: 'quote', ...data, sourcePage }); }
-      catch (e) { console.error('[forms] save failed', e instanceof Error ? e.name : 'Unknown error'); }
-    });
     const key = createHash('sha256').update(String(token ?? '') + JSON.stringify(result.data)).digest('hex');
     const now = Date.now();
     for (const [storedKey, entry] of deliveries) if (entry.expires < now) deliveries.delete(storedKey);
     const existing = deliveries.get(key);
     if (existing) return await existing.result ? reply(200, undefined, true) : reply(502, content.form.messages.error);
+    after(async () => {
+      try { await saveSubmission({ formType: 'quote', ...data, sourcePage }); }
+      catch (e) { console.error('[forms] save failed', e instanceof Error ? e.name : 'Unknown error'); }
+    });
     const endpoint = process.env.QUOTE_WEBHOOK_URL;
     if (!endpoint && !resendConfigured()) return reply(503, content.form.messages.unconfigured);
     if (deliveries.size >= 1000) return reply(429, content.form.messages.error);

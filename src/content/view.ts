@@ -3,8 +3,8 @@ import siteDefaults from '../config/site.json';
 export function createContentView(snapshot: ContentSnapshot) {
   const siteConfig = snapshot.siteSettings;
   const footerExtra = [...siteConfig.navigation.footerExtra];
-  const defaultBlogLink = siteDefaults.navigation.footerExtra.find(link => link.href === '/blog/');
-  if (defaultBlogLink && ![...siteConfig.navigation.main, ...footerExtra].some(link => link.href.replace(/\/$/, '') === '/blog')) {
+  const defaultBlogLink = siteDefaults.navigation.footerExtra.find(link => link.href === '/blogs/');
+  if (defaultBlogLink && ![...siteConfig.navigation.main, ...footerExtra].some(link => link.href.replace(/\/$/, '') === '/blogs')) {
     footerExtra.push(defaultBlogLink);
   }
   const phoneHref = 'tel:' + siteConfig.business.phone.replace(/^0/, '+64').replaceAll(' ', '');

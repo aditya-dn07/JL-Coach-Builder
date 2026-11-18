@@ -24,6 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
     settings: siteConfig,
     description: editorial.interface.recovery.notFoundMetaDescription,
     index: false,
+    routeOverride: false,
   }),
   metadataBase: new URL(siteConfig.url),
   title: {

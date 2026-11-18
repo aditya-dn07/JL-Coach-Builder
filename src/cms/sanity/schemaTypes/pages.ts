@@ -1,4 +1,5 @@
 import { fromSanityDocumentId } from '../document-ids.mjs';
+import { relatedLinks, relatedLinksTitle } from '../link-fields';
 import { seededType } from '../infer';
 import { extendSectionFields, scopeSectionControls, hideOverriddenDescriptions } from './section-fields';
 export const pageTypes = [
@@ -12,6 +13,7 @@ const seo = pageTypes.find(type => type.name === 'pageSeo');
 if (seo && 'fields' in seo) seo.fields?.push({ name: 'ogImage', title: 'Open Graph Image', type: 'accessibleImage' });
 
 const settings = pageTypes.find(type => type.name === 'pageSettings');
+if (settings && 'fields' in settings) settings.fields?.push(relatedLinks, relatedLinksTitle);
 if (settings && 'fields' in settings) for (const field of settings.fields ?? []) {
   if (['id', 'slug', 'kind'].includes(field.name)) field.readOnly = true;
 }

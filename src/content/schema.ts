@@ -62,6 +62,8 @@ export const PageSchema = z.object({
   homeUi: z.record(z.string(), z.string()).optional(),
   closingCta: z.object({ eyebrow: z.string(), title: z.string(), description: z.string(), quoteLabel: z.string(), callLabel: z.string(), quoteHref: z.string().optional(), callHref: z.string().optional(), descriptionRichText: RichInlineSchema.optional(), contactCallLabel: z.string().optional(), contactEmailLabel: z.string().optional(), emailHref: z.string().optional() }).optional(),
   relatedServices: z.array(NavigationLinkSchema).optional(),
+  relatedLinks: z.array(NavigationLinkSchema).optional(),
+  relatedLinksTitle: z.string().optional(),
   updatedAt: z.string().optional(),
   seo: z.object({ title: z.string().min(1), description: z.string().min(1), canonical: z.string().optional(), noindex: z.boolean().optional(), ogImage: ImageSchema.optional() }),
   sections: z.array(

@@ -1,10 +1,13 @@
 import { getSiteContent } from '@/lib/sanity/site-content';
 import type { ContentPage } from '@/content/schema';
 import { generateJsonLd } from '@/lib/jsonld';
+import { pageUrl } from '@/lib/site-url';
+import { getSeoTarget } from '@/lib/seo-targets';
 export async function PageStructuredData({ page }: { page: ContentPage }) {
   const { contentRepository, siteConfig } = await getSiteContent();
   const site = contentRepository.getLegacySite();
-  const url = new URL(page.slug ? `/${page.slug}/` : '/', site.url).href;
+  const target = getSeoTarget(page.slug ? `/${page.slug}` : '/');
+  const url = target?.canonical ?? pageUrl(page.slug ? `/${page.slug}` : '/', site.url);
   const base = generateJsonLd(site, siteConfig)['@graph'].filter(
     (e) => !['FAQPage', 'BreadcrumbList'].includes(e['@type'] as string)
   );
@@ -14,15 +17,15 @@ export async function PageStructuredData({ page }: { page: ContentPage }) {
       '@type': 'WebPage',
       '@id': `${url}#page`,
       url,
-      name: page.title,
-      description: page.seo.description,
+      name: target?.title ?? page.title,
+      description: target?.description ?? page.seo.description,
       isPartOf: { '@id': `${site.url}#website` },
       about: { '@id': `${site.url}#business` },
     },
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: siteConfig.ui.headerHome, item: site.url },
+        { '@type': 'ListItem', position: 1, name: siteConfig.ui.headerHome, item: pageUrl('/', target?.canonical ?? site.url) },
         ...(page.slug ? [{ '@type': 'ListItem', position: 2, name: page.label, item: url }] : []),
       ],
     },
