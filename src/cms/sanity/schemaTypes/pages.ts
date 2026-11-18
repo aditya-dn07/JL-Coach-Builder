@@ -1,3 +1,4 @@
+import { fromSanityDocumentId } from '../document-ids.mjs';
 import { seededType } from '../infer';
 import { extendSectionFields, scopeSectionControls, hideOverriddenDescriptions } from './section-fields';
 export const pageTypes = [
@@ -21,7 +22,7 @@ scopeSectionControls(pageTypes);
 
 if (seo && 'fields' in seo) {
   const noindex = seo.fields?.find(field => field.name === 'noindex');
-  if (noindex) noindex.readOnly = ({ document }) => document?._id?.replace(/^drafts\./, '') === 'page.quote-result.seo';
+  if (noindex) noindex.readOnly = ({ document }) => fromSanityDocumentId(document?._id ?? '') === 'page.quote-result.seo';
 }
 
 hideOverriddenDescriptions(pageTypes);

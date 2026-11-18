@@ -1,4 +1,5 @@
 import 'server-only';
+import { randomUUID } from 'node:crypto';
 import { getWriteClient } from '../../../sanity/lib/writeClient';
 import { FORMS } from './config';
 import { submittedDate } from './date';
@@ -26,6 +27,8 @@ export async function saveSubmission(input: SubmissionInput): Promise<void> {
       _key: 'extra-' + index, label: trim(item.label, 100), value: trim(item.value, 4000),
     })).filter(item => item.label);
     await client.create({
+      // Dotted IDs are private Sanity subpaths, including in a public dataset.
+      _id: 'formSubmissions.' + randomUUID(),
       _type: 'formSubmission', formType,
       name: trim(input.name, 200), email: trim(input.email, 320), phone: trim(input.phone, 100),
       message: trim(input.message, 10000), sourcePage: source(input.sourcePage),

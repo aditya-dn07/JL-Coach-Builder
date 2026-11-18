@@ -1,6 +1,6 @@
 # Sanity CMS integration
 
-The website has an embedded Sanity Studio at /studio, fixed page/section editors, server-side published-content reads and source-backed defaults. No dataset has been provisioned or written by this implementation.
+The website has an embedded Sanity Studio at /studio, fixed page/section editors, server-side published-content reads and source-backed defaults. On 18-11-26 the owner authorised migration of website content and images: 398 content singleton documents were published to production and 297 image assets were verified. Form submissions were not imported.
 
 ## Configuration
 
@@ -8,13 +8,13 @@ Copy .env.example to an ignored .env.local or set deployment environment variabl
 
 The default content dataset is **production**. Configure only NEXT_PUBLIC_SANITY_PROJECT_ID and NEXT_PUBLIC_SANITY_DATASET for Studio, CLI, content reads and images. Public datasets need no read token. Public identifiers are not credentials. The minimal example contains six core names plus the three Resend names.
 
-Studio shows eleven global singletons, page folders with section items, Blog Posts/Categories/Authors/Tags and Form Submissions at the end. Existing schema registrations retain their original order. New singleton templates are excluded from the normal create menu; duplicate/delete actions are removed for fixed singleton documents. Initial editor values come from src/cms/sanity/defaults.json; these templates do not write anything until an authorised editor explicitly saves/publishes.
+Studio shows eleven original global singletons plus four shared image-library singletons, page folders with section items, Blog Posts/Categories/Authors/Tags and Form Submissions at the end. Existing schema registrations retain their original order. New singleton templates are excluded from the normal create menu; duplicate/delete actions are removed for fixed singleton documents. Initial editor values come from src/cms/sanity/defaults.json; these templates do not write anything until an authorised editor explicitly saves/publishes.
 
 Editors for service/about final source sections omitted by the live template are not exposed. FAQs are edited in their source section, then aggregated; testimonials are shared. Existing slugs/layouts remain fixed. New generic content routes are not automatically added.
 
 ## Images
 
-Upload images through the image fields. Every image supports hotspot and Alt text. Meaningful images need alt; decorative images can be marked decorative. Existing local images remain the fallback. The server resolves asset references with @sanity/image-url and the front end uses next/image. No existing assets were uploaded automatically.
+Upload images through the image fields. Every image supports hotspot and Alt text. Meaningful images need alt; decorative images can be marked decorative. Existing local images remain the fallback. The server resolves asset references with @sanity/image-url and the front end uses next/image. The authorised initial migration uploaded/reused the existing images as Sanity assets; future replacements can be uploaded through Studio.
 
 ## Blog
 
@@ -30,7 +30,7 @@ If QUOTE_WEBHOOK_URL is configured, its existing HTTPS delivery flow/auth/body r
 
 Validated submissions are saved using Next.js after, outside the response path. Storage failure never changes email or response behavior. This is best-effort saving, not a durable queue. Configure SANITY_WRITE_TOKEN server-side with permission for the submissions dataset; without a token/project, saving silently skips. No read token is required for public content.
 
-Set SANITY_SUBMISSIONS_DATASET and NEXT_PUBLIC_SANITY_SUBMISSIONS_DATASET to the same restricted dataset name, different from the content dataset. The writer skips if either name is missing, they disagree, or they resolve to the content dataset. There is no public-content fallback for submissions. Studio provides its separate workspace through Form Submissions. Dataset privacy/roles still require account-side configuration; a different name alone does not prove privacy.
+The owner selected the shared production dataset for submissions. SANITY_SUBMISSIONS_DATASET and NEXT_PUBLIC_SANITY_SUBMISSIONS_DATASET may both equal production; omitted overrides use the content dataset. If overrides disagree, saving skips to avoid writing outside the Studio workspace. Every new submission has an explicit formSubmissions.<UUID> ID: Sanity treats dotted IDs as private subpaths, so anonymous public reads cannot access these records. Authenticated authorised Studio users can view them under Form Submissions. A separate private dataset remains supported when both overrides match it. Dataset visibility and roles were not changed.
 
 Studio hierarchy: Form Submissions → Quote request → Year (count) → Month (count) → records, newest first. Form folder is always shown; year/month folders appear only with records. Only status is editable; test records can still be deleted through document actions.
 
@@ -38,7 +38,7 @@ Studio hierarchy: Form Submissions → Quote request → Year (count) → Month 
 
 ## Verification authorised for this implementation
 
-Only npx tsc --noEmit --incremental false --pretty false was run. Build, lint, tests, live submissions, email sends, dataset mutations, imports and deployment were not run. See Changes/Aditya_17-11-26.md under Sanity Implementation for the file-level record and client checks.
+The code checker was npx tsc --noEmit --incremental false --pretty false. The owner-authorised website content/image import was executed on 18-11-26; build, lint, tests, live submissions, email sends and deployment were not run. See Changes/Aditya_17-11-26.md under Sanity Implementation for the file-level record and client checks.
 
 ## Completion verification
 
@@ -74,3 +74,33 @@ New fixed-document editors use the existing website defaults through an explicit
 Image fields show the current local website image as a preview when no Sanity asset has been selected. This preview does not upload the file. Use the normal image upload control, set alt text (or decorative), and publish to replace the local fallback.
 
 Studio's homepage folder is labelled **Home** (fixed ID `page.home`). Its public headline remains editable and does not control navigation identity. Singleton editor headings and previews use the stable registry labels, so documents without a public title field do not need an artificial title or content migration.
+
+
+## Initial website content and image publication (18-11-26)
+
+The migration is complete in the configured **production** content dataset: **398 public content documents**, **297 image assets**, and **494 published image references** were read back without a token; zero references were unresolved. Existing drafts were retained as drafts, including two copies at the new fixed IDs. No blog articles were invented and no formSubmission documents were read/imported/modified.
+
+Sanity treats dotted document IDs as private subpaths, even in public datasets. Fixed logical registry identities such as `page.home.banner` therefore map to public root IDs such as `page__home__banner` through `src/cms/sanity/document-ids.mjs`. Studio, defaults, visibility controls and frontend queries use the same mapping. Old dotted content documents are retained for recovery and are not the active editor targets. See [Sanity document visibility](https://www.sanity.io/docs/content-lake/keeping-your-data-safe).
+
+The shared image manifest was split into four small **Shared Image Library** singleton editors to stay below Sanity's document attribute limit. Main shared vehicle images remain in Branding; page-owned image fields remain on their existing page/section editors. Local responsive variants/blur placeholders are omitted from uploaded image records; CDN rendering generates the required image sizes. The new image-library schema is appended to the existing schema index.
+
+Deploy the latest code together with `CONTENT_SOURCE=sanity`, `NEXT_PUBLIC_SANITY_PROJECT_ID`, and `NEXT_PUBLIC_SANITY_DATASET=production`. Open Studio, edit a field or image/alt, then **Publish**. Published data is fetched with the existing 60-second timed revalidation; it is refreshed on a subsequent page request. Immediate signed webhook revalidation remains optional. Draft-only edits do not change the public website. No write token is required for public content reads. The write token remains server-only.
+
+For an intentional repeat migration, the script is read-only by default:
+
+```powershell
+node scripts/import-sanity-content.mjs
+# Performs uploads and publishes website singleton defaults only when explicitly selected:
+node scripts/import-sanity-content.mjs --apply
+```
+
+The importer fills missing defaults, preserves existing populated fields/asset references and drafts, reuses uploaded assets by SHA-1, guards patches by revision, and backs up existing website documents in the git-ignored `.sanity-import-backups/` folder before writes. It never imports submission records. Existing data is not deleted.
+
+The last browser check could not run because localhost:3000 was no longer serving; authenticated Studio publishing and the deployed website remain external verification steps. Public token-free content/asset reads and the TypeScript checker passed. Both local submissions dataset identifiers match the public content dataset; the owner subsequently authorised shared-dataset storage. The writer now supports this configuration and creates private-subpath formSubmissions.<UUID> records. No permissions or credentials were changed; actual form/email submission checks remain unperformed.
+
+
+### Shared public dataset: form submissions
+
+Keep the existing public production dataset. New form submissions use private document IDs such as `formSubmissions.<UUID>`; this is distinct from public website root IDs. Sanity excludes these dotted IDs from anonymous reads even when the dataset is public ([document visibility](https://www.sanity.io/docs/content-lake/keeping-your-data-safe)). Do not rename submission IDs to root IDs or publish their data through public API projections. Authenticated project members with applicable read permission can access them, so staff access still matters. The server-only write token must be allowed to create documents under that subpath.
+
+Deploy the updated saver/writer code. When content and submissions datasets match, Studio uses `/studio` and shows Form Submissions directly; Year/Month folders appear after the first successfully saved submission. There is no need to create a second dataset for this mode. Timed public-content reads still do not use the write token. No synthetic submission or email was sent to verify this change.

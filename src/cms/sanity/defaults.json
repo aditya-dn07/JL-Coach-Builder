@@ -54,6 +54,26 @@
       "id": "global.testimonials",
       "type": "globalTestimonials",
       "title": "Testimonials"
+    },
+    {
+      "id": "global.imageLibrary.1",
+      "type": "globalImageLibrary",
+      "title": "Shared Image Library 1"
+    },
+    {
+      "id": "global.imageLibrary.2",
+      "type": "globalImageLibrary",
+      "title": "Shared Image Library 2"
+    },
+    {
+      "id": "global.imageLibrary.3",
+      "type": "globalImageLibrary",
+      "title": "Shared Image Library 3"
+    },
+    {
+      "id": "global.imageLibrary.4",
+      "type": "globalImageLibrary",
+      "title": "Shared Image Library 4"
     }
   ],
   "registry": [
@@ -2460,954 +2480,6 @@
             }
           ],
           "alt": "Bus parked outdoors"
-        },
-        "interior-caravan": {
-          "src": "/images/interior-caravan.webp",
-          "alt": "White caravan parked outdoors",
-          "width": 1024,
-          "height": 768,
-          "variants": []
-        },
-        "interior-campervan": {
-          "src": "/images/interior-campervan.webp",
-          "alt": "White campervan parked outdoors",
-          "width": 768,
-          "height": 1024,
-          "variants": []
-        },
-        "interior-motorhome": {
-          "src": "/images/interior-motorhome.webp",
-          "alt": "Interior of a vehicle with seating and kitchen",
-          "width": 768,
-          "height": 1024,
-          "variants": []
-        },
-        "interior-fifthWheel": {
-          "src": "/images/interior-fifth-wheel.webp",
-          "alt": "Fifth wheel trailer inside a workshop",
-          "width": 768,
-          "height": 1024,
-          "variants": []
-        },
-        "interior-bus": {
-          "src": "/images/interior-bus.webp",
-          "alt": "Bus parked outdoors",
-          "width": 768,
-          "height": 1024,
-          "variants": []
-        },
-        "interior-workshop": {
-          "src": "/images/interior-workshop.webp",
-          "alt": "Caravan parked outside a workshop building",
-          "width": 1440,
-          "height": 1920,
-          "variants": []
-        },
-        "home-workshop-banner-supplied": {
-          "src": "/images/home-workshop-banner-supplied.png",
-          "alt": "JL Coachbuilders workshop buildings and caravan yard in Christchurch",
-          "width": 1717,
-          "height": 916
-        },
-        "home-vehicle-roof-before-after": {
-          "src": "/images/home-vehicle-roof-before-after.webp",
-          "alt": "Side-by-side views of a damaged vehicle roof and a smooth vehicle roof",
-          "width": 1498,
-          "height": 824
-        },
-        "interior-caravan-services-hero": {
-          "src": "/images/interior-caravan-services-hero.webp",
-          "alt": "White caravan parked outdoors",
-          "width": 1024,
-          "height": 576
-        },
-        "interior-caravan-repairs-hero": {
-          "src": "/images/interior-caravan-repairs-hero.webp",
-          "alt": "Damaged rear corner of a white caravan",
-          "width": 1024,
-          "height": 576
-        },
-        "interior-caravan-panel-paint-hero": {
-          "src": "/images/interior-caravan-panel-paint-hero.webp",
-          "alt": "White and purple caravan parked outdoors",
-          "width": 768,
-          "height": 432
-        },
-        "interior-caravan-upgrades-hero": {
-          "src": "/images/interior-caravan-upgrades-hero.webp",
-          "alt": "Blue and white caravan parked outdoors",
-          "width": 900,
-          "height": 506
-        },
-        "interior-campervan-services-hero": {
-          "src": "/images/interior-campervan-services-hero.webp",
-          "alt": "White campervan parked outdoors",
-          "width": 768,
-          "height": 432
-        },
-        "interior-campervan-repairs-hero": {
-          "src": "/images/interior-campervan-repairs-hero.webp",
-          "alt": "Front and side of a white campervan",
-          "width": 645,
-          "height": 363
-        },
-        "interior-campervan-panel-paint-hero": {
-          "src": "/images/interior-campervan-panel-paint-hero.webp",
-          "alt": "Side of a white campervan",
-          "width": 614,
-          "height": 345
-        },
-        "interior-campervan-upgrades-hero": {
-          "src": "/images/interior-campervan-upgrades-hero.webp",
-          "alt": "Roof and side of a white campervan",
-          "width": 675,
-          "height": 380
-        },
-        "interior-motorhome-services-hero": {
-          "src": "/images/interior-motorhome-services-hero.webp",
-          "alt": "White motorhome parked outdoors",
-          "width": 900,
-          "height": 506
-        },
-        "interior-motorhome-repairs-hero": {
-          "src": "/images/interior-motorhome-repairs-hero.webp",
-          "alt": "Damaged front upper body of a white motorhome",
-          "width": 900,
-          "height": 506
-        },
-        "interior-motorhome-panel-paint-hero": {
-          "src": "/images/interior-motorhome-panel-paint-hero.webp",
-          "alt": "White and blue motorhome side",
-          "width": 768,
-          "height": 432
-        },
-        "interior-motorhome-upgrades-hero": {
-          "src": "/images/interior-motorhome-upgrades-hero.webp",
-          "alt": "Vehicle interior with kitchen and seating",
-          "width": 768,
-          "height": 432
-        },
-        "interior-fifth-wheel-services-hero": {
-          "src": "/images/interior-fifth-wheel-services-hero.webp",
-          "alt": "White fifth wheel trailer inside a workshop",
-          "width": 768,
-          "height": 432
-        },
-        "interior-fifth-wheel-repairs-hero": {
-          "src": "/images/interior-fifth-wheel-repairs-hero.webp",
-          "alt": "Front overhang of a white fifth wheel trailer",
-          "width": 668,
-          "height": 376
-        },
-        "interior-fifth-wheel-panel-paint-hero": {
-          "src": "/images/interior-fifth-wheel-panel-paint-hero.webp",
-          "alt": "Side of a white fifth wheel trailer",
-          "width": 637,
-          "height": 358
-        },
-        "interior-fifth-wheel-upgrades-hero": {
-          "src": "/images/interior-fifth-wheel-upgrades-hero.webp",
-          "alt": "White fifth wheel trailer with side door and windows",
-          "width": 691,
-          "height": 389
-        },
-        "interior-bus-services-hero": {
-          "src": "/images/interior-bus-services-hero.webp",
-          "alt": "Gold and grey bus parked outdoors",
-          "width": 768,
-          "height": 432
-        },
-        "interior-bus-repairs-hero": {
-          "src": "/images/interior-bus-repairs-hero.webp",
-          "alt": "Bus with a damaged front corner inside a workshop",
-          "width": 900,
-          "height": 506
-        },
-        "interior-bus-panel-paint-hero": {
-          "src": "/images/interior-bus-panel-paint-hero.webp",
-          "alt": "Side-by-side views of the rear of a white bus",
-          "width": 1200,
-          "height": 675
-        },
-        "interior-bus-upgrades-hero": {
-          "src": "/images/interior-bus-upgrades-hero.webp",
-          "alt": "Gold and grey bus with a side door open",
-          "width": 900,
-          "height": 506
-        },
-        "interior-insurance-damage-hero": {
-          "src": "/images/interior-insurance-damage-hero.webp",
-          "alt": "Damaged roof edge of a motorhome",
-          "width": 768,
-          "height": 432
-        },
-        "interior-about-workshop-hero": {
-          "src": "/images/interior-about-workshop-hero.webp",
-          "alt": "White caravan parked outside workshop buildings",
-          "width": 1024,
-          "height": 576
-        },
-        "interior-contact-workshop-hero": {
-          "src": "/images/interior-contact-workshop-hero.webp",
-          "alt": "Blue and white caravan outside a workshop building",
-          "width": 900,
-          "height": 506
-        },
-        "interior-caravan-services-roof": {
-          "src": "/images/interior-caravan-services-roof.webp",
-          "alt": "Roof of a white caravan with roof vents and patched seams",
-          "width": 768,
-          "height": 576
-        },
-        "interior-caravan-repairs-roof": {
-          "src": "/images/interior-caravan-repairs-roof.webp",
-          "alt": "Roof of a caravan inside a workshop",
-          "width": 1000,
-          "height": 750
-        },
-        "interior-caravan-upgrades-body": {
-          "src": "/images/interior-caravan-upgrades-body.webp",
-          "alt": "Rear of a caravan with an open wall and sink",
-          "width": 768,
-          "height": 576
-        },
-        "interior-insurance-caravan-damage": {
-          "src": "/images/interior-insurance-caravan-damage.webp",
-          "alt": "Cracked rear corner of a white caravan",
-          "width": 896,
-          "height": 672
-        },
-        "interior-about-workshop-repair": {
-          "src": "/images/interior-about-workshop-repair.webp",
-          "alt": "Caravan front with windows removed inside a workshop",
-          "width": 900,
-          "height": 675
-        },
-        "split-caravan-models": {
-          "src": "/images/split-caravan-models.webp",
-          "alt": "Green and white caravan parked on gravel",
-          "width": 1200,
-          "height": 900
-        },
-        "split-campervan-models": {
-          "src": "/images/split-campervan-models.webp",
-          "alt": "White and grey campervan parked on gravel",
-          "width": 1200,
-          "height": 900
-        },
-        "split-motorhome-models": {
-          "src": "/images/split-motorhome-models.webp",
-          "alt": "White motorhome with an overcab sleeping compartment",
-          "width": 1200,
-          "height": 900
-        },
-        "split-fifth-wheel-models": {
-          "src": "/images/split-fifth-wheel-models.webp",
-          "alt": "Fifth-wheel trailer with front overhang and landing legs inside a workshop",
-          "width": 1200,
-          "height": 900
-        },
-        "split-bus-models": {
-          "src": "/images/split-bus-models.webp",
-          "alt": "Gold and grey coach bus parked on gravel",
-          "width": 1200,
-          "height": 900
-        },
-        "split-campervan-roof": {
-          "src": "/images/split-campervan-roof.webp",
-          "alt": "Exposed metal roof inside a van with protective covers over the seats",
-          "width": 1200,
-          "height": 900
-        },
-        "split-campervan-upgrades": {
-          "src": "/images/split-campervan-upgrades.webp",
-          "alt": "Timber ceiling framing and a roof vent inside a van",
-          "width": 1200,
-          "height": 900
-        },
-        "split-motorhome-roof": {
-          "src": "/images/split-motorhome-roof.webp",
-          "alt": "Motorhome roof with vents and solar panels",
-          "width": 1200,
-          "height": 900
-        },
-        "split-motorhome-interior": {
-          "src": "/images/split-motorhome-interior.webp",
-          "alt": "Motorhome interior with timber cabinets and a kitchen worktop",
-          "width": 1200,
-          "height": 900
-        },
-        "split-bus-maintenance": {
-          "src": "/images/split-bus-maintenance.webp",
-          "alt": "Exposed wiring and ventilation components behind a coach bus front panel",
-          "width": 1200,
-          "height": 900
-        },
-        "split-bus-interior": {
-          "src": "/images/split-bus-interior.webp",
-          "alt": "Converted coach interior with an aisle, timber cupboards and large side windows",
-          "width": 1200,
-          "height": 900
-        },
-        "gen-caravan-paint": {
-          "src": "/images/gen-caravan-paint.webp",
-          "alt": "Caravan with masked windows and prepared body panels inside a spray booth",
-          "width": 1600,
-          "height": 1200
-        },
-        "gen-campervan-paint": {
-          "src": "/images/gen-campervan-paint.webp",
-          "alt": "High-roof van with masked windows inside a spray booth",
-          "width": 1600,
-          "height": 1200
-        },
-        "gen-motorhome-paint": {
-          "src": "/images/gen-motorhome-paint.webp",
-          "alt": "White overcab motorhome with masked windows inside a spray booth",
-          "width": 1600,
-          "height": 1200
-        },
-        "gen-fifth-wheel-paint": {
-          "src": "/images/gen-fifth-wheel-paint.webp",
-          "alt": "Fifth-wheel trailer with masked windows and prepared side panels inside a spray booth",
-          "width": 1600,
-          "height": 1200
-        },
-        "gen-bus-paint": {
-          "src": "/images/gen-bus-paint.webp",
-          "alt": "Gold and grey coach with masked side windows inside a spray booth",
-          "width": 1600,
-          "height": 1200
-        },
-        "gen-fifth-wheel-roof": {
-          "src": "/images/gen-fifth-wheel-roof.webp",
-          "alt": "Trailer roof with a vent, sealant joints and a metal edge inside a workshop",
-          "width": 1600,
-          "height": 1200
-        },
-        "gen-fifth-wheel-interior": {
-          "src": "/images/gen-fifth-wheel-interior.webp",
-          "alt": "Trailer interior with timber cupboards, dinette seating and steps to a raised bedroom",
-          "width": 1600,
-          "height": 1200
-        },
-        "gen-bus-roof": {
-          "src": "/images/gen-bus-roof.webp",
-          "alt": "Coach roof with a vent and sealed joints inside a workshop",
-          "width": 1600,
-          "height": 1200
-        },
-        "cta-real-caravan-workshop": {
-          "src": "/images/cta-real-caravan-workshop.webp",
-          "alt": "",
-          "width": 1600,
-          "height": 900
-        },
-        "cta-real-caravan-yellow": {
-          "src": "/images/cta-real-caravan-yellow.webp",
-          "alt": "",
-          "width": 1600,
-          "height": 900
-        },
-        "cta-real-caravan-purple-side": {
-          "src": "/images/cta-real-caravan-purple-side.webp",
-          "alt": "",
-          "width": 1600,
-          "height": 900
-        },
-        "cta-real-caravan-purple-front": {
-          "src": "/images/cta-real-caravan-purple-front.webp",
-          "alt": "",
-          "width": 1600,
-          "height": 900
-        },
-        "cta-real-campervan-lined-roof": {
-          "src": "/images/cta-real-campervan-lined-roof.webp",
-          "alt": "",
-          "width": 1600,
-          "height": 900
-        },
-        "cta-real-campervan-roof-framing": {
-          "src": "/images/cta-real-campervan-roof-framing.webp",
-          "alt": "",
-          "width": 1600,
-          "height": 900
-        },
-        "cta-real-campervan-metal-roof": {
-          "src": "/images/cta-real-campervan-metal-roof.webp",
-          "alt": "",
-          "width": 1600,
-          "height": 900
-        },
-        "cta-real-motorhome-front": {
-          "src": "/images/cta-real-motorhome-front.webp",
-          "alt": "",
-          "width": 1600,
-          "height": 900
-        },
-        "cta-real-motorhome-cab": {
-          "src": "/images/cta-real-motorhome-cab.webp",
-          "alt": "",
-          "width": 1600,
-          "height": 900
-        },
-        "cta-real-motorhome-kitchen": {
-          "src": "/images/cta-real-motorhome-kitchen.webp",
-          "alt": "",
-          "width": 1600,
-          "height": 900
-        },
-        "cta-real-motorhome-storage": {
-          "src": "/images/cta-real-motorhome-storage.webp",
-          "alt": "",
-          "width": 1600,
-          "height": 900
-        },
-        "cta-real-fifth-wheel-workshop": {
-          "src": "/images/cta-real-fifth-wheel-workshop.webp",
-          "alt": "",
-          "width": 1600,
-          "height": 900
-        },
-        "cta-real-fifth-wheel-rear": {
-          "src": "/images/cta-real-fifth-wheel-rear.webp",
-          "alt": "",
-          "width": 1600,
-          "height": 900
-        },
-        "cta-real-bus-front": {
-          "src": "/images/cta-real-bus-front.webp",
-          "alt": "",
-          "width": 1600,
-          "height": 900
-        },
-        "cta-real-bus-workshop": {
-          "src": "/images/cta-real-bus-workshop.webp",
-          "alt": "",
-          "width": 1600,
-          "height": 900
-        },
-        "cta-real-bus-dinette": {
-          "src": "/images/cta-real-bus-dinette.webp",
-          "alt": "",
-          "width": 1600,
-          "height": 900
-        },
-        "cta-real-bus-storage": {
-          "src": "/images/cta-real-bus-storage.webp",
-          "alt": "",
-          "width": 1600,
-          "height": 900
-        },
-        "cta-real-workshop-caravans": {
-          "src": "/images/cta-real-workshop-caravans.webp",
-          "alt": "",
-          "width": 1600,
-          "height": 900
-        },
-        "benefit-real-caravan-service-yard": {
-          "src": "/images/benefit-real-caravan-service-yard.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-caravan-service-front": {
-          "src": "/images/benefit-real-caravan-service-front.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-caravan-service-interior": {
-          "src": "/images/benefit-real-caravan-service-interior.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-caravan-service-panel": {
-          "src": "/images/benefit-real-caravan-service-panel.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-caravan-repairs-yard": {
-          "src": "/images/benefit-real-caravan-repairs-yard.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-caravan-repairs-front": {
-          "src": "/images/benefit-real-caravan-repairs-front.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-caravan-repairs-interior": {
-          "src": "/images/benefit-real-caravan-repairs-interior.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-caravan-repairs-panel": {
-          "src": "/images/benefit-real-caravan-repairs-panel.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-caravan-paint-yard": {
-          "src": "/images/benefit-real-caravan-paint-yard.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-caravan-paint-front": {
-          "src": "/images/benefit-real-caravan-paint-front.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-caravan-paint-interior": {
-          "src": "/images/benefit-real-caravan-paint-interior.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-caravan-paint-panel": {
-          "src": "/images/benefit-real-caravan-paint-panel.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-caravan-upgrades-yard": {
-          "src": "/images/benefit-real-caravan-upgrades-yard.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-caravan-upgrades-front": {
-          "src": "/images/benefit-real-caravan-upgrades-front.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-caravan-upgrades-interior": {
-          "src": "/images/benefit-real-caravan-upgrades-interior.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-caravan-upgrades-panel": {
-          "src": "/images/benefit-real-caravan-upgrades-panel.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-campervan-service-framing": {
-          "src": "/images/benefit-real-campervan-service-framing.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-campervan-service-workshop-roof": {
-          "src": "/images/benefit-real-campervan-service-workshop-roof.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-campervan-service-workshop-roof-bay": {
-          "src": "/images/benefit-real-campervan-service-workshop-roof-bay.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-campervan-service-workshop-roof-panel": {
-          "src": "/images/benefit-real-campervan-service-workshop-roof-panel.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-campervan-repairs-ceiling": {
-          "src": "/images/benefit-real-campervan-repairs-ceiling.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-campervan-repairs-workshop-roof": {
-          "src": "/images/benefit-real-campervan-repairs-workshop-roof.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-campervan-repairs-workshop-roof-bay": {
-          "src": "/images/benefit-real-campervan-repairs-workshop-roof-bay.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-campervan-repairs-workshop-roof-panel": {
-          "src": "/images/benefit-real-campervan-repairs-workshop-roof-panel.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-campervan-paint-framing": {
-          "src": "/images/benefit-real-campervan-paint-framing.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-campervan-paint-ceiling": {
-          "src": "/images/benefit-real-campervan-paint-ceiling.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-campervan-paint-workshop-roof": {
-          "src": "/images/benefit-real-campervan-paint-workshop-roof.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-campervan-paint-workshop-roof-bay": {
-          "src": "/images/benefit-real-campervan-paint-workshop-roof-bay.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-campervan-upgrades-shell": {
-          "src": "/images/benefit-real-campervan-upgrades-shell.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-campervan-upgrades-workshop-roof": {
-          "src": "/images/benefit-real-campervan-upgrades-workshop-roof.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-campervan-upgrades-workshop-roof-bay": {
-          "src": "/images/benefit-real-campervan-upgrades-workshop-roof-bay.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-campervan-upgrades-workshop-roof-panel": {
-          "src": "/images/benefit-real-campervan-upgrades-workshop-roof-panel.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-motorhome-service-roof": {
-          "src": "/images/benefit-real-motorhome-service-roof.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-motorhome-service-kitchen": {
-          "src": "/images/benefit-real-motorhome-service-kitchen.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-motorhome-service-bathroom": {
-          "src": "/images/benefit-real-motorhome-service-bathroom.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-motorhome-service-hob": {
-          "src": "/images/benefit-real-motorhome-service-hob.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-motorhome-repairs-roof": {
-          "src": "/images/benefit-real-motorhome-repairs-roof.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-motorhome-repairs-kitchen": {
-          "src": "/images/benefit-real-motorhome-repairs-kitchen.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-motorhome-repairs-bathroom": {
-          "src": "/images/benefit-real-motorhome-repairs-bathroom.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-motorhome-repairs-hob": {
-          "src": "/images/benefit-real-motorhome-repairs-hob.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-motorhome-paint-roof": {
-          "src": "/images/benefit-real-motorhome-paint-roof.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-motorhome-paint-kitchen": {
-          "src": "/images/benefit-real-motorhome-paint-kitchen.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-motorhome-paint-bathroom": {
-          "src": "/images/benefit-real-motorhome-paint-bathroom.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-motorhome-paint-hob": {
-          "src": "/images/benefit-real-motorhome-paint-hob.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-motorhome-upgrades-roof": {
-          "src": "/images/benefit-real-motorhome-upgrades-roof.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-motorhome-upgrades-kitchen": {
-          "src": "/images/benefit-real-motorhome-upgrades-kitchen.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-motorhome-upgrades-bathroom": {
-          "src": "/images/benefit-real-motorhome-upgrades-bathroom.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-motorhome-upgrades-hob": {
-          "src": "/images/benefit-real-motorhome-upgrades-hob.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-fifth-wheel-service-rear": {
-          "src": "/images/benefit-real-fifth-wheel-service-rear.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-fifth-wheel-service-framing": {
-          "src": "/images/benefit-real-fifth-wheel-service-framing.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-fifth-wheel-service-body": {
-          "src": "/images/benefit-real-fifth-wheel-service-body.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-fifth-wheel-service-workshop-caravan-bay": {
-          "src": "/images/benefit-real-fifth-wheel-service-workshop-caravan-bay.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-fifth-wheel-repairs-framing": {
-          "src": "/images/benefit-real-fifth-wheel-repairs-framing.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-fifth-wheel-repairs-body": {
-          "src": "/images/benefit-real-fifth-wheel-repairs-body.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-fifth-wheel-repairs-workshop-caravan-bay": {
-          "src": "/images/benefit-real-fifth-wheel-repairs-workshop-caravan-bay.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-fifth-wheel-repairs-workshop-roof": {
-          "src": "/images/benefit-real-fifth-wheel-repairs-workshop-roof.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-fifth-wheel-paint-framing": {
-          "src": "/images/benefit-real-fifth-wheel-paint-framing.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-fifth-wheel-paint-body": {
-          "src": "/images/benefit-real-fifth-wheel-paint-body.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-fifth-wheel-paint-workshop-caravan-bay": {
-          "src": "/images/benefit-real-fifth-wheel-paint-workshop-caravan-bay.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-fifth-wheel-paint-workshop-roof": {
-          "src": "/images/benefit-real-fifth-wheel-paint-workshop-roof.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-fifth-wheel-upgrades-rear": {
-          "src": "/images/benefit-real-fifth-wheel-upgrades-rear.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-fifth-wheel-upgrades-framing": {
-          "src": "/images/benefit-real-fifth-wheel-upgrades-framing.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-fifth-wheel-upgrades-body": {
-          "src": "/images/benefit-real-fifth-wheel-upgrades-body.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-fifth-wheel-upgrades-workshop-caravan-bay": {
-          "src": "/images/benefit-real-fifth-wheel-upgrades-workshop-caravan-bay.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-bus-service-body": {
-          "src": "/images/benefit-real-bus-service-body.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-bus-service-dinette": {
-          "src": "/images/benefit-real-bus-service-dinette.webp",
-          "alt": "",
-          "width": 1000,
-          "height": 750
-        },
-        "benefit-real-bus-service-seating": {
-          "src": "/images/benefit-real-bus-service-seating.webp",
-          "alt": "",
-          "width": 1000,
-          "height": 750
-        },
-        "benefit-real-bus-service-storage": {
-          "src": "/images/benefit-real-bus-service-storage.webp",
-          "alt": "",
-          "width": 1000,
-          "height": 750
-        },
-        "benefit-real-bus-repairs-wiring": {
-          "src": "/images/benefit-real-bus-repairs-wiring.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-bus-repairs-front": {
-          "src": "/images/benefit-real-bus-repairs-front.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-bus-repairs-dinette": {
-          "src": "/images/benefit-real-bus-repairs-dinette.webp",
-          "alt": "",
-          "width": 1000,
-          "height": 750
-        },
-        "benefit-real-bus-repairs-storage": {
-          "src": "/images/benefit-real-bus-repairs-storage.webp",
-          "alt": "",
-          "width": 1000,
-          "height": 750
-        },
-        "benefit-real-bus-paint-body": {
-          "src": "/images/benefit-real-bus-paint-body.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-bus-paint-wiring": {
-          "src": "/images/benefit-real-bus-paint-wiring.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-bus-paint-front": {
-          "src": "/images/benefit-real-bus-paint-front.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-bus-paint-storage": {
-          "src": "/images/benefit-real-bus-paint-storage.webp",
-          "alt": "",
-          "width": 1000,
-          "height": 750
-        },
-        "benefit-real-bus-upgrades-body": {
-          "src": "/images/benefit-real-bus-upgrades-body.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-bus-upgrades-wiring": {
-          "src": "/images/benefit-real-bus-upgrades-wiring.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-bus-upgrades-front": {
-          "src": "/images/benefit-real-bus-upgrades-front.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-bus-upgrades-storage": {
-          "src": "/images/benefit-real-bus-upgrades-storage.webp",
-          "alt": "",
-          "width": 1000,
-          "height": 750
-        },
-        "benefit-real-insurance-workshop-rebuild": {
-          "src": "/images/benefit-real-insurance-workshop-rebuild.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-insurance-workshop-paint-prep": {
-          "src": "/images/benefit-real-insurance-workshop-paint-prep.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-insurance-workshop-bodywork": {
-          "src": "/images/benefit-real-insurance-workshop-bodywork.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
-        },
-        "benefit-real-insurance-workshop-cabinetry": {
-          "src": "/images/benefit-real-insurance-workshop-cabinetry.webp",
-          "alt": "",
-          "width": 900,
-          "height": 1200
         }
       },
       "_type": "globalBranding",
@@ -27599,6 +26671,1445 @@
       "canonical": "",
       "noindex": true,
       "_type": "pageSeo"
+    },
+    "global.imageLibrary.1": {
+      "_type": "globalImageLibrary",
+      "images": [
+        {
+          "id": "interior-caravan",
+          "image": {
+            "src": "/images/interior-caravan.webp",
+            "alt": "White caravan parked outdoors",
+            "width": 1024,
+            "height": 768,
+            "variants": []
+          }
+        },
+        {
+          "id": "interior-campervan",
+          "image": {
+            "src": "/images/interior-campervan.webp",
+            "alt": "White campervan parked outdoors",
+            "width": 768,
+            "height": 1024,
+            "variants": []
+          }
+        },
+        {
+          "id": "interior-motorhome",
+          "image": {
+            "src": "/images/interior-motorhome.webp",
+            "alt": "Interior of a vehicle with seating and kitchen",
+            "width": 768,
+            "height": 1024,
+            "variants": []
+          }
+        },
+        {
+          "id": "interior-fifthWheel",
+          "image": {
+            "src": "/images/interior-fifth-wheel.webp",
+            "alt": "Fifth wheel trailer inside a workshop",
+            "width": 768,
+            "height": 1024,
+            "variants": []
+          }
+        },
+        {
+          "id": "interior-bus",
+          "image": {
+            "src": "/images/interior-bus.webp",
+            "alt": "Bus parked outdoors",
+            "width": 768,
+            "height": 1024,
+            "variants": []
+          }
+        },
+        {
+          "id": "interior-workshop",
+          "image": {
+            "src": "/images/interior-workshop.webp",
+            "alt": "Caravan parked outside a workshop building",
+            "width": 1440,
+            "height": 1920,
+            "variants": []
+          }
+        },
+        {
+          "id": "home-workshop-banner-supplied",
+          "image": {
+            "src": "/images/home-workshop-banner-supplied.png",
+            "alt": "JL Coachbuilders workshop buildings and caravan yard in Christchurch",
+            "width": 1717,
+            "height": 916
+          }
+        },
+        {
+          "id": "home-vehicle-roof-before-after",
+          "image": {
+            "src": "/images/home-vehicle-roof-before-after.webp",
+            "alt": "Side-by-side views of a damaged vehicle roof and a smooth vehicle roof",
+            "width": 1498,
+            "height": 824
+          }
+        },
+        {
+          "id": "interior-caravan-services-hero",
+          "image": {
+            "src": "/images/interior-caravan-services-hero.webp",
+            "alt": "White caravan parked outdoors",
+            "width": 1024,
+            "height": 576
+          }
+        },
+        {
+          "id": "interior-caravan-repairs-hero",
+          "image": {
+            "src": "/images/interior-caravan-repairs-hero.webp",
+            "alt": "Damaged rear corner of a white caravan",
+            "width": 1024,
+            "height": 576
+          }
+        },
+        {
+          "id": "interior-caravan-panel-paint-hero",
+          "image": {
+            "src": "/images/interior-caravan-panel-paint-hero.webp",
+            "alt": "White and purple caravan parked outdoors",
+            "width": 768,
+            "height": 432
+          }
+        },
+        {
+          "id": "interior-caravan-upgrades-hero",
+          "image": {
+            "src": "/images/interior-caravan-upgrades-hero.webp",
+            "alt": "Blue and white caravan parked outdoors",
+            "width": 900,
+            "height": 506
+          }
+        },
+        {
+          "id": "interior-campervan-services-hero",
+          "image": {
+            "src": "/images/interior-campervan-services-hero.webp",
+            "alt": "White campervan parked outdoors",
+            "width": 768,
+            "height": 432
+          }
+        },
+        {
+          "id": "interior-campervan-repairs-hero",
+          "image": {
+            "src": "/images/interior-campervan-repairs-hero.webp",
+            "alt": "Front and side of a white campervan",
+            "width": 645,
+            "height": 363
+          }
+        },
+        {
+          "id": "interior-campervan-panel-paint-hero",
+          "image": {
+            "src": "/images/interior-campervan-panel-paint-hero.webp",
+            "alt": "Side of a white campervan",
+            "width": 614,
+            "height": 345
+          }
+        },
+        {
+          "id": "interior-campervan-upgrades-hero",
+          "image": {
+            "src": "/images/interior-campervan-upgrades-hero.webp",
+            "alt": "Roof and side of a white campervan",
+            "width": 675,
+            "height": 380
+          }
+        },
+        {
+          "id": "interior-motorhome-services-hero",
+          "image": {
+            "src": "/images/interior-motorhome-services-hero.webp",
+            "alt": "White motorhome parked outdoors",
+            "width": 900,
+            "height": 506
+          }
+        },
+        {
+          "id": "interior-motorhome-repairs-hero",
+          "image": {
+            "src": "/images/interior-motorhome-repairs-hero.webp",
+            "alt": "Damaged front upper body of a white motorhome",
+            "width": 900,
+            "height": 506
+          }
+        },
+        {
+          "id": "interior-motorhome-panel-paint-hero",
+          "image": {
+            "src": "/images/interior-motorhome-panel-paint-hero.webp",
+            "alt": "White and blue motorhome side",
+            "width": 768,
+            "height": 432
+          }
+        },
+        {
+          "id": "interior-motorhome-upgrades-hero",
+          "image": {
+            "src": "/images/interior-motorhome-upgrades-hero.webp",
+            "alt": "Vehicle interior with kitchen and seating",
+            "width": 768,
+            "height": 432
+          }
+        },
+        {
+          "id": "interior-fifth-wheel-services-hero",
+          "image": {
+            "src": "/images/interior-fifth-wheel-services-hero.webp",
+            "alt": "White fifth wheel trailer inside a workshop",
+            "width": 768,
+            "height": 432
+          }
+        },
+        {
+          "id": "interior-fifth-wheel-repairs-hero",
+          "image": {
+            "src": "/images/interior-fifth-wheel-repairs-hero.webp",
+            "alt": "Front overhang of a white fifth wheel trailer",
+            "width": 668,
+            "height": 376
+          }
+        },
+        {
+          "id": "interior-fifth-wheel-panel-paint-hero",
+          "image": {
+            "src": "/images/interior-fifth-wheel-panel-paint-hero.webp",
+            "alt": "Side of a white fifth wheel trailer",
+            "width": 637,
+            "height": 358
+          }
+        },
+        {
+          "id": "interior-fifth-wheel-upgrades-hero",
+          "image": {
+            "src": "/images/interior-fifth-wheel-upgrades-hero.webp",
+            "alt": "White fifth wheel trailer with side door and windows",
+            "width": 691,
+            "height": 389
+          }
+        },
+        {
+          "id": "interior-bus-services-hero",
+          "image": {
+            "src": "/images/interior-bus-services-hero.webp",
+            "alt": "Gold and grey bus parked outdoors",
+            "width": 768,
+            "height": 432
+          }
+        },
+        {
+          "id": "interior-bus-repairs-hero",
+          "image": {
+            "src": "/images/interior-bus-repairs-hero.webp",
+            "alt": "Bus with a damaged front corner inside a workshop",
+            "width": 900,
+            "height": 506
+          }
+        },
+        {
+          "id": "interior-bus-panel-paint-hero",
+          "image": {
+            "src": "/images/interior-bus-panel-paint-hero.webp",
+            "alt": "Side-by-side views of the rear of a white bus",
+            "width": 1200,
+            "height": 675
+          }
+        },
+        {
+          "id": "interior-bus-upgrades-hero",
+          "image": {
+            "src": "/images/interior-bus-upgrades-hero.webp",
+            "alt": "Gold and grey bus with a side door open",
+            "width": 900,
+            "height": 506
+          }
+        },
+        {
+          "id": "interior-insurance-damage-hero",
+          "image": {
+            "src": "/images/interior-insurance-damage-hero.webp",
+            "alt": "Damaged roof edge of a motorhome",
+            "width": 768,
+            "height": 432
+          }
+        },
+        {
+          "id": "interior-about-workshop-hero",
+          "image": {
+            "src": "/images/interior-about-workshop-hero.webp",
+            "alt": "White caravan parked outside workshop buildings",
+            "width": 1024,
+            "height": 576
+          }
+        },
+        {
+          "id": "interior-contact-workshop-hero",
+          "image": {
+            "src": "/images/interior-contact-workshop-hero.webp",
+            "alt": "Blue and white caravan outside a workshop building",
+            "width": 900,
+            "height": 506
+          }
+        },
+        {
+          "id": "interior-caravan-services-roof",
+          "image": {
+            "src": "/images/interior-caravan-services-roof.webp",
+            "alt": "Roof of a white caravan with roof vents and patched seams",
+            "width": 768,
+            "height": 576
+          }
+        },
+        {
+          "id": "interior-caravan-repairs-roof",
+          "image": {
+            "src": "/images/interior-caravan-repairs-roof.webp",
+            "alt": "Roof of a caravan inside a workshop",
+            "width": 1000,
+            "height": 750
+          }
+        },
+        {
+          "id": "interior-caravan-upgrades-body",
+          "image": {
+            "src": "/images/interior-caravan-upgrades-body.webp",
+            "alt": "Rear of a caravan with an open wall and sink",
+            "width": 768,
+            "height": 576
+          }
+        },
+        {
+          "id": "interior-insurance-caravan-damage",
+          "image": {
+            "src": "/images/interior-insurance-caravan-damage.webp",
+            "alt": "Cracked rear corner of a white caravan",
+            "width": 896,
+            "height": 672
+          }
+        },
+        {
+          "id": "interior-about-workshop-repair",
+          "image": {
+            "src": "/images/interior-about-workshop-repair.webp",
+            "alt": "Caravan front with windows removed inside a workshop",
+            "width": 900,
+            "height": 675
+          }
+        },
+        {
+          "id": "split-caravan-models",
+          "image": {
+            "src": "/images/split-caravan-models.webp",
+            "alt": "Green and white caravan parked on gravel",
+            "width": 1200,
+            "height": 900
+          }
+        },
+        {
+          "id": "split-campervan-models",
+          "image": {
+            "src": "/images/split-campervan-models.webp",
+            "alt": "White and grey campervan parked on gravel",
+            "width": 1200,
+            "height": 900
+          }
+        },
+        {
+          "id": "split-motorhome-models",
+          "image": {
+            "src": "/images/split-motorhome-models.webp",
+            "alt": "White motorhome with an overcab sleeping compartment",
+            "width": 1200,
+            "height": 900
+          }
+        },
+        {
+          "id": "split-fifth-wheel-models",
+          "image": {
+            "src": "/images/split-fifth-wheel-models.webp",
+            "alt": "Fifth-wheel trailer with front overhang and landing legs inside a workshop",
+            "width": 1200,
+            "height": 900
+          }
+        }
+      ]
+    },
+    "global.imageLibrary.2": {
+      "_type": "globalImageLibrary",
+      "images": [
+        {
+          "id": "split-bus-models",
+          "image": {
+            "src": "/images/split-bus-models.webp",
+            "alt": "Gold and grey coach bus parked on gravel",
+            "width": 1200,
+            "height": 900
+          }
+        },
+        {
+          "id": "split-campervan-roof",
+          "image": {
+            "src": "/images/split-campervan-roof.webp",
+            "alt": "Exposed metal roof inside a van with protective covers over the seats",
+            "width": 1200,
+            "height": 900
+          }
+        },
+        {
+          "id": "split-campervan-upgrades",
+          "image": {
+            "src": "/images/split-campervan-upgrades.webp",
+            "alt": "Timber ceiling framing and a roof vent inside a van",
+            "width": 1200,
+            "height": 900
+          }
+        },
+        {
+          "id": "split-motorhome-roof",
+          "image": {
+            "src": "/images/split-motorhome-roof.webp",
+            "alt": "Motorhome roof with vents and solar panels",
+            "width": 1200,
+            "height": 900
+          }
+        },
+        {
+          "id": "split-motorhome-interior",
+          "image": {
+            "src": "/images/split-motorhome-interior.webp",
+            "alt": "Motorhome interior with timber cabinets and a kitchen worktop",
+            "width": 1200,
+            "height": 900
+          }
+        },
+        {
+          "id": "split-bus-maintenance",
+          "image": {
+            "src": "/images/split-bus-maintenance.webp",
+            "alt": "Exposed wiring and ventilation components behind a coach bus front panel",
+            "width": 1200,
+            "height": 900
+          }
+        },
+        {
+          "id": "split-bus-interior",
+          "image": {
+            "src": "/images/split-bus-interior.webp",
+            "alt": "Converted coach interior with an aisle, timber cupboards and large side windows",
+            "width": 1200,
+            "height": 900
+          }
+        },
+        {
+          "id": "gen-caravan-paint",
+          "image": {
+            "src": "/images/gen-caravan-paint.webp",
+            "alt": "Caravan with masked windows and prepared body panels inside a spray booth",
+            "width": 1600,
+            "height": 1200
+          }
+        },
+        {
+          "id": "gen-campervan-paint",
+          "image": {
+            "src": "/images/gen-campervan-paint.webp",
+            "alt": "High-roof van with masked windows inside a spray booth",
+            "width": 1600,
+            "height": 1200
+          }
+        },
+        {
+          "id": "gen-motorhome-paint",
+          "image": {
+            "src": "/images/gen-motorhome-paint.webp",
+            "alt": "White overcab motorhome with masked windows inside a spray booth",
+            "width": 1600,
+            "height": 1200
+          }
+        },
+        {
+          "id": "gen-fifth-wheel-paint",
+          "image": {
+            "src": "/images/gen-fifth-wheel-paint.webp",
+            "alt": "Fifth-wheel trailer with masked windows and prepared side panels inside a spray booth",
+            "width": 1600,
+            "height": 1200
+          }
+        },
+        {
+          "id": "gen-bus-paint",
+          "image": {
+            "src": "/images/gen-bus-paint.webp",
+            "alt": "Gold and grey coach with masked side windows inside a spray booth",
+            "width": 1600,
+            "height": 1200
+          }
+        },
+        {
+          "id": "gen-fifth-wheel-roof",
+          "image": {
+            "src": "/images/gen-fifth-wheel-roof.webp",
+            "alt": "Trailer roof with a vent, sealant joints and a metal edge inside a workshop",
+            "width": 1600,
+            "height": 1200
+          }
+        },
+        {
+          "id": "gen-fifth-wheel-interior",
+          "image": {
+            "src": "/images/gen-fifth-wheel-interior.webp",
+            "alt": "Trailer interior with timber cupboards, dinette seating and steps to a raised bedroom",
+            "width": 1600,
+            "height": 1200
+          }
+        },
+        {
+          "id": "gen-bus-roof",
+          "image": {
+            "src": "/images/gen-bus-roof.webp",
+            "alt": "Coach roof with a vent and sealed joints inside a workshop",
+            "width": 1600,
+            "height": 1200
+          }
+        },
+        {
+          "id": "cta-real-caravan-workshop",
+          "image": {
+            "src": "/images/cta-real-caravan-workshop.webp",
+            "alt": "",
+            "width": 1600,
+            "height": 900
+          }
+        },
+        {
+          "id": "cta-real-caravan-yellow",
+          "image": {
+            "src": "/images/cta-real-caravan-yellow.webp",
+            "alt": "",
+            "width": 1600,
+            "height": 900
+          }
+        },
+        {
+          "id": "cta-real-caravan-purple-side",
+          "image": {
+            "src": "/images/cta-real-caravan-purple-side.webp",
+            "alt": "",
+            "width": 1600,
+            "height": 900
+          }
+        },
+        {
+          "id": "cta-real-caravan-purple-front",
+          "image": {
+            "src": "/images/cta-real-caravan-purple-front.webp",
+            "alt": "",
+            "width": 1600,
+            "height": 900
+          }
+        },
+        {
+          "id": "cta-real-campervan-lined-roof",
+          "image": {
+            "src": "/images/cta-real-campervan-lined-roof.webp",
+            "alt": "",
+            "width": 1600,
+            "height": 900
+          }
+        },
+        {
+          "id": "cta-real-campervan-roof-framing",
+          "image": {
+            "src": "/images/cta-real-campervan-roof-framing.webp",
+            "alt": "",
+            "width": 1600,
+            "height": 900
+          }
+        },
+        {
+          "id": "cta-real-campervan-metal-roof",
+          "image": {
+            "src": "/images/cta-real-campervan-metal-roof.webp",
+            "alt": "",
+            "width": 1600,
+            "height": 900
+          }
+        },
+        {
+          "id": "cta-real-motorhome-front",
+          "image": {
+            "src": "/images/cta-real-motorhome-front.webp",
+            "alt": "",
+            "width": 1600,
+            "height": 900
+          }
+        },
+        {
+          "id": "cta-real-motorhome-cab",
+          "image": {
+            "src": "/images/cta-real-motorhome-cab.webp",
+            "alt": "",
+            "width": 1600,
+            "height": 900
+          }
+        },
+        {
+          "id": "cta-real-motorhome-kitchen",
+          "image": {
+            "src": "/images/cta-real-motorhome-kitchen.webp",
+            "alt": "",
+            "width": 1600,
+            "height": 900
+          }
+        },
+        {
+          "id": "cta-real-motorhome-storage",
+          "image": {
+            "src": "/images/cta-real-motorhome-storage.webp",
+            "alt": "",
+            "width": 1600,
+            "height": 900
+          }
+        },
+        {
+          "id": "cta-real-fifth-wheel-workshop",
+          "image": {
+            "src": "/images/cta-real-fifth-wheel-workshop.webp",
+            "alt": "",
+            "width": 1600,
+            "height": 900
+          }
+        },
+        {
+          "id": "cta-real-fifth-wheel-rear",
+          "image": {
+            "src": "/images/cta-real-fifth-wheel-rear.webp",
+            "alt": "",
+            "width": 1600,
+            "height": 900
+          }
+        },
+        {
+          "id": "cta-real-bus-front",
+          "image": {
+            "src": "/images/cta-real-bus-front.webp",
+            "alt": "",
+            "width": 1600,
+            "height": 900
+          }
+        },
+        {
+          "id": "cta-real-bus-workshop",
+          "image": {
+            "src": "/images/cta-real-bus-workshop.webp",
+            "alt": "",
+            "width": 1600,
+            "height": 900
+          }
+        },
+        {
+          "id": "cta-real-bus-dinette",
+          "image": {
+            "src": "/images/cta-real-bus-dinette.webp",
+            "alt": "",
+            "width": 1600,
+            "height": 900
+          }
+        },
+        {
+          "id": "cta-real-bus-storage",
+          "image": {
+            "src": "/images/cta-real-bus-storage.webp",
+            "alt": "",
+            "width": 1600,
+            "height": 900
+          }
+        },
+        {
+          "id": "cta-real-workshop-caravans",
+          "image": {
+            "src": "/images/cta-real-workshop-caravans.webp",
+            "alt": "",
+            "width": 1600,
+            "height": 900
+          }
+        },
+        {
+          "id": "benefit-real-caravan-service-yard",
+          "image": {
+            "src": "/images/benefit-real-caravan-service-yard.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-caravan-service-front",
+          "image": {
+            "src": "/images/benefit-real-caravan-service-front.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-caravan-service-interior",
+          "image": {
+            "src": "/images/benefit-real-caravan-service-interior.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-caravan-service-panel",
+          "image": {
+            "src": "/images/benefit-real-caravan-service-panel.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-caravan-repairs-yard",
+          "image": {
+            "src": "/images/benefit-real-caravan-repairs-yard.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-caravan-repairs-front",
+          "image": {
+            "src": "/images/benefit-real-caravan-repairs-front.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-caravan-repairs-interior",
+          "image": {
+            "src": "/images/benefit-real-caravan-repairs-interior.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        }
+      ]
+    },
+    "global.imageLibrary.3": {
+      "_type": "globalImageLibrary",
+      "images": [
+        {
+          "id": "benefit-real-caravan-repairs-panel",
+          "image": {
+            "src": "/images/benefit-real-caravan-repairs-panel.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-caravan-paint-yard",
+          "image": {
+            "src": "/images/benefit-real-caravan-paint-yard.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-caravan-paint-front",
+          "image": {
+            "src": "/images/benefit-real-caravan-paint-front.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-caravan-paint-interior",
+          "image": {
+            "src": "/images/benefit-real-caravan-paint-interior.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-caravan-paint-panel",
+          "image": {
+            "src": "/images/benefit-real-caravan-paint-panel.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-caravan-upgrades-yard",
+          "image": {
+            "src": "/images/benefit-real-caravan-upgrades-yard.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-caravan-upgrades-front",
+          "image": {
+            "src": "/images/benefit-real-caravan-upgrades-front.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-caravan-upgrades-interior",
+          "image": {
+            "src": "/images/benefit-real-caravan-upgrades-interior.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-caravan-upgrades-panel",
+          "image": {
+            "src": "/images/benefit-real-caravan-upgrades-panel.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-campervan-service-framing",
+          "image": {
+            "src": "/images/benefit-real-campervan-service-framing.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-campervan-service-workshop-roof",
+          "image": {
+            "src": "/images/benefit-real-campervan-service-workshop-roof.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-campervan-service-workshop-roof-bay",
+          "image": {
+            "src": "/images/benefit-real-campervan-service-workshop-roof-bay.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-campervan-service-workshop-roof-panel",
+          "image": {
+            "src": "/images/benefit-real-campervan-service-workshop-roof-panel.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-campervan-repairs-ceiling",
+          "image": {
+            "src": "/images/benefit-real-campervan-repairs-ceiling.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-campervan-repairs-workshop-roof",
+          "image": {
+            "src": "/images/benefit-real-campervan-repairs-workshop-roof.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-campervan-repairs-workshop-roof-bay",
+          "image": {
+            "src": "/images/benefit-real-campervan-repairs-workshop-roof-bay.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-campervan-repairs-workshop-roof-panel",
+          "image": {
+            "src": "/images/benefit-real-campervan-repairs-workshop-roof-panel.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-campervan-paint-framing",
+          "image": {
+            "src": "/images/benefit-real-campervan-paint-framing.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-campervan-paint-ceiling",
+          "image": {
+            "src": "/images/benefit-real-campervan-paint-ceiling.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-campervan-paint-workshop-roof",
+          "image": {
+            "src": "/images/benefit-real-campervan-paint-workshop-roof.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-campervan-paint-workshop-roof-bay",
+          "image": {
+            "src": "/images/benefit-real-campervan-paint-workshop-roof-bay.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-campervan-upgrades-shell",
+          "image": {
+            "src": "/images/benefit-real-campervan-upgrades-shell.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-campervan-upgrades-workshop-roof",
+          "image": {
+            "src": "/images/benefit-real-campervan-upgrades-workshop-roof.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-campervan-upgrades-workshop-roof-bay",
+          "image": {
+            "src": "/images/benefit-real-campervan-upgrades-workshop-roof-bay.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-campervan-upgrades-workshop-roof-panel",
+          "image": {
+            "src": "/images/benefit-real-campervan-upgrades-workshop-roof-panel.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-motorhome-service-roof",
+          "image": {
+            "src": "/images/benefit-real-motorhome-service-roof.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-motorhome-service-kitchen",
+          "image": {
+            "src": "/images/benefit-real-motorhome-service-kitchen.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-motorhome-service-bathroom",
+          "image": {
+            "src": "/images/benefit-real-motorhome-service-bathroom.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-motorhome-service-hob",
+          "image": {
+            "src": "/images/benefit-real-motorhome-service-hob.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-motorhome-repairs-roof",
+          "image": {
+            "src": "/images/benefit-real-motorhome-repairs-roof.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-motorhome-repairs-kitchen",
+          "image": {
+            "src": "/images/benefit-real-motorhome-repairs-kitchen.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-motorhome-repairs-bathroom",
+          "image": {
+            "src": "/images/benefit-real-motorhome-repairs-bathroom.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-motorhome-repairs-hob",
+          "image": {
+            "src": "/images/benefit-real-motorhome-repairs-hob.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-motorhome-paint-roof",
+          "image": {
+            "src": "/images/benefit-real-motorhome-paint-roof.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-motorhome-paint-kitchen",
+          "image": {
+            "src": "/images/benefit-real-motorhome-paint-kitchen.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-motorhome-paint-bathroom",
+          "image": {
+            "src": "/images/benefit-real-motorhome-paint-bathroom.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-motorhome-paint-hob",
+          "image": {
+            "src": "/images/benefit-real-motorhome-paint-hob.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-motorhome-upgrades-roof",
+          "image": {
+            "src": "/images/benefit-real-motorhome-upgrades-roof.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-motorhome-upgrades-kitchen",
+          "image": {
+            "src": "/images/benefit-real-motorhome-upgrades-kitchen.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-motorhome-upgrades-bathroom",
+          "image": {
+            "src": "/images/benefit-real-motorhome-upgrades-bathroom.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        }
+      ]
+    },
+    "global.imageLibrary.4": {
+      "_type": "globalImageLibrary",
+      "images": [
+        {
+          "id": "benefit-real-motorhome-upgrades-hob",
+          "image": {
+            "src": "/images/benefit-real-motorhome-upgrades-hob.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-fifth-wheel-service-rear",
+          "image": {
+            "src": "/images/benefit-real-fifth-wheel-service-rear.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-fifth-wheel-service-framing",
+          "image": {
+            "src": "/images/benefit-real-fifth-wheel-service-framing.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-fifth-wheel-service-body",
+          "image": {
+            "src": "/images/benefit-real-fifth-wheel-service-body.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-fifth-wheel-service-workshop-caravan-bay",
+          "image": {
+            "src": "/images/benefit-real-fifth-wheel-service-workshop-caravan-bay.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-fifth-wheel-repairs-framing",
+          "image": {
+            "src": "/images/benefit-real-fifth-wheel-repairs-framing.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-fifth-wheel-repairs-body",
+          "image": {
+            "src": "/images/benefit-real-fifth-wheel-repairs-body.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-fifth-wheel-repairs-workshop-caravan-bay",
+          "image": {
+            "src": "/images/benefit-real-fifth-wheel-repairs-workshop-caravan-bay.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-fifth-wheel-repairs-workshop-roof",
+          "image": {
+            "src": "/images/benefit-real-fifth-wheel-repairs-workshop-roof.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-fifth-wheel-paint-framing",
+          "image": {
+            "src": "/images/benefit-real-fifth-wheel-paint-framing.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-fifth-wheel-paint-body",
+          "image": {
+            "src": "/images/benefit-real-fifth-wheel-paint-body.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-fifth-wheel-paint-workshop-caravan-bay",
+          "image": {
+            "src": "/images/benefit-real-fifth-wheel-paint-workshop-caravan-bay.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-fifth-wheel-paint-workshop-roof",
+          "image": {
+            "src": "/images/benefit-real-fifth-wheel-paint-workshop-roof.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-fifth-wheel-upgrades-rear",
+          "image": {
+            "src": "/images/benefit-real-fifth-wheel-upgrades-rear.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-fifth-wheel-upgrades-framing",
+          "image": {
+            "src": "/images/benefit-real-fifth-wheel-upgrades-framing.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-fifth-wheel-upgrades-body",
+          "image": {
+            "src": "/images/benefit-real-fifth-wheel-upgrades-body.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-fifth-wheel-upgrades-workshop-caravan-bay",
+          "image": {
+            "src": "/images/benefit-real-fifth-wheel-upgrades-workshop-caravan-bay.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-bus-service-body",
+          "image": {
+            "src": "/images/benefit-real-bus-service-body.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-bus-service-dinette",
+          "image": {
+            "src": "/images/benefit-real-bus-service-dinette.webp",
+            "alt": "",
+            "width": 1000,
+            "height": 750
+          }
+        },
+        {
+          "id": "benefit-real-bus-service-seating",
+          "image": {
+            "src": "/images/benefit-real-bus-service-seating.webp",
+            "alt": "",
+            "width": 1000,
+            "height": 750
+          }
+        },
+        {
+          "id": "benefit-real-bus-service-storage",
+          "image": {
+            "src": "/images/benefit-real-bus-service-storage.webp",
+            "alt": "",
+            "width": 1000,
+            "height": 750
+          }
+        },
+        {
+          "id": "benefit-real-bus-repairs-wiring",
+          "image": {
+            "src": "/images/benefit-real-bus-repairs-wiring.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-bus-repairs-front",
+          "image": {
+            "src": "/images/benefit-real-bus-repairs-front.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-bus-repairs-dinette",
+          "image": {
+            "src": "/images/benefit-real-bus-repairs-dinette.webp",
+            "alt": "",
+            "width": 1000,
+            "height": 750
+          }
+        },
+        {
+          "id": "benefit-real-bus-repairs-storage",
+          "image": {
+            "src": "/images/benefit-real-bus-repairs-storage.webp",
+            "alt": "",
+            "width": 1000,
+            "height": 750
+          }
+        },
+        {
+          "id": "benefit-real-bus-paint-body",
+          "image": {
+            "src": "/images/benefit-real-bus-paint-body.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-bus-paint-wiring",
+          "image": {
+            "src": "/images/benefit-real-bus-paint-wiring.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-bus-paint-front",
+          "image": {
+            "src": "/images/benefit-real-bus-paint-front.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-bus-paint-storage",
+          "image": {
+            "src": "/images/benefit-real-bus-paint-storage.webp",
+            "alt": "",
+            "width": 1000,
+            "height": 750
+          }
+        },
+        {
+          "id": "benefit-real-bus-upgrades-body",
+          "image": {
+            "src": "/images/benefit-real-bus-upgrades-body.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-bus-upgrades-wiring",
+          "image": {
+            "src": "/images/benefit-real-bus-upgrades-wiring.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-bus-upgrades-front",
+          "image": {
+            "src": "/images/benefit-real-bus-upgrades-front.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-bus-upgrades-storage",
+          "image": {
+            "src": "/images/benefit-real-bus-upgrades-storage.webp",
+            "alt": "",
+            "width": 1000,
+            "height": 750
+          }
+        },
+        {
+          "id": "benefit-real-insurance-workshop-rebuild",
+          "image": {
+            "src": "/images/benefit-real-insurance-workshop-rebuild.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-insurance-workshop-paint-prep",
+          "image": {
+            "src": "/images/benefit-real-insurance-workshop-paint-prep.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-insurance-workshop-bodywork",
+          "image": {
+            "src": "/images/benefit-real-insurance-workshop-bodywork.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        },
+        {
+          "id": "benefit-real-insurance-workshop-cabinetry",
+          "image": {
+            "src": "/images/benefit-real-insurance-workshop-cabinetry.webp",
+            "alt": "",
+            "width": 900,
+            "height": 1200
+          }
+        }
+      ]
     }
   }
 }

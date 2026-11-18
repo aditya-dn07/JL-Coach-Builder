@@ -13,11 +13,12 @@ import { singletonQuery } from './queries';
 import { resolveImages } from './images';
 import layouts from '../../cms/sanity/layout-map.json';
 import { homeUiOwners } from '../../content/section-identity';
+import { toSanityDocumentId, fromSanityDocumentId } from '../../cms/sanity/document-ids.mjs';
 type Document = Record<string, unknown> & { _id: string };
 const parseOr = validateContent;
 export const getPublicContent = cache(async (): Promise<ContentSnapshot> => {
-  const remote = await fetchPublished<Document[]>(singletonQuery, { ids: Object.keys(defaults.seeds) });
-  const documents = new Map((remote ?? []).map(doc => [doc._id, doc]));
+  const remote = await fetchPublished<Document[]>(singletonQuery, { ids: Object.keys(defaults.seeds).map(toSanityDocumentId) });
+  const documents = new Map((remote ?? []).map(doc => [fromSanityDocumentId(doc._id), doc]));
   const get = <T>(id: string, fallback: T): T => resolveImages(mergeContent(fallback, documents.get(id))) as T;
   const business = get('global.business', defaults.seeds['global.business']);
   const branding = get('global.branding', { ...defaults.seeds['global.branding'], webManifest });
@@ -43,10 +44,17 @@ export const getPublicContent = cache(async (): Promise<ContentSnapshot> => {
     nav: catalog.nav, services: catalog.services, copy: footer.copy,
   }), local.legacySite);
   const imageManifest = { ...local.imageManifest };
-  for (const [key, image] of Object.entries({ ...branding.manifest, logo: branding.logo })) {
+  // Sanity limits attributes per document; shared library images live in small singletons.
+  const libraryImages: Record<string, unknown> = {};
+  for (const entry of defaults.globals.filter(item => item.type === 'globalImageLibrary')) {
+    const seed = (defaults.seeds as unknown as Record<string, { images: { id: string; image: unknown }[] }>)[entry.id];
+    const library = get(entry.id, seed);
+    for (const item of library.images) libraryImages[item.id] = item.image;
+  }
+  for (const [key, image] of Object.entries({ ...libraryImages, ...branding.manifest, logo: branding.logo })) {
     const parsed = parseOr(ImageSchema, image, imageManifest[key]);
     imageManifest[key] = parsed.src.startsWith('https://cdn.sanity.io/')
-      ? parsed : { ...imageManifest[key], ...image, ...parsed };
+      ? parsed : { ...imageManifest[key], ...(image as object), ...parsed };
   }
   const pages = local.pages.map(page => {
     const entry = defaults.registry.find(item => item.slug === page.slug)!;

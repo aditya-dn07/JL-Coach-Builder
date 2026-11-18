@@ -8,3 +8,4 @@ out/
 screenshots/
 
 .next-production/
+.sanity-import-backups/

@@ -325,7 +325,7 @@ src/
   lib/forms/                            Form registry, dates, storage and Resend
 ~~~
 
-The quote webhook remains the primary delivery path when configured. With no webhook, Resend uses RESEND_API_KEY, RESEND_FROM_EMAIL and RESEND_TO_EMAIL. Submission saving runs after the response and skips without a token. Use server-only SANITY_WRITE_TOKEN and matching SANITY_SUBMISSIONS_DATASET/NEXT_PUBLIC_SANITY_SUBMISSIONS_DATASET names for a separate restricted dataset. Saving skips if the private dataset configuration is missing or mismatched; it never falls back to the content dataset.
+The quote webhook remains the primary delivery path when configured. With no webhook, Resend uses RESEND_API_KEY, RESEND_FROM_EMAIL and RESEND_TO_EMAIL. Submission saving runs after the response and skips without a token. Use server-only SANITY_WRITE_TOKEN. Matching SANITY_SUBMISSIONS_DATASET/NEXT_PUBLIC_SANITY_SUBMISSIONS_DATASET overrides can select a separate dataset or the shared production content dataset; omitted overrides use the content dataset. Mismatched workspace names skip saving. New submissions always use private formSubmissions.<UUID> IDs, excluded from anonymous public reads even in a public dataset.
 
 See [CMS setup](docs/cms-integration.md) and [implementation changelog](Changes/Aditya_17-11-26.md) for environment names, Studio filling, privacy and client verification. There were no existing blog posts to import. The existing CONTENT_SOURCE=payload option remains available.
 
@@ -362,3 +362,6 @@ npm run assets
 These regenerate optimized photography and brand/icon assets respectively. Review regenerated assets before committing them. No hosting service, live domain, or public deployment is changed by the local development commands.
 
 Environment setup is limited to the six core Sanity/source variables and three Resend variables in `.env.example`. Public content reads need no token. Optional signed-webhook, legacy/private-content, Payload and deployment settings are documented separately in [CMS setup](docs/cms-integration.md#optional-settings-outside-the-minimal-example). Timed revalidation does not need a webhook secret.
+
+
+Website content/images were migrated to the Sanity **production** dataset on 18-11-26. Deploy the latest Studio/query code, then edit and **Publish** in Studio; public pages refresh through the existing 60-second revalidation. The repeatable, explicitly opt-in importer is `node scripts/import-sanity-content.mjs --apply` (omit `--apply` for a read-only inventory). See [CMS migration details](docs/cms-integration.md).

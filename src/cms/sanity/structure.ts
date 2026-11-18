@@ -1,8 +1,9 @@
 import type { StructureResolver, StructureBuilder } from 'sanity/structure';
 import defaults from './defaults.json';
+import { toSanityDocumentId } from './document-ids.mjs';
 import { formSubmissionsStructure } from '../../../sanity/structure/formSubmissionsStructure';
 const document = (S: StructureBuilder, item: { id: string; type: string; title: string }) =>
-  S.listItem().id(item.id).title(item.title).child(S.document().title(item.title).schemaType(item.type).documentId(item.id).initialValueTemplate(item.type, { documentId: item.id }));
+  S.listItem().id(item.id).title(item.title).child(S.document().title(item.title).schemaType(item.type).documentId(toSanityDocumentId(item.id)).initialValueTemplate(item.type, { documentId: item.id }));
 export const websiteStructure: StructureResolver = (S, context) => S.list().title('Website').items([
   ...defaults.globals.map(item => document(S, item)),
   ...defaults.registry.map(page => S.listItem().id(page.id).title(page.id === 'page.home' ? 'Home' : page.title).child(

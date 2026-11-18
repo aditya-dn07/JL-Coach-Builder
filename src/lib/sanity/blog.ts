@@ -7,6 +7,7 @@ import { mergeContent } from '../../content/merge';
 import { fetchPublished } from './client';
 import { resolveImages } from './images';
 import { singletonQuery } from './queries';
+import { toSanityDocumentId, fromSanityDocumentId } from '../../cms/sanity/document-ids.mjs';
 const image = ImageSchema;
 const category = z.object({ _id: z.string(), title: z.string(), slug: z.object({ current: z.string() }), count: z.number().default(0) });
 const postSchema = z.object({
@@ -56,8 +57,8 @@ export async function getFeaturedPosts(ids: string[], maximum: number) {
 }
 export const getBlogPage = cache(async () => {
   const ids = defaults.registry.find(page => page.id === 'page.blog')!.items.map(item => item.id);
-  const docs = await fetchPublished<(Record<string, unknown> & { _id: string })[]>(singletonQuery, { ids }, ['sanity:blog']);
-  const map = new Map((docs ?? []).map(doc => [doc._id, doc]));
+  const docs = await fetchPublished<(Record<string, unknown> & { _id: string })[]>(singletonQuery, { ids: ids.map(toSanityDocumentId) }, ['sanity:blog']);
+  const map = new Map((docs ?? []).map(doc => [fromSanityDocumentId(doc._id), doc]));
   const get = <T>(key: string, fallback: T): T => resolveImages(mergeContent(fallback, map.get('page.blog.' + key))) as T;
   return {
     settings: get('settings', defaults.seeds['page.blog.settings']), seo: get('seo', defaults.seeds['page.blog.seo']),

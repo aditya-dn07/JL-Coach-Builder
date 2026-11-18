@@ -1,3 +1,4 @@
+import { fromSanityDocumentId } from './document-ids.mjs';
 import type { SchemaTypeDefinition, StringRule } from 'sanity';
 import defaults from './defaults.json';
 import { getSingletonDefaults, getSingletonTitle } from './seed-values';
@@ -47,7 +48,7 @@ export function seededType(name: string, titleText: string): SchemaTypeDefinitio
       ...field,
       readOnly: field.name === 'id' || field.name === 'form' || field.name === 'sourcePageId',
       hidden: ({ document }: { document?: { _id?: string } }) => {
-        const id = document?._id?.replace(/^drafts\./, '') ?? '';
+        const id = fromSanityDocumentId(document?._id ?? '');
         const seed = (defaults.seeds as Record<string, Shape>)[id];
         if (!seed) return false;
         const key = Object.keys(seed).find(key => key.replace(/[^a-zA-Z0-9_]/g, '_') === field.name);

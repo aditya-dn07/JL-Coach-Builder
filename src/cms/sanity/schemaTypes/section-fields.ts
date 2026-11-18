@@ -1,3 +1,4 @@
+import { fromSanityDocumentId } from '../document-ids.mjs';
 import type { SchemaTypeDefinition } from 'sanity';
 import defaults from '../defaults.json';
 import layouts from '../layout-map.json';
@@ -46,7 +47,7 @@ export function scopeSectionControls(types: SchemaTypeDefinition[]) {
     const fields = type.fields as Field[] | undefined;
     const ui = fields?.find(field => field.name === 'ui');
     for (const field of ui?.fields ?? []) field.hidden = ({ document }: { document?: { _id?: string } }) => {
-      const id = document?._id?.replace(/^drafts\./, '') ?? '';
+      const id = fromSanityDocumentId(document?._id ?? '');
       const allowed: Record<string, string[]> = {
         'page.home.section-2': ['serviceAll', 'serviceRepairs', 'servicePaint', 'serviceUpgrades'],
         'page.home.section-7': ['reviewIntro'], 'page.home.section-8': ['faqIntro'], 'page.home.section-9': ['call'],
@@ -55,7 +56,7 @@ export function scopeSectionControls(types: SchemaTypeDefinition[]) {
     };
     const actions = fields?.find(field => field.name === 'actions');
     for (const field of actions?.fields ?? []) field.hidden = ({ document }: { document?: { _id?: string } }) => {
-      const id = document?._id?.replace(/^drafts\./, '') ?? '';
+      const id = fromSanityDocumentId(document?._id ?? '');
       const home: Record<string, string[]> = {
         'section-1': ['quote'], 'section-2': ['quote','call'], 'section-3': ['quote'], 'section-4': ['quote','call'],
         'section-5': ['quote'], 'section-6': ['quote'], 'section-7': ['viewAll'], 'section-8': ['viewAll'], 'section-9': ['quote','call'],
@@ -77,7 +78,7 @@ export function hideOverriddenDescriptions(types: SchemaTypeDefinition[]) {
     if (type.name !== 'sectionSettings' || !('fields' in type)) continue;
     const rich = type.fields?.find(field => field.name === 'descriptionRichText');
     if (rich) rich.hidden = ({ document }) => {
-      const id = document?._id?.replace(/^drafts\./, '') ?? '';
+      const id = fromSanityDocumentId(document?._id ?? '');
       const seed = (defaults.seeds as Record<string, Record<string, unknown>>)[id];
       return Boolean(seed?.form || Array.isArray(seed?.descriptionParagraphs) && seed.descriptionParagraphs.length);
     };

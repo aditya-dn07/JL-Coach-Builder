@@ -1,6 +1,10 @@
 import { seededType } from '../infer';
 import defaults from '../defaults.json';
-export const globalTypes = defaults.globals.map(item => seededType(item.type, item.title));
+export const globalTypes = defaults.globals
+  .filter(item => item.type !== 'globalImageLibrary')
+  .filter((item, index, items) => items.findIndex(candidate => candidate.type === item.type) === index)
+  .map(item => seededType(item.type, item.type === 'globalImageLibrary' ? 'Shared Image Library' : item.title));
+export const sharedImageLibraryTypes = [seededType('globalImageLibrary', 'Shared Image Library')];
 
 for (const type of globalTypes) {
   if (!('fields' in type)) continue;

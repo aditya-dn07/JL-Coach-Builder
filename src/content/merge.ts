@@ -19,7 +19,8 @@ export function mergeContent<T>(fallback: T, incoming: unknown): T {
     const result: Record<string, unknown> = { ...base };
     for (const [key, value] of Object.entries(incoming)) {
       if ((!key.startsWith('_') || ['_ref', '_type', '_key'].includes(key)) && key !== '@type' && key !== 'constructor' && key !== 'prototype') {
-        const sourceKey = Object.keys(base).find(name => name.replace(/[^a-zA-Z0-9_]/g, '_') === key) ?? key;
+        // Sanity object metadata must not replace JSON-LD's distinct @type field.
+        const sourceKey = key.startsWith('_') ? key : Object.keys(base).find(name => name.replace(/[^a-zA-Z0-9_]/g, '_') === key) ?? key;
         result[sourceKey] = mergeContent(result[sourceKey], value);
       }
     }
