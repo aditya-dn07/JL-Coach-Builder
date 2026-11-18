@@ -1,0 +1,21 @@
+export const recoveryCopy = {
+  "eyebrow": "A small detour",
+  "title": "Something needs",
+  "titleLine2": "a second look.",
+  "description": "We couldn’t load this page. Please retry, or contact our Christchurch workshop for help.",
+  "globalDescription": "The website couldn’t finish loading. Please try again in a moment.",
+  "retry": "Try again",
+  "home": "Back to home",
+  "contact": "Contact the workshop",
+  "notFoundEyebrow": "404 / A different direction",
+  "notFoundTitle": "Let’s get you",
+  "notFoundTitleLine2": "back on track.",
+  "notFoundDescription": "We couldn’t find that page. Our workshop team and vehicle services are right here.",
+  "services": "Explore vehicle services",
+  "unavailableTitle": "Page unavailable",
+  "notFoundMetaTitle": "Page not found",
+  "notFoundMetaDescription": "Find your way to JL Coachbuilders vehicle services or contact our Christchurch workshop.",
+  "homeHref": "/",
+  "contactHref": "/contact/",
+  "servicesHref": "/#services"
+};

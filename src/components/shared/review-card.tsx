@@ -1,4 +1,6 @@
-import { siteConfig } from '@/config/site';
+'use client';
+import { useSiteContent } from '@/components/providers/site-content';
+
 import { GoogleReviewBadge } from '@/components/shared/google-review-badge';
 
 export type CustomerReview = { text: string; author: string };
@@ -9,7 +11,8 @@ export function ReviewCard({ review, preserveAuthor = false, position, total }: 
   position?: number;
   total?: number;
 }) {
-  return <blockquote role={position === undefined ? undefined : 'group'} aria-roledescription={position === undefined ? undefined : 'slide'} aria-label={position === undefined ? undefined : `${position + 1} of ${total}`}>
+  const { siteConfig, editorial } = useSiteContent();
+  return <blockquote role={position === undefined ? undefined : 'group'} aria-roledescription={position === undefined ? undefined : 'slide'} aria-label={position === undefined ? undefined : `${position + 1} ${editorial.interface.copy.of} ${total}`}>
     <span className="review-card-stars" aria-label={siteConfig.ui.reviewStarsAria}>{siteConfig.ui.googleStars}</span>
     <p>{review.text}</p>
     <footer>

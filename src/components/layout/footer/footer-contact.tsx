@@ -1,9 +1,10 @@
+import { getSiteContent } from '@/lib/sanity/site-content';
 import { Mail, MapPin, Phone } from 'lucide-react';
-import { directionsHref, fullAddress, mapEmbedSrc, phoneHref, siteConfig } from '@/config/site';
 
 const contactClass = 'mb-3 flex min-h-11 items-center gap-4 break-words py-1.5 transition-colors hover:text-[#ff9aa2] [&>svg]:shrink-0 [&>svg]:text-[#ff3038]';
 
-export function FooterContact() {
+export async function FooterContact() {
+  const { directionsHref, fullAddress, mapEmbedSrc, phoneHref, siteConfig } = await getSiteContent();
   return (
     <div className="col-span-2 min-w-0 sm:col-span-1">
       <h2 className="mb-6 font-sans text-chrome uppercase leading-snug tracking-normal">{siteConfig.ui.footerContact}</h2>

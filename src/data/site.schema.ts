@@ -14,7 +14,8 @@ export const ImageRefSchema = z.object({
   id: text,
   originalSrc: text,
   optimizedSrc: text,
-  alt: text,
+  alt: z.string(),
+  caption: z.string().optional(), decorative: z.boolean().optional(),
   width: z.number().positive(),
   height: z.number().positive(),
   focalPoint: z.object({ x: z.number().min(0).max(1), y: z.number().min(0).max(1) }),
@@ -31,7 +32,7 @@ export const BusinessSchema = z.object({
   openingHoursSpecification: z.array(openingHoursSpecification).default([]),
   specialOpeningHoursSpecification: z.array(openingHoursSpecification).default([]),
   confirmedResponseTime: text.nullable().default(null),
-  foundedYear: z.literal(2016),
+  foundedYear: z.number().int().positive(),
   sameAs: z.array(z.url()),
   googleRating: z.object({
     value: z.number().min(1).max(5),

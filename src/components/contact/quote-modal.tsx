@@ -1,10 +1,11 @@
 'use client';
+import { useSiteContent } from '@/components/providers/site-content';
 import { useEffect, useRef } from 'react';
 import { LibraryIcon } from '@/components/shared/library-icon';
 import { QuoteForm } from '@/components/contact/quote-form';
-import { contentRepository } from '@/content/repository';
 
 export function QuoteModal() {
+  const { contentRepository, siteConfig } = useSiteContent();
   const ref = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -42,7 +43,7 @@ export function QuoteModal() {
         return;
       const link =
         event.target instanceof Element
-          ? event.target.closest<HTMLAnchorElement>('a[href="#quote"]')
+          ? event.target.closest<HTMLAnchorElement>('a[href={siteConfig.ui.quoteTarget}]')
           : null;
       if (!link) return;
       event.preventDefault();

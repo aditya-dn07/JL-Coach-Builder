@@ -2,14 +2,14 @@ import { pageFields, pageKinds, imageIds } from '../model';
 // Dependency-free definitions: register in sanity.config.ts using schema.types.
 export const sanitySchemaTypes = [
   {
-    name: 'contentImage', title: 'Content image', type: 'object', fields: [
-      { name: 'src', type: 'string' }, { name: 'alt', type: 'string' },
+    name: 'contentImage', title: 'Content image', type: 'image', options: { hotspot: true }, fields: [
+      { name: 'src', type: 'string' }, { name: 'alt', title: 'Alt text', type: 'string', description: 'Describe the image for people who cannot see it. Leave empty only for decorative images.' },
       { name: 'width', type: 'number' }, { name: 'height', type: 'number' },
     ],
   },
   { name: 'keyValue', title: 'Label or setting', type: 'object', fields: [{ name: 'key', type: 'string' }, { name: 'value', type: 'string' }] },
-  { name: 'namedImage', title: 'Named image', type: 'object', fields: [
-    { name: 'key', type: 'string' }, { name: 'src', type: 'string' }, { name: 'alt', type: 'string' },
+  { name: 'namedImage', title: 'Named image', type: 'image', options: { hotspot: true }, fields: [
+    { name: 'key', type: 'string' }, { name: 'src', type: 'string' }, { name: 'alt', title: 'Alt text', type: 'string', description: 'Describe the image for people who cannot see it. Leave empty only for decorative images.' },
     { name: 'width', type: 'number' }, { name: 'height', type: 'number' },
   ] },
   {

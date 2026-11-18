@@ -1,10 +1,11 @@
 import type { MetadataRoute } from 'next';
-import { contentRepository } from '@/content/repository';
-export default function robots(): MetadataRoute.Robots {
+import { getPublicContent } from '../lib/sanity/public-content';
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const { siteSettings, editorial } = await getPublicContent();
   return {
     rules: process.env.VERCEL_ENV === 'production'
-      ? { userAgent: '*', allow: '/', disallow: '/api/' }
+      ? { userAgent: '*', allow: editorial.sitemap.robotsAllow, disallow: editorial.sitemap.robotsDisallow }
       : { userAgent: '*', disallow: '/' },
-    sitemap: `${contentRepository.getSiteSettings().url}sitemap.xml`,
+    sitemap: new URL('sitemap.xml', siteSettings.url).href,
   };
 }

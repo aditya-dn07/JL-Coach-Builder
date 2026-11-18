@@ -2,10 +2,7 @@
 import localFont from 'next/font/local';
 import { RetryPanel } from '@/components/errors/retry-panel';
 import { siteConfig } from '@/config/site';
-import '@/styles/globals.css';
-import '@/components/shared/sections.css';
-import '@/styles/theme.css';
-import '@/styles/refinements.css';
+import { useRecoveryCopy } from '@/components/providers/site-content';
 const display = localFont({
   src: '../../public/fonts/outfit-medium.ttf',
   weight: '500',
@@ -19,10 +16,11 @@ const body = localFont({
   display: 'swap',
 });
 export default function GlobalError() {
+ const copy = useRecoveryCopy();
   return (
     <html lang={siteConfig.language} data-theme="dark">
       <head>
-        <title>Page unavailable | {siteConfig.business.name}</title>
+        <title>{copy.unavailableTitle} | {siteConfig.business.name}</title>
         <meta name="robots" content="noindex,nofollow" />
       </head>
       <body className={`${display.variable} ${body.variable}`}>

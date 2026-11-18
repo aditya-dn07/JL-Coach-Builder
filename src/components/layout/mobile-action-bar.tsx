@@ -1,9 +1,10 @@
 'use client';
+import { useSiteContent } from '@/components/providers/site-content';
 import { useEffect, useRef } from 'react';
-import { phoneHref, siteConfig } from '@/config/site';
 import { LibraryIcon } from '@/components/shared/library-icon';
 
 export function MobileActionBar() {
+  const { phoneHref, siteConfig, editorial } = useSiteContent();
   const barRef = useRef<HTMLElement>(null);
   useEffect(() => {
     const bar = barRef.current;
@@ -21,11 +22,11 @@ export function MobileActionBar() {
     return () => { observer.disconnect(); document.documentElement.style.removeProperty('--sticky-bar-h'); };
   }, []);
   return (
-    <nav ref={barRef} className="mobile-action-bar" aria-label="Quick contact">
+    <nav ref={barRef} className="mobile-action-bar" aria-label={editorial.interface.copy.quickContact}>
       <a className="mobile-action-button mobile-action-call" href={phoneHref}>
-        <LibraryIcon name="telephone" />Call Now
+        <LibraryIcon name="telephone" />{editorial.interface.copy.callNow}
       </a>
-      <a className="mobile-action-button mobile-action-quote" href="#quote">
+      <a className="mobile-action-button mobile-action-quote" href={siteConfig.ui.quoteTarget}>
         <LibraryIcon name="chat-square-text" />{siteConfig.ui.quote}
       </a>
     </nav>

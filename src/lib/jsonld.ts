@@ -1,7 +1,7 @@
 import type { Site } from '@/data/site.schema';
 import { siteConfig } from '@/config/site';
 
-export function generateJsonLd(data: Site) {
+export function generateJsonLd(data: Site, settings = siteConfig) {
   const { business: b, url } = data;
   const address = {
     '@type': 'PostalAddress',
@@ -18,14 +18,14 @@ export function generateJsonLd(data: Site) {
         '@id': `${url}#business`,
         name: b.name,
         url,
-        telephone: '+64 27 347 0214',
+        telephone: settings.business.phone,
         email: b.email,
         address,
         foundingDate: String(b.foundedYear),
-        image: new URL('/images/optimized/workshop-768.webp', url).href,
+        image: new URL(settings.images.business?.src || '/images/optimized/workshop-768.webp', url).href,
         sameAs: b.sameAs,
-        openingHoursSpecification: siteConfig.business.openingHoursSpecification,
-        specialOpeningHoursSpecification: siteConfig.business.specialOpeningHoursSpecification,
+        openingHoursSpecification: settings.business.openingHoursSpecification,
+        specialOpeningHoursSpecification: settings.business.specialOpeningHoursSpecification,
       },
       {
         '@type': 'Organization',
@@ -39,11 +39,13 @@ export function generateJsonLd(data: Site) {
       },
       {
         '@type': 'WebSite',
+        description: settings.seo.description,
+        alternateName: settings.seo.title,
         '@id': `${url}#website`,
         url,
         name: b.name,
         publisher: { '@id': `${url}#organization` },
-        inLanguage: 'en-NZ',
+        inLanguage: settings.language,
       },
       {
         '@type': 'BreadcrumbList',

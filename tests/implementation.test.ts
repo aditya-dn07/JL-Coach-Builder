@@ -47,10 +47,10 @@ test('production stays indexable and every other environment sends three noindex
       if (env === undefined) delete process.env.VERCEL_ENV; else process.env.VERCEL_ENV = env;
       const production = env === 'production';
       assert.deepEqual(pageMetadata({ title: 'Contact', description: 'Test', path: '/contact/' }).robots, { index: production, follow: production });
-      assert.deepEqual(robots().rules, production ? { userAgent: '*', allow: '/', disallow: '/api/' } : { userAgent: '*', disallow: '/' });
+      assert.deepEqual((await robots()).rules, production ? { userAgent: '*', allow: ['/'], disallow: ['/api/', '/studio/'] } : { userAgent: '*', disallow: '/' });
       const headers = await config(PHASE_PRODUCTION_BUILD).headers!();
       assert.equal(headers[0].headers.some(header => header.key === 'X-Robots-Tag'), !production);
-      assert.equal(robots().sitemap, 'https://jlcoachbuilders.co.nz/sitemap.xml');
+      assert.equal((await robots()).sitemap, 'https://jlcoachbuilders.co.nz/sitemap.xml');
       assert.deepEqual(pageMetadata({ title: 'Contact', description: 'Test', path: '/contact/' }).alternates, { canonical: 'https://jlcoachbuilders.co.nz/contact/' });
     }
   } finally { if (prior === undefined) delete process.env.VERCEL_ENV; else process.env.VERCEL_ENV = prior; }

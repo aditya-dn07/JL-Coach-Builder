@@ -9,7 +9,7 @@ A Next.js website for JL Coachbuilders in Christchurch, with 27 content pages, o
 - Feature CSS for the homepage composition, editorial layouts, image treatments, and animations
 - Motion, Lucide React, and Bootstrap Icons
 - Zod for content and quote validation
-- Local JSON content, with optional Sanity or Payload adapters
+- Sanity Studio with source-backed JSON fallbacks, plus the existing optional Payload adapter
 - Self-hosted Outfit and Inter fonts; optimized images through `next/image`
 
 ## Getting started
@@ -31,6 +31,8 @@ For quote delivery or a remote CMS, copy `.env.example` to `.env.local` and conf
 
 ## Project structure
 
+The tree below lists application files and key supporting folders. Asset and documentation folders are grouped to keep it readable; generated build output and installed dependencies are omitted.
+
 ```text
 src/
   app/
@@ -41,6 +43,7 @@ src/
     (resources)/
       reviews/page.tsx           Customer reviews; URL: /reviews/
       faqs/page.tsx              All existing FAQ topics; URL: /faqs/
+      quote-result/page.tsx      Quote submission status; URL: /quote-result/
     api/quote/route.ts          Server-side quote validation and delivery
     layout.tsx                  Global fonts, styles, header, footer, and effects
     error.tsx                   Route error boundary
@@ -64,6 +67,7 @@ src/
     layout/
       site-header.tsx
       header-navigation.tsx     Responsive navigation and keyboard dismissal
+      mobile-action-bar.tsx     Mobile contact actions
       site-footer.tsx
       back-to-top.tsx            Floating scroll-to-top arrow
       footer/
@@ -73,7 +77,7 @@ src/
       interaction-effects.tsx
     content/
       interior-hero.tsx
-      page-contents.tsx
+      interior-sections.tsx
       document-sections.tsx
       content-groups.tsx
       animated-benefit-card.tsx
@@ -87,12 +91,22 @@ src/
       contact-panel.css
     gallery/
       project-gallery.tsx       Gallery, pagination, and image dialog
+    faq/
+      faq-page.tsx               FAQ resource page presentation
+    reviews/
+      reviews-page.tsx           Reviews resource page presentation
     shared/
       photo.tsx
       library-icon.tsx
       two-tone-heading.tsx
       quote-link.tsx
       google-review-link.tsx    Google badge shared by trust, reviews, and footer
+      google-review-badge.tsx
+      opening-hours.tsx
+      resource-page.tsx
+      review-card.tsx
+      section-divider.tsx
+      section-intro.tsx
       trust-strip.tsx
       customer-reviews.tsx
       review-slider.tsx
@@ -112,11 +126,28 @@ src/
     schema.ts                   Validated ContentPage contract
     repository.ts               Local / Sanity / Payload content loading
     catalog.ts                  Vehicle navigation and image references
+    banners.ts                  Banner content helpers
     feedback.ts                 DOCX testimonial pairing
-  data/                         Image manifest, gallery, and legacy content data
-  cms/                          Remote content adapters and authoring schemas
-  lib/                          Fonts, metadata, JSON-LD, and quote validation
+  data/
+    image-manifest.json         Image references and dimensions
+    site-gallery.json           Gallery image data
+    legacy-content.json         Legacy source content
+    site.data.ts                Validated site data access
+    site.schema.ts              Site data schema
+  cms/
+    adapters.ts                 Remote provider adapters
+    model.ts                    Shared CMS model
+    payload/collection.ts       Payload collection definition
+    sanity/schema.ts            Sanity document schema
+  lib/
+    brand-fonts.ts              Self-hosted font configuration
+    metadata.ts                 Page metadata helpers
+    jsonld.ts                   Structured data helpers
+    quote.ts                    Quote validation
+    quote-conversion.ts         Quote conversion event helpers
+    service-ctas.ts             Service call-to-action helpers
     motion.ts                   Interior duration and easing tokens
+  middleware.ts                 Request middleware
   styles/
     globals.css                 Tailwind directives, reset, and base tokens
     theme.css                   Dark theme
@@ -125,10 +156,37 @@ public/
   fonts/                        Self-hosted font files and licenses
   images/                       Original assets and optimized variants
   icons/                        Favicons and app icons
-scripts/                        Asset generation and route verification
-tests/                         Content, CMS, SEO, and quote API regression tests
+  site.webmanifest              Web app manifest
+scripts/
+  check-routes.mjs               Rendered route verification
+  generate-brand-assets.tsx      Brand and icon asset generation
+  process-images.mjs            Image optimization
+  import-document.mjs           Document content import
+  import-site-gallery.mjs        Gallery import
+  report-content-gaps.mjs        Content gap reporting
+  banner-generation.json        Banner generation metadata
+tests/                          Content, CMS, SEO, build, and quote regression tests
 docs/                          CMS setup, source inventory, and verification notes
+Changes/                        Dated change notes
+JL CoachBuilder Content.docx    Source content document
+.env.example                    Environment variable template
+.gitignore                      Git exclusions
+.dockerignore                   Docker build exclusions
+.prettierrc.json                 Code formatting configuration
+Dockerfile                      Standalone Node deployment image
+eslint.config.mjs               ESLint configuration
+next-env.d.ts                   Generated Next.js TypeScript declarations
+next.config.ts                  Next.js build, image, and header configuration
+package.json                    Dependencies and npm scripts
+package-lock.json               Locked dependency versions
+postcss.config.mjs              PostCSS configuration
+tailwind.config.ts              Tailwind tokens, breakpoints, and animations
+tsconfig.json                   TypeScript configuration and import aliases
+vercel.json                     Vercel deployment configuration
+README.md                       Project documentation
 ```
+
+`node_modules/`, `.next/`, `.next-production/`, and `tsconfig.tsbuildinfo` are generated locally and should not be edited manually.
 
 `(home)` and `(content)` are Next.js route groups. Their names organize files without appearing in URLs. The homepage remains `/`; `app/home/page.tsx` would create a separate `/home` URL. Shared document pages remain data driven through `[slug]`, so their original URLs and metadata are preserved.
 
@@ -231,25 +289,45 @@ Development and Vercel output is `.next/`; local production and Docker output is
 
 ## Quote delivery
 
-Set `QUOTE_WEBHOOK_URL` to a trusted HTTPS endpoint accepting the validated quote JSON. Optionally set `QUOTE_WEBHOOK_SECRET` for a bearer token. The route rejects cross-origin requests, oversized or malformed bodies, and honeypot submissions, and applies a delivery timeout.
+Resend is the confirmed active provider: configure `RESEND_API_KEY`, `RESEND_FROM_EMAIL` and `RESEND_TO_EMAIL`. Its sender must be verified. The existing webhook alternative remains supported with `QUOTE_WEBHOOK_URL` and optional bearer `QUOTE_WEBHOOK_SECRET`; a configured webhook retains precedence. The route’s validation, honeypot, payload and success/redirect behavior are unchanged.
 
-With no webhook configured, the form reports that delivery is unavailable and provides phone/email alternatives. Tests mock delivery and do not send customer enquiries. A deployment needs a real delivery configuration and a real end-to-end enquiry check.
+With neither a webhook nor complete Resend configuration, the form reports that delivery is unavailable and provides phone/email alternatives. Tests mock delivery and do not send customer enquiries. A deployment needs a real delivery configuration and a real end-to-end enquiry check.
 
-## Optional CMS
+## Sanity CMS
 
-`CONTENT_SOURCE` defaults to `local`. Set it to `sanity` or `payload` and configure the matching variables from `.env.example` to use a remote content provider. Adapters validate responses against the same page schema. See [CMS integration](docs/cms-integration.md).
+Open /studio after configuring the public Sanity project/dataset identifiers. The default dataset is **production**. Set CONTENT_SOURCE=sanity to load published content; empty or unavailable fields retain current local defaults. No dataset writes or imports are performed automatically.
 
-Interior sections follow **subheading → heading → description**. Add a page in `src/content/pages.json` with a unique `slug`, hero fields, `seo`, ordered `sections`, `faqs`, and one `closingCta`. Each section needs `id`, `eyebrow` where appropriate, `title`, `description`, and source `blocks`. Numbered legal sections omit `eyebrow`. Images use `{ src, alt, width, height }`. For example:
+Studio has global singletons, Page → Section editors, Blog Posts and Form Submissions. Schema entry: src/cms/sanity/schemaTypes/index.ts; structure: src/cms/sanity/structure.ts. Server fetches revalidate every 60 seconds. A signed /api/revalidate webhook supports immediate publication refresh.
 
-```json
-{"id":"example","slug":"example","label":"[Heading needed]","title":"[Heading needed]","eyebrow":"[Subheading needed]","description":"[Description needed]","intro":[],"kind":"service","image":"workshop","seo":{"title":"[Heading needed]","description":"[Description needed]"},"sections":[{"id":"section-1","eyebrow":"[Subheading needed]","title":"[Heading needed]","description":"[Description needed]","blocks":[]}],"faqs":[],"closingCta":{"eyebrow":"Ready to Book?","title":"Get Your Caravan, Motorhome or RV Looked At by a Specialist","description":"Whether it is a small repair, a leak, insurance work, panel and paint, servicing or a major rebuild, JL Coachbuilders can help you understand the next step and get the work moving.","quoteLabel":"Get a free quote","callLabel":"Call 027 347 0214"}}
-```
+New source areas:
 
-`src/content/schema.ts` defines the exact heading, subheading and description placeholders. Search for `needed]` in `src/content/pages.json` to list them. A normal build permits placeholders; `CONTENT_STRICT=1 npm run build` fails while any remain. Interior closing labels live in each page's `closingCta`. The homepage retains its existing two closing CTAs.
+~~~text
+sanity.config.ts                        Studio workspaces and singleton actions
+sanity.cli.ts                           Studio CLI identifiers
+sanity/
+  lib/writeClient.ts                    Lazy server-only submission writer
+  structure/formSubmissionsStructure.ts Form → Year → Month record lists
+src/
+  app/studio/[[...tool]]/                Embedded Studio
+  app/(resources)/blog/                 Blog list and dynamic post pages
+  app/api/revalidate/route.ts            Signed publish webhook
+  cms/sanity/
+    defaults.json                       Local templates and fixed document IDs
+    infer.ts                            Typed field/default construction
+    schemaTypes/                        Existing types followed by new schemas
+  content/local.ts                      Original validated fallback content
+  content/merge.ts                      Partial-field fallback merge
+  content/snapshot.ts                   Public DTO type
+  content/view.ts                       Pure derived links/catalog view
+  components/providers/site-content.tsx Server snapshot → client context
+  components/blog/                      Cards, sidebar and Portable Text
+  lib/sanity/                           Published queries, images and blog reads
+  lib/forms/                            Form registry, dates, storage and Resend
+~~~
 
-Interior motion uses the tokens in `src/lib/motion.ts`, shared with Tailwind's FAQ keyframe. `InteriorReveal` and `InteriorListItem` in `animated-benefit-card.tsx` provide once-only reveals and staggered lists; use them on new interior sections. They respect reduced-motion preferences and do not change homepage animation.
+The quote webhook remains the primary delivery path when configured. With no webhook, Resend uses RESEND_API_KEY, RESEND_FROM_EMAIL and RESEND_TO_EMAIL. Submission saving runs after the response and skips without a token. Use server-only SANITY_WRITE_TOKEN and matching SANITY_SUBMISSIONS_DATASET/NEXT_PUBLIC_SANITY_SUBMISSIONS_DATASET names for a separate restricted dataset. Saving skips if the private dataset configuration is missing or mismatched; it never falls back to the content dataset.
 
-Pages are generated at build time. Content or slug changes require a rebuild. Keep CMS credentials in server-side environment variables.
+See [CMS setup](docs/cms-integration.md) and [implementation changelog](Changes/Aditya_17-11-26.md) for environment names, Studio filling, privacy and client verification. There were no existing blog posts to import. The existing CONTENT_SOURCE=payload option remains available.
 
 ## Production deployment
 
@@ -272,7 +350,7 @@ docker build -t jl-coachbuilders .
 docker run --rm -p 3000:3000 --env-file .env.local jl-coachbuilders
 ```
 
-Docker itself has not been validated in this environment. The standard Node production build is checked locally. Remote CMS builds need the corresponding build-time environment and credentials; do not place secrets in Docker build arguments.
+Docker itself has not been validated in this environment. Production verification for the CMS changes remains subject to the current command restrictions. Remote CMS builds need the corresponding build-time environment and credentials; do not place secrets in Docker build arguments.
 
 Asset commands:
 
@@ -282,3 +360,5 @@ npm run assets
 ```
 
 These regenerate optimized photography and brand/icon assets respectively. Review regenerated assets before committing them. No hosting service, live domain, or public deployment is changed by the local development commands.
+
+Environment setup is limited to the six core Sanity/source variables and three Resend variables in `.env.example`. Public content reads need no token. Optional signed-webhook, legacy/private-content, Payload and deployment settings are documented separately in [CMS setup](docs/cms-integration.md#optional-settings-outside-the-minimal-example). Timed revalidation does not need a webhook secret.

@@ -1,5 +1,7 @@
 import { createHash } from 'node:crypto';
-import { NextResponse } from 'next/server';
+import { after, NextResponse } from 'next/server';
+import { saveSubmission } from '@/lib/forms/saveSubmission';
+import { resendConfigured, sendQuoteEmail } from '@/lib/forms/resend';
 import { QuoteSchema } from '@/lib/quote';
 import content from '@/content/quote-form.json';
 
@@ -51,18 +53,25 @@ export async function POST(request: Request) {
     const token = (payload as Record<string, unknown>).idempotencyToken;
     if (token !== undefined && (typeof token !== 'string' || !/^[a-zA-Z0-9-]{0,80}$/.test(token)))
       return reply(400, content.form.messages.invalid);
+    const sourcePage = request.headers.get('referer') || '';
+    const data = result.data;
+    after(async () => {
+      try { await saveSubmission({ formType: 'quote', ...data, sourcePage }); }
+      catch (e) { console.error('[forms] save failed', e instanceof Error ? e.name : 'Unknown error'); }
+    });
     const key = createHash('sha256').update(String(token ?? '') + JSON.stringify(result.data)).digest('hex');
     const now = Date.now();
     for (const [storedKey, entry] of deliveries) if (entry.expires < now) deliveries.delete(storedKey);
     const existing = deliveries.get(key);
     if (existing) return await existing.result ? reply(200, undefined, true) : reply(502, content.form.messages.error);
     const endpoint = process.env.QUOTE_WEBHOOK_URL;
-    if (!endpoint) return reply(503, content.form.messages.unconfigured);
+    if (!endpoint && !resendConfigured()) return reply(503, content.form.messages.unconfigured);
     if (deliveries.size >= 1000) return reply(429, content.form.messages.error);
-    const target = new URL(endpoint);
-    if (target.protocol !== 'https:') throw new Error('Delivery endpoint must use HTTPS');
+    const target = endpoint ? new URL(endpoint) : undefined;
+    if (target && target.protocol !== 'https:') throw new Error('Delivery endpoint must use HTTPS');
     const delivery = (async () => {
       try {
+        if (!target) return await sendQuoteEmail(result.data, key);
         const response = await fetch(target, {
           method: 'POST',
           headers: {

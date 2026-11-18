@@ -6,7 +6,7 @@ import site from '@/config/site.json';
 export function middleware(request: NextRequest) {
   const response = NextResponse.next();
   const hostname = request.headers.get('host')?.split(':')[0] ?? request.nextUrl.hostname;
-  if (process.env.VERCEL_ENV !== 'production' || hostname !== new URL(site.url).hostname) {
+  if (process.env.VERCEL_ENV !== 'production' || hostname !== new URL(process.env.SITE_CANONICAL_URL || site.url).hostname) {
     response.headers.set('X-Robots-Tag', 'noindex, nofollow');
   }
   return response;

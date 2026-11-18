@@ -1,4 +1,5 @@
-import Image from 'next/image';
+import { ContentImage as Image } from '../shared/content-image';
+import { InlineContent, type InlineValue } from '../shared/inline-content';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import type { ContentImage, ContentPage } from '@/content/schema';
@@ -6,7 +7,8 @@ import type { CSSProperties, ReactNode } from 'react';
 
 type TextLink = { label: string; href: string };
 
-export function LinkedText({ text, links, className = '' }: { text: string; links?: TextLink[]; className?: string }) {
+export function LinkedText({ text, links, richText, className = '' }: { text: string; links?: TextLink[]; richText?: InlineValue; className?: string }) {
+  if (richText?.length) return <InlineContent value={richText} />;
   if (!links?.length) return <>{text}</>;
   const pieces: ReactNode[] = [];
   let cursor = 0;
@@ -25,6 +27,6 @@ export function LinkedText({ text, links, className = '' }: { text: string; link
 export function RelatedServices({ page, images }: { page: ContentPage; images: Record<string, ContentImage> }) {
   if (!page.relatedServices?.length) return null;
   return <nav className="interior-related-services" style={{ '--interior-columns': page.relatedServices.length } as CSSProperties} aria-label={page.sections.find(section => section.id === 'section-5')?.title ?? page.title}>
-    {page.relatedServices.map(link => <Link className="interior-related-card" href={link.href} key={link.href}><span className="interior-related-card-photo">{images[link.href] && <Image src={images[link.href].src} alt={images[link.href].alt} fill sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw" className="object-cover" />}</span><span className="interior-related-card-label"><span>{link.label}</span><span className="interior-related-arrow"><ArrowRight size={18} aria-hidden="true" /></span></span></Link>)}
+    {page.relatedServices.map(link => <Link className="interior-related-card" href={link.href} key={link.href}><span className="interior-related-card-photo">{images[link.href] && <Image src={images[link.href].src} caption={images[link.href].caption} decorative={images[link.href].decorative} focalPoint={images[link.href].focalPoint} alt={images[link.href].alt} fill sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw" className="object-cover" />}</span><span className="interior-related-card-label"><span>{link.label}</span><span className="interior-related-arrow"><ArrowRight size={18} aria-hidden="true" /></span></span></Link>)}
   </nav>;
 }

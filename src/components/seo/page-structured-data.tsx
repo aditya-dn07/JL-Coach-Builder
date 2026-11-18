@@ -1,10 +1,11 @@
+import { getSiteContent } from '@/lib/sanity/site-content';
 import type { ContentPage } from '@/content/schema';
 import { generateJsonLd } from '@/lib/jsonld';
-import { contentRepository } from '@/content/repository';
-export function PageStructuredData({ page }: { page: ContentPage }) {
+export async function PageStructuredData({ page }: { page: ContentPage }) {
+  const { contentRepository, siteConfig } = await getSiteContent();
   const site = contentRepository.getLegacySite();
   const url = new URL(page.slug ? `/${page.slug}/` : '/', site.url).href;
-  const base = generateJsonLd(site)['@graph'].filter(
+  const base = generateJsonLd(site, siteConfig)['@graph'].filter(
     (e) => !['FAQPage', 'BreadcrumbList'].includes(e['@type'] as string)
   );
   const graph = [
@@ -21,7 +22,7 @@ export function PageStructuredData({ page }: { page: ContentPage }) {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+        { '@type': 'ListItem', position: 1, name: siteConfig.ui.headerHome, item: site.url },
         ...(page.slug ? [{ '@type': 'ListItem', position: 2, name: page.label, item: url }] : []),
       ],
     },

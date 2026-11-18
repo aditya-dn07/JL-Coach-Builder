@@ -1,0 +1,2 @@
+body:has([data-sanity-studio]) { margin: 0; padding: 0; }
+[data-sanity-studio] { position: fixed; inset: 0; height: 100dvh; overflow: hidden; background: white; color: #101112; }

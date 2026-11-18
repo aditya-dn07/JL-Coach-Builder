@@ -1,37 +1,76 @@
-# CMS integration
+# Sanity CMS integration
 
-The live frontend currently uses local content. Sanity and Payload are alternative providers; select one when you are ready. No CMS service is provisioned by this project.
+The website has an embedded Sanity Studio at /studio, fixed page/section editors, server-side published-content reads and source-backed defaults. No dataset has been provisioned or written by this implementation.
 
-## Shared contract
+## Configuration
 
-Each page has `id`, `slug`, `label`, `title`, `eyebrow`, `description`, `intro`, `kind`, `image`, `seo`, `sections`, `faqs` and an interior `closingCta`. Optional `heroImage`, `closingImage` and `homeUi` fields support page presentation. The homepage uses an empty slug. Every other slug must be unique and match its URL. Local page records, including Gallery, Reviews and FAQs, are in `src/content/pages.json`.
+Copy .env.example to an ignored .env.local or set deployment environment variables. Set CONTENT_SOURCE=sanity to enable CMS reads. Without configured identifiers, or when a CMS field is empty/unavailable, the current local content remains visible.
 
-Sections use `id`, optional `eyebrow`, `title`, `description`, ordered heading/paragraph `blocks`, and optional `image` and `cta`. Interior hierarchy is subheading → heading → description; numbered legal sections omit the subheading. FAQs are question/answer pairs. Every content image uses `{ src, alt, width, height }`, including page heroes, gallery records and the image manifest. The Word extraction remains in `docs/content-source.json`. Edit JSON directly for ordinary changes; `node scripts/import-document.mjs` overwrites them.
+The default content dataset is **production**. Configure only NEXT_PUBLIC_SANITY_PROJECT_ID and NEXT_PUBLIC_SANITY_DATASET for Studio, CLI, content reads and images. Public datasets need no read token. Public identifiers are not credentials. The minimal example contains six core names plus the three Resend names.
 
-## Sanity
+Studio shows eleven global singletons, page folders with section items, Blog Posts/Categories/Authors/Tags and Form Submissions at the end. Existing schema registrations retain their original order. New singleton templates are excluded from the normal create menu; duplicate/delete actions are removed for fixed singleton documents. Initial editor values come from src/cms/sanity/defaults.json; these templates do not write anything until an authorised editor explicitly saves/publishes.
 
-1. Register `sanitySchemaTypes` from `src/cms/sanity/schema.ts` in your Studio's `schema.types`.
-2. Import page records as `_type: page` documents, the site settings as `_type: siteSettings`, and form labels as `_type: quoteFormContent`. Add unique `_key` values to array objects. Sanity key/value arrays and named-image arrays are normalized to the Zod record fields by the adapter.
-3. Set `CONTENT_SOURCE=sanity`, `SANITY_PROJECT_ID`, `SANITY_DATASET`, and optionally `SANITY_API_TOKEN` for a private dataset.
-4. Publish all documents and rebuild. The reader excludes drafts and validates content. Missing or malformed content fails visibly instead of silently showing stale local copy.
+Editors for service/about final source sections omitted by the live template are not exposed. FAQs are edited in their source section, then aggregated; testimonials are shared. Existing slugs/layouts remain fixed. New generic content routes are not automatically added.
 
-## Payload
+## Images
 
-1. Copy `payloadPagesCollection`, `payloadSiteSettingsGlobal` and `payloadQuoteFormGlobal` from `src/cms/payload/collection.ts` into your Payload project. Type their final registration against your installed Payload version and set access rules.
-2. Import page JSON and gallery data through Payload's Local API or admin UI. Publish every page (`_status: published`). The `intro` JSON field holds an array of strings; use a custom array editor if desired.
-3. Set `CONTENT_SOURCE=payload`, `PAYLOAD_API_URL=https://your-cms.example/api`, and optionally `PAYLOAD_API_KEY` for a read-only API-enabled users collection.
-4. Rebuild. Published-page queries load up to 100 pages, check pagination and validate the shared contract.
+Upload images through the image fields. Every image supports hotspot and Alt text. Meaningful images need alt; decorative images can be marked decorative. Existing local images remain the fallback. The server resolves asset references with @sanity/image-url and the front end uses next/image. No existing assets were uploaded automatically.
 
-The schema definitions intentionally have no CMS package dependency in this frontend. They are authoring templates for the separate CMS installation, not a running Studio or admin dashboard. Test them against the CMS version selected when integrating.
+## Blog
 
-## Refresh and global content
+/blog/ lists published articles and /blog/[slug]/ shows a post. Create a category and author, then a Blog Post with title, slug, publication date, excerpt, featured image/alt and Portable Text body. Future-dated posts/drafts stay private. Blog Page contains SEO, banner, filter/featured selections, list/detail labels, optional sidebar, internal CTA and footer CTA. There were no legacy posts, so no blog import script or import run is needed.
 
-Remote requests use Next.js's 60-second fetch cache. Add authenticated CMS publish webhooks and route revalidation if you need immediate updates. All page slugs are prebuilt. Publish a new build after adding or removing a page; unknown slugs intentionally return HTTP 404.
+Publish changes are visible after the 60-second cache window. For immediate refresh, configure a signed Sanity webhook to POST /api/revalidate using SANITY_REVALIDATE_SECRET. Its projection should include _type, _id, slug and beforeSlug when a post slug changes. No webhook was configured or invoked here. Arbitrary paths and submission document events are rejected.
 
-Local site settings and navigation live in `src/config/site.json`; functional quote labels live in `src/content/quote-form.json`. `SiteSettingsSchema` and `QuoteFormContentSchema` in `src/content/schema.ts` validate both local and normalized CMS responses. The page, section, CTA, SEO and image fields have matching names in Zod, Sanity and Payload. `getCmsSettings()` can fetch and validate remote globals, but the current header, footer and quote form still read the local synchronous settings path; changing `CONTENT_SOURCE` does not change them. Adapter tests use mocked responses only. No real CMS account is connected.
+## Quote delivery and submission storage
 
-If a Sanity image CDN URL replaces local `src` values, add that CDN host to `images.remotePatterns` in `next.config.ts` before using it with `next/image`. Preserve `alt`, `width` and `height` in the normalized image record.
+The same QuoteForm remains inline on /contact/ and in the global popup. Fields, validation, honeypot, native-post redirects and JSON success/conversion behavior are preserved.
 
-## Before production
+If QUOTE_WEBHOOK_URL is configured, its existing HTTPS delivery flow/auth/body remain in use. Resend is used only when no webhook is configured and RESEND_API_KEY, RESEND_FROM_EMAIL and RESEND_TO_EMAIL are all set. The sender must have a verified domain; recipient values come from env and reply-to is the validated submitter. No message was sent during implementation.
 
-Configure the quote webhook, actual CMS credentials if using a remote provider, and the intended domain. Verify CMS permissions, imported slugs, published content, contact details and form delivery on that environment. No credentials or enquiry contents belong in the page JSON.
+Validated submissions are saved using Next.js after, outside the response path. Storage failure never changes email or response behavior. This is best-effort saving, not a durable queue. Configure SANITY_WRITE_TOKEN server-side with permission for the submissions dataset; without a token/project, saving silently skips. No read token is required for public content.
+
+Set SANITY_SUBMISSIONS_DATASET and NEXT_PUBLIC_SANITY_SUBMISSIONS_DATASET to the same restricted dataset name, different from the content dataset. The writer skips if either name is missing, they disagree, or they resolve to the content dataset. There is no public-content fallback for submissions. Studio provides its separate workspace through Form Submissions. Dataset privacy/roles still require account-side configuration; a different name alone does not prove privacy.
+
+Studio hierarchy: Form Submissions → Quote request → Year (count) → Month (count) → records, newest first. Form folder is always shown; year/month folders appear only with records. Only status is editable; test records can still be deleted through document actions.
+
+**Privacy:** submissions contain personal data. Limit dataset access to authorised staff. readOnly controls Studio UI only, not API access. Agree retention/deletion and privacy policy before accepting real enquiries. Never expose a write token in NEXT_PUBLIC variables.
+
+## Verification authorised for this implementation
+
+Only npx tsc --noEmit --incremental false --pretty false was run. Build, lint, tests, live submissions, email sends, dataset mutations, imports and deployment were not run. See Changes/Aditya_17-11-26.md under Sanity Implementation for the file-level record and client checks.
+
+## Completion verification
+
+See Changes/Aditya_17-11-26.md, under Sanity Completion Verification, for the requirement checklist and the full 313-section source/editor/query/render matrix. src/cms/sanity/section-map.json is the machine-readable mapping, and layout-map.json holds immutable dispatch and CTA placement.
+
+The original inventory remains 30 page URLs / 313 logical sections. /blog adds a fixed list URL plus a dynamic post template, with no legacy posts stored in this repository. Studio and metadata endpoints are counted separately.
+
+Rendered introductions, every FAQ topic and the reviews grid now have fixed editors. Home metrics/cards/intro/checklist/capability/CTA fields live with their owning sections. Legacy duplicate/unused fields are hidden. Main-page formatted text uses richInline; full article blocks use blogBody. Images retain caption/decorative/hotspot metadata; gallery and article figures display captions, and other image descriptions are preserved without changing layout.
+
+The existing /site.webmanifest URL is now a read-only route backed by Branding & Images, with its former contents retained as local defaults. The browser viewport colour is also a branding setting; the initial value is unchanged.
+
+No real service variables were configured in the local shell; only the blank .env.example is present. The default content dataset is production, matching Studio and front-end defaults, but deployed values, access permissions, CORS, sender-domain verification and CMS round trips are unverified. No matching preview was available at the documented localhost:3011 address, so visual/runtime verification was not performed.
+
+Asset generation continues to update the manifest fallback at src/content/web-manifest.json; it no longer creates a conflicting public/site.webmanifest file. The generator was not run in this pass.
+
+## Optional settings outside the minimal example
+
+The owner confirmed Resend is the active delivery provider. Keep RESEND_API_KEY, RESEND_FROM_EMAIL and RESEND_TO_EMAIL. The webhook branch is unchanged: an already-configured QUOTE_WEBHOOK_URL still takes precedence, and QUOTE_WEBHOOK_SECRET supplies its optional bearer authentication. These names are omitted from the Resend example, not removed from code or deployment settings. Do not switch providers or remove existing live settings without reviewing that deployment.
+
+- **Signed publish hook:** optionally add SANITY_REVALIDATE_SECRET to enable /api/revalidate. Signature verification stays intact. Ordinary 60-second revalidation works without this variable.
+- **Private content / legacy credentials:** SANITY_API_TOKEN remains an optional server-only authenticated-read token and legacy writer fallback. Public content does not need it; new setups use SANITY_WRITE_TOKEN for submissions. SANITY_PROJECT_ID and SANITY_DATASET remain compatibility aliases only when public identifiers are absent. Do not configure duplicate identifiers for a new setup; Studio requires the public identifiers.
+- **Payload:** CONTENT_SOURCE=payload still uses PAYLOAD_API_URL and, if authentication is needed, PAYLOAD_API_KEY. Configure those only for an existing Payload deployment. They are not required for Sanity.
+- **Deployment:** Docker still sets BUILD_STANDALONE=1 internally. Vercel provides VERCEL/VERCEL_ENV; leave them platform-managed. SITE_CANONICAL_URL remains an optional indexing-host override, defaulting to src/config/site.json. CONTENT_STRICT and CHECK_ORIGIN remain optional development/tooling switches. No deployment configuration or provider code was removed.
+
+Only .env.example was rewritten; no real environment file, account setting or secret was read out or modified. See the Environment Simplification changelog entry for the current configuration contract; older audit/setup entries remain historical.
+
+### Studio layout and existing website defaults
+
+Studio is available at `/studio/website` when the private submissions workspace is configured (`/studio` for a single workspace). It has its own viewport layout, without website navigation/footer/styles. Public routes retain the same URLs under the internal `(website)` route group.
+
+New fixed-document editors use the existing website defaults through an explicit documentId initial-value template. If a document was previously created with missing fields, choose **Fill missing fields from website defaults** to fill absent top-level values while retaining saved content. This is an editor action that saves a draft; review and publish it yourself. No defaults are automatically written on component mount.
+
+Image fields show the current local website image as a preview when no Sanity asset has been selected. This preview does not upload the file. Use the normal image upload control, set alt text (or decorative), and publish to replace the local fallback.
+
+Studio's homepage folder is labelled **Home** (fixed ID `page.home`). Its public headline remains editable and does not control navigation identity. Singleton editor headings and previews use the stable registry labels, so documents without a public title field do not need an artificial title or content migration.

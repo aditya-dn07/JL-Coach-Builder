@@ -1,11 +1,11 @@
+import { LinkedText } from './related-services';
+import { getSiteContent } from '@/lib/sanity/site-content';
 import { InteriorSectionFrame, InteriorSectionHeader } from '@/components/shared/section-intro';
 import type { ReactNode } from 'react';
 import { TwoToneHeading } from '@/components/shared/two-tone-heading';
 import { MapPin } from 'lucide-react';
 import type { ContentPage } from '@/content/schema';
-import { imageFor, vehicles } from '@/content/catalog';
 import { Photo } from '@/components/shared/photo';
-import { phoneHref } from '@/config/site';
 import { LibraryIcon } from '@/components/shared/library-icon';
 import { ContentGroups } from '@/components/content/content-groups';
 import { QuoteLink } from '@/components/shared/quote-link';
@@ -13,7 +13,8 @@ import { SectionIntro } from '@/components/shared/section-intro';
 import Link from 'next/link';
 import { getHomeUi } from '@/components/home/home-content';
 
-export function DocumentSections({ page, sectionIds }: { page: ContentPage; sectionIds?: string[] }) {
+export async function DocumentSections({ page, sectionIds }: { page: ContentPage; sectionIds?: string[] }) {
+  const { imageFor, vehicles, phoneHref, siteConfig } = await getSiteContent();
   const sections = page.sections.filter(
     (s) =>
       sectionIds ? sectionIds.includes(s.id) : (page.kind !== 'home' ||
@@ -36,7 +37,7 @@ export function DocumentSections({ page, sectionIds }: { page: ContentPage; sect
         </section>
       )}
       {sections.map((s, i) =>
-        /Common Questions/.test(s.title) ? (
+        s.id === 'section-8' ? (
           <section id={s.id} className="faq-block section-pad" key={s.id}>
             <div className="container faq-layout" data-reveal>
               <div>
@@ -45,8 +46,8 @@ export function DocumentSections({ page, sectionIds }: { page: ContentPage; sect
                 {page.kind === 'legal' && s.description && <p className="mt-4 text-base leading-7">{s.description}</p>}
                 {page.kind === 'home' ? (
                   <>
-                    <p className="col-start-1 row-start-3 max-w-[100ch] text-[15px] leading-[1.85] text-[#b9c6d5]">{getHomeUi(page, 'faqIntro')}</p>
-                    <p className="self-end min-[801px]:!row-start-3"><Link className="underlink !mt-0" href="/faqs/">{getHomeUi(page, 'viewFaqs')}</Link></p>
+                    <p className="col-start-1 row-start-3 max-w-[100ch] text-[15px] leading-[1.85] text-[#b9c6d5]"><LinkedText text={getHomeUi(page, 'faqIntro')} links={s.descriptionLinks} richText={s.descriptionRichText} /></p>
+                    <p className="self-end min-[801px]:!row-start-3"><Link className="underlink !mt-0" href={s.actions?.viewAllHref || '/faqs/'}>{s.actions?.viewAllLabel ?? getHomeUi(page, 'viewFaqs')}</Link></p>
                   </>
                 ) : (
                   <p>Have a different question?<br /><a className="underlink" href={phoneHref}><LibraryIcon name="telephone" />Talk to our team</a></p>
@@ -59,7 +60,7 @@ export function DocumentSections({ page, sectionIds }: { page: ContentPage; sect
                       {f.question}
                       <span className="faq-toggle-icon" aria-hidden="true"><LibraryIcon name="plus-lg" className="faq-plus" /><LibraryIcon name="x-lg" className="faq-close" /></span>
                     </summary>
-                    <p>{f.answer}</p>
+                    <p><LinkedText text={f.answer} links={f.answerLinks} richText={f.richText} /></p>
                   </details>
                 ))}
               </div>
@@ -81,7 +82,7 @@ export function DocumentSections({ page, sectionIds }: { page: ContentPage; sect
                 )}
                 <h2><TwoToneHeading text={s.title} /></h2>
                 {page.kind === 'home' && s.id === 'section-3' && (
-                  <a className="underlink section-link" href="#quote"><LibraryIcon name="chat-square-text" />{getHomeUi(page, 'quote')}</a>
+                  <a className="underlink section-link" href={s.actions?.quoteHref || siteConfig.ui.quoteTarget}><LibraryIcon name="chat-square-text" />{getHomeUi(page, 'quote')}</a>
                 )}
               </div>}
               {page.kind === 'home' && s.id === 'section-4' && (
@@ -99,14 +100,14 @@ export function DocumentSections({ page, sectionIds }: { page: ContentPage; sect
                 statementCards={page.kind === 'about' && s.id === 'section-2'}
                 summaryInHeader={page.kind === 'home' && s.id === 'section-5'}
                 showNumbers={!(page.kind === 'home' && s.id === 'section-5')}
-                benefitImages={page.kind === 'home' ? getHomeUi(page, 'benefitImages').split('|') : undefined}
+                benefitImages={page.kind === 'home' ? s.cardImages ?? page.benefitImages ?? getHomeUi(page, 'benefitImages').split('|').map(src => ({ src, alt: '', width: 1200, height: 800 })) : undefined}
                 beforeGrid={page.kind === 'home' && s.id === 'section-5'
-                  ? <SectionIntro eyebrow={s.eyebrow ?? ''} title={s.title} description={s.blocks.at(-1)!.text} action={<QuoteLink />} />
+                  ? <SectionIntro eyebrow={s.eyebrow ?? ''} title={s.title} description={s.blocks.at(-1)!.text} descriptionContent={<LinkedText text={s.blocks.at(-1)!.text} links={s.blocks.at(-1)!.links} richText={s.descriptionRichText ?? s.blocks.at(-1)!.richText} />} action={<QuoteLink label={s.actions?.quoteLabel} href={s.actions?.quoteHref} />} />
                   : undefined}
               />
               {page.kind !== 'legal' && !(page.kind === 'home' && ['section-3', 'section-5'].includes(s.id)) && (
-                <a className="underlink section-link" href="#quote">
-                  <LibraryIcon name="chat-square-text" />{page.kind === 'home' ? getHomeUi(page, 'quote') : 'Get a free quote'}
+                <a className="underlink section-link" href={s.actions?.quoteHref || siteConfig.ui.quoteTarget}>
+                  <LibraryIcon name="chat-square-text" />{s.actions?.quoteLabel ?? (page.kind === 'home' ? getHomeUi(page, 'quote') : siteConfig.ui.quote)}
                 </a>
               )}
               </div>
@@ -118,9 +119,11 @@ export function DocumentSections({ page, sectionIds }: { page: ContentPage; sect
   );
 }
 
-export function HomeDocumentSection({ section, intro, children, benefits = false, legal = false }: { section: ContentPage['sections'][number]; intro: ReactNode; children: ReactNode; benefits?: boolean; legal?: boolean }) {
+export async function HomeDocumentSection({ section, intro, children, benefits = false, legal = false }: { section: ContentPage['sections'][number]; intro: ReactNode; children: ReactNode; benefits?: boolean; legal?: boolean }) {
+  const { imageFor, vehicles, phoneHref, siteConfig } = await getSiteContent();
   return <InteriorSectionFrame id={section.id} className={`home-content-section-${benefits ? '5' : '6'}`}><div className={legal ? 'interior-legal-text' : undefined}><InteriorSectionHeader>{intro}</InteriorSectionHeader><div className="section-body">{children}</div></div></InteriorSectionFrame>;
 }
-export function HomeFaqSection({ id, intro, children }: { id: string; intro: ReactNode; children: ReactNode }) {
+export async function HomeFaqSection({ id, intro, children }: { id: string; intro: ReactNode; children: ReactNode }) {
+  const { imageFor, vehicles, phoneHref, siteConfig } = await getSiteContent();
   return <InteriorSectionFrame id={id} className="faq-block"><div className="faq-layout"><InteriorSectionHeader>{intro}</InteriorSectionHeader><div className="faq-questions">{children}</div></div></InteriorSectionFrame>;
 }

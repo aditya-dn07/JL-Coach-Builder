@@ -1,5 +1,4 @@
-import { contentRepository } from '@/content/repository';
-const config = contentRepository.getSiteSettings();
+import { siteSettings as config } from '@/content/local';
 export const siteConfig = config;
 export const phoneHref = 'tel:' + config.business.phone.replace(/^0/, '+64').replaceAll(' ', '');
 export const fullAddress = [

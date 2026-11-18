@@ -119,7 +119,7 @@ async function generate() {
   });
   await fs.writeFile('public/favicon.ico', Buffer.concat([header, ...iconBuffers]));
   await fs.writeFile(
-    'public/site.webmanifest',
+    'src/content/web-manifest.json',
     JSON.stringify(
       {
         name: config.business.name,
@@ -142,7 +142,7 @@ async function generate() {
     ) + '\n'
   );
   console.log(
-    'Generated 1200×630 OG artwork, favicon.ico, SVG, Apple touch icon, PNG icons and web manifest.'
+    'Generated 1200×630 OG artwork, favicon.ico, SVG, Apple touch icon, PNG icons and web manifest fallback.'
   );
 }
 generate().catch((error) => {

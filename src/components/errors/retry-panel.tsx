@@ -1,27 +1,29 @@
 'use client';
 import Link from 'next/link';
+import { useRecoveryCopy } from '../providers/site-content';
 export function RetryPanel({ retry, global = false }: { retry: () => void; global?: boolean }) {
+  const copy = useRecoveryCopy();
   return (
     <section className="recovery-panel container section-pad" role="alert">
-      <p className="kicker">A small detour</p>
+      <p className="kicker">{copy.eyebrow}</p>
       <h1>
-        Something needs
-        <br />a second look.
+        {copy.title}
+        <br />{copy.titleLine2}
       </h1>
       <p>
         {global
-          ? 'The website couldn’t finish loading. Please try again in a moment.'
-          : 'We couldn’t load this page. Please retry, or contact our Christchurch workshop for help.'}
+          ? copy.globalDescription
+          : copy.description}
       </p>
       <div className="recovery-actions">
         <button className="button primary" onClick={retry}>
-          Try again
+          {copy.retry}
         </button>
-        <Link href="/" className="underlink">
-          Back to home
+        <Link href={copy.homeHref} className="underlink">
+          {copy.home}
         </Link>
-        <Link href="/contact/" className="underlink">
-          Contact the workshop
+        <Link href={copy.contactHref} className="underlink">
+          {copy.contact}
         </Link>
       </div>
     </section>

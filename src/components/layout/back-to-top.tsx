@@ -1,9 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useSiteContent } from '../providers/site-content';
 import { ArrowUp } from 'lucide-react';
 
 export function BackToTop() {
+ const { editorial } = useSiteContent();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -18,8 +20,8 @@ export function BackToTop() {
   return (
     <a
       href="#top"
-      aria-label="Back to top"
-      title="Back to top"
+      aria-label={editorial.interface.copy.backToTop}
+      title={editorial.interface.copy.backToTop}
       className="back-to-top fixed bottom-5 right-5 z-40 grid h-11 w-11 place-items-center rounded-full border border-white/20 bg-brand text-white shadow-[0_4px_20px_#0006] transition-colors hover:bg-[#d40000] sm:bottom-6 sm:right-6"
     >
       <ArrowUp size={20} aria-hidden="true" />

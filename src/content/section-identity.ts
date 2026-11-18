@@ -1,0 +1,25 @@
+// Editorial identity is fixed; displayed copy never selects a layout.
+export const homeUiOwners: Record<string, string> = {
+  "trustEyebrow": "section-1",
+  "serviceAll": "section-2",
+  "serviceRepairs": "section-2",
+  "servicePaint": "section-2",
+  "serviceUpgrades": "section-2",
+  "insurance": "section-2",
+  "serviceHelpTitle": "section-2",
+  "workshop": "section-4",
+  "workshopYears": "section-4",
+  "workshopYearsLabel1": "section-4",
+  "workshopYearsLabel2": "section-4",
+  "electrical": "section-4",
+  "plumbing": "section-4",
+  "problems": "section-3",
+  "reviews": "section-7",
+  "reviewIntro": "section-7",
+  "viewReviews": "section-7",
+  "faqs": "section-8",
+  "viewFaqs": "section-8",
+  "faqIntro": "section-8",
+  "ready": "section-9",
+  "call": "section-9"
+};

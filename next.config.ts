@@ -19,6 +19,7 @@ export default function config(phase: string): NextConfig {
     env: { VERCEL_ENV: process.env.VERCEL_ENV ?? 'development' },
 
     images: {
+      remotePatterns: [{ protocol: 'https', hostname: 'cdn.sanity.io', pathname: '/images/**' }],
       formats: ['image/avif', 'image/webp'],
     },
 

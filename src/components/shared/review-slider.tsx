@@ -1,10 +1,11 @@
 'use client';
+import { useSiteContent } from '@/components/providers/site-content';
 import { useEffect, useRef, useState } from 'react';
 import { LibraryIcon } from '@/components/shared/library-icon';
-import { siteConfig } from '@/config/site';
 import { ReviewCard } from './review-card';
 
 export function ReviewSlider({ reviews, preserveAuthors = false }: { reviews: { text: string; author: string }[]; preserveAuthors?: boolean }) {
+  const { siteConfig } = useSiteContent();
   const viewport = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
   const [hovered, setHovered] = useState(false);

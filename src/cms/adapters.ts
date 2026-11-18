@@ -1,3 +1,4 @@
+import { getSanityIdentifiers } from '../lib/sanity/config';
 import { PageSchema, QuoteFormContentSchema, SiteSettingsSchema, type ContentPage, type QuoteFormContent, type SiteSettings } from '@/content/schema';
 function recordFromPairs(value: unknown): unknown {
   if (!Array.isArray(value)) return value;
@@ -23,9 +24,8 @@ export function normalizeCmsSettings(site: unknown, quoteForm: unknown): { site:
 }
 export async function readCmsSettings(provider: 'sanity' | 'payload'): Promise<{ site: SiteSettings; quoteForm: QuoteFormContent }> {
   if (provider === 'sanity') {
-    const project = process.env.SANITY_PROJECT_ID;
-    const dataset = process.env.SANITY_DATASET ?? 'production';
-    if (!project || !/^[a-z0-9-]+$/.test(project) || !/^[-\w]+$/.test(dataset)) throw new Error('Configure a valid SANITY_PROJECT_ID and SANITY_DATASET.');
+    const { projectId: project, dataset } = getSanityIdentifiers();
+    if (!project || !/^[a-z0-9-]+$/.test(project) || !/^[-\w]+$/.test(dataset)) throw new Error('Configure a valid NEXT_PUBLIC_SANITY_PROJECT_ID and NEXT_PUBLIC_SANITY_DATASET.');
     const query = '{"site": *[_type == "siteSettings" && !(_id in path("drafts.**"))][0], "quoteForm": *[_type == "quoteFormContent" && !(_id in path("drafts.**"))][0]}';
     const response = await fetch(`https://${project}.api.sanity.io/v2025-02-19/data/query/${dataset}?query=${encodeURIComponent(query)}`, {
       headers: process.env.SANITY_API_TOKEN ? { Authorization: `Bearer ${process.env.SANITY_API_TOKEN}` } : {}, next: { revalidate: 60 },
@@ -49,10 +49,9 @@ export async function readCmsSettings(provider: 'sanity' | 'payload'): Promise<{
 export async function readCmsPages(provider: 'sanity' | 'payload'): Promise<ContentPage[]> {
   let data: unknown;
   if (provider === 'sanity') {
-    const project = process.env.SANITY_PROJECT_ID;
-    const dataset = process.env.SANITY_DATASET ?? 'production';
+    const { projectId: project, dataset } = getSanityIdentifiers();
     if (!project || !/^[a-z0-9-]+$/.test(project) || !/^[-\w]+$/.test(dataset))
-      throw new Error('Configure a valid SANITY_PROJECT_ID and SANITY_DATASET.');
+      throw new Error('Configure a valid NEXT_PUBLIC_SANITY_PROJECT_ID and NEXT_PUBLIC_SANITY_DATASET.');
     const query = '*[_type == "page" && !(_id in path("drafts.**"))]';
     const response = await fetch(
       `https://${project}.api.sanity.io/v2025-02-19/data/query/${dataset}?query=${encodeURIComponent(query)}`,

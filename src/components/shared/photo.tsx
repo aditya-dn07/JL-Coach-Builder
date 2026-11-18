@@ -1,34 +1,40 @@
-import Image from 'next/image';
+import { getSiteContent } from '@/lib/sanity/site-content';
+import { ContentImage as Image } from '../shared/content-image';
 import type { ImageRef } from '@/data/site.schema';
-import { contentRepository } from '@/content/repository';
 
-export function Photo({
+export async function Photo({
   image,
+  override,
   priority = false,
   sizes = '(max-width: 640px) 90vw, 35vw',
   className = '',
 }: {
   image: ImageRef;
+  override?: import('@/content/schema').ContentImage;
   priority?: boolean;
   sizes?: string;
   className?: string;
 }) {
+  const { contentRepository } = await getSiteContent();
   const asset = contentRepository.getImageManifest()[image.id];
-  const src = asset.variants?.at(-1)?.src ?? asset.src;
-  const position = `${image.focalPoint.x * 100}% ${image.focalPoint.y * 100}%`;
+  const catalogUpload = image.optimizedSrc.startsWith('https://cdn.sanity.io/');
+  const src = override?.src || (catalogUpload ? image.optimizedSrc : asset.variants?.at(-1)?.src ?? asset.src);
+  const alt = override ? override.alt : catalogUpload ? image.alt : asset.alt;
+  const point = override?.focalPoint ?? asset.focalPoint ?? image.focalPoint;
+  const position = `${point.x * 100}% ${point.y * 100}%`;
   // The generated tiny preview provides a soft placeholder without runtime SVG filters.
   return (
     <div
       className={`photo ${className}`}
       style={{
-        backgroundImage: `url(${asset.blurDataURL})`,
+        backgroundImage: asset.blurDataURL ? `url(${asset.blurDataURL})` : undefined,
         backgroundSize: 'cover',
         backgroundPosition: position,
       }}
     >
       <Image
-        src={src}
-        alt={image.alt}
+        src={src} caption={override?.caption ?? asset.caption} decorative={override?.decorative ?? asset.decorative} focalPoint={point}
+        alt={alt}
         fill
         priority={priority}
         fetchPriority={priority ? 'high' : undefined}

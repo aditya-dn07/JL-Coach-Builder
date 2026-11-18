@@ -1,8 +1,7 @@
 'use client';
+import { useSiteContent } from '@/components/providers/site-content';
 import { useEffect, useId, useRef, useState, type FormEvent } from 'react';
-import { contentRepository } from '@/content/repository';
 import Link from 'next/link';
-import { siteConfig, phoneHref } from '@/config/site';
 import { QuoteSchema } from '@/lib/quote';
 import { Send } from 'lucide-react';
 import { quoteConversionTracker } from '@/lib/quote-conversion';
@@ -14,6 +13,7 @@ const trackConversion = quoteConversionTracker(event => {
 });
 
 export function QuoteForm() {
+  const { contentRepository, siteConfig, phoneHref } = useSiteContent();
   const content = contentRepository.getQuoteForm();
   const titleId = useId();
   const { labels: l, messages: m } = content.form;
@@ -91,7 +91,7 @@ export function QuoteForm() {
       </button>
       <p className="form-privacy">
         {content.ui.privacy}{' '}
-        <Link href="/privacy-policy/" className="underline underline-offset-2">{content.ui.privacyLink}</Link>
+        <Link href={content.ui.privacyHref} className="underline underline-offset-2">{content.ui.privacyLink}</Link>
       </p>
       <p ref={feedbackRef} tabIndex={-1} className="form-feedback" role={status === 'error' ? 'alert' : 'status'}>
         {feedback}

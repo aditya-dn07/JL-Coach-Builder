@@ -1,3 +1,5 @@
+import { LinkedText } from '../content/related-services';
+import { getSiteContent } from '@/lib/sanity/site-content';
 import { InteriorSectionFrame, InteriorSectionHeader } from '@/components/shared/section-intro';
 import type { ReactNode } from 'react';
 import type { ContentPage } from '@/content/schema';
@@ -10,7 +12,8 @@ import { getHomeSection, getHomeUi } from './home-content';
 
 type Props = { page: ContentPage; interior?: { section: ContentPage['sections'][number]; intro: ReactNode; children: ReactNode } };
 
-export function HomeReviews({ page, interior }: Props) {
+export async function HomeReviews({ page, interior }: Props) {
+  const { editorial } = await getSiteContent();
   if (interior) return <InteriorSectionFrame id={interior.section.id} className="home-document-reviews">
     {page.slug !== 'reviews' && <div className={interior.intro
       ? 'mb-10 flex flex-col items-start gap-6 min-[1001px]:flex-row min-[1001px]:items-end min-[1001px]:justify-between'
@@ -18,7 +21,7 @@ export function HomeReviews({ page, interior }: Props) {
       {interior.intro && <div className="min-w-0 flex-1 [&>.interior-section-header]:!mb-0"><InteriorSectionHeader>{interior.intro}</InteriorSectionHeader></div>}
       <div className="flex shrink-0 flex-col items-stretch gap-3">
         <GoogleReviewLink />
-        {page.slug !== 'reviews' && <Link href="/reviews/" className="underlink !mt-0">View All Reviews</Link>}
+        {page.slug !== 'reviews' && <Link href={interior.section.actions?.viewAllHref || '/reviews/'} className="underlink !mt-0">{interior.section.actions?.viewAllLabel || editorial.interface.copy.viewReviews}</Link>}
       </div>
     </div>
     }
@@ -30,10 +33,10 @@ export function HomeReviews({ page, interior }: Props) {
     <div className="section-heading !mb-7 !gap-y-[15px] min-[801px]:!grid-cols-[minmax(0,1fr)_auto]" data-reveal>
       <p className="kicker min-[801px]:!col-end-2">{getHomeUi(page, 'reviews')}</p>
       <h2 className="!max-w-none"><TwoToneHeading text={content.title} /></h2>
-      <p className="col-start-1 row-start-3 max-w-[100ch] text-[15px] leading-[1.85] text-[#b9c6d5]">{getHomeUi(page, 'reviewIntro')}</p>
+      <p className="col-start-1 row-start-3 max-w-[100ch] text-[15px] leading-[1.85] text-[#b9c6d5]"><LinkedText text={getHomeUi(page, 'reviewIntro')} links={content.descriptionLinks} richText={content.descriptionRichText} /></p>
       <div className="home-review-actions flex flex-row items-center gap-3 self-end justify-self-start min-[801px]:col-start-2 min-[801px]:row-span-3 min-[801px]:row-start-1 min-[801px]:justify-self-end">
         <GoogleReviewLink />
-        <Link href="/reviews/" className="underlink !mt-0">{getHomeUi(page, 'viewReviews')}</Link>
+        <Link href="/reviews/" className="underlink !mt-0">{content.actions?.viewAllLabel ?? getHomeUi(page, 'viewReviews')}</Link>
       </div>
     </div>
     <ReviewSlider reviews={reviews} />
